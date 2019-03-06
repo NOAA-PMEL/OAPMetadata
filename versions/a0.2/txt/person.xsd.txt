@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://ncei.noaa.gov/oads_metadata"
+  xmlns="http://ncei.noaa.gov/oads_metadata"
+  elementFormDefault="qualified"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  
+  <xs:include schemaLocation="commonTypes.xsd" />
+    
+  <xs:complexType name="person_type">
+    <xs:sequence>
+      <xs:element name="name" type="person_name_type" />
+      <xs:element name="organization" type="xs:string" />
+      <xs:element name="contactInfo" type="person_contact_info_type" />
+      <xs:element name="identifier" type="typed_identifier_type" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="person_name_type">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+      <xs:element name="first" type="xs:string" />
+      <xs:element name="middle" minOccurs="0" maxOccurs="unbounded" type="ordered_string_element_type" />
+      <xs:element name="last" type="xs:string" />
+      <xs:element name="suffix" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="person_contact_info_type">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="address" type="address_type" />
+      <xs:element name="phone" type="typed_string_type" />
+      <xs:element name="email" type="typed_string_type" />
+      <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="address_type">
+    <xs:complexContent>
+      <xs:extension base="typed_element_type">
+        <xs:sequence>
+          <xs:element name="deliveryPoint" type="ordered_string_element_type" maxOccurs="unbounded" />
+          <xs:element name="city" type="xs:string" />
+          <xs:element name="administrativeArea" type="xs:string" />
+          <xs:element name="postalCode" type="xs:string" />
+          <xs:element name="country" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="person_reference_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" /> <!-- single string name --> <!-- XXX This is no good. -->
+      <xs:element name="organization" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>
