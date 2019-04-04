@@ -157,10 +157,10 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
 
 
   <xs:complexType name="qc_flag_info_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="description" type="xs:string" />
       <xs:element name="qcFlagVarName" type="xs:string" minOccurs="0"/> <!-- XXX ??? if missing, assume datasetVarName + "_qc" -->
-    </xs:all>
+    </xs:sequence>
   </xs:complexType>
   
   <xs:complexType name="equilibrator_type" >
@@ -222,7 +222,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
   <xs:complexType name="crm_type">
     <xs:sequence>
       <xs:element name="manufacturer" type="xs:string" />
-      <xs:element name="batch"  type="xs:string" />
+      <xs:element name="batch"  type="xs:string" minOccurs="0" />
       <xs:element name="bottle"   type="xs:string" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -239,7 +239,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:element name="name" type="xs:string" />
       <xs:element name="description" type="xs:string" minOccurs="0" />
       <xs:element name="volume" type="xs:string" minOccurs="0" /> <!-- value_with_unit_type -->
-      <xs:element name="correction" type="xs:string" />
+      <xs:element name="correction" type="xs:string" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 

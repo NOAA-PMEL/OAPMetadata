@@ -4,6 +4,8 @@
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:annox="http://annox.dev.java.net"
+  xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
   xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd"
   jaxb:extensionBindingPrefixes="xjc annox"
   version="2.1">
@@ -16,6 +18,15 @@
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+        <ci:code>
+          <![CDATA[
+    public void clearEmptyCollections() {
+        System.out.println("Clearing person empty collections.");
+        if ( identifier != null && identifier.isEmpty()) { identifier = null; }
+    }
+          ]]>
+        </ci:code>
+        
     </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='person_type']//xs:element[@name='identifier']">
         <annox:annotate target="field">@lombok.Singular("addIdentifier")</annox:annotate>

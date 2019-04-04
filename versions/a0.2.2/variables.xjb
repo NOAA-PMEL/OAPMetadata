@@ -53,8 +53,6 @@
       <annox:annotate target="field">@lombok.Singular("addStandardGas")</annox:annotate>
     </jaxb:bindings>
 
-    
-
     <jaxb:bindings node="xs:complexType[@name='gas_detector_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
