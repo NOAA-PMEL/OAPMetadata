@@ -10,7 +10,6 @@
 
   <xs:include schemaLocation="commonTypes.xsd"/>
   <xs:include schemaLocation="person.xsd"/>
-  <!-- xs:include schemaLocation="strings.xsd" /> -->
   <xs:include schemaLocation="variables.xsd"/>
 
   <xs:element name="oads_metadata" type="oads_metadata_document_type"/>
