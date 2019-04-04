@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_4"
+  xmlns="http://ncei.noaa.gov/oads/v_a0_4" elementFormDefault="qualified"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
+  jaxb:extensionBindingPrefixes="xjc annox xew" 
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+
+  <xs:include schemaLocation="commonTypes.xsd"/>
+  <xs:include schemaLocation="instrumentation.xsd" />
+  <xs:include schemaLocation="person.xsd"/>
+  <xs:include schemaLocation="variables.xsd"/>
+
+  <xs:element name="oads_metadata" type="oads_metadata_document_type"/>
+
+  <xs:complexType name="oads_metadata_document_type">
+    <xs:sequence>
+      <xs:element name="submissionDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="relatedDataSets" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dataset" type="related_data_type" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="investigators" type="xs:IDREFS" />
+      <!--
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="investigator" type="xs:IDREF" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+        -->
+      <xs:element name="dataSubmitter" type="xs:IDREF" />
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="abstract" type="xs:string"/>
+      <xs:element name="purpose" type="xs:string"/>
+      <xs:element name="temporalExtents" type="temporal_extents_type"/>
+      <xs:element name="spatialExtents" type="spatial_extents_type"/>
+      <xs:element name="spatialReference" type="xs:string" minOccurs="0"/>
+      <xs:element name="sampleCollectionRegions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="region" type="xs:string" maxOccurs="unbounded"/>
+            <!-- TODO: controlled vocabulary -->
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="organismCollectionRegions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="region" type="xs:string" maxOccurs="unbounded"/>
+            <!-- TODO: controlled vocabulary -->
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fundingInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="source" type="funding_source_type" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="researchProjects" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="project" type="xs:string" maxOccurs="unbounded"/> <!-- "research_project_type"  -->
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="platforms" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="platform" type="platform_type" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="expoCodes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="expocode" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cruiseIds" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cruiseId" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sections" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="section" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="authors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="author" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="citation" type="xs:string" minOccurs="0"/>
+      <xs:element name="references" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reference" type="reference_type" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="supplementalInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="keywords" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="keyword" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="variables" type="variable_collection"/>
+      <xs:element name="instrumentation" type="instrument_collection" />
+      <xs:element name="people" type="person_collection" />
+      <xs:element name="update" type="xs:date" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <!-- END of 1st level schema -->
+
+  <xs:complexType name="archive_info_type"/>
+
+  <!-- basic elements -->
+  <xs:complexType name="related_data_type">
+    <xs:sequence>
+      <xs:element name="dataset" type="xs:string"/>
+      <xs:element name="link" type="xs:anyURI"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="temporal_extents_type">
+    <xs:sequence>
+      <xs:element name="startDate" type="xs:date"/>
+      <!-- format YYYY-MM-DD -->
+      <xs:element name="endDate" type="xs:date"/>
+      <!-- format YYYY-MM-DD -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="spatial_extents_type">
+    <xs:sequence>
+      <xs:element name="westernBounds" type="xs:decimal"/>
+      <xs:element name="easternBounds" type="xs:decimal"/>
+      <xs:element name="northernBounds" type="xs:decimal"/>
+      <xs:element name="southernBounds" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="altitude_range_type">
+    <xs:sequence>
+      <xs:element name="maxAltitude" type="xs:decimal"/>
+      <xs:element name="minAltitude" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depth_range_type">
+    <xs:sequence>
+      <xs:element name="maxDepth" type="xs:decimal"/>
+      <xs:element name="minDepth" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funding_source_type">
+    <xs:sequence>
+      <xs:element name="agency" type="xs:string"/>
+      <!-- and/or org-ref -->
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="identifier" type="typed_identifier_type"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--
+  <xs:complexType name="research_project_type">
+    <xs:sequence>
+      <xs:element name="organization" type="xs:string"/> <!-X- and/or org-ref -X->
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="url" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  -->
+  <xs:complexType name="platform_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="identifier" type="typed_identifier_type"/>
+      <xs:element name="type" type="xs:string" /> <!-- type_platform_type"/> --> <!-- ??? controlled vocab -->
+      <xs:element name="owner" type="xs:string"/> <!-- and/or org-ref -->
+      <xs:element name="country" type="xs:string"/> <!-- controlled vocab -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- collection wrapper elements
+  <xs:complexType name="related_data_collection">
+    <xs:sequence>
+      <xs:element name="dataset" type="related_data_type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="person_collection">
+    <xs:sequence>
+      <xs:element name="person" type="person_type" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="investigators_collection">
+    <xs:sequence>
+      <xs:element name="investigator" type="person_type" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="geographic_region_name_collection">
+    <xs:sequence>
+      <xs:element name="region" type="xs:string" maxOccurs="unbounded" /> <!-X- TODO: controlled vocabulary -X->
+    </xs:sequence>
+  </xs:complexType> -->
+  <xs:complexType name="variable_collection">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="variable" type="base_variable_type"/>
+      <!-- <xs:element name="measured" type="measured_variable"/> -->
+      <xs:element name="dic" type="dic_variable_type"/>
+      <xs:element name="ta" type="ta_variable_type"/>
+      <xs:element name="ph" type="ph_variable_type"/>
+      <xs:element name="co2a" type="co2_autonomous"/>
+      <xs:element name="co2d" type="co2_discrete"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="instrument_collection">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="instrument" type="base_instrument_type" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="person_collection">
+    <xs:sequence>
+      <xs:element name="person" type="person_type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- base types 
+  <xs:simpleType name="type_platform_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Research Vessel"/>
+      <xs:enumeration value="ship"/>
+    </xs:restriction>
+  </xs:simpleType>
+  -->
+
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://ncei.noaa.gov/oads/v_a0_4"
+  xmlns="http://ncei.noaa.gov/oads/v_a0_4"
+  elementFormDefault="qualified">
+  <xs:complexType name="ordered_string_element_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="index" type="xs:int" default="0" /> <!-- zero-based indexing -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="typed_element_type">
+    <xs:attribute name="type" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="typed_string_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="value_with_unit_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="units" type="xs:Name" /> <!-- controlled vocabulary ??? -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="typed_identifier_type">
+    <xs:simpleContent>
+      <xs:extension base="typed_string_type">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="reference_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="link" type="xs:anyURI"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

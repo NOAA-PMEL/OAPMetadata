@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+  <option name="title">OAP Funded Data Set: NCEI Accession</option>
+
+  <option name="keywords">Ocean Acidification data, Ocean Acidification Data Stewardship Project, OADS, National Centers for Environmental Information, NCEI, National Oceanographic Data Center, NODC, NOAA, Ocean Acidification Program</option>
+
+  <option name="website">https://www.nodc.noaa.gov/oads/</option>
+
+  <option name="project">Ocean Acidification Data Stewardship (OADS) Project</option>
+
+</config>

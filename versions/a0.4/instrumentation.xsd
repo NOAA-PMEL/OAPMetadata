@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_4"
+  xmlns="http://ncei.noaa.gov/oads/v_a0_4" elementFormDefault="qualified"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
+  jaxb:extensionBindingPrefixes="xjc annox xew" 
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  
+  <xs:include schemaLocation="commonTypes.xsd" />
+  
+  <xs:complexType name="base_instrument_type">
+    <xs:sequence>
+      <xs:element name="manufacturer" type="xs:string" minOccurs="0" />
+      <xs:element name="model" type="xs:string" minOccurs="0" />
+      <xs:element name="serial" type="xs:string" minOccurs="0" />
+      <xs:element name="description" type="xs:string" minOccurs="0" />
+      <xs:element name="reference" type="reference_type" minOccurs="0" maxOccurs="unbounded" />
+      <xs:any minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="ref_id" type="xs:ID" />
+  </xs:complexType>
+</xs:schema>
