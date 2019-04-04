@@ -44,7 +44,7 @@
 	<path id="compile.path">
 		<fileset dir="${_basedir}/lib">
 			<include name="jaxb-api-*.jar"/>
-			<include name="lombok*.jar"/>
+			<include name="lombok.*.jar"/>
 			<include name="tws_util.jar"/>
 			<!--include name="hibernate-search-*.jar"/ -->
 		</fileset>
@@ -105,12 +105,18 @@
 	<target name="compile" description="Compile src and generated classes."> <!-- depends="generate-sources"  -->
 		<mkdir dir="${target.classes}"/>
 		<javac
-			destdir="${target.classes}"
 			srcdir="${gen-src-dir}:${_basedir}/src"
+			destdir="${target.classes}"
 			classpathref="compile.path"
 			includeantruntime="false"
 			source="1.8"
 			target="1.8">
+			<!-- src path="${gen-src-dir}"/>
+			<src path="${_basedir}/src"/> -->
+			<!-- exclude name="gov/noaa/pmel/oads/xml/a0_4/**"/> -->
+			<include name="gov/noaa/ncei/**"/>
+			<include name="gov/noaa/pmel/oads/xml/a0_2_2/**"/>
+			<include name="gov/noaa/pmel/oads/util/**"/>
 		</javac>
 		<!--
 		<copy todir="${basedir}/target/classes">
