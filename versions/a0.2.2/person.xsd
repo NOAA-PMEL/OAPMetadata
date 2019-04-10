@@ -43,10 +43,10 @@
       <xs:extension base="typed_element_type">
         <xs:sequence>
           <xs:element name="deliveryPoint" type="ordered_string_element_type" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="city" type="xs:string" />
+          <xs:element name="city" type="xs:string"  minOccurs="0" />
           <xs:element name="administrativeArea" type="xs:string" minOccurs="0" />
           <xs:element name="postalCode" type="xs:string" minOccurs="0" />
-          <xs:element name="country" type="xs:string" />
+          <xs:element name="country" type="xs:string"  minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

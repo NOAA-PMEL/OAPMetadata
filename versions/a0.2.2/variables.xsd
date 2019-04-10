@@ -42,9 +42,16 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
   <xs:group name="base_variable_elements">
     <xs:sequence>
     <xs:element name="fullName" type="xs:string" />
-    <xs:element name="datasetVarName" type="xs:string" />
-    <xs:element name="variableType" type="xs:string" /> <!-- variable_type"/> -->
-    <xs:element name="observationType" type="xs:string" /> <!-- observation_type"/> -->
+    <xs:element name="datasetVarName" type="xs:string" >
+      <xs:annotation>
+        <xs:documentation>
+          This is the name of the variable it the data file.
+          It may or may not be an abbreviation, and may, in some cases, contain additional information, such as units.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="variableType" type="xs:string" /> 
+    <xs:element name="observationType" type="xs:string" /> 
     <xs:element name="units" type="xs:string" minOccurs="0" />
     <xs:element name="missingValue" type="xs:string" minOccurs="0"/>
     <xs:element name="uncertainty" type="xs:string" minOccurs="0"/>
@@ -64,7 +71,13 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
         <xs:sequence>
           <xs:group ref="base_variable_elements"/>
         </xs:sequence>
-    <xs:attribute name="name" type="xs:string" use="required"/>  <!-- fixed vocabulary -->
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          This is the canonical name of the variable.  Ideally, it should come from a well-known dictionary.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>  <!-- fixed vocabulary -->
   </xs:complexType>
 
   <!-- DIC-->

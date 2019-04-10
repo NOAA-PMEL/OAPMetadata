@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <oads_metadata xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 ../a0.2.2/oads_metadata_a0.2.2.xsd" version="">
+  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd" version="">
   <submissionDate></submissionDate>
   <relatedDataSets>
     <dataset>
