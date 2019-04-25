@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <oads_metadata xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd" version="">
+  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd" version="a0.2.2">
   <submissionDate></submissionDate>
   <relatedDataSets>
     <dataset>
@@ -122,12 +122,54 @@
     <keyword></keyword>
   </keywords>
   <variables>
-    <variable name="">
+    <variable name="" >
+      <!-- The variable name attribute is the canonical name of the measured item.
+           Ideally this would come from a controlled vocabulary. 
+      -->
       <fullName></fullName>
       <datasetVarName></datasetVarName>
+      <!-- datasetVarName is the name of the variable in the data file. 
+           This may or may not be an abbreviation.
+           For spread-sheet data files, this would be the column header.
+           In a netCDF file, this would be the variable name. 
+      -->
       <variableType></variableType>
+      <!-- The variableType element identifies the source of the data values in this variable.
+           (Alternative names considered, if variableType is somehow inappropriate or confusing.)
+           
+           This replaces the <insitu> and <measured> tags.  All observations are measured,
+           so the formerly required <measured>measured</measured> element is (doubly) redundant.   
+           And a calculated value is just that.  Use of <measured>calculated</measured> with
+           any of the other choices would be incorrect.
+           
+           Accepted values include:
+             - in-situ observation
+                examples: CTD sensors, buoys, floats and similar, autonomous vehicles, etc.
+                          Anything were the value is measured directly within its environment
+             - discrete sample
+                examples: samples from Niskin bottles
+                         Any measurement that is taken where a sample has been taken and
+                         removed from the original environment to be analysed elsewhere.
+             - calculated
+                 examples: Any value that has been calculated and not measured
+                           including values that have been calculated from other measured values.
+                           This could include model output.
+             - manipuation condition
+                 examples: ? 
+             - response
+                 examples: ?
+             - others ?
+      -->
       <observationType></observationType>
+      <!-- The observationType accepted values are as described in the current spreadsheet help document.
+           These include the CF DSG (Discrete Sampling Geometry) types, as well as others.
+           Ideally this would come from a controlled vocabulary, but given the somewhat
+           open-ended list of "others," I don't know if that is possible.
+      -->
       <units></units>
+      <!-- variable units in a standard format, 
+           ideally using standard terms and abbreviations so it can be parsed programmatically.
+      -->
       <missingValue></missingValue>
       <uncertainty></uncertainty>
       <qcFlag>
