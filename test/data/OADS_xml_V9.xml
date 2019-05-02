@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xmlblob.xsl" type="text/xsl"?>
+
+<metadata>
+
+  <image>/Images/nceilogo-banner.png</image>
+
+  <submissionDate>2014-03-12</submissionDate>
+
+  <related>
+    <name></name>
+    <link></link>
+  </related>
+
+  <person>
+    <name>First Last</name>
+    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    <deliverypoint1>4301 Rickenbacker Causeway</deliverypoint1>
+    <deliverypoint2></deliverypoint2>
+    <city>Miami</city>
+    <administrativeArea>FL</administrativeArea>
+    <zip>33149</zip>
+    <country>USA</country>
+    <phone>(123) 456-7890</phone>
+    <email>abc@def.com</email>
+    <ID></ID>
+    <IDtype></IDtype>
+    <role>Investigator</role>
+  </person>
+
+  <person>
+    <name>First Last</name>
+    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    <deliverypoint1>4301 Rickenbacker Causeway</deliverypoint1>
+    <deliverypoint2></deliverypoint2>
+    <city>Miami</city>
+    <administrativeArea>FL</administrativeArea>
+    <zip>33149</zip>
+    <country>USA</country>
+    <phone>(123) 456-7890</phone>
+    <email>abc@def.com</email>
+    <ID></ID>
+    <IDtype></IDtype>
+    <role>Investigator</role>
+  </person>
+
+  <person>
+    <name>First Last</name>
+    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    <deliverypoint1>4301 Rickenbacker Causeway</deliverypoint1>
+    <deliverypoint2></deliverypoint2>
+    <city>Miami</city>
+    <administrativeArea>FL</administrativeArea>
+    <zip>33149</zip>
+    <country>USA</country>
+    <phone>(123) 456-7890</phone>
+    <email>abc@def.com</email>
+    <ID></ID>
+    <IDtype></IDtype>
+    <role>Investigator</role>
+  </person>
+
+  <datasubmitter>
+    <name>First Last</name>
+    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    <deliverypoint1>4301 Rickenbacker Causeway</deliverypoint1>
+    <deliverypoint2></deliverypoint2>
+    <city>Miami</city>
+    <administrativeArea>FL</administrativeArea>
+    <zip>33149</zip>
+    <country>USA</country>
+    <phone>(123) 456-7890</phone>
+    <email>abc@def.com</email>
+    <ID></ID>
+    <IDtype></IDtype>
+  </datasubmitter>
+
+  <title>Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971)</title>
+
+  <abstract>The second Gulf of Mexico and East Coast Carbon (GOMECC-2) Cruise on board the R/V Ronald H. Brown from Miami, took place in the Gulf of Mexico and then along the East US coast to Boston. The effort was in support of the coastal monitoring and research objectives of the NOAA Ocean Acidification Program (OAP). The cruise was designed to obtain a snapshot of key carbon, physical, and biogeochemical parameters as they relate to ocean acidification (OA) in the coastal realm. This was the second occupation, with the first occurring in 2007, and complemented mooring time series and other regional OA activities. The cruise included a series of 8 transects approximately orthogonal to the Gulf of Mexico and Atlantic coasts and a comprehensive set of underway measurements along the entire transect.</abstract>
+
+  <purpose>To measure key carbon, physical and biogeochemical parameters in coastal waters of the Gulf of Mexico and eastern coast of the US in relation to Ocean Acidification.</purpose>
+
+  <startdate>2012-07-21</startdate>
+  <enddate>2012-08-13</enddate>
+
+  <westbd>-90.344</westbd>
+  <eastbd>-68.5931</eastbd>
+  <northbd>42.1139</northbd>
+  <southbd>24.3784</southbd>
+
+  <spatialReference></spatialReference>
+
+  <geographicName>U.S. East Coast</geographicName>
+  <geographicName>Gulf of Mexico</geographicName>
+
+  <locationOrganism></locationOrganism>
+
+  <fundingAgency>
+    <agency>NOAA Ocean Acidification Program</agency>
+    <title>Coastal Observations on the East Coast: Ocean Acidification Monitoring Network</title>
+    <ID>OAPFY13.03.AOML.001</ID>
+  </fundingAgency>
+
+  <researchProject></researchProject>
+
+  <platform>
+    <name>RV Ronald H. Brown</name>
+    <ID>33RO</ID>
+    <type>Research Vessel</type>
+    <owner>NOAA</owner>
+    <country>USA</country>
+  </platform>
+
+  <expocode>33RO20120721</expocode>
+
+  <cruiseID>RB-12-03 GOMECC2</cruiseID>
+
+  <section></section>
+
+  <authors>
+    <author>Wanninkhof, Rik</author>
+    <author>Barbero, Leticia</author>
+    <author>Baringer, Molly</author>
+    <author>Byrne, Robert</author>
+    <author>Cai, Wei-Jun</author>
+    <author>Langdon, Chris</author>
+  </authors>
+
+  <reference>Wanninkhof, R., A. M. Wood and L. Barbero. 2012. Gulf of Mexico and East Coast Carbon Cruise #2 Report. http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf</reference>
+  <suppleInfo>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2</suppleInfo>
+
+  <keywords>
+    <keyword>one</keyword>
+    <keyword>two</keyword>
+    <keyword>three</keyword>
+    <keyword>four</keyword>
+    <keyword>five</keyword>
+    <keyword>six</keyword>
+  </keywords>
+
+  <link_landing>http://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.nodc:NNNNNNN</link_landing>
+  <link_download>http://accession.nodc.noaa.gov/NNNNNNN/data/0-data/</link_download>
+  <link_img>http://www.nodc.noaa.gov/archive/arc0072/NNNNNNN/1.0/about/NNNNNNN_map.jpg</link_img>
+
+  <variable>
+    <fullname>Dissolved inorganic carbon</fullname>
+    <abbrev>tcarbn</abbrev>
+    <observationType>Profile and surface underway</observationType>
+    <insitu>In-situ observation</insitu>
+    <manipulationMethod></manipulationMethod>
+    <unit>micro-mol/kg</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle and flow through pump</samplingInstrument>
+    <analyzingInstrument>Two systems consisting of a coulometer (UIC Inc.) coupled with a Dissolved Inorganic Carbon Extractor (DICE) inlet system. DICE was developed by Esa Peltola and Denis Pierrot of NOAA/AOML and Dana Greeley of  NOAA/PMEL to modernize a carbon extractor called SOMMA (Johnson et al. 1985, 1987, 1993, and 1999; Johnson 1992)</analyzingInstrument>
+    <detailedInfo>Samples for total dissolved inorganic carbon (DIC) measurements were drawn according to procedures outlined in the Handbook of Methods for CO2 Analysis (DOE 1994) from Niskin bottles into cleaned 294-ml glass bottles. Bottles were rinsed and filled from the bottom, leaving 6 ml of headspace; care was taken not to entrain any bubbles. After 0.2 ml of saturated HgCl2 solution was added as a preservative, the sample bottles were sealed with glass stoppers lightly covered with Apiezon-L grease and were stored at room temperature for a maximum of 12 hours prior to analysis.
+The DIC analytical equipment was set up in a seagoing laboratory van. The analysis was done by coulometry with two analytical systems (AOML3 and AOML4) used simultaneously on the cruise. In the coulometric analysis of DIC, all carbonate species are converted to CO2 (gas) by addition of excess hydrogen ion (acid) to the seawater sample, and the evolved CO2 gas is swept into the titration cell of the coulometer with pure air or compressed nitrogen, where it reacts quantitatively with a proprietary reagent based on ethanolamine to generate hydrogen ions. In this process, the solution changes from blue to colorless, triggering a current through the cell and causing coulometrical generation of OH minus ions at the anode. The OH ions react with the H+, and the solution turns blue again. A beam of light is shone through the solution, and a photometric detector at the opposite side of the cell senses the change in transmission. Once the percent transmission reaches its original value, the coulometric titration is stopped, and the amount of CO2 that enters the cell is determined by integrating the total charge during the titration.
+The pipette volume was determined by taking aliquots at known temperature of distilled water from the volumes. The weights with the appropriate densities were used to determine the volume of the pipettes.
+Calculation of the amount of CO2 injected was according to the CO2 handbook (DOE 1994).
+The instrument has a salinity sensor, but all DIC values were recalculated to a molar weight (micro-mol/kg) using density obtained from the CTD salinity. The DIC values were corrected for dilution by 0.2 ml of saturated HgCl2 used for sample preservation.  A correction was also applied for the offset from the CRM. This additive correction was applied for each cell using the CRM value obtained in the beginning of the cell. The average correction was 2.3 micro-mol/kg.
+While both systems worked very well during the cruise, they occasionally had high blanks.  Normally the blank is less than 30, but we were forced to run them with blanks in the 12 to 45 range.
+Other problems were relatively minor. The Midas failed shortly after the cruise began so compressed Nitrogen was used for sample analysis. Communication errors between the instruments and their controlling laptop computers occurred several times.
+Coulometer AOML 5 was replaced with Coulometer AOML 3 on DICE 3 the second to last day during the GOM line of stations.
+Underway samples were collected from the flow thru system in the Wet Lab during transits between station lines.  Discrete DIC samples were collected every two hours with duplicates every fourth sample.</detailedInfo>
+    <replicate>Duplicates were collected on every station as well as on the underway discrete sampling</replicate>
+    <standard>
+      <description>The coulometers were calibrated by injecting aliquots of pure CO2 (99.99%) by means of an 8-port valve outfitted with two sample loops with known gas volumes bracketing the amount of CO2 extracted from the water samples for the two AOML systems.</description>
+      <frequency> The stability of each coulometer cell solution was confirmed three different ways: two sets of gas loops were measured at the beginning; also the Certified Reference Material (CRM), Batches 112 and 120, supplied by Dr. A. Dickson of SIO, were measured at the beginning; and the duplicate samples at the beginning, middle, and end of each cell solution. The coulometer cell solution was replaced after 25 mg of carbon was titrated, typically after 9 to 12 hours of continuous use.</frequency>
+      <crm>
+        <manufacturer>Dr. A. Dickson (SIO)</manufacturer>
+	<batch>112 and 120</batch>
+      </crm>
+    </standard>
+    <poison>
+      <poisonName>saturated HgCl2</poisonName>
+      <volume>0.2 ml</volume>
+      <correction>The DIC values were corrected for dilution by 0.2 ml of saturated HgCl2 used for sample preservation. The total water volume of the sample bottles was 288 ml (calibrated by Esa Peltola, AOML). The correction factor used for dilution was 1.0007. </correction>
+    </poison>
+    <uncertainty></uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference>DOE (U.S. Department of Energy). (1994). Handbook of Methods for the Analysis of the Various Parameters of the Carbon Dioxide System in Seawater. Version 2.0. ORNL/CDIAC-74. Ed. A. G. Dickson and C. Goyet. Carbon Dioxide Information Analysis Center, Oak Ridge National Laboratory, Oak Ridge, Tenn.
+Johnson, K.M., Kortzinger, A.; Mintrop, L.; Duinker, J.C.; and Wallace, D.W.R. (1999). Coulometric total carbon dioxide analysis for marine studies: Measurement and internal consistency of underway surface TCO2 concentrations. Marine Chemistry 67:123 to 44.
+Johnson, K.M., Wills, K.D.; Butler, D.B.; Johnson, W.K.; and Wong, C.S. (1993). Coulometric total carbon dioxide analysis for marine studies: Maximizing the performance of an automated gas extraction.
+Johnson, K.M. (1992). Operator Manual: Single-Operator Multiparameter Metabolic Analyzer (SOMMA) for Total Carbon Dioxide (CT) with Coulometric Detection. Brookhaven National Laboratory, Brookhaven, N.Y.
+Johnson, K.M.; Williams, P.J.; Brandstrom, L.; and McN. Sieburth, J. (1987). Coulometric total carbon analysis for marine studies: Automation and calibration. Marine Chemistry 21:117 to 33.</methodReference>
+    <QC></QC>
+    <researcherName>Rik Wanninkhof</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>1</internal>
+  </variable>
+
+  <variable>
+    <fullname>Total alkalinity</fullname>
+    <abbrev>alkali</abbrev>
+    <observationType>Profile and surface underway</observationType>
+    <insitu>In-situ observation</insitu>
+    <manipulationMethod></manipulationMethod>
+    <unit>micro-mol/kg</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle and flow through pump</samplingInstrument>
+    <analyzingInstrument>Semi-automatic titration system (AS-ALK2, Apollo Scitech), consisting of two KloehnTM syringe pumps (module #50300) of 1 ml and 25 ml respectively, a pH meter (AR15, Accumet Research), and a ROSS combination pH glass electrode (Orion 8102BN, Thermo Scientific).</analyzingInstrument>
+    <titrationType>Gran titration</titrationType>
+    <cellType>Open</cellType>
+    <curveFitting>End point</curveFitting>
+    <detailedInfo>All of the samples were measured in 48 hours except 86 samples were poisoned with 40 micro liter saturated HgCl2 for later, post-cruise analysis at the UGA lab.
+TA samples were taken by 250ml narrow-ground neck, borosilicate glass bottles from Niskin bottles after removing air bubbles from the sampling tubing. Each glass bottle was rinsed three times and then filled from the bottom (overflow of half of bottle volume seawater was allowed). One ml headspace was left for those post-cruise-analysis samples and no headspace was left for those measured on board.</detailedInfo>
+    <replicate>10 duplicates were sampled during the cruise.</replicate>
+    <standard>
+      <description>For each measurement, 25 ml of TA sample was titrated with an HCl solution (0.1 M HCl and 0.5 M NaCl). This TA titration system has a precision of better than 0.1 % (Cai et al. 2010). pH electrode was calibrated with pH buffer (NBS) 4.01, 7.00, and 10.01 and recalibration was done every 12 to 24 hours.
+All the TA values were directly measured with reference to Certified Reference Material (CRM, batch#114). System (titrator and electrode) stability was also checked along with the sample run using the CRM seawater every 12 hours or when necessary.  The precision of this method is better than 0.1% and accuracy is 0.1%.
+</description>
+      <frequency>All values were directly measured with reference to Certified Reference Material (Dickson, SIO)</frequency>
+      <crm>
+	<manufacturer>Dr. A. Dickson (SIO)</manufacturer>
+	<batch></batch>
+      </crm>
+    </standard>
+    <poison>
+      <poisonName>86 samples were poisoned with 40 micro liter saturated HgCl2 for later, post-cruise analysis at the UGA lab. The other samples were not poisoned.</poisonName>
+      <volume>40 microliters</volume>
+      <correction></correction>
+    </poison>
+    <blank></blank>
+    <uncertainty>The precision of this method is better than 0.1% and accuracy is 0.1%.</uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference>Gran G. (1952). Determination of the equivalence point in potentiometric titrations. Part 2. The analyst, 77, 661-671.</methodReference>
+    <QC></QC>
+    <researcherName>Wei-Jun Cai</researcherName>
+    <researcherInstitution>University of Georgia</researcherInstitution>
+    <internal>2</internal>
+  </variable>
+
+  <variable>
+    <fullname>pH</fullname>
+    <abbrev>PH_TOT</abbrev>
+    <observationType>Profile and surface underway</observationType>
+    <insitu>In-situ observation</insitu>
+    <manipulationMethod></manipulationMethod>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle and flow through pump</samplingInstrument>
+    <analyzingInstrument>Agilent 8453 spectrometer setup with a custom-made temperature-controlled cell holder</analyzingInstrument>
+    <phscale>Total</phscale>
+    <temperatureMeasure>25 (minus plus 0.05) degrees Celsius </temperatureMeasure>
+    <detailedInfo>Samples were collected for pH analysis immediately following O2 in the Niskin/Rosette sampling sequence. Seawater samples were collected from the Niskin bottles directly in 10-cm cylindrical optical cells (~30 mL volume) using a section of silicone tubing (about 15 cm long). One end of the silicone tubing was attached to the optical cell and the other end was attached to the nipple of the Niskin bottle. The Niskin bottle nipple was pushed in to initiate flow and the silicone tubing was squeezed to eliminate air bubbles. The optical cell was agitated to eliminate bubbles and, after 15 seconds of sample flow, the cell was capped at one end. The silicone tubing was then detached from the optical cell and, with the water still flowing, the cap was rinsed and used to seal the optical cell. Samples collected this way were not exposed to the atmosphere, and each cell was flushed with approximately three cell volumes of seawater. The samples were collected, taken into the lab, and rinsed with tap water to get rid of salt outside of the cells. The cells were dried and the optical windows were cleaned with Kimwipes. Samples were thermostatted at 25 (minus plus 0.05) degrees Celsius in a custom made 36-position cell warmer. A custom macro program running on Agilent ChemStation was used to guide the measurements and data processing. The macro automated the procedures of sample input, blank and sample scans, quality control, and data archiving. The quality control steps included checking the baseline shift after dye injection and monitoring the standard deviation of multiple scans. Absorbance blanks were taken for each sample and 10 micro liter of purified m-cresol purple (10 mmol kg-1) were added for the analysis. pHT (total scale) was calculated according to Liu et al. (2011) </detailedInfo>
+    <replicate>Duplicate pH samples were collected from underway samples (N = 105) and from discrete samples taken from the Niskin bottles (N = ~60) with a precision equal to minus plus 0.0004. </replicate>
+    <standard>
+      <description>The pH is calibration-free.</description>
+      <frequency></frequency>
+      <standardphvalues></standardphvalues>
+      <temperatureStandardization></temperatureStandardization>
+    </standard>
+    <temperatureCorrectionMethod></temperatureCorrectionMethod>
+    <phReportTemperature>25 degrees Celsius</phReportTemperature>
+    <uncertainty>Precision was equal to minus plus 0.0004. </uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference>Liu, X.; Patsavas, M.C.; and Byrne, R. H. (2011). Purification and characterization of meta-cresol purple for spectrophotometric seawater pH measurements. Environmental Science and Technology, 45(11), 4862-4868. doi: 10.1021/es200665d</methodReference>
+    <QC></QC>
+    <researcherName>Robert Byrne</researcherName>
+    <researcherInstitution>University of South Florida</researcherInstitution>
+    <internal>3</internal>
+  </variable>
+
+  <variable>
+    <fullname>pCO2 (fCO2) autonomous</fullname>
+    <abbrev>pCO2</abbrev>
+    <observationType>Surface underway</observationType>
+    <insitu>in-situ</insitu>
+    <manipulationMethod></manipulationMethod>
+    <unit>uatm</unit>
+    <measured>Yes</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument></samplingInstrument>
+    <locationSeawaterIntake></locationSeawaterIntake>
+    <DepthSeawaterIntake></DepthSeawaterIntake>
+    <analyzingInstrument></analyzingInstrument>
+    <measurementFrequency></measurementFrequency>
+    <environmentalControl></environmentalControl>
+    <analysisCO2comparison></analysisCO2comparison>
+    <measuredCO2params>xco2(dry)</measuredCO2params>
+    <numberNonZeroGasStds>5</numberNonZeroGasStds>
+    <detailedInfo></detailedInfo>
+    
+    <equilibrator>
+    
+      <type></type>
+      <volume></volume>
+      <vented></vented>
+      <waterFlowRate></waterFlowRate>
+      <gasFlowRate></gasFlowRate>
+      <dryMethod></dryMethod>
+      
+      <temperatureEquilibratorMethod></temperatureEquilibratorMethod>
+      
+      <equilibratorTemp>
+         <location>new</location>
+         <manufacturer>new</manufacturer>
+         <model>new</model>
+         <accuracy>new</accuracy>
+         <precision>new</precision>
+         <calibration>new</calibration>
+         <warming>new</warming>
+         <otherComments>new</otherComments>
+      </equilibratorTemp>
+      
+      <pressureEquilibratorMethod></pressureEquilibratorMethod>
+      
+      <equilibratorPress>
+         <location>new</location>
+         <manufacturer>new</manufacturer>
+         <model>new</model>
+         <accuracy>new</accuracy>
+         <precision>new</precision>
+         <calibration>new</calibration>
+         <warming>new</warming>
+         <otherComments>new</otherComments>
+      </equilibratorPress>
+      
+    </equilibrator>
+    
+    <gasDetector>
+      <manufacturer></manufacturer>
+      <model></model>
+      <resolution></resolution>
+      <uncertainty></uncertainty>
+    </gasDetector>
+    
+    <gasDetectorAtm>
+      <manufacturer></manufacturer>
+      <model></model>
+      <resolution></resolution>
+      <uncertainty></uncertainty>
+    </gasDetectorAtm>
+    
+    <standardization>
+      <description></description>
+      <frequency></frequency>
+      <standardgas>
+	    <manufacturer></manufacturer>
+	    <concentration></concentration>
+	    <uncertainty></uncertainty>
+      </standardgas>
+    </standardization>
+    
+    <waterVaporCorrection></waterVaporCorrection>
+    <temperatureCorrection></temperatureCorrection>
+    <co2ReportTemperature></co2ReportTemperature>
+    <uncertainty></uncertainty>
+    <flag></flag>
+    <methodReference></methodReference>
+    <QC></QC>
+    
+    <atmCO2>
+      <measurement>Yes, 5 readings in a group every 4.5 hours</measurement>
+      <locationAndHeight>On mast above the bridge at ~13 meters above the sea surface</locationAndHeight>
+      <dryMethod>Gas stream passes through a thermoelectric condenser and then through a Perma Pure (Nafion) dryer 
+      before reaching the analyzer (90% dry).</dryMethod>
+    </atmCO2>
+    
+    <researcherName></researcherName>
+    <researcherInstitution></researcherInstitution>
+    <internal>4</internal>
+  </variable>
+
+  <variable>
+    <fullname>pCO2 (fCO2) discrete</fullname>
+    <abbrev>fCO2</abbrev>
+    <observationType>Profile and surface underway</observationType>
+    <insitu>In-situ observation</insitu>
+    <manipulationMethod></manipulationMethod>
+    <unit>micro-atmospheres</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle and flow through pump</samplingInstrument>
+    <analyzingInstrument>LI-COR (model 840) </analyzingInstrument>
+    <storageMethod>The sample bottles were sealed with glass stoppers lightly covered with Apiezon-L grease and were stored at room temperature for a maximum of twelve hours prior to analysis. When twelve bottles were moved into the primary water bath for analyses, the next twelve bottles were moved into the secondary water bath. No sample bottle spent less than one hour in the secondary water bath prior to being moved to the analytical water bath. </storageMethod>
+    <seawatervol>500 ml</seawatervol>
+    <headspacevol>5 ml</headspacevol>
+    <temperatureMeasure>20 degrees Celsius</temperatureMeasure>
+    <detailedInfo>Samples were drawn from 10-L Niskin bottles into 500 ml glass bottles using Tygon tubing with a Silicone adapter that fit over the drain cock to avoid contamination of DOM samples. Bottles were rinsed twice, the second time while inverted. They were filled from the bottom, overflowing half a volume while taking care not to entrain any bubbles. About 5 ml of water was withdrawn to allow for expansion of the water as it warms and to provide space for the stopper and tubing of the analytical system.  Saturated mercuric chloride solution (0.2 ml) was added as a preservative. The sample bottles were sealed with glass stoppers lightly covered with Apiezon-L grease and were stored at room temperature for a maximum of twelve hours prior to analysis.The analyses for pCO2 were done with the discrete samples at 20 degrees Celsius. A primary water bath was kept within 0.03 degrees Celsius of the analytical temperature; a secondary bath was kept within 0.15 degrees Celsius the analytical temperature. The majority of the samples were analyzed in batches of twelve bottles, which with standards took approximately 2.5 hours. When twelve bottles were moved into the primary water bath for analyses, the next twelve bottles were moved into the secondary water bath. No sample bottle spent less than one hour in the secondary water bath prior to being moved to the analytical water bath. </detailedInfo>
+    <replicate>More than fifty sets of duplicate bottles were drawn at numerous depths. The average relative error of these duplicate pairs was 0.18%, while the median relative error was 0.11%.  </replicate>
+    <gasDetector>
+      <manufacturer>LiCOR infrared analyzer. The system was built by Colm Sweeney and Tim Newberger</manufacturer>
+      <model>Prototype</model>
+      <resolution></resolution>
+      <uncertainty>The average relative error of these duplicate pairs was 0.18%, while the median relative error was 0.11%.  </uncertainty>
+    </gasDetector>
+    <standardization>
+      <description>To ensure analytical accuracy, a set of six gas standards (ranging from 248 to 1534 ppm) was run through the analyzer before and after every sample batch. The standards were obtained from Scott-Marin and referenced against primary standards purchased from C.D. Keeling in 1991, which are on the WMO-78 scale.</description>
+      <frequency>Before and after each batch of 12 samples.</frequency>
+      <temperatureStd></temperatureStd>
+      <standardgas>
+	<manufacturer>Scott Marin</manufacturer>
+	<concentration>248.73, 384.14, 567.40, 792.51, 1036.95, and 1533.7 ppm</concentration>
+	<uncertainty></uncertainty>
+      </standardgas>
+    </standardization>
+    <waterVaporCorrection>The details of the data reduction are described in Pierrot, et.al. (2009).</waterVaporCorrection>
+    <temperatureCorrection>The details of the data reduction are described in Pierrot, et.al. (2009).</temperatureCorrection>
+    <co2ReportTemperature>20 degrees Celsius</co2ReportTemperature>
+    <uncertainty></uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference>Wanninkhof, R.; and Thoning, K. (1993). Measurement of fugacity of CO2 in surface water using continuous and discrete sampling methods. Mar. Chem., v. 44, no. 2-4, pp. 189-205.
+Pierrot, D.; Neill, C.; Sullivan, K.; Castle, R.; Wanninkhof, R.; Luger, H.; Johannessen, T.; Olsen, A.; Feely, R.A.; and Cosca, C.E. (2009). Recommendations for autonomous underway pCO2 measuring systems and data-reduction routines. Deep-Sea Res., II, v. 56, pp. 512-522.</methodReference>
+    <QC></QC>
+    <researcherName>Rik Wanninkhof</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>5</internal>
+  </variable>
+
+  <variable>
+    <abbrev>CTDPRS</abbrev>
+    <fullname>CTD pressure</fullname>
+    <observationType>profile</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit>dbars</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>CTD</samplingInstrument>
+    <analyzingInstrument>Sea-Bird SBE-911plus CTD system</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>A detailed and more complete description is available in the cruise report at: http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.
+CTD/rosette casts were performed with a package consisting of a 24-place, 10-liter rosette frame (AOML white frame), a 24-place water sampler/pylon (SBE32) and 24, 10-liter Bullister/Niskin-style bottles. This package was deployed on all stations/casts. Underwater electronic components consisted of a Sea-Bird Electronics (SBE) 9 plus CTD with dual pumps and the following sensors: dual temperature (SBE3), dual conductivity (SBE4), dual dissolved oxygen (SBE43), and a Simrad 807 altimeter. The CTDs supplied a standard Sea-Bird format data stream at a data rate of 24 frames/second. The SBE9plus CTD was connected to the SBE32 24-place pylon providing for single-conductor sea cable operation. Power to the SBE9plus CTD, SBE32 pylon, auxiliary sensors, and altimeter was provided through the sea cable from the SBE11plus deck unit in the computer lab. Shipboard CTD data processing was performed automatically at the end of each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab processing software. </detailedInfo>
+    <replicate></replicate>
+    <uncertainty>Pressure sensor calibration coefficients derived from the pre-cruise calibrations were applied to raw pressure data during each cast. Residual pressure offsets (the difference between the first and last submerged pressures) were examined to check for calibration shifts. On deck pressure before the start of each cast was recorded. The on deck pressure before and after the cast were stable at 1.67 +/- 0.081 db, and 1.68 +/- 0.087 db respectively.
+Near surface pressure values (which are taken as the near-surface pressure at the markscan and the last fired bottle pressure) showed relatively small variability (4.41+/- 0.40 db before and 4.54+/- 0.33 db after).
+</uncertainty>
+    <flag></flag>
+    <methodReference>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.</methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Molly Baringer</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <variable>
+    <abbrev>CTDTMP</abbrev>
+    <fullname>CTD temperature</fullname>
+    <observationType>profile</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit>degree C</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>CTD</samplingInstrument>
+    <analyzingInstrument>Sea-Bird SBE-911plus CTD system</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>A detailed and more complete description is available in the cruise report at: http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.
+CTD/rosette casts were performed with a package consisting of a 24-place, 10-liter rosette frame (AOML white frame), a 24-place water sampler/pylon (SBE32) and 24, 10-liter Bullister/Niskin-style bottles. This package was deployed on all stations/casts. Underwater electronic components consisted of a Sea-Bird Electronics (SBE) 9 plus CTD with dual pumps and the following sensors: dual temperature (SBE3), dual conductivity (SBE4), dual dissolved oxygen (SBE43), and a Simrad 807 altimeter. The CTDs supplied a standard Sea-Bird format data stream at a data rate of 24 frames/second. The SBE9plus CTD was connected to the SBE32 24-place pylon providing for single-conductor sea cable operation. Power to the SBE9plus CTD, SBE32 pylon, auxiliary sensors, and altimeter was provided through the sea cable from the SBE11plus deck unit in the computer lab. Shipboard CTD data processing was performed automatically at the end of each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab processing software. </detailedInfo>
+    <replicate></replicate>
+    <uncertainty>Temperature sensor calibration coefficients derived from the pre-cruise calibrations were applied to raw primary and secondary temperature data during each cast.  Calibration accuracy was examined by comparing T1-T2 over a range of station numbers and pressures (bottle trip locations) for each cast. For the entire cruise, only one set of temperature sensors were used, both tracked each other extremely nicely. The median temperature difference between the two sensors was 0.0006 degrees Celsius with a pseudo standard deviation of 0.006 degrees Celsius. </uncertainty>
+    <flag></flag>
+    <methodReference>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.</methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Molly Baringer</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <variable>
+    <abbrev>CTDSAL</abbrev>
+    <fullname>CTD salinity</fullname>
+    <observationType>profile</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit></unit>
+    <measured>Calculated from conductivity measurements.</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>CTD</samplingInstrument>
+    <analyzingInstrument>Sea-Bird SBE-911plus CTD system</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>A detailed and more complete description is available in the cruise report at: http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.
+CTD/rosette casts were performed with a package consisting of a 24-place, 10-liter rosette frame (AOML white frame), a 24-place water sampler/pylon (SBE32) and 24, 10-liter Bullister/Niskin-style bottles. This package was deployed on all stations/casts. Underwater electronic components consisted of a Sea-Bird Electronics (SBE) 9 plus CTD with dual pumps and the following sensors: dual temperature (SBE3), dual conductivity (SBE4), dual dissolved oxygen (SBE43), and a Simrad 807 altimeter. The CTDs supplied a standard Sea-Bird format data stream at a data rate of 24 frames/second. The SBE9plus CTD was connected to the SBE32 24-place pylon providing for single-conductor sea cable operation. Power to the SBE9plus CTD, SBE32 pylon, auxiliary sensors, and altimeter was provided through the sea cable from the SBE11plus deck unit in the computer lab. Shipboard CTD data processing was performed automatically at the end of each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab processing software. </detailedInfo>
+    <replicate></replicate>
+    <uncertainty>Conductivity sensor calibration coefficients derived from the pre-cruise calibrations were applied to raw primary and secondary conductivities. Comparisons between the primary and secondary sensors and between each of the sensors to check sample conductivities (conductivity calculated from bottle salinities) were used to derive conductivity corrections. For the entire cruise, only one set of conductivity sensors were used, both tracked each other extremely nicely. The two sensors show a median difference of 0.00092 S/m and a pseudo standard deviation of 0.00064 S/m.</uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value.</flag>
+    <methodReference>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.</methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Molly Baringer</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <variable>
+    <abbrev>SALNTY</abbrev>
+    <fullname>Bottle salinity</fullname>
+    <observationType>Profile</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit></unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle</samplingInstrument>
+    <analyzingInstrument>Guildline Autosal, model 8400B salinometer (S/N 60843)</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>The salinity samples were collected in 200 ml Kimax high-alumina borosilicate bottles that had been rinsed at least three times with sample water prior to filling. The bottles were sealed with custom-made plastic insert thimbles and Nalgene screw caps. This assembly provides very low container dissolution and sample evaporation. Prior to sample collection, inserts were inspected for proper fit and loose inserts replaced to insure an airtight seal. Laboratory temperature was also monitored electronically throughout the cruise. PSS-78 salinity UNES81, was calculated for each sample from the measured conductivity ratios. The offset between the initial standard seawater value and its reference value was applied to each sample. The difference (if any) between the initial and final vials of standard seawater was then applied to each sample as a linear function of elapsed run time.
+Salinity analyses were performed after samples had equilibrated to laboratory temperature, usually at least 24 hours after collection. The salinometer was standardized for each group of samples analyzed (usually 2 casts and up to 50 samples) using two bottles of standard seawater: one at the beginning and end of each set of measurements. The salinometer output was logged to a computer file. The software prompted the analyst to flush the instrument cell and change samples when appropriate. For each sample, the salinometer cell was initially flushed at least 3 times before a set of conductivity ratio readings were taken.
+</detailedInfo>
+    <replicate>A duplicate sample was drawn from each cast to determine total analytical precision.</replicate>
+    <uncertainty>Through the course of the 24-day cruise, the autosal standards changed by 0.0001 in conductivity ratio (about 0.008 in salinity).</uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference></methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Molly Baringer</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <variable>
+    <abbrev>CTDOXY</abbrev>
+    <fullname>CTD oxygen</fullname>
+    <observationType>profile</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit>micro-mol/kg</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>CTD</samplingInstrument>
+    <analyzingInstrument>Sea-Bird SBE-911plus CTD system</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>A detailed and more complete description is available in the cruise report at: http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.
+CTD/rosette casts were performed with a package consisting of a 24-place, 10-liter rosette frame (AOML white frame), a 24-place water sampler/pylon (SBE32) and 24, 10-liter Bullister/Niskin-style bottles. This package was deployed on all stations/casts. Underwater electronic components consisted of a Sea-Bird Electronics (SBE) 9 plus CTD with dual pumps and the following sensors: dual temperature (SBE3), dual conductivity (SBE4), dual dissolved oxygen (SBE43), and a Simrad 807 altimeter. The CTDs supplied a standard Sea-Bird format data stream at a data rate of 24 frames/second. The SBE9plus CTD was connected to the SBE32 24-place pylon providing for single-conductor sea cable operation. Power to the SBE9plus CTD, SBE32 pylon, auxiliary sensors, and altimeter was provided through the sea cable from the SBE11plus deck unit in the computer lab. Shipboard CTD data processing was performed automatically at the end of each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab processing software. </detailedInfo>
+    <replicate></replicate>
+    <uncertainty>Two SBE43 dissolved O2 (DO) sensors were used on this cruise. Both sensors tracked each other very well, with no noted problems. The DO sensors were calibrated to dissolved O2 check samples by matching the up cast bottle trips to down cast CTD data along isopycnal surfaces, calculating CTD dissolved O2, and then minimizing the residuals using a non-linear least-squares fitting procedure. The fitting determined calibration coefficients for the sensor model conversion equation and proceeded in a series of steps. Each sensor was fit in a separate sequence. The first step was to determine the time constants for the exponential terms in the model. These time constants are sensor-specific but applicable to an entire cruise. Once the time constants had been determined, casts were fit individually to O2 check sample data. The resulting calibration coefficients were then smoothed and held constant during a refit to determine sensor slope and offset. Calibration accuracy was examined by comparing O1-O2 over a range of station numbers and pressures (bottle trip locations) for each cast. For the entire cruise, only one set of oxygen sensors were used, both tracked each other extremely nicely. The two sensors show a median difference of -2.96 micro-mol/kg and a pseudo standard deviation of 1.21 micro-mol/kg.</uncertainty>
+    <flag></flag>
+    <methodReference>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf.</methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Molly Baringer</researcherName>
+    <researcherInstitution>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <variable>
+    <abbrev>oxygen</abbrev>
+    <fullname>bottle dissolved oxygen</fullname>
+    <observationType>Profile and surface underway</observationType>
+    <insitu>In-situ observation</insitu>
+    <unit>micro-mol/kg</unit>
+    <measured>Measured</measured>
+    <calcMethod></calcMethod>
+    <samplingInstrument>Niskin bottle and flow through pump</samplingInstrument>
+    <analyzingInstrument>Automated oxygen titrator using amperometric end-point detection (Langdon 2010).</analyzingInstrument>
+    <sensorManufacturer></sensorManufacturer>
+    <sensorModel></sensorModel>
+    <sensorResolution></sensorResolution>
+    <sensorCalibration></sensorCalibration>
+    <sensorDepth></sensorDepth>
+    <duration></duration>
+    <detailedInfo>Samples were drawn from all casts and all Niskin bottles into volumetrically calibrated 125 ml iodine titration flasks using Tygon tubing with a silicone adaptor that fit over the petcock to avoid contamination of DOC samples. Bottles were rinsed three times and filled from the bottom, overflowing three volumes while taking care not to entrain any bubbles. The draw temperature was taken using a digital thermometer with a flexible thermistor probe that was inserted into the flask while the sample was being drawn during the overflow period. These temperatures were used to calculate concentrations, and a diagnostic check of Niskin bottle integrity. One ml of MnCl2 and one ml of NaOH/NaI were added immediately after drawing of the sample was concluded using a Repipetor, the flasks were then stoppered and shaken well. DIW was added to the neck of each flask to create a water seal. The flasks were stored in the lab in plastic totes at room temperature for at least 1 hour before analysis. Twenty-four samples plus duplicates were drawn from each station except the shallow coastal stations where fewer samples were drawn depending on the depth or as directed by the chief scientist.
+Dissolved oxygen analyses were performed with an automated oxygen titrator using amperometric end-point detection (Langdon 2010). The titration of the samples and the data logging and graphical display was performed on a PC running a LabView program written by Ulises Rivero of AOML. The titrations were performed in a climate controlled lab at 18.5-20 degrees Celsius. Thiosulfate was dispensed by a 2 ml Gilmont syringe driven with a stepper motor controlled by the titrator. Tests in the lab were performed to confirm that the precision and accuracy of the volume dispensed were comparable or superior to the Dosimat 665. The whole-bottle titration technique of Carpenter (1965) with modifications by Culberson et al. (1991) was used.  Four to three replicate 10 ml iodate standards were run 13 times during the cruise. The reagent blank was determined at the beginning and end of the cruise. A titration was made to 1 ml of iodate standard. The volume of thiosulfate required for the titration is V1. An additional 1 ml of standard was added to the titrated sample and titrated again. The volume of thiosulfate used for the second titration is V2. The reagent blank was determined as the difference between V1 and V2.</detailedInfo>
+    <replicate>Over 100 duplicate samples were drawn. The preliminary difference between replicates averaged 0.2 micro-mol kg-1 for stations 1-93. </replicate>
+    <uncertainty></uncertainty>
+    <flag>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not drawn.</flag>
+    <methodReference>Carpenter, J.H. (1965). The Chesapeake Bay Institute technique for the Winkler dissolved oxygen method. Limnol. Oceanogr. 10: 141-143
+Culberson, C.H. and Huang, S. (1987). Automated amperometric oxygen titration. Deep-Sea Res. 34: 875-880.
+Culberson, C.H.; Knapp, G.; Stalcup, M.; Williams, R.T. and Zemlyak, F. (1991). A comparison of methods for the determination of dissolved oxygen in seawater. WHP Operations and Methods.
+Langdon, C. (2010). Determination of dissolved oxygen in seawater by Winkler titration using the amperometric technique. The GO-SHIP Repeat Hydrography Manual: A Collection of Expert Reports and Guidelines. E. M. Hood, C. L. Sabine and B. M. Sloyan, IOCCP Report Number 14, ICPO Publication Series Number 134.</methodReference>
+    <biologicalSubject></biologicalSubject>
+    <speciesID></speciesID>
+    <lifeStage></lifeStage>
+    <QC></QC>
+    <researcherName>Chris Langdon </researcherName>
+    <researcherInstitution>Rosenstiel School of Marine and Atmospheric Science/University of Miami</researcherInstitution>
+    <internal>0</internal>
+  </variable>
+
+  <update>17-Nov-2014</update>
+
+</metadata>

@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="ocads_a0.2.xsl" type="text/xsl"?>
-
-<oads_metadata version="a0.2"
-  xmlns="http://ncei.noaa.gov/oads_metadata"
+<?xml-stylesheet href="ocads_a0.2.2.xsl" type="text/xsl"?>
+<oads_metadata version="a0.2.2" xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://ncei.noaa.gov/oads_metadata file:///Users/kamb/workspace/oads_xml/versions/a0.2/oads_metadata_a0.2.xsd" >
-
+  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd">
   <investigators>
     <investigator>
       <name>
-        <first>First</first>
-        <last>Last</last>
+        <first>Rik</first>
+        <last>Wannikhof</last>
+      </name>
+      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+      <contactInfo>
+        <address>
+          <deliveryPoint index="1">M/S 402</deliveryPoint>
+          <deliveryPoint index="2">4301 Rickenbacker Causeway</deliveryPoint>
+          <city>Miami</city>
+          <administrativeArea>FL</administrativeArea>
+          <postalCode>33149</postalCode>
+          <country>USA</country>
+        </address>
+        <phone>(123) 456-7890</phone>
+        <email>abc@def.com</email>
+      </contactInfo>
+      <identifier/>
+    </investigator>
+    <investigator>
+      <name>
+        <first>Molly</first>
+        <last>Baringer</last>
       </name>
       <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and             Atmospheric Administration</organization>
       <contactInfo>
@@ -22,45 +39,18 @@
           <postalCode>33149</postalCode>
           <country>USA</country>
         </address>
-        <phone type="cell">(123) 456-7890</phone>
-        <phone type="office">(123) 452-8642</phone>
-        <email type="primary">abc@def.com</email>
-        <email type="alt">abc@gosecond.com</email>
-      </contactInfo>
-      <identifier />
-    </investigator>
-    <investigator>
-      <name>
-        <title>Dr</title>
-        <first>John</first>
-        <middle index="1">Vincent</middle>
-        <middle index="2">Beauregard</middle>
-        <last>de la Saison</last>
-        <suffix>III</suffix>
-      </name>
-      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and             Atmospheric Administration</organization>
-      <contactInfo>
-        <address>
-          <deliveryPoint>4301 Rickenbacker Causeway</deliveryPoint>
-          <city>Miami</city>
-          <administrativeArea>FL</administrativeArea>
-          <postalCode>33149</postalCode>
-          <country>USA</country>
-        </address>
         <phone>(123) 456-7890</phone>
         <email>abc@def.com</email>
       </contactInfo>
-      <identifier />
+      <identifier/>
     </investigator>
   </investigators>
-
-
   <dataSubmitter>
     <name>
-      <first>First</first>
-      <last>last</last>
+      <first>John</first>
+      <last>Doe</last>
     </name>
-    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and          Atmospheric Administration</organization>
+    <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
     <contactInfo>
       <address>
         <deliveryPoint index="1">M/S 402</deliveryPoint>
@@ -70,68 +60,46 @@
         <postalCode>33149</postalCode>
         <country>USA</country>
       </address>
-      <phone type="cell">(123) 456-7890</phone>
-      <phone type="office">(123) 452-8642</phone>
-      <email type="primary">abc@def.com</email>
-      <email type="alt">abc@gosecond.com</email>
+      <phone>(123)456-7890</phone>
+      <email>abc@gosecond.com</email>
     </contactInfo>
-    <identifier />
+    <identifier/>
   </dataSubmitter>
-
   <title>Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971)</title>
-
   <abstract>The second Gulf of Mexico and East Coast Carbon (GOMECC-2) Cruise on board the R/V Ronald H. Brown from Miami, took place in the Gulf of Mexico and then along the East US coast to Boston. The effort was in support of the coastal monitoring and research objectives of the NOAA Ocean Acidification Program (OAP). The cruise was designed to obtain a snapshot of key carbon, physical, and biogeochemical parameters as they relate to ocean acidification (OA) in the coastal realm. This was the second occupation, with the first occurring in 2007, and complemented mooring time series and other regional OA activities. The cruise included a series of 8 transects approximately orthogonal to the Gulf of Mexico and Atlantic coasts and a comprehensive set of underway measurements along the entire transect.</abstract>
-
   <purpose>To measure key carbon, physical and biogeochemical parameters in coastal waters of the Gulf of Mexico and eastern coast of the US in relation to Ocean Acidification.</purpose>
-
-  <!-- In the help documentation, these described in a hierarchy, but the elements are at the top level. This is not critical, 
-    but most metadata uses the generic "extents" or some such and groups them. <extents> <time/> <spatial/> <vertical/> </extents> -->
   <temporalExtents>
     <startDate>2012-07-21</startDate>
     <endDate>2012-08-13</endDate>
   </temporalExtents>
-
-  <geospatialExtents>
+  <spatialExtents>
     <westernBounds>-90.344</westernBounds>
     <easternBounds>-68.5931</easternBounds>
     <northernBounds>42.1139</northernBounds>
     <southernBounds>24.3784</southernBounds>
-  </geospatialExtents>
-
-  <geospatialReference /> <!-- TODO: Should this be required? -->
-
+  </spatialExtents>
+  <spatialReference/>
   <sampleCollectionRegions>
     <region>U.S. East Coast</region>
     <region>Gulf of Mexico</region>
   </sampleCollectionRegions>
-
-  <!-- <organismCollectionRegions></organismCollectionRegions> -->
-
-  <fundingInformation>
-    <fundingSource>
+  <fundingInfo>
+    <source>
       <agency>NOAA Ocean Acidification Program</agency>
       <title>Coastal Observations on the East Coast: Ocean Acidification Monitoring Network</title>
       <identifier type="grant number">OAPFY13.03.AOML.001</identifier>
-    </fundingSource>
-    <fundingSource>
+    </source>
+    <source>
       <agency>National Science Foundation</agency>
       <title>Coastal Observations on the East Coast: Ocean Acidification Monitoring Network</title>
       <identifier type="grant number">OAPFY13.03.NSF.001</identifier>
-    </fundingSource>
-  </fundingInformation>
-
+    </source>
+  </fundingInfo>
   <researchProjects>
-    <project>
-      <organization>Nestle</organization>
-      <title>Looking for Mr Goodbar</title>
-    </project>
-    <project>
-      <organization>AOML</organization>
-      <title>Coastal Obs East</title>
-    </project>
+    <project>Looking for Mr Goodbar</project>
+    <project>Coastal Obs East</project>
   </researchProjects>
-
-  <platforms>  <!-- ??? Is it likely to have more than one? I suppose if there are multiple cruises. -->
+  <platforms>
     <platform>
       <name>RV Ronald H. Brown</name>
       <identifier type="ICEScode">33RO</identifier>
@@ -140,26 +108,40 @@
       <country>USA</country>
     </platform>
   </platforms>
-
-  <cruiseIdentifiers> <!-- XXX Need to associate these to the platform(s) above! -->
+  <!-- XXX Need to associate these to the platform(s) above! -->
+  <expocodes>
     <expocode>33RO20120721</expocode>
+  </expocodes>
+  <cruiseIds>
     <cruiseId>RB-12-03 GOMECC2</cruiseId>
-  </cruiseIdentifiers>
-
-  <section />
-
+  </cruiseIds>
+  <sections>
+    <section>T-49</section>
+  </sections>
+  <authors>
+    <author>Wanninkhof, Rik</author>
+    <author>Barbero, Leticia</author>
+    <author>Baringer, Molly</author>
+    <author>Byrne, Robert</author>
+    <author>Cai, Wei-Jun</author>
+    <author>Langdon, Chris</author>
+    <author>Lohrenz, Steven</author>
+    <author>Salisbury, Joe</author>
+    <author>Zhang, Jia-Zhong</author>
+  </authors>
   <citation> Wanninkhof, Rik; Barbero, Leticia; Baringer, Molly; Byrne, Robert; Cai, Wei-Jun; Langdon, Chris; Lohrenz, Steven; Salisbury, Joe; and Zhang, Jia-Zhong (2014). Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971). National Oceanographic Data Center, NOAA. Dataset. doi:10.7289/V5542KJ0 </citation>
   <references>
-    <reference>Wanninkhof, R., A. M. Wood and L. Barbero. 2012. Gulf of Mexico and East Coast Carbon Cruise #2 Report. http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf</reference>
+    <reference>
+      <name>Wanninkhof, R., A. M. Wood and L. Barbero. 2012. Gulf of Mexico and East Coast Carbon Cruise #2 Report.</name>
+      <link>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2/Cruise_Report.pdf</link>
+    </reference>
   </references>
-  <supplementalInformation>
-    <url>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2</url>
-  </supplementalInformation>
-
+  <supplementalInfo>
+    http://www.aoml.noaa.gov/ocd/gcc/GOMECC2
+  </supplementalInfo>
   <variables>
-    <variable xsi:type="dic_sample_type">
-      <name>DIC</name>
-      <description>Dissolved inorganic carbon</description>
+    <variable xsi:type="dic_variable_type" name="DIC">
+      <fullName>Dissolved inorganic carbon</fullName>
       <datasetVarName>tcarbn</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile and surface underway</observationType>
@@ -274,9 +256,8 @@
          </correction>
       </poison>
     </variable>
-    <ta>
-      <name>TA</name>
-      <description>Total alkalinity</description>
+    <ta name="TA">
+      <fullName>Total alkalinity</fullName>
       <datasetVarName>alkali</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile and surface underway</observationType>
@@ -326,7 +307,7 @@
           Material (Dickson, SIO)</frequency>
         <crm>
           <manufacturer>Dr. A. Dickson (SIO)</manufacturer>
-          <batch />
+          <batch/>
         </crm>
       </standardization>
       <poison>
@@ -334,24 +315,21 @@
                post-cruise analysis at the UGA lab. The other samples were not
                poisoned.</name>
         <volume>40 microliters</volume>
-        <correction />
+        <correction/>
       </poison>
       <titrationType>Gran titration</titrationType>
       <cellType>Open</cellType>
       <curveFitting>End point</curveFitting>
     </ta>
-
-    <variable xsi:type="ph_sample_type">
-      <name>pH</name>
-      <description>pH</description>
+    <variable xsi:type="ph_variable_type" name="pH">
+      <fullName>pH</fullName>
       <datasetVarName>PH_TOT</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile and surface underway</observationType>
       <uncertainty>Precision was equal to minus plus 0.0004. </uncertainty>
       <qcFlag>
         <description>WOCE quality control flags are used: 2 = good value, 3 = questionable value, 4 = bad
-        value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not
-		drawn.</description>
+        value, 5 = value not reported, 6 = mean of replicate measurements, 9 = sample not	drawn.</description>
       </qcFlag>
       <researcher>
         <name>Robert Byrne</name>
@@ -395,10 +373,8 @@
       <measurementTemperature>25 (minus plus 0.05) degrees Celsius </measurementTemperature>
       <phReportTemperature>25 degrees Celsius</phReportTemperature>
     </variable>
-
-    <co2d>
-      <name>pCO2D</name>
-      <description>pCO2 (fCO2) discrete</description>
+    <co2d name="pCO2D">
+      <fullName>pCO2 (fCO2) discrete</fullName>
       <datasetVarName>fCO2</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile and surface underway</observationType>
@@ -463,12 +439,12 @@
         <manufacturer>LiCOR infrared analyzer. The system was built by Colm Sweeney and Tim
           Newberger</manufacturer>
         <model>Prototype</model>
-        <resolution />
+        <resolution/>
       </gasDetector>
       <waterVaporCorrection>The details of the data reduction are described in Pierrot, et.al.
         (2009).</waterVaporCorrection>
-      <temperatureCorrection>The details of the data reduction are described in Pierrot, et.al.
-        (2009).</temperatureCorrection>
+      <temperatureCorrectionMethod>The details of the data reduction are described in Pierrot, et.al.
+        (2009).</temperatureCorrectionMethod>
       <co2ReportTemperature>20 degrees Celsius</co2ReportTemperature>
       <storageMethod>The sample bottles were sealed with glass stoppers lightly covered with
         Apiezon-L grease and were
@@ -484,13 +460,11 @@
       <headspaceVolume>5 ml</headspaceVolume>
       <measurementTemperature>20 degrees Celsius</measurementTemperature>
     </co2d>
-
-    <measured>
-      <name>CTD pressure</name>
-      <description>CTD pressure</description>
+    <variable name="CTD_PRESSURE">
+      <fullName>CTD pressure</fullName>
       <datasetVarName>CTDPRS</datasetVarName>
       <variableType>In-situ observation</variableType>
-      <observationType>profile</observationType>
+      <observationType>Profile</observationType>
       <units>dbars</units>
       <uncertainty>Pressure sensor calibration coefficients derived from the pre-cruise calibrations
         were applied to raw pressure data during each cast. Residual pressure offsets (the
@@ -532,14 +506,12 @@
         each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab
         processing software.
       </detailedInfo>
-    </measured>
-
-    <measured>
-      <name>CTD temperature</name>
-      <description>CTD temperature</description>
+    </variable>
+    <variable name="CTD_TEMP">
+      <fullName>CTD temperature</fullName>
       <datasetVarName>CTDTMP</datasetVarName>
       <variableType>In-situ observation</variableType>
-      <observationType>profile</observationType>
+      <observationType>Profile</observationType>
       <units>degree C</units>
       <uncertainty>Temperature sensor calibration coefficients derived from the pre-cruise
         calibrations were applied to raw primary and secondary temperature data during each cast.
@@ -580,14 +552,12 @@
         each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab
         processing software.
       </detailedInfo>
-    </measured>
-
-    <measured>
-      <name>CTD salinity</name>
-      <description>CTD salinity</description>
+    </variable>
+    <variable name="CTD_SAL">
+      <fullName>CTD salinity</fullName>
       <datasetVarName>CTDSAL</datasetVarName>
       <variableType>In-situ observation</variableType>
-      <observationType>profile</observationType>
+      <observationType>Profile</observationType>
       <uncertainty>Conductivity sensor calibration coefficients derived from the pre-cruise
         calibrations were applied to raw primary and secondary conductivities. Comparisons between
         the primary and secondary sensors and between each of the sensors to check sample
@@ -630,11 +600,9 @@
         each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab
         processing software.
       </detailedInfo>
-    </measured>
-
-    <variable xsi:type="measured_variable">
-      <name>discrete salinity</name>
-      <description>Bottle salinity</description>
+    </variable>
+    <variable name="BOTTLE_SAL">
+      <fullName>Bottle salinity</fullName>
       <datasetVarName>SALNTY</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile</observationType>
@@ -675,13 +643,11 @@
       <fieldReplicateHandling>A duplicate sample was drawn from each cast to determine total analytical
         precision.</fieldReplicateHandling>
     </variable>
-
-    <measured>
-      <name>CTD oxygen</name>
-      <description>CTD oxygen</description>
+    <variable name="CTD_OXY">
+      <fullName>CTD oxygen</fullName>
       <datasetVarName>CTDOXY</datasetVarName>
       <variableType>In-situ observation</variableType>
-      <observationType>profile</observationType>
+      <observationType>Profile</observationType>
       <units>micro-mol/kg</units>
       <uncertainty>Two SBE43 dissolved O2 (DO) sensors were used on this cruise. Both sensors
         tracked each other very well, with no noted problems. The DO sensors were calibrated to
@@ -729,11 +695,9 @@
         each deployment using SEABIRD SBE Data Processing version 7.21h and AOML Matlab
         processing software.
       </detailedInfo>
-    </measured>
-
-    <measured>
-      <name>discrete oxygen</name>
-      <description>bottle dissolved oxygen</description>
+    </variable>
+    <variable name="BOTTLE_OXY">
+      <fullName>bottle dissolved oxygen</fullName>
       <datasetVarName>oxygen</datasetVarName>
       <variableType>In-situ observation</variableType>
       <observationType>Profile and surface underway</observationType>
@@ -819,15 +783,7 @@
         replicates
         averaged 0.2 micro-mol kg-1 for stations 1-93.
       </fieldReplicateHandling>
-    </measured>
+    </variable>
   </variables>
-
-  <update>17-Nov-2014</update>
-
-  <!-- If it were up to me, I would take a couple of the most important identifying piece of the <variable> tag and make 
-    them into attributes. This makes looking at the files and searching them with text tools much easier on the human. And I 
-    might go so far as to create a group. <variables> <variable datasetVarName="oxygen" description="Bottle disolved oxygen" 
-    internal="0"/> <variable datasetVarName="SALNTY" description="Bottle salinity" internal="0"/> <variable datasetVarName="CTDTMP" 
-    description="CTD temperature" internal="0"/> <variable description="pCO2 (fCO2) discrete" datasetVarName="fCO2" internal="5"/> 
-    </variables> -->
+  <update>2014-11-17</update>
 </oads_metadata>
