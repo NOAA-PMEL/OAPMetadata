@@ -2,7 +2,19 @@
 <oads_metadata xmlns="http://ncei.noaa.gov/oads/v_a0_4"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_4 ../oads_metadata_a0.4.xsd" version="">
-  <submissionDate></submissionDate>
+  <archiveInfo>
+    <initialSubmission>
+      <submittedBy></submittedBy>
+      <submissionDate></submissionDate>
+    </initialSubmission>
+    <revision>
+      <submittedBy></submittedBy>
+      <submissionDate></submissionDate>
+    </revision>
+    <metadataUpdate></metadataUpdate>
+    <archiveId></archiveId>
+    <doi></doi>
+  </archiveInfo>
   <relatedDataSets>
     <dataset>
       <dataset></dataset>
@@ -10,13 +22,8 @@
     </dataset>
   </relatedDataSets>
   <investigators>
-    <investigator>
-      <display></display>
-    </investigator>
+    <investigator/>
   </investigators>
-  <dataSubmitter>
-    <display></display>
-  </dataSubmitter>
   <title></title>
   <abstract></abstract>
   <purpose></purpose>
@@ -65,10 +72,12 @@
   <sections>
     <section></section>
   </sections>
-  <authors>
-    <author></author>
-  </authors>
-  <citation></citation>
+  <citation>
+    <authors>
+      <author/>
+    </authors>
+    <title></title>
+  </citation>
   <references>
     <reference>
       <name></name>
@@ -92,21 +101,15 @@
         <description></description>
         <qcFlagVarName></qcFlagVarName>
       </qcFlag>
-      <researcher>
-        <display></display>
-      </researcher>
+      <researcher/>
       <methodReference></methodReference>
       <calculationMethod>
         <description></description>
         <parameter></parameter>
       </calculationMethod>
       <manipulationMethod></manipulationMethod>
-      <samplingInstrument>
-        <description></description>
-      </samplingInstrument>
-      <analyzingInstrument>
-        <description></description>
-      </analyzingInstrument>
+      <samplingInstrument/>
+      <analyzingInstrument/>
       <detailedInfo></detailedInfo>
       <fieldReplicateHandling></fieldReplicateHandling>
       <standardization>
@@ -162,7 +165,9 @@
       </contactInfo>
       <identifier></identifier>
       <link></link>
+      <roles>
+        <role></role>
+      </roles>
     </person>
   </people>
-  <update></update>
 </oads_metadata>

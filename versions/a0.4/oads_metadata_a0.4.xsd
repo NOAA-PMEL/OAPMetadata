@@ -17,7 +17,7 @@
 
   <xs:complexType name="oads_metadata_document_type">
     <xs:sequence>
-      <xs:element name="submissionDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="archiveInfo" type="archive_info_type"/>
       <xs:element name="relatedDataSets" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
@@ -25,16 +25,18 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="investigators" type="xs:IDREFS" />
-      <!--
+      <xs:element name="investigators" >  <!-- type="xs:IDREFS" /> -->
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="investigator" type="xs:IDREF" maxOccurs="unbounded"/>
+            <xs:element name="investigator" type="id_reference_type" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-        -->
+      <!-- dataSubmitter moved to the submission_info_type, 
+           as it's possible that a revision could be submitted by someone other 
+           than the original submitter.
       <xs:element name="dataSubmitter" type="xs:IDREF" />
+       -->
       <xs:element name="title" type="xs:string"/>
       <xs:element name="abstract" type="xs:string"/>
       <xs:element name="purpose" type="xs:string"/>
@@ -99,14 +101,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="authors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="author" type="xs:string" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="citation" type="xs:string" minOccurs="0"/>
+      <xs:element name="citation" type="citation_type" minOccurs="0"/>
       <xs:element name="references" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
@@ -125,16 +120,37 @@
       <xs:element name="variables" type="variable_collection"/>
       <xs:element name="instrumentation" type="instrument_collection" />
       <xs:element name="people" type="person_collection" />
-      <xs:element name="update" type="xs:date" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="version" type="xs:string" use="required" />
   </xs:complexType>
 
-  <!-- END of 1st level schema -->
+  <!-- END of top level schema -->
 
-  <xs:complexType name="archive_info_type"/>
-
-  <!-- basic elements -->
+  <!-- element types -->
+  <xs:complexType name="archive_info_type">
+    <xs:sequence>
+      <xs:element name="initialSubmission" type="submission_info_type" />
+      <xs:element name="revision" type="submission_info_type" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="metadataUpdate" type="xs:date" minOccurs="0"/>
+      <xs:element name="archiveId" minOccurs="0" type="xs:string"/> 
+      <!--  This would be for NCEI accession #s
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="[0-9]{7}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      -->
+      <xs:element name="doi" type="xs:string" minOccurs="0" />
+      <xs:any minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType> 
+  <xs:complexType name="submission_info_type">
+    <xs:sequence>
+      <xs:element name="submittedBy" type="xs:IDREF"/>
+      <xs:element name="submissionDate" type="xs:date" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="related_data_type">
     <xs:sequence>
       <xs:element name="dataset" type="xs:string"/>
@@ -143,10 +159,8 @@
   </xs:complexType>
   <xs:complexType name="temporal_extents_type">
     <xs:sequence>
-      <xs:element name="startDate" type="xs:date"/>
-      <!-- format YYYY-MM-DD -->
-      <xs:element name="endDate" type="xs:date"/>
-      <!-- format YYYY-MM-DD -->
+      <xs:element name="startDate" type="xs:date"/>      <!-- format YYYY-MM-DD'Z' -->
+      <xs:element name="endDate" type="xs:date"/>      <!-- format YYYY-MM-DD'Z' -->
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="spatial_extents_type">
@@ -195,7 +209,18 @@
       <xs:element name="country" type="xs:string"/> <!-- controlled vocab -->
     </xs:sequence>
   </xs:complexType>
-
+  <xs:complexType name="citation_type"> <!-- TODO: needs work breaking out parts from "title" -->
+    <xs:sequence>
+      <xs:element name="authors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="author" type="ordered_reference_type" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="title" type="xs:normalizedString"/>     
+    </xs:sequence>
+  </xs:complexType>
   <!-- collection wrapper elements
   <xs:complexType name="related_data_collection">
     <xs:sequence>
@@ -220,7 +245,10 @@
   <xs:complexType name="variable_collection">
     <xs:choice maxOccurs="unbounded">
       <xs:element name="variable" type="base_variable_type"/>
-      <!-- <xs:element name="measured" type="measured_variable"/> -->
+      <!-- 
+        <xs:element name="measured" type="measured_variable"/> 
+        <xs:element name="biological" type="biological_variable"/> 
+      -->
       <xs:element name="dic" type="dic_variable_type"/>
       <xs:element name="ta" type="ta_variable_type"/>
       <xs:element name="ph" type="ph_variable_type"/>
@@ -240,13 +268,4 @@
     </xs:sequence>
   </xs:complexType>
   
-  <!-- base types 
-  <xs:simpleType name="type_platform_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Research Vessel"/>
-      <xs:enumeration value="ship"/>
-    </xs:restriction>
-  </xs:simpleType>
-  -->
-
 </xs:schema>

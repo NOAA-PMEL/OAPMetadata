@@ -115,6 +115,21 @@ xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2  https://www.pmel.noaa.go
     </authors>
     <supplementalInfo>http://www.aoml.noaa.gov/ocd/gcc/GOMECC2</supplementalInfo>
     <variables>
+        <variable>
+            <accuracy>
+                <unitString>μatm in fCO2_SW</unitString>
+                <valueString>2</valueString>
+            </accuracy>
+            <colName>xCO2_EQU_ppm</colName>
+            <flagColName>WOCE_QC_FLAG</flagColName>
+            <fullName>Mole fraction of CO2 in the equilibrator headspace (dry) at equilibrator temperature (ppm)</fullName>
+            <missVal></missVal>
+            <precision>
+                <unitString>μatm in fCO2_SW</unitString>
+                <valueString>0.01</valueString>
+            </precision>
+            <varUnit>ppm</varUnit>
+        </variable>
         <dic name="tcarbn">
             <fullName>Dissolved inorganic carbon</fullName>
             <datasetVarName>tcarbn</datasetVarName>

@@ -1,3 +1,5 @@
 gen-src
 gen-classes
 build
+/test-classes/
+/classes/

@@ -34,7 +34,7 @@
 <project name="oads_metadata" >
 	<property name="_basedir" value="../.." />
     <property name="version" value="a0.4" />
-	<property name="gen-src-root" value="${_basedir}/gen-src" />
+	<property name="gen-src-root" value="${basedir}/gen-src" />
 	<property name="gen-src-dir" value="${gen-src-root}/${version}" />
     <property name="target.classes" value="${_basedir}/build/classes" />
     <property name="target.dist" value="${_basedir}/build/dist" />
@@ -44,7 +44,7 @@
 	<path id="compile.path">
 		<fileset dir="${_basedir}/lib">
 			<include name="jaxb-api-*.jar"/>
-			<include name="lombok.*.jar"/>
+			<include name="lombok*.jar"/>
 			<include name="tws_util.jar"/>
 			<!--include name="hibernate-search-*.jar"/ -->
 		</fileset>
@@ -105,18 +105,12 @@
 	<target name="compile" description="Compile src and generated classes."> <!-- depends="generate-sources"  -->
 		<mkdir dir="${target.classes}"/>
 		<javac
-			srcdir="${gen-src-dir}:${_basedir}/src"
 			destdir="${target.classes}"
+			srcdir="${gen-src-dir}:${_basedir}/src"
 			classpathref="compile.path"
 			includeantruntime="false"
 			source="1.8"
 			target="1.8">
-			<!-- src path="${gen-src-dir}"/>
-			<src path="${_basedir}/src"/> -->
-			<!-- exclude name="gov/noaa/pmel/oads/xml/a0_4/**"/> -->
-			<include name="gov/noaa/ncei/**"/>
-			<include name="gov/noaa/pmel/oads/xml/a0_4/**"/>
-			<include name="gov/noaa/pmel/oads/util/**"/>
 		</javac>
 		<!--
 		<copy todir="${basedir}/target/classes">

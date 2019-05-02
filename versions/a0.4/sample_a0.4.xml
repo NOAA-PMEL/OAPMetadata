@@ -3,11 +3,17 @@
 <oads_metadata version="a0.4" xmlns="http://ncei.noaa.gov/oads/v_a0_4"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="hhttp://ncei.noaa.gov/oads/v_a0_4 file:///Users/kamb/workspace/oads_xml/versions/a0.4/oads_metadata_a0.4.xsd">
+  <archiveInfo>
+    <initialSubmission>
+      <submittedBy>Joe_Lackey</submittedBy>
+      <submissionDate>2014-11-17</submissionDate>
+    </initialSubmission>
+    <metadataUpdate>2015-11-17</metadataUpdate>
+  </archiveInfo>
   <investigators>
     <investigator id_ref="Fred_Flintstone"/>
     <investigator id_ref="John_Beauregard_de_la_Saison"/>
   </investigators>
-  <dataSubmitter id_ref="Joe_Lackey"/>
   <title>Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971)</title>
   <abstract>The second Gulf of Mexico and East Coast Carbon (GOMECC-2) Cruise on board the R/V Ronald H. Brown from Miami, took place in the Gulf of Mexico and then along the East US coast to Boston. The effort was in support of the coastal monitoring and research objectives of the NOAA Ocean Acidification Program (OAP). The cruise was designed to obtain a snapshot of key carbon, physical, and biogeochemical parameters as they relate to ocean acidification (OA) in the coastal realm. This was the second occupation, with the first occurring in 2007, and complemented mooring time series and other regional OA activities. The cruise included a series of 8 transects approximately orthogonal to the Gulf of Mexico and Atlantic coasts and a comprehensive set of underway measurements along the entire transect.</abstract>
   <purpose>To measure key carbon, physical and biogeochemical parameters in coastal waters of the Gulf of Mexico and eastern coast of the US in relation to Ocean Acidification.</purpose>
@@ -61,19 +67,23 @@
   <sections>
     <section>T-49</section>
   </sections>
-  <authors>
-    <author>Wanninkhof, Rik</author>
-    <author>Barbero, Leticia</author>
-    <author>Baringer, Molly</author>
-    <author>Byrne, Robert</author>
-    <author>Cai, Wei-Jun</author>
-    <author>Langdon, Chris</author>
-    <author>Lohrenz, Steven</author>
-    <author>Salisbury, Joe</author>
-    <author>and Zhang, Jia-Zhong</author>
-  </authors>
-  <!-- There is some redundancy between these two elements, also with investigators and researchers. -->
-  <citation> Wanninkhof, Rik; Barbero, Leticia; Baringer, Molly; Byrne, Robert; Cai, Wei-Jun; Langdon, Chris; Lohrenz, Steven; Salisbury, Joe; and Zhang, Jia-Zhong (2014). Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971). National Oceanographic Data Center, NOAA. Dataset. doi:10.7289/V5542KJ0 </citation>
+  <!-- There is some redundancy between (previous) authors and citation, also with investigators and researchers. -->
+  <citation>  <!-- TODO: needs work breaking out parts from "title" -->
+    <authors>
+      <author id_ref="Rik_Wannikhof" index="0"/>
+      <author id_ref="Leticia_Barbero" index="1" />
+      <author id_ref="Molly_Baringer" index="2"/>
+      <author id_ref="Robert_Byrne" index="3"/>
+      <author id_ref="Wei-Jun_Cai" index="4"/>
+      <author id_ref="Chris_Langdon" index="5"/>
+      <author id_ref="Steven_Lohrenz" index="6"/>
+      <author id_ref="Joe_Salisbury" index="7"/>
+      <author id_ref="Jia-Zhong_Zhang" index="8"/>
+    </authors>
+    <title>
+      Dissolved inorganic carbon, total alkalinity, pH, fugacity of carbon dioxide, and other variables from profile and surface observations using CTD, Niskin bottle, flow through pump and other instruments from the Ronald H. Brown in the Gulf of Mexico and East Coast of the United States from 2012-07-22 to 2012-08-13 (NODC Accession 0117971). National Oceanographic Data Center, NOAA. Dataset. doi:10.7289/V5542KJ0
+      </title>
+  </citation>
   <references>
     <reference>
       <name>Wanninkhof, R., A. M. Wood and L. Barbero. 2012. Gulf of Mexico and East Coast Carbon Cruise #2 Report.</name>
@@ -822,11 +832,36 @@
       </name>
       <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
     </person>
+    <person ref_id="Leticia_Barbero">
+      <name><first>Molly</first><last>Baringer</last>
+      </name>
+      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    </person>
     <person ref_id="Chris_Langdon">
       <name><first>Chris</first><last>Langdon</last>
       </name>
       <organization>Rosenstiel School of Marine and Atmospheric Science/University of Miami</organization>
     </person>
+    <person ref_id="Steven_Lohrenz">
+      <name>
+        <first>Steven</first>
+        <last>Lohrenz</last>
+      </name>
+      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    </person>
+    <person ref_id="Joe_Salisbury">
+      <name>
+        <first>Joe</first>
+        <last>Salisbury</last>
+      </name>
+      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    </person>
+    <person ref_id="Jia-Zhong_Zhang">
+      <name>
+        <first>Jia-Zhong</first>
+        <last>Zhang</last>
+      </name>
+      <organization>Atlantic Oceanographic and Meteorological Laboratory, National Oceanic and Atmospheric Administration</organization>
+    </person>
   </people>
-  <update>2014-11-17</update>
 </oads_metadata>

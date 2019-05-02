@@ -49,12 +49,12 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
         <xs:element name="missingValue" type="xs:string" minOccurs="0"/>
         <xs:element name="uncertainty" type="xs:string" minOccurs="0"/>
         <xs:element name="qcFlag" type="qc_flag_info_type" minOccurs="0" />
-        <xs:element name="researcher" type="xs:IDREF" /> <!-- ??? multiple ? -->
+        <xs:element name="researcher" type="id_reference_type" /> <!-- ??? multiple ? -->
         <xs:element name="methodReference" type="xs:string" minOccurs="0" maxOccurs="unbounded" /> <!-- ??? multiple ? -->
         <xs:element name="calculationMethod" type="calculation_method_type" minOccurs="0"/>
         <xs:element name="manipulationMethod" type="xs:string" minOccurs="0" />   <!-- XXX only in manipulation type variables ? -->
-        <xs:element name="samplingInstrument" type="xs:IDREF" minOccurs="0" /> 
-        <xs:element name="analyzingInstrument" type="xs:IDREF" minOccurs="0" />
+        <xs:element name="samplingInstrument" type="id_reference_type" minOccurs="0" /> 
+        <xs:element name="analyzingInstrument" type="id_reference_type" minOccurs="0" />
         <xs:element name="detailedInfo" type="xs:string" minOccurs="0" />   <!-- XXX methodDescription -->
         <xs:element name="fieldReplicateHandling" type="xs:string" minOccurs="0" /> 
         <xs:element name="standardization" type="standardization_type" minOccurs="0" /> 
