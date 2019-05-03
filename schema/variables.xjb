@@ -49,7 +49,6 @@
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='standardization_type']//xs:element[@name='standardGas']">
-      <!-- xew:xew instantiate="none" /> -->
       <annox:annotate target="field">@lombok.Singular("addStandardGas")</annox:annotate>
     </jaxb:bindings>
 
@@ -72,11 +71,39 @@
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
+<!--
+    <jaxb:bindings node="xs:complexType[@name='instrument_ref_type']">
+        <annox:annotate>@lombok.Builder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='instrument_ref_type']//xs:attribute[@name='id_ref']">
+      <annox:annotate target="field">@lombok.Singular("addInstrumentRef")</annox:annotate>
+    </jaxb:bindings>
+-->
     <jaxb:bindings node="xs:complexType[@name='base_variable_type']">
         <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='base_variable_type']//xs:element[@name='samplingInstrument']">
+      <annox:annotate target="field">@lombok.Singular("addSamplingInstrument")</annox:annotate>
+      <jaxb:property>
+        <jaxb:baseType name="BaseInstrumentType"/>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='base_variable_type']//xs:element[@name='analyzingInstrument']">
+      <annox:annotate target="field">@lombok.Singular("addAnalyzingInstrument")</annox:annotate>
+      <jaxb:property>
+        <jaxb:baseType name="BaseInstrumentType"/>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='base_variable_type']//xs:element[@name='researcher']">
+      <jaxb:property>
+        <jaxb:baseType name="PersonType"/>
+      </jaxb:property>
     </jaxb:bindings>
 <!--  
     <jaxb:bindings node="xs:complexType[@name='data_variable']">
@@ -85,15 +112,12 @@
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-
     <jaxb:bindings node="xs:complexType[@name='measured_variable']">
         <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-    
-    
     <jaxb:bindings node="xs:complexType[@name='computed_variable']">
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>

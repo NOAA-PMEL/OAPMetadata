@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
-<project name="oads_metadata" >
-    <property name="version" value="a0.2.2" />
+<project name="oads_metadata" default="gen-src" >
+
+    <property name="version" value="a0.4" />
+    <property name="package-version" value="v_a0_4" />
 	<property name="_basedir" value=".." />
 	<property name="gen-src-root" value="${_basedir}/gen-src" />
 	<property name="gen-src-dir" value="${gen-src-root}/${version}" />
+	<property name="package-root" value="gov.noaa.ncei.oads.xml" />
+	<property name="package-version" value="${package-root}.${package-version}" />
+	<property name="package-dir-root" value="gov/noaa/ncei/oads/xml" />
+	<property name="package-dir-version" value="${package-dir-root}/${package-version}" />
     <property name="target.classes" value="${_basedir}/build/classes" />
     <property name="target.dist" value="${_basedir}/build/dist" />
     <property name="target.test-classes" value="${_basedir}/build/test-classes" />
@@ -12,7 +18,7 @@
 	<path id="compile.path">
 		<fileset dir="${_basedir}/lib">
 			<include name="jaxb-api-*.jar"/>
-			<include name="lombok.*.jar"/>
+			<include name="lombok*.jar"/>
 			<include name="tws_util.jar"/>
 		</fileset>
 	</path>
@@ -21,7 +27,7 @@
 		<delete dir="${target.dist}"/>
 		<delete dir="${target.test-classes}"/>
 	</target>
-	<target name="gen-src" description="Generate java classes from XML schema.">
+	<target name="gen-src" description="Generate java classes from XML schema." >
 		<taskdef name="xjc" classname="org.jvnet.jaxb2_commons.xjc.XJC2Task">
 			<!-- XJC2 Task classpath -->
 			<classpath>
@@ -68,19 +74,19 @@
 				</fileset>
 			</classpath>
 		</xjc>
+		<exec executable="${_basedir}/fixup">
+			<arg value="${gen-src-dir}/${package-dir-version}/OadsMetadataDocumentType.java" />
+		</exec>
 	</target>
 	<target name="compile" description="Compile src and generated classes."> <!-- depends="generate-sources"  -->
 		<mkdir dir="${target.classes}"/>
 		<javac
-			srcdir="${gen-src-dir}:${_basedir}/src"
 			destdir="${target.classes}"
+			srcdir="${gen-src-dir}:${_basedir}/src"
 			classpathref="compile.path"
 			includeantruntime="false"
 			source="1.8"
 			target="1.8">
-			<include name="gov/noaa/ncei/**"/>
-			<include name="gov/noaa/pmel/oads/xml/a0_2_2/**"/>
-			<include name="gov/noaa/pmel/oads/util/**"/>
 		</javac>
 	</target>
 	<target name="package" depends="compile">

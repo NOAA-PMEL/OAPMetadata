@@ -1,0 +1,13 @@
+#!/bin/bash
+
+file=$1
+
+echo "fixing $file"
+
+cp $file ${file}.bak \
+&& sed  '/import.*JAXBElement/d' $file \
+ | sed  '/import.*XmlElementRef/d' \
+ | sed  's/XmlElementRef/XmlElement/' \
+ | sed  's/JAXBElement/Object/' \
+ > temp && \mv temp ${file}
+

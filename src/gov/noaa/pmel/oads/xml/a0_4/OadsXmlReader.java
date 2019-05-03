@@ -3,9 +3,11 @@
  */
 package gov.noaa.pmel.oads.xml.a0_4;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.xml.bind.JAXBContext;
@@ -15,6 +17,8 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.stream.StreamSource;
+
+import org.xml.sax.SAXException;
 
 import gov.noaa.ncei.oads.xml.v_a0_4.OadsMetadataDocumentType;
 
@@ -31,14 +35,17 @@ public class OadsXmlReader {
         // TODO Auto-generated constructor stub
     }
 
-    public static OadsMetadataDocumentType read(File xmlFile) {
-        throw new IllegalStateException("Not implemented");
+    public static OadsMetadataDocumentType read(File xmlFile) 
+            throws JAXBException, SAXException, IOException, Exception {
+        return read(getDocBuilder().parse(xmlFile));
     }
-    public static OadsMetadataDocumentType read(InputStream inStream) {
-        throw new IllegalStateException("Not implemented");
+    public static OadsMetadataDocumentType read(InputStream inStream) 
+            throws JAXBException, SAXException, IOException, Exception {
+        return read(getDocBuilder().parse(inStream));
     }
-    public static OadsMetadataDocumentType read(String xmlText) {
-        throw new IllegalStateException("Not implemented");
+    public static OadsMetadataDocumentType read(String xmlText) 
+            throws JAXBException, SAXException, IOException, Exception {
+        return read(getDocBuilder().parse(new ByteArrayInputStream(xmlText.getBytes())));
     }
     public static OadsMetadataDocumentType read(org.w3c.dom.Document xmlDocument) throws JAXBException {
         OadsMetadataDocumentType metadata = null;
@@ -50,12 +57,11 @@ public class OadsXmlReader {
         return metadata;
     }
     
-    private static org.w3c.dom.Document getXdoc(InputStream is) throws Exception {
+    private static DocumentBuilder getDocBuilder() throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
         DocumentBuilder db = dbf.newDocumentBuilder();
-        org.w3c.dom.Document doc = db.parse(is);
-        return doc;
+        return db;
     }
     /**
      * @param args
@@ -80,10 +86,9 @@ public class OadsXmlReader {
     }
 
     public static void main(String[] args) {
-        String filename = args.length > 0 ? args[0] : "versions/a0.2.2/sample_a0.2.2.xml";
+        String filename = args.length > 0 ? args[0] : "test/data/a0.4/sample_a0.4.xml";
         try (InputStream is = new FileInputStream(filename)) {
-            org.w3c.dom.Document doc = getXdoc(is);
-            OadsMetadataDocumentType metadata = read(doc);
+            OadsMetadataDocumentType metadata = read(is);
             System.out.println(metadata);
         } catch (Exception ex) {
             ex.printStackTrace();
