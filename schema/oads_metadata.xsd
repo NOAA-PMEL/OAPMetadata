@@ -104,6 +104,8 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="citation" type="xs:string" minOccurs="0"/>
+      <xs:element name="useLimitation" type="xs:string" minOccurs="0"/>
+      <xs:element name="dataUse" type="xs:string" minOccurs="0"/>
       <xs:element name="references" minOccurs="0">
         <xs:complexType>
           <xs:sequence>

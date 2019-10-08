@@ -14,11 +14,13 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import gov.noaa.ncei.oads.xml.v_a0_4.ArchiveInfoType;
 import gov.noaa.ncei.oads.xml.v_a0_4.OadsMetadataDocumentType;
 import gov.noaa.ncei.oads.xml.v_a0_4.ObjectFactory;
 import gov.noaa.ncei.oads.xml.v_a0_4.PersonContactInfoType;
 import gov.noaa.ncei.oads.xml.v_a0_4.PersonNameType;
 import gov.noaa.ncei.oads.xml.v_a0_4.PersonType;
+import gov.noaa.ncei.oads.xml.v_a0_4.SubmissionInfoType;
 import gov.noaa.ncei.oads.xml.v_a0_4.TemporalExtentsType;
 
 /**
@@ -68,11 +70,16 @@ public class OadsXmlWriter {
                     .startDate(new Date())
                     .endDate(new Date())
                     .build();
+            // dataSubmitter
             OadsMetadataDocumentType oads = OadsMetadataDocumentType.builder()
-                    .dataSubmitter(person)
+//                    .dataSubmitter(person)
+                    .archiveInfo(ArchiveInfoType.builder()
+                                 .initialSubmission(SubmissionInfoType.builder()
+                                                    .submittedBy(person).build()).build())
                     .addInvestigator(person)
                     .temporalExtents(tempExtents)
-                    .addAuthor("John Doe").addAuthor("Emily Picket")
+                    // author moved into Citation in a kind of complicated way...
+//                    .addAuthor("John Doe").addAuthor("Emily Picket")
                     .build();
             oads.setKeywords(null);
             writeXml(oads, new File("oads.xml"));

@@ -114,6 +114,12 @@ td.desc {
           <span style="font-weight:bold">ABSTRACT: </span><xsl:value-of select="oa:abstract"/>
           <br/><br/>
 
+          <xsl:if test="oa:useLimitation != ''">
+            <span style="font-weight:bold">FAIR USE STATEMENT (from data producers): </span>
+            <xsl:value-of select="oa:useLimitation"/>
+            <br/><br/>
+          </xsl:if>
+
           <span style="font-weight:bold">CITE AS: </span><xsl:value-of select="oa:citation"/>
           <br/><br/>
 

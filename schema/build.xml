@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="oads_metadata" >
+<project name="oads_metadata" default="gen-src" >
     <property name="version" value="a0.2.2" />
 	<property name="_basedir" value=".." />
 	<property name="gen-src-root" value="${_basedir}/gen-src" />
