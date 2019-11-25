@@ -11,5 +11,4 @@ https://github.com/NOAA-PMEL/OAPMetadata/tree/M_a0.2.2-rc
 
 Source download is available from: https://github.com/NOAA-PMEL/OAPMetadata/releases/tag/M_a0.2.2-rc
 
-Proof-of-concept version for references and separate people and instruments collections in
-https://github.com/NOAA-PMEL/OAPMetadata/tree/master/versions/a0.4
+The master branch is developing a version that includes references and separate collections for people and instruments.
