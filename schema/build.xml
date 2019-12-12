@@ -83,7 +83,7 @@
 			<include name="gov/noaa/pmel/oads/util/**"/>
 		</javac>
 	</target>
-	<target name="package" depends="compile">
+	<target name="package" depends="compile" description="Create jar file.">
 		<delete dir="${target.dist}"/>
 		<mkdir dir="${target.dist}"/>
 		<jar destfile="${target.dist}/${artifactId}.jar"

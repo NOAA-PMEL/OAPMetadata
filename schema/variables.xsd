@@ -221,13 +221,13 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
     <xs:sequence>
       <xs:element name="description" type="xs:string" />
       <xs:element name="frequency" type="xs:string" />
-      <xs:element name="temperature" type="xs:decimal" minOccurs="0" /> <!-- ph only -->
+      <xs:element name="temperature" type="xs:string" minOccurs="0" /> <!-- ph only -->
       <xs:choice>
         <xs:sequence>
           <xs:element name="standardGas" type="standard_gas_type" minOccurs="0" maxOccurs="unbounded" />
           <xs:element name="crm" type="crm_type" minOccurs="0" />
         </xs:sequence>
-        <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/>
+        <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/> <!-- ph only -->
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
