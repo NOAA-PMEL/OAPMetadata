@@ -109,7 +109,8 @@
       <xs:element name="references" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="reference" type="reference_type" maxOccurs="unbounded"/>
+            <!-- xs:element name="reference" type="reference_type" maxOccurs="unbounded"/ -->
+            <xs:element name="reference" type="xs:string" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
