@@ -10,11 +10,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>versions/a0.2.2/ocads_a0.2.2.xsl</String>
+                                    <String>schema/ocads.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>ocads_a0_2_2</String>
+                                        <String>ocads_a0_2_2-real</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -33,7 +33,7 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String>ocads_a0_2_2</String>
+                                    <String>ocads_a0_2_2-real</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -54,7 +54,7 @@
                                     <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>${pdu}/versions/a0.2.2/sample_a0.2.2.xml</String>
+                                    <String>file:/Users/kamb/workspace/oa_dashboard_test_data/cosca/oap_metadata_AG5W20161019.xml</String>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
