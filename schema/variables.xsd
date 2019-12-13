@@ -50,8 +50,23 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
         </xs:documentation>
       </xs:annotation>
     </xs:element>
-    <xs:element name="variableType" type="xs:string" /> 
-    <xs:element name="observationType" type="xs:string" /> 
+    <xs:element name="variableType" type="xs:string" >
+      <xs:annotation>
+        <xs:documentation>
+          This is the so-called "Details of the Observation" field: whether it is in-situ, manipulation condition, or response variable.  
+          It should really be of type variable_type.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element> 
+    <xs:element name="observationType" type="xs:string" >
+      <xs:annotation>
+        <xs:documentation>
+          How the variable is observed, e.g., surface underway, profile, time series, model output, etc. 
+          For experimental data, this could be: laboratory experiment, pelagic mesocosm, benthic mesocosm, 
+          benthic FOCE type studies, natural pertubration site studies, etc
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element> 
     <xs:element name="units" type="xs:string" minOccurs="0" />
     <xs:element name="missingValue" type="xs:string" minOccurs="0"/>
     <xs:element name="uncertainty" type="xs:string" minOccurs="0"/>
@@ -167,7 +182,6 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
 
   <xs:complexType name="qc_flag_info_type">
     <xs:sequence>
