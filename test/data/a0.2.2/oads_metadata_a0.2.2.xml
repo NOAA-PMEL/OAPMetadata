@@ -1,211 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<oads_metadata xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd" version="a0.2.2">
-  <submissionDate></submissionDate>
+<oads_metadata xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 file:/Users/kamb/workspace/oap_metadata/schema/oads_metadata.xsd" version="a0.2.2">
+  <submissionDate>2006-05-04</submissionDate>
   <relatedDataSets>
     <dataset>
-      <dataset></dataset>
-      <link></link>
+      <dataset>string</dataset>
+      <link>http://www.oxygenxml.com/</link>
+    </dataset>
+    <dataset>
+      <dataset>string</dataset>
+      <link>http://www.oxygenxml.com/</link>
     </dataset>
   </relatedDataSets>
   <investigators>
     <investigator>
       <name>
-        <title></title>
-        <first></first>
-        <middle></middle>
-        <last></last>
-        <suffix></suffix>
+        <title>string</title>
+        <first>string</first>
+        <middle>string</middle>
+        <last>string</last>
+        <suffix>string</suffix>
       </name>
-      <organization></organization>
+      <organization>string</organization>
       <contactInfo>
-        <address>
-          <deliveryPoint></deliveryPoint>
-          <city></city>
-          <administrativeArea></administrativeArea>
-          <postalCode></postalCode>
-          <country></country>
+        <address type="string">
+          <deliveryPoint index="0">string</deliveryPoint>
+          <deliveryPoint index="0">string</deliveryPoint>
+          <city>string</city>
+          <administrativeArea>string</administrativeArea>
+          <postalCode>string</postalCode>
+          <country>string</country>
         </address>
-        <phone></phone>
-        <email></email>
-        <link></link>
+        <phone>string</phone>
+        <email>string</email>
+        <link>http://www.oxygenxml.com/</link>
       </contactInfo>
-      <identifier></identifier>
-      <link></link>
+      <identifier type="string">string</identifier>
+      <identifier type="string">string</identifier>
+      <link>http://www.oxygenxml.com/</link>
+      <link>http://www.oxygenxml.com/</link>
+    </investigator>
+    <investigator>
+      <name>
+        <title>string</title>
+        <first>string</first>
+        <middle>string</middle>
+        <last>string</last>
+        <suffix>string</suffix>
+      </name>
+      <organization>string</organization>
+      <contactInfo>
+        <address type="string">
+          <deliveryPoint index="0">string</deliveryPoint>
+          <deliveryPoint index="0">string</deliveryPoint>
+          <city>string</city>
+          <administrativeArea>string</administrativeArea>
+          <postalCode>string</postalCode>
+          <country>string</country>
+        </address>
+        <phone>string</phone>
+        <email>string</email>
+        <link>http://www.oxygenxml.com/</link>
+      </contactInfo>
+      <identifier type="string">string</identifier>
+      <identifier type="string">string</identifier>
+      <link>http://www.oxygenxml.com/</link>
+      <link>http://www.oxygenxml.com/</link>
     </investigator>
   </investigators>
   <dataSubmitter>
     <name>
-      <title></title>
-      <first></first>
-      <middle></middle>
-      <last></last>
-      <suffix></suffix>
+      <title>string</title>
+      <first>string</first>
+      <middle>string</middle>
+      <last>string</last>
+      <suffix>string</suffix>
     </name>
-    <organization></organization>
+    <organization>string</organization>
     <contactInfo>
-      <address>
-        <deliveryPoint></deliveryPoint>
-        <city></city>
-        <administrativeArea></administrativeArea>
-        <postalCode></postalCode>
-        <country></country>
+      <address type="string">
+        <deliveryPoint index="0">string</deliveryPoint>
+        <deliveryPoint index="0">string</deliveryPoint>
+        <city>string</city>
+        <administrativeArea>string</administrativeArea>
+        <postalCode>string</postalCode>
+        <country>string</country>
       </address>
-      <phone></phone>
-      <email></email>
-      <link></link>
+      <phone>string</phone>
+      <email>string</email>
+      <link>http://www.oxygenxml.com/</link>
     </contactInfo>
-    <identifier></identifier>
-    <link></link>
+    <identifier type="string">string</identifier>
+    <identifier type="string">string</identifier>
+    <link>http://www.oxygenxml.com/</link>
+    <link>http://www.oxygenxml.com/</link>
   </dataSubmitter>
-  <title></title>
-  <abstract></abstract>
-  <purpose></purpose>
+  <title>string</title>
+  <abstract>string</abstract>
+  <useLimitation>string</useLimitation>
+  <dataUse>string</dataUse>
+  <purpose>string</purpose>
   <temporalExtents>
-    <startDate></startDate>
-    <endDate></endDate>
+    <startDate>2006-05-04</startDate>
+    <endDate>2006-05-04</endDate>
   </temporalExtents>
   <spatialExtents>
-    <westernBounds></westernBounds>
-    <easternBounds></easternBounds>
-    <northernBounds></northernBounds>
-    <southernBounds></southernBounds>
+    <westernBounds>0</westernBounds>
+    <easternBounds>0</easternBounds>
+    <northernBounds>0</northernBounds>
+    <southernBounds>0</southernBounds>
   </spatialExtents>
-  <spatialReference></spatialReference>
+  <spatialReference>string</spatialReference>
   <sampleCollectionRegions>
-    <region></region>
+    <region>string</region>
+    <region>string</region>
   </sampleCollectionRegions>
   <organismCollectionRegions>
-    <region></region>
+    <region>string</region>
+    <region>string</region>
   </organismCollectionRegions>
   <fundingInfo>
     <source>
-      <agency></agency>
-      <title></title>
-      <identifier></identifier>
+      <agency>string</agency>
+      <title>string</title>
+      <identifier type="string">string</identifier>
+    </source>
+    <source>
+      <agency>string</agency>
+      <title>string</title>
+      <identifier type="string">string</identifier>
     </source>
   </fundingInfo>
   <researchProjects>
-    <project></project>
+    <project>string</project>
+    <project>string</project>
   </researchProjects>
   <platforms>
     <platform>
-      <name></name>
-      <identifier></identifier>
-      <type></type>
-      <owner></owner>
-      <country></country>
+      <name>string</name>
+      <identifier type="string">string</identifier>
+      <type>string</type>
+      <owner>string</owner>
+      <country>string</country>
+    </platform>
+    <platform>
+      <name>string</name>
+      <identifier type="string">string</identifier>
+      <type>string</type>
+      <owner>string</owner>
+      <country>string</country>
     </platform>
   </platforms>
   <expocodes>
-    <expocode></expocode>
+    <expocode>string</expocode>
+    <expocode>string</expocode>
   </expocodes>
   <cruiseIds>
-    <cruiseId></cruiseId>
+    <cruiseId>string</cruiseId>
+    <cruiseId>string</cruiseId>
   </cruiseIds>
   <sections>
-    <section></section>
+    <section>string</section>
+    <section>string</section>
   </sections>
   <authors>
-    <author></author>
+    <author>string</author>
+    <author>string</author>
   </authors>
-  <citation></citation>
+  <citation>string</citation>
   <references>
-    <reference>
-      <name></name>
-      <link></link>
-    </reference>
+    <reference>string</reference>
+    <reference>string</reference>
   </references>
-  <supplementalInfo></supplementalInfo>
+  <supplementalInfo>string</supplementalInfo>
   <keywords>
-    <keyword></keyword>
+    <keyword>string</keyword>
+    <keyword>string</keyword>
   </keywords>
   <variables>
-    <variable name="" >
-      <!-- The variable name attribute is the canonical name of the measured item.
-           Ideally this would come from a controlled vocabulary. 
-      -->
-      <fullName></fullName>
-      <datasetVarName></datasetVarName>
-      <!-- datasetVarName is the name of the variable in the data file. 
-           This may or may not be an abbreviation.
-           For spread-sheet data files, this would be the column header.
-           In a netCDF file, this would be the variable name. 
-      -->
-      <variableType></variableType>
-      <!-- The variableType element identifies the source of the data values in this variable.
-           (Alternative names considered, if variableType is somehow inappropriate or confusing.)
-           
-           This replaces the <insitu> and <measured> tags.  All observations are measured,
-           so the formerly required <measured>measured</measured> element is (doubly) redundant.   
-           And a calculated value is just that.  Use of <measured>calculated</measured> with
-           any of the other choices would be incorrect.
-           
-           Accepted values include:
-             - in-situ observation
-                examples: CTD sensors, buoys, floats and similar, autonomous vehicles, etc.
-                          Anything were the value is measured directly within its environment
-             - discrete sample
-                examples: samples from Niskin bottles
-                         Any measurement that is taken where a sample has been taken and
-                         removed from the original environment to be analysed elsewhere.
-             - calculated
-                 examples: Any value that has been calculated and not measured
-                           including values that have been calculated from other measured values.
-                           This could include model output.
-             - manipuation condition
-                 examples: ? 
-             - response
-                 examples: ?
-             - others ?
-      -->
-      <observationType></observationType>
-      <!-- The observationType accepted values are as described in the current spreadsheet help document.
-           These include the CF DSG (Discrete Sampling Geometry) types, as well as others.
-           Ideally this would come from a controlled vocabulary, but given the somewhat
-           open-ended list of "others," I don't know if that is possible.
-      -->
-      <units></units>
-      <!-- variable units in a standard format, 
-           ideally using standard terms and abbreviations so it can be parsed programmatically.
-      -->
-      <missingValue></missingValue>
-      <uncertainty></uncertainty>
+    <ta name="string">
+      <fullName>string</fullName>
+      <datasetVarName>string</datasetVarName>
+      <variableType>string</variableType>
+      <observationType>string</observationType>
+      <units>string</units>
+      <missingValue>string</missingValue>
+      <uncertainty>string</uncertainty>
       <qcFlag>
-        <description></description>
-        <qcFlagVarName></qcFlagVarName>
+        <description>string</description>
+        <qcFlagVarName>string</qcFlagVarName>
       </qcFlag>
       <researcher>
-        <name></name>
-        <organization></organization>
+        <name>string</name>
+        <organization>string</organization>
       </researcher>
-      <methodReference></methodReference>
+      <methodReference>string</methodReference>
       <calculationMethod>
-        <description></description>
-        <parameter></parameter>
+        <description>string</description>
+        <parameter name="string">anySimpleType</parameter>
+        <parameter name="string">anySimpleType</parameter>
       </calculationMethod>
-      <manipulationMethod></manipulationMethod>
-      <samplingInstrument></samplingInstrument>
-      <analyzingInstrument></analyzingInstrument>
-      <detailedInfo></detailedInfo>
-      <fieldReplicateHandling></fieldReplicateHandling>
+      <manipulationMethod>string</manipulationMethod>
+      <samplingInstrument>string</samplingInstrument>
+      <analyzingInstrument>string</analyzingInstrument>
+      <detailedInfo>string</detailedInfo>
+      <fieldReplicateHandling>string</fieldReplicateHandling>
       <standardization>
-        <description></description>
-        <frequency></frequency>
-        <temperature></temperature>
+        <description>string</description>
+        <frequency>string</frequency>
+        <temperature>string</temperature>
         <standardGas>
-          <manufacturer></manufacturer>
-          <concentration></concentration>
-          <uncertainty></uncertainty>
+          <manufacturer>string</manufacturer>
+          <concentration>string</concentration>
+          <uncertainty>string</uncertainty>
+        </standardGas>
+        <standardGas>
+          <manufacturer>string</manufacturer>
+          <concentration>string</concentration>
+          <uncertainty>string</uncertainty>
         </standardGas>
         <crm>
-          <manufacturer></manufacturer>
-          <batch></batch>
-          <bottle></bottle>
+          <manufacturer>string</manufacturer>
+          <batch>string</batch>
+          <bottle>string</bottle>
         </crm>
       </standardization>
-    </variable>
+      <poison>
+        <name>string</name>
+        <description>string</description>
+        <volume>string</volume>
+        <correction>string</correction>
+      </poison>
+      <titrationType>string</titrationType>
+      <cellType>string</cellType>
+      <curveFitting>string</curveFitting>
+      <blankCorrection>string</blankCorrection>
+    </ta>
+    <dic name="string">
+      <fullName>string</fullName>
+      <datasetVarName>string</datasetVarName>
+      <variableType>string</variableType>
+      <observationType>string</observationType>
+      <units>string</units>
+      <missingValue>string</missingValue>
+      <uncertainty>string</uncertainty>
+      <qcFlag>
+        <description>string</description>
+        <qcFlagVarName>string</qcFlagVarName>
+      </qcFlag>
+      <researcher>
+        <name>string</name>
+        <organization>string</organization>
+      </researcher>
+      <methodReference>string</methodReference>
+      <calculationMethod>
+        <description>string</description>
+        <parameter name="string">anySimpleType</parameter>
+        <parameter name="string">anySimpleType</parameter>
+      </calculationMethod>
+      <manipulationMethod>string</manipulationMethod>
+      <samplingInstrument>string</samplingInstrument>
+      <analyzingInstrument>string</analyzingInstrument>
+      <detailedInfo>string</detailedInfo>
+      <fieldReplicateHandling>string</fieldReplicateHandling>
+      <standardization>
+        <description>string</description>
+        <frequency>string</frequency>
+        <temperature>string</temperature>
+        <standardGas>
+          <manufacturer>string</manufacturer>
+          <concentration>string</concentration>
+          <uncertainty>string</uncertainty>
+        </standardGas>
+        <standardGas>
+          <manufacturer>string</manufacturer>
+          <concentration>string</concentration>
+          <uncertainty>string</uncertainty>
+        </standardGas>
+        <crm>
+          <manufacturer>string</manufacturer>
+          <batch>string</batch>
+          <bottle>string</bottle>
+        </crm>
+      </standardization>
+      <poison>
+        <name>string</name>
+        <description>string</description>
+        <volume>string</volume>
+        <correction>string</correction>
+      </poison>
+    </dic>
   </variables>
-  <update></update>
+  <update>2006-05-04</update>
 </oads_metadata>
