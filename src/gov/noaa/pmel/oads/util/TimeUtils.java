@@ -10,10 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-import org.apache.log4j.Logger;
-
-import gov.noaa.pmel.tws.util.Logging;
-
 /**
  * @author kamb
  *
@@ -23,8 +19,6 @@ public class TimeUtils {
 	public class Times {
 		public static final long HOUR_ms = 60 * 60 * 1000;
 	}
-
-	static Logger logger = Logging.getLogger(TimeUtils.class);
 
 	public static TimeZone TZ_UTC = TimeZone.getTimeZone("UTC");
 	
@@ -187,7 +181,6 @@ public class TimeUtils {
 			sdf.setTimeZone(TZ_UTC);
 			try {
 				d = sdf.parse(timeString);
-				logger.debug("parsed using:"+format);
 				break;
 			} catch (Exception e) {
 				// ignore;
@@ -198,7 +191,6 @@ public class TimeUtils {
 		}
 		if ( d == null ) {
 			String s = "Unable to parse time string as UTC: " + timeString;
-			logger.warn(s);
 			throw new IllegalArgumentException(s);
 		}
 		return d;
@@ -308,10 +300,10 @@ public class TimeUtils {
 				}
 				date = sdf.parse(timeStr);
 			} catch (ParseException e) {
-				logger.info("parse error:"+timeStr+" as " + datePattern + ": " + e.getMessage());
+				System.err.println("parse error:"+timeStr+" as " + datePattern + ": " + e);
 			}
 		} else {
-			logger.info("No matching date pattern found for : " + timeStr);
+			System.err.println("No matching date pattern found for : " + timeStr);
 		}
 		return date;
 	}
