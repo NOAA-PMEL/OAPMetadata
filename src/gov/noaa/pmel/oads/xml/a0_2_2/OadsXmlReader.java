@@ -20,6 +20,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.stream.StreamSource;
 
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import gov.noaa.ncei.oads.xml.v_a0_2_2.OadsMetadataDocumentType;
@@ -42,6 +43,9 @@ public class OadsXmlReader {
     }
     public static OadsMetadataDocumentType read(InputStream inStream) throws JAXBException, Exception {
         return read(getDocBuilder().parse(inStream));
+    }
+    public static OadsMetadataDocumentType read(InputSource inSource) throws JAXBException, Exception {
+        return read(getDocBuilder().parse(inSource));
     }
     public static OadsMetadataDocumentType read(String xmlText) throws JAXBException, SAXException, IOException, Exception {
         return read(getDocBuilder().parse(new ByteArrayInputStream(xmlText.getBytes())));
