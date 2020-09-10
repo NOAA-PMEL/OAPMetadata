@@ -3,3 +3,6 @@ gen-classes
 build
 /test-classes/
 /classes/
+/classesX/
+/*.xml
+*.bak

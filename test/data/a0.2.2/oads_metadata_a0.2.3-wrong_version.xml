@@ -2,7 +2,7 @@
 <oads_metadata xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
  xmlns="http://ncei.noaa.gov/oads/v_a0_2_2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 file:/Users/kamb/workspace/oap_metadata/schema/oads_metadata.xsd" version="a0.2.2">
+ xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 file:/Users/kamb/workspace/oap_metadata/schema/oads_metadata.xsd" version="a0.2.34">
   <submissionDate>2006-05-04</submissionDate>
   <relatedDataSets>
     <dataset>
