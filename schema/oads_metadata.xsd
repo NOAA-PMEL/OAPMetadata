@@ -224,12 +224,12 @@
   <xs:complexType name="variable_collection">
     <xs:choice maxOccurs="unbounded">
       <xs:element name="variable" type="base_variable_type"/>
-      <!-- <xs:element name="measured" type="measured_variable"/> -->
+      <!-- <xs:element name="measured" type="measured_variable"/>
       <xs:element name="dic" type="dic_variable_type"/>
       <xs:element name="ta" type="ta_variable_type"/>
       <xs:element name="ph" type="ph_variable_type"/>
       <xs:element name="co2a" type="co2_autonomous"/>
-      <xs:element name="co2d" type="co2_discrete"/>
+      <xs:element name="co2d" type="co2_discrete"/>  -->
     </xs:choice>
   </xs:complexType>
 
