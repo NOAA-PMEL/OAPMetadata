@@ -74,7 +74,7 @@ public class BuilderTest {
             mdBuilder.addInstrument(instrument1);
             mdBuilder.addPerson(person);
             OadsMetadataDocumentType metadata = mdBuilder.build();
-            OadsXmlWriter.writeXml(metadata, new File("test/data/a0.4/ocads-sample.xml"));
+            OadsXmlWriter.writeXml(metadata, new File("builderTest-out.xml"));
         } catch (Exception ex) {
             ex.printStackTrace();
             // TODO: handle exception
