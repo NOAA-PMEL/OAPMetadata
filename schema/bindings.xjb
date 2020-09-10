@@ -11,6 +11,7 @@
 
   <!--   jaxb:extensionBindingPrefixes="xjc annox xew" -->
   <jaxb:globalBindings 
+    fixedAttributeAsConstantProperty="true"
     generateIsSetMethod="true" >
     <xjc:serializable uid="101"/>
     <jaxb:javaType name="java.util.Date" xmlType="xs:date" 
@@ -28,8 +29,8 @@
     </jaxb:schemaBindings>
     
     <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.Builder(toBuilder=true)</annox:annotate>
+        <!-- <annox:annotate>@lombok.ToString</annox:annotate> -->
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
         <ci:code>
@@ -154,7 +155,7 @@
     </jaxb:bindings>
     
     <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='variables']">
-      <xew:xew instantiate="none" />
+      <xew:xew instantiate="lazy" />
       <annox:annotate target="field">@lombok.Singular("addVariable")</annox:annotate>
     </jaxb:bindings>
     

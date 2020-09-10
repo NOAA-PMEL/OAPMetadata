@@ -81,6 +81,7 @@ public class OadsXmlReader {
             Unmarshaller unmarshaller = content.createUnmarshaller();
             StreamSource source = new StreamSource(xmlReader);
             Object obj =  unmarshaller.unmarshal(source, OadsMetadataDocumentType.class);
+            @SuppressWarnings("unchecked")
             JAXBElement<OadsMetadataDocumentType> jobj =  (JAXBElement<OadsMetadataDocumentType>)obj;
             Object maybe = jobj.getValue();
             OadsMetadataDocumentType metadata = (OadsMetadataDocumentType) maybe;

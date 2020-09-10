@@ -27,7 +27,7 @@ import gov.noaa.ncei.oads.xml.v_a0_2_2.TemporalExtentsType;
  */
 public class OadsXmlWriter {
 
-    public static String VERSION = "a0.2.2";
+//    public static String VERSION = "a0.2.2";
     public static String SCHEMA_NS = "http://ncei.noaa.gov/oads/v_a0_2_2";
     public static String SCHEMA_LOC = "https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd";
     
@@ -43,7 +43,7 @@ public class OadsXmlWriter {
         }
     }
     public static void outputXml(OadsMetadataDocumentType metadata, OutputStream os) throws JAXBException, IOException {
-        metadata.setVersion(VERSION);
+        // metadata.setVersion(VERSION);
         JAXBContext content =  JAXBContext.newInstance(OadsMetadataDocumentType.class);
         Marshaller marshaller = content.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
