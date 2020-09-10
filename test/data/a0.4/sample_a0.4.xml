@@ -203,7 +203,7 @@
          </correction>
       </poison>
     </variable>
-    <ta std_name="TA">
+    <variable xsi:type="ta_variable_type" std_name="TA">
       <fullName>Total alkalinity</fullName>
       <datasetVarName>alkali</datasetVarName>
       <variableType>In-situ observation</variableType>
@@ -260,7 +260,7 @@
       <titrationType>Gran titration</titrationType>
       <cellType>Open</cellType>
       <curveFitting>End point</curveFitting>
-    </ta>
+    </variable>
     <variable xsi:type="ph_variable_type" std_name="pH">
       <fullName>pH</fullName>
       <datasetVarName>PH_TOT</datasetVarName>
@@ -309,7 +309,7 @@
       <measurementTemperature>25 (minus plus 0.05) degrees Celsius </measurementTemperature>
       <phReportTemperature>25 degrees Celsius</phReportTemperature>
     </variable>
-    <co2d std_name="pCO2D">
+    <variable xsi:type="co2_discrete" std_name="pCO2D">
       <fullName>pCO2 (fCO2) discrete</fullName>
       <datasetVarName>fCO2</datasetVarName>
       <variableType>In-situ observation</variableType>
@@ -391,7 +391,7 @@
       <seawaterVolume>500 ml</seawaterVolume>
       <headspaceVolume>5 ml</headspaceVolume>
       <measurementTemperature>20 degrees Celsius</measurementTemperature>
-    </co2d>
+    </variable>
     <variable std_name="CTD_PRESSURE">
       <fullName>CTD pressure</fullName>
       <datasetVarName>CTDPRS</datasetVarName>
