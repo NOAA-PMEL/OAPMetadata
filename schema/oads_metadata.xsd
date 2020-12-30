@@ -35,7 +35,6 @@
       <xs:element name="title" type="xs:string"/>
       <xs:element name="abstract" type="xs:string"/>
       <xs:element name="useLimitation" type="xs:string" minOccurs="0"/>
-      <xs:element name="dataUse" type="xs:string" minOccurs="0"/>
       <xs:element name="purpose" type="xs:string"/>
       <xs:element name="temporalExtents" type="temporal_extents_type"/>
       <xs:element name="spatialExtents" type="spatial_extents_type"/>
