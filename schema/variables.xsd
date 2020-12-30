@@ -58,6 +58,14 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
         </xs:documentation>
       </xs:annotation>
     </xs:element> 
+    <xs:element name="measuredOrCalculated" type="xs:string" >
+      <xs:annotation>
+        <xs:documentation>
+          Whether this variable was measured or calculated.  Allowed values are "Measured" or "Calculated".
+          However, actual values in older XML may be different.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element> 
     <xs:element name="observationType" type="xs:string" >
       <xs:annotation>
         <xs:documentation>
