@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  targetNamespace="http://ncei.noaa.gov/oads/v_a0_4"
-  xmlns="http://ncei.noaa.gov/oads/v_a0_4"
-  elementFormDefault="qualified">
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/&VERSION;"
+  xmlns="http://ncei.noaa.gov/oads/&VERSION;" elementFormDefault="qualified">
   <xs:complexType name="ordered_string_element_type">
     <xs:simpleContent>
       <xs:extension base="xs:string">

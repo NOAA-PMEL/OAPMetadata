@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_4"
-  xmlns="http://ncei.noaa.gov/oads/v_a0_4" elementFormDefault="qualified"
-  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/&VERSION;"
+  xmlns="http://ncei.noaa.gov/oads/&VERSION;" elementFormDefault="qualified"  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:annox="http://annox.dev.java.net"
   xmlns:xew="http://github.com/jaxb-xew-plugin"
