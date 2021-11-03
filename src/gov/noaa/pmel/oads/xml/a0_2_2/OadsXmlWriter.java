@@ -14,12 +14,12 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-import gov.noaa.ncei.oads.xml.v_a0_2_2.OadsMetadataDocumentType;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.ObjectFactory;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.PersonContactInfoType;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.PersonNameType;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.PersonType;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.TemporalExtentsType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.OadsMetadataDocumentType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.ObjectFactory;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.PersonContactInfoType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.PersonNameType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.PersonType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.TemporalExtentsType;
 
 /**
  * @author kamb
@@ -28,7 +28,7 @@ import gov.noaa.ncei.oads.xml.v_a0_2_2.TemporalExtentsType;
 public class OadsXmlWriter {
 
 //    public static String VERSION = "a0.2.2";
-    public static String SCHEMA_NS = "http://ncei.noaa.gov/oads/v_a0_2_2";
+    public static String SCHEMA_NS = "http://ncei.noaa.gov/oads/v_a0_2_2s";
     public static String SCHEMA_LOC = "https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd";
     
     public static String getXml(OadsMetadataDocumentType metadata) throws JAXBException, IOException {

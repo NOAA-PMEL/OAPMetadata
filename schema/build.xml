@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="oads_metadata" default="gen-src" >
-    <property name="version" value="a0.2.2" />
+    <property name="version" value="a0.2.2s" />
 	<property name="_basedir" value=".." />
 	<property name="gen-src-root" value="${_basedir}/gen-src" />
 	<property name="gen-src-dir" value="${gen-src-root}/${version}" />
@@ -34,16 +34,19 @@
 					<include name="stax-api-*.jar"/>
 					<include name="jsr173_api-*.jar"/>
 
-					<include name="jaxb2-basics-jaxb-xjc-*.jar"/>
-					<include name="jaxb-xjc-*.jar"/>
 					<include name="jaxb2-basics-ant-*.jar"/>
+					<include name="jaxb-xjc-*.jar"/>
+					<!--
+					<include name="jaxb2-basics-jaxb-xjc-*.jar"/>
+					<include name="jaxb2-basics-ant-*.jar"/>
+					-->
 				</fileset>
 			</classpath>
 		</taskdef>
 		<delete dir="${gen-src-dir}" />
 		<mkdir dir="${gen-src-dir}" />
 		<xjc destdir="${gen-src-dir}" extension="true" failonerror="false">
-			<arg line=" -Xannotate -Xxew -Xinject-code"/>
+			<arg line=" -Xannotate -Xxew -Xinject-code -Xinheritance "/>
 			<binding dir="${basedir}">
 			 	<include name="**/*.xjb"/>
 			</binding>
@@ -75,6 +78,7 @@
 		</echo>
 	</target>
 	<target name="compile" description="Compile src and generated classes."> <!-- depends="generate-sources"  -->
+		<delete dir="${target.classes}"/>
 		<mkdir dir="${target.classes}"/>
 		<javac
 			srcdir="${gen-src-dir}:${_basedir}/src"

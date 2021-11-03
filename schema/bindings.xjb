@@ -20,7 +20,7 @@
 
   <jaxb:bindings schemaLocation="oads_metadata.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="gov.noaa.ncei.oads.xml.v_a0_2_2"/>
+      <jaxb:package name="gov.noaa.ncei.oads.xml.v_a0_2_2s"/>
       <!--
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="_"/>
@@ -71,6 +71,12 @@
       <annox:annotate target="field">@lombok.Singular("addInvestigator")</annox:annotate>
     </jaxb:bindings>
     
+    <jaxb:bindings node="xs:complexType[@name='geospatial_extents_type']">
+        <annox:annotate>@lombok.Builder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='temporal_extents_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
@@ -93,6 +99,13 @@
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
+    <jaxb:bindings node="xs:complexType[@name='spatial_location_type']">
+        <annox:annotate>@lombok.Builder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    
     <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='sampleCollectionRegions']">
       <xew:xew instantiate="none" />
       <annox:annotate target="field">@lombok.Singular("addSampleCollectionRegion")</annox:annotate>

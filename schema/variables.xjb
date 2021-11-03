@@ -3,6 +3,7 @@
   xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd"
+  xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:annox="http://annox.dev.java.net"
   xmlns:xew="http://github.com/jaxb-xew-plugin"
@@ -53,14 +54,20 @@
       <annox:annotate target="field">@lombok.Singular("addStandardGas")</annox:annotate>
     </jaxb:bindings>
 
-    <jaxb:bindings node="xs:complexType[@name='gas_detector_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="xs:complexType[@name='equilibrator_sensor_type']">
+      <jaxb:bindings node="xs:complexType[@name='gas_detector_type']">
+          <annox:annotate>@lombok.Builder</annox:annotate>
+          <annox:annotate>@lombok.ToString</annox:annotate>
+          <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+          <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      </jaxb:bindings>
+      <jaxb:bindings node="xs:complexType[@name='instrument_type']">
+          <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
+          <annox:annotate>@lombok.ToString</annox:annotate>
+          <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+          <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      </jaxb:bindings>
+      
+    <jaxb:bindings node="xs:complexType[@name='equilibrator_measurement_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
@@ -73,6 +80,7 @@
     </jaxb:bindings>
 
     <jaxb:bindings node="xs:complexType[@name='base_variable_type']">
+        <inheritance:implements>gov.noaa.pmel.oads.xml.a0_2_2.StandardizedVariable</inheritance:implements>
         <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
@@ -142,7 +150,14 @@
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
-    <jaxb:bindings node="xs:complexType[@name='co2_discrete']">
+      <jaxb:bindings node="xs:complexType[@name='co2_socat']">
+          <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
+          <annox:annotate>@lombok.ToString</annox:annotate>
+          <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+          <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      </jaxb:bindings>
+      
+      <jaxb:bindings node="xs:complexType[@name='co2_discrete']">
         <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>

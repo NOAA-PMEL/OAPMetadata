@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_2_2"
-  xmlns="http://ncei.noaa.gov/oads/v_a0_2_2" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_2_2s"
+  xmlns="http://ncei.noaa.gov/oads/v_a0_2_2s" elementFormDefault="qualified"
   xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:annox="http://annox.dev.java.net"
@@ -16,6 +16,7 @@
 
   <xs:complexType name="oads_metadata_document_type">
     <xs:sequence>
+      <xs:element name="metadataRecordCreationDate" type="xs:date" minOccurs="0"/>
       <xs:element name="submissionDate" type="xs:date" minOccurs="0"/>
       <xs:element name="relatedDataSets" minOccurs="0">
         <xs:complexType>
@@ -24,6 +25,9 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="metadataURL" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="datasetURL" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="datasetDOI" type="xs:anyURI" minOccurs="0" />
       <xs:element name="investigators">
         <xs:complexType>
           <xs:sequence>
@@ -36,8 +40,9 @@
       <xs:element name="abstract" type="xs:string"/>
       <xs:element name="useLimitation" type="xs:string" minOccurs="0"/>
       <xs:element name="purpose" type="xs:string"/>
+      <xs:element name="methods" type="xs:string" minOccurs="0"/>
       <xs:element name="temporalExtents" type="temporal_extents_type"/>
-      <xs:element name="spatialExtents" type="spatial_extents_type"/>
+      <xs:element name="spatialExtents" type="geospatial_extents_type"/>
       <xs:element name="spatialReference" type="xs:string" minOccurs="0"/>
       <xs:element name="sampleCollectionRegions" minOccurs="0">
         <xs:complexType>
@@ -86,7 +91,7 @@
       <xs:element name="cruiseIds" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="cruiseId" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="cruiseId" type="typed_identifier_type" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -134,8 +139,9 @@
   <!-- basic elements -->
   <xs:complexType name="related_datasets_type">
     <xs:sequence>
-      <xs:element name="dataset" type="xs:string"/>
-      <xs:element name="link" type="xs:anyURI"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="xs:anyURI" minOccurs="0"/>
+      <xs:element name="accession" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="temporal_extents_type">
@@ -146,6 +152,12 @@
       <!-- format YYYY-MM-DD -->
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="spatial_location_type" > <!-- jaxb:class="SpatialLocationType" -->
+    <xs:sequence>
+        <xs:element name="latitude" type="xs:decimal"/>
+        <xs:element name="longitude" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="spatial_extents_type">
     <xs:sequence>
       <xs:element name="westernBounds" type="xs:decimal"/>
@@ -153,6 +165,12 @@
       <xs:element name="northernBounds" type="xs:decimal"/>
       <xs:element name="southernBounds" type="xs:decimal"/>
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="geospatial_extents_type">
+    <xs:choice>
+        <xs:element name="location" type="spatial_location_type"/>
+        <xs:element name="bounds" type="spatial_extents_type"/>
+    </xs:choice>
   </xs:complexType>
   <xs:complexType name="altitude_range_type">
     <xs:sequence>

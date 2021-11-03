@@ -23,7 +23,7 @@ import javax.xml.transform.stream.StreamSource;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import gov.noaa.ncei.oads.xml.v_a0_2_2.OadsMetadataDocumentType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.OadsMetadataDocumentType;
 
 /**
  * @author kamb

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_2_2"
-	xmlns="http://ncei.noaa.gov/oads/v_a0_2_2" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/v_a0_2_2s"
+	xmlns="http://ncei.noaa.gov/oads/v_a0_2_2s" elementFormDefault="qualified"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
 >
 
@@ -81,11 +81,13 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
     <xs:element name="qcFlag" type="qc_flag_info_type" minOccurs="0" />
     <xs:element name="researcher" type="person_reference_type" /> <!-- ??? multiple ? -->
     <xs:element name="methodReference" type="xs:string" minOccurs="0" /> <!-- ??? multiple ? -->
+    <xs:element name="variationsFromMethod" type="xs:string" minOccurs="0" />
     <xs:element name="calculationMethod" type="calculation_method_type" minOccurs="0"/>
     <xs:element name="manipulationMethod" type="xs:string" minOccurs="0" />   <!-- XXX only in manipulation type variables ? -->
     <xs:element name="samplingInstrument" type="xs:string" minOccurs="0" /> 
+    <xs:element name="detailedSamplingInfo" type="xs:string" minOccurs="0" />   <!-- XXX methodDescription -->
     <xs:element name="analyzingInstrument" type="xs:string" minOccurs="0" />
-    <xs:element name="detailedInfo" type="xs:string" minOccurs="0" />   <!-- XXX methodDescription -->
+    <xs:element name="detailedAnalyzingInfo" type="xs:string" minOccurs="0" />   <!-- XXX methodDescription -->
     <xs:element name="fieldReplicateHandling" type="xs:string" minOccurs="0" /> 
     <xs:element name="standardization" type="standardization_type" minOccurs="0" /> 
     </xs:sequence>
@@ -135,6 +137,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
           <xs:element name="measurementTemperature" type="xs:string" minOccurs="0" />
           <xs:element name="temperatureCorrectionMethod" type="xs:string" minOccurs="0" />
           <xs:element name="phReportTemperature" type="xs:string" />
+          <xs:element name="typeOfDye" type="xs:string" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -147,6 +150,8 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
           <xs:element name="gasDetector" type="gas_detector_type"/>
           <xs:element name="waterVaporCorrection" type="xs:string" />
           <xs:element name="temperatureCorrectionMethod" type="xs:string" />
+          <xs:element name="calculationMethodFor_pCO2" type="xs:string" minOccurs="0"/>
+          <xs:element name="calculationMethodFor_fCO2" type="xs:string" minOccurs="0"/>
           <xs:element name="co2ReportTemperature" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -160,6 +165,20 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
           <xs:element name="locationSeawaterIntake" type="xs:string" minOccurs="0" />
           <xs:element name="depthSeawaterIntake" type="xs:string" minOccurs="0" />
           <xs:element name="equilibrator" minOccurs="0" type="equilibrator_type" />
+          <!-- In co2_socat
+          <xs:element name="totalPressureMeasurement" type="equilibrator_measurement_type" minOccurs="0" />
+          -->
+          <xs:element name="co2GasDryingMethod" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+ 
+  <xs:complexType name="co2_socat">
+    <xs:complexContent>
+      <xs:extension base="co2_autonomous">
+        <xs:sequence>
+          <xs:element name="totalMeasurementPressure" type="equilibrator_measurement_type" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -193,8 +212,17 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
 
   <xs:complexType name="qc_flag_info_type">
     <xs:sequence>
-      <xs:element name="description" type="xs:string" />
+    <!-- Do we need to have both? -->
+      <xs:element name="scheme" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
       <xs:element name="qcFlagVarName" type="xs:string" minOccurs="0"/> <!-- XXX ??? if missing, assume datasetVarName + "_qc" -->
+    </xs:sequence>
+  </xs:complexType>
+ 
+  <xs:complexType name="calibration_type" >
+    <xs:sequence>
+      <xs:element name="method" type="xs:string" />
+      <xs:element name="frequency" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   
@@ -205,28 +233,28 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:element name="vented" type="xs:string" minOccurs="0" />
       <xs:element name="waterFlowRate" type="xs:string" minOccurs="0" />
       <xs:element name="gasFlowRate" type="xs:string" minOccurs="0" />
-      <xs:element name="temperatureMeasurement" type="equilibrator_sensor_type" />
-      <xs:element name="pressureMeasurement" type="equilibrator_sensor_type" />
-      <xs:element name="dryMethod" type="xs:string" minOccurs="0" />  <!-- atmospheric -->
+      <xs:element name="temperatureMeasurement" type="equilibrator_measurement_type"  minOccurs="0" />
+      <xs:element name="pressureMeasurement" type="equilibrator_measurement_type"  minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="equilibrator_sensor_type">
+      
+  <xs:complexType name="equilibrator_measurement_type">
     <xs:sequence>
       <xs:element name="method" type="xs:string" />
-      <xs:element name="sensor" >
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="location" type="xs:string" />
-            <xs:element name="manufacturer" type="xs:string" />
-            <xs:element name="model" type="xs:string" />
-            <xs:element name="accuracy" type="xs:string" />
-            <xs:element name="precision" type="xs:string" />
-            <xs:element name="calibration" type="xs:string" />
-            <xs:element name="warming" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element name="sensor" type="instrument_type" minOccurs="0"/>
+      <xs:element name="sensorLocation" type="xs:string" minOccurs="0"/>
       <xs:element name="comments" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="instrument_type">
+    <xs:sequence>
+      <xs:element name="manufacturer" type="xs:string" />
+      <xs:element name="model" type="xs:string" />
+      <xs:element name="accuracy" type="xs:string" />
+      <xs:element name="precision" type="xs:string" />
+      <xs:element name="uncertainty" type="xs:string" />
+      <xs:element name="calibration" type="calibration_type" />  
     </xs:sequence>
   </xs:complexType>
   
@@ -243,17 +271,29 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
     <xs:sequence>
       <xs:element name="description" type="xs:string" />
       <xs:element name="frequency" type="xs:string" />
-      <xs:element name="temperature" type="xs:string" minOccurs="0" /> <!-- ph only -->
+      <xs:element name="temperature" type="xs:string" minOccurs="0" /> 
       <xs:choice>
         <xs:sequence>
-          <xs:element name="standardGas" type="standard_gas_type" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="crm" type="crm_type" minOccurs="0" />
+          <xs:element name="standardGas" type="standard_gas_type" minOccurs="0" maxOccurs="unbounded" /> <!-- CO2 variables -->
+          <xs:element name="crm" type="crm_type" minOccurs="0" /> <!-- DIC / TA -->
         </xs:sequence>
-        <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/> <!-- ph only -->
       </xs:choice>
+      <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/> <!-- ph only -->          
     </xs:sequence>
   </xs:complexType>
   
+<!-- added too much unnecessary complexity
+  <xs:complexType name="ph_standardization_type">
+    <xs:complexContent>
+      <xs:extension base="standardization_type">
+        <xs:sequence>
+          <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+--> 
+
   <xs:complexType name="crm_type">
     <xs:sequence>
       <xs:element name="manufacturer" type="xs:string" />
@@ -267,12 +307,13 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:element name="manufacturer" type="xs:string" minOccurs="0" />
       <xs:element name="concentration" type="xs:string" minOccurs="0" />
       <xs:element name="uncertainty" type="xs:string" minOccurs="0" />
+      <xs:element name="traceabilityToWmoStandards" type="xs:string" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="poison_type">
     <xs:sequence>
       <xs:element name="name" type="xs:string" />
-      <xs:element name="description" type="xs:string" minOccurs="0" />
+    <!--  <xs:element name="description" type="xs:string" minOccurs="0" />  -->
       <xs:element name="volume" type="xs:string" minOccurs="0" /> <!-- value_with_unit_type -->
       <xs:element name="correction" type="xs:string" minOccurs="0" />
     </xs:sequence>

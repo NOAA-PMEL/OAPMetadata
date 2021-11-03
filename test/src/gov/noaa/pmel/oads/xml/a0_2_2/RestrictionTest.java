@@ -5,9 +5,9 @@ package gov.noaa.pmel.oads.xml.a0_2_2;
 
 import java.io.File;
 
-import gov.noaa.ncei.oads.xml.v_a0_2_2.Co2Discrete;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.DicVariableType;
-import gov.noaa.ncei.oads.xml.v_a0_2_2.OadsMetadataDocumentType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.Co2Discrete;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.DicVariableType;
+import gov.noaa.ncei.oads.xml.v_a0_2_2s.OadsMetadataDocumentType;
 import gov.noaa.pmel.oads.xml.a0_2_2.OadsXmlWriter;
 
 /**
