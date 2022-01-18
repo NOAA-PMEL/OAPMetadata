@@ -36,7 +36,7 @@
         <ci:code>
         <![CDATA[
     public void clearEmptyCollections() {
-        System.out.println("Clearing empty collections.");
+        /* System.out.println("Clearing empty collections."); */
         if ( relatedDataSets != null && relatedDataSets.isEmpty()) { relatedDataSets = null; }
 		if ( investigators != null && investigators.isEmpty()) { investigators = null; }
 		if ( sampleCollectionRegions != null && sampleCollectionRegions.isEmpty()) { sampleCollectionRegions = null; }
