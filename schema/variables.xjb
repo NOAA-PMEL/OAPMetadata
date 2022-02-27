@@ -54,24 +54,31 @@
       <annox:annotate target="field">@lombok.Singular("addStandardGas")</annox:annotate>
     </jaxb:bindings>
 
-      <jaxb:bindings node="xs:complexType[@name='gas_detector_type']">
-          <annox:annotate>@lombok.Builder</annox:annotate>
-          <annox:annotate>@lombok.ToString</annox:annotate>
-          <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-          <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
-      </jaxb:bindings>
-      <jaxb:bindings node="xs:complexType[@name='instrument_type']">
-          <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
-          <annox:annotate>@lombok.ToString</annox:annotate>
-          <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-          <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
-      </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='gas_detector_type']">
+        <annox:annotate>@lombok.Builder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='instrument_type']">
+        <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='calibration_type']">
+        <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
+        <annox:annotate>@lombok.ToString</annox:annotate>
+        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
       
     <jaxb:bindings node="xs:complexType[@name='equilibrator_measurement_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+        
     </jaxb:bindings><jaxb:bindings node="xs:complexType[@name='standard_gas_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>

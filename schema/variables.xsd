@@ -243,6 +243,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:element name="method" type="xs:string" />
       <xs:element name="sensor" type="instrument_type" minOccurs="0"/>
       <xs:element name="sensorLocation" type="xs:string" minOccurs="0"/>
+      <xs:element name="uncertainty" type="xs:string" />
       <xs:element name="comments" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -253,8 +254,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:element name="model" type="xs:string" />
       <xs:element name="accuracy" type="xs:string" />
       <xs:element name="precision" type="xs:string" />
-      <xs:element name="uncertainty" type="xs:string" />
-      <xs:element name="calibration" type="calibration_type" />  
+      <xs:element name="calibration" type="xs:string" /> <!--  type="calibration_type" />  -->
     </xs:sequence>
   </xs:complexType>
   
