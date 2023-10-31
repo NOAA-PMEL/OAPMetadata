@@ -29,7 +29,7 @@ public class OadsXmlWriter {
 
 //    public static String VERSION = "a0.2.2";
     public static String SCHEMA_NS = "http://ncei.noaa.gov/oads/v_a0_2_2s";
-    public static String SCHEMA_LOC = "https://www.pmel.noaa.gov/sdig/oap/a0.2.2/oads_metadata_a0.2.2.xsd";
+    public static String SCHEMA_LOC = "https://www.pmel.noaa.gov/sdig/oap/a0.2.2s/oads_metadata_a0.2.2s.xsd";   // <<<<<=======
     
     public static String getXml(OadsMetadataDocumentType metadata) throws JAXBException, IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -48,6 +48,7 @@ public class OadsXmlWriter {
         Marshaller marshaller = content.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, SCHEMA_NS + " " + SCHEMA_LOC );
+        marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
         marshaller.setListener(new EmptyCollectionMarshaller());
         marshaller.marshal(new ObjectFactory().createOadsMetadata(metadata), os);
         os.flush();
