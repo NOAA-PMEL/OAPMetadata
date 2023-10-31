@@ -39,7 +39,7 @@
       <xs:element name="title" type="xs:string"/>
       <xs:element name="abstract" type="xs:string"/>
       <xs:element name="useLimitation" type="xs:string" minOccurs="0"/>
-      <xs:element name="purpose" type="xs:string"/>
+      <xs:element name="purpose" type="xs:string" minOccurs="0"/>
       <xs:element name="methods" type="xs:string" minOccurs="0"/>
       <xs:element name="temporalExtents" type="temporal_extents_type"/>
       <xs:element name="spatialExtents" type="geospatial_extents_type"/>
@@ -88,11 +88,13 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="cruiseIds" minOccurs="0">
+      <xs:element name="cruiseIds" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="cruiseId" type="typed_identifier_type" maxOccurs="unbounded"/>
-          </xs:sequence>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" type="typed_platform_identifier_type" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
         </xs:complexType>
       </xs:element>
       <xs:element name="sections" minOccurs="0">
@@ -189,7 +191,7 @@
       <xs:element name="agency" type="xs:string"/>
       <!-- and/or org-ref -->
       <xs:element name="title" type="xs:string"/>
-      <xs:element name="identifier" type="typed_identifier_type"/>
+      <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
   <!--
@@ -204,7 +206,15 @@
   <xs:complexType name="platform_type">
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
-      <xs:element name="identifier" type="typed_identifier_type"/>
+      <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" type="typed_platform_identifier_type" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="type" type="xs:string" /> <!-- type_platform_type"/> --> <!-- ??? controlled vocab -->
       <xs:element name="owner" type="xs:string"/> <!-- and/or org-ref -->
       <xs:element name="country" type="xs:string"/> <!-- controlled vocab -->
