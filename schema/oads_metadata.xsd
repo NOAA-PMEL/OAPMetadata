@@ -131,7 +131,7 @@
       <xs:element name="variables" type="variable_collection"/>
       <xs:element name="update" type="xs:date" minOccurs="0"/>
     </xs:sequence>
-    <xs:attribute name="version" type="xs:string" use="required" fixed="a0.2.2"/>
+    <xs:attribute name="version" type="xs:string" use="required" fixed="a0.2.2s"/>
   </xs:complexType>
 
   <!-- END of 1st level schema -->

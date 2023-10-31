@@ -6,6 +6,7 @@
   xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:annox="http://annox.dev.java.net"
+  xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
   xmlns:xew="http://github.com/jaxb-xew-plugin"
   jaxb:version="2.1">
 
@@ -33,6 +34,7 @@
         <!-- <annox:annotate>@lombok.ToString</annox:annotate> -->
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+        <!-- <inheritance:implements>gov.noaa.ncei.oads.xml.OadsMetadataDocument</inheritance:implements> -->
         <ci:code>
         <![CDATA[
     public void clearEmptyCollections() {

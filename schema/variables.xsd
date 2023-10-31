@@ -97,6 +97,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
       <xs:group ref="base_variable_elements"/>
     </xs:sequence>
     <xs:attribute name="name" type="xs:string" use="required">
+      <!-- Ideally, this would be a ControlledVocabulary element  -->
       <xs:annotation>
         <xs:documentation>
           This is the canonical name of the variable.  Ideally, it should come from a well-known dictionary.
@@ -304,6 +305,7 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
 
 <xs:complexType name="standard_gas_type">
   <xs:sequence>
+    <xs:element name="id" type="xs:string" minOccurs="0" />
     <xs:element name="manufacturer" type="xs:string" minOccurs="0" />
     <xs:element name="concentration" type="xs:string" minOccurs="0" />
     <xs:element name="uncertainty" type="xs:string" minOccurs="0" />
