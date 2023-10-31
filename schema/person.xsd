@@ -16,9 +16,25 @@
     <xs:sequence>
       <xs:element name="name" type="person_name_type" />
       <xs:element name="organization" type="xs:string" />
-      <xs:element name="organizationID" type="typed_identifier_type" />
+      <xs:element name="organizationID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" type="typed_person_identifier_type" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="contactInfo" type="person_contact_info_type" />
-      <xs:element name="identifier" type="typed_identifier_type" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" type="typed_person_identifier_type" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
