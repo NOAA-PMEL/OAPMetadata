@@ -245,16 +245,16 @@ For experimental data, this could be: laboratory experiment, pelagic mesocosm, b
     <xs:element name="sensor" type="instrument_type" minOccurs="0"/>
     <xs:element name="sensorLocation" type="xs:string" minOccurs="0"/>
     <xs:element name="uncertainty" type="xs:string" />
-    <xs:element name="comments" type="xs:string" />
+    <xs:element name="comments" type="xs:string" minOccurs="0" />
   </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="instrument_type">
   <xs:sequence>
     <xs:element name="manufacturer" type="xs:string" />
-    <xs:element name="model" type="xs:string" />
-    <xs:element name="accuracy" type="xs:string" />
-    <xs:element name="precision" type="xs:string" />
+    <xs:element name="model" type="xs:string" minOccurs="0" />
+    <xs:element name="accuracy" type="xs:string" minOccurs="0" />
+    <xs:element name="precision" type="xs:string" minOccurs="0" />
     <xs:element name="calibration" type="xs:string" /> <!--  type="calibration_type" />  -->
   </xs:sequence>
 </xs:complexType>
