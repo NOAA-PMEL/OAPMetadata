@@ -11,12 +11,43 @@
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   
   <xs:include schemaLocation="commonTypes.xsd" />
-    
+  
+  <xs:simpleType name="person_identifier_types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ORCID"/>
+      <xs:enumeration value="ResearcherID"/>
+      <xs:enumeration value="OceanExpert"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="organization_identifier_types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ROR"/>
+      <xs:enumeration value="OceanExpert"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="person_identifier_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="person_identifier_types"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="organization_identifier_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="organization_identifier_types" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
   <xs:complexType name="person_type">
     <xs:sequence>
       <xs:element name="name" type="person_name_type" />
       <xs:element name="organization" type="xs:string" />
-      <xs:element name="organizationID" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="organizationID" minOccurs="0" type="organization_identifier_type" /> <!--
         <xs:complexType>
           <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -25,8 +56,9 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
+      -->
       <xs:element name="contactInfo" type="person_contact_info_type" />
-      <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="identifier" minOccurs="0" type="person_identifier_type"  maxOccurs="unbounded"/> <!--
         <xs:complexType>
           <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -35,6 +67,7 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
+      -->
       <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>

@@ -75,6 +75,8 @@
 ****
 **** You can (most likely) ignore the xjc exception.  The source was (most likely) generated.
 ****
+**** You can NOT ignore ERRORs!
+****
 		</echo>
 	</target>
 	<target name="compile" description="Compile src and generated classes."> <!-- depends="generate-sources"  -->

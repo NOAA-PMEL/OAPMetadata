@@ -81,20 +81,21 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="expocodes" minOccurs="0">
+      <!-- it seems sometimes metadata is reused for multiple expocodes 
+           I know that's not the SOCAT way, but we'll support it for now 
+           so things don't blow up -->
+      <xs:element name="expocodes" minOccurs="0"> 
         <xs:complexType>
           <xs:sequence>
             <xs:element name="expocode" type="xs:string" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="cruiseIds" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="cruiseIds" minOccurs="0">
         <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="xs:string">
-              <xs:attribute name="type" type="typed_platform_identifier_type" use="required" />
-            </xs:extension>
-          </xs:simpleContent>
+          <xs:sequence>
+            <xs:element name="cruiseId" type="platform_identifier_type" maxOccurs="unbounded"/> <!-- are cruise ids same types as platforms? -->
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="sections" minOccurs="0">
@@ -203,18 +204,26 @@
     </xs:sequence>
   </xs:complexType>
   -->
+  <xs:simpleType name="platform_identifier_types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ICES"/>
+      <xs:enumeration value="IMO"/>
+      <xs:enumeration value="WMO"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="platform_identifier_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="platform_identifier_types"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
   <xs:complexType name="platform_type">
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
-      <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="xs:string">
-              <xs:attribute name="type" type="typed_platform_identifier_type" use="required" />
-            </xs:extension>
-          </xs:simpleContent>
-        </xs:complexType>
-      </xs:element>
+      <xs:element name="identifier" minOccurs="0" type="platform_identifier_type"/> 
       <xs:element name="type" type="xs:string" /> <!-- type_platform_type"/> --> <!-- ??? controlled vocab -->
       <xs:element name="owner" type="xs:string"/> <!-- and/or org-ref -->
       <xs:element name="country" type="xs:string"/> <!-- controlled vocab -->

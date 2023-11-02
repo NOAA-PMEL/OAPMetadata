@@ -28,18 +28,4 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="typed_person_identifier_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ORCID"/>
-      <xs:enumeration value="ResearcherID"/>
-      <xs:enumeration value="OceanExpert"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="typed_platform_identifier_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ICES"/>
-      <xs:enumeration value="IMO"/>
-      <xs:enumeration value="WMO"/>
-    </xs:restriction>
-  </xs:simpleType>
 </xs:schema>

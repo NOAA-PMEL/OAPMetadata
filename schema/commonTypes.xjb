@@ -11,12 +11,6 @@
   <!-- Application of annotations to selected classes within schemas -->
   <jaxb:bindings schemaLocation="commonTypes.xsd" node="/xs:schema">
 
-    <jaxb:bindings node="xs:complexType[@name='typed_identifier_type']">
-        <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-    </jaxb:bindings>
-
     <jaxb:bindings node="xs:complexType[@name='value_with_unit_type']">
         <annox:annotate>@lombok.experimental.SuperBuilder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
