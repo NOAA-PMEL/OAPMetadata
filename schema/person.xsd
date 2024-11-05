@@ -15,7 +15,7 @@
   <xs:complexType name="person_type">
     <xs:sequence>
       <xs:element name="name" type="person_name_type" />
-      <xs:element name="organization" type="xs:string" />
+      <xs:element name="organization" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="contactInfo" type="person_contact_info_type" />
       <xs:element name="identifier" type="typed_identifier_type" minOccurs="0" maxOccurs="unbounded" nillable="true" />
       <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />

@@ -8,14 +8,15 @@
   xmlns:annox="http://annox.dev.java.net"
   xmlns:xew="http://github.com/jaxb-xew-plugin"
   jaxb:version="2.1">
+  <!-- xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd" -->
 
   <!--   jaxb:extensionBindingPrefixes="xjc annox xew" -->
   <jaxb:globalBindings 
     fixedAttributeAsConstantProperty="true"
     generateIsSetMethod="true" >
-    <xjc:serializable uid="101"/>
     <jaxb:javaType name="java.util.Date" xmlType="xs:date" 
         parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTC" printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTC"/>
+    <xjc:serializable uid="101"/>
   </jaxb:globalBindings>
 
   <jaxb:bindings schemaLocation="oads_metadata.xsd" node="/xs:schema">
@@ -195,7 +196,14 @@
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-
+    
+    <jaxb:bindings node="xs:complexType[@name='data_license_type']">
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+    </jaxb:bindings>
+    
     <jaxb:bindings node="xs:complexType[@name='variable_collection']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<v_:oads_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ xmlns:annox="http://annox.dev.java.net"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+ xmlns:xew="http://github.com/jaxb-xew-plugin"
+ xmlns:v_="http://ncei.noaa.gov/oads/v_a0_2_2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://ncei.noaa.gov/oads/v_a0_2_2 file:/Users/kamb/workspace/oap_metadata_v0.2.2/schema/oads_metadata.xsd" version="a0.2.2">
+    <v_:submissionDate>2006-05-04</v_:submissionDate>
+    <v_:relatedDataSets>
+        <v_:dataset>
+            <v_:dataset>dataset0</v_:dataset>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+        </v_:dataset>
+        <v_:dataset>
+            <v_:dataset>dataset1</v_:dataset>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+        </v_:dataset>
+    </v_:relatedDataSets>
+    <v_:dataLicense url="http://www.oxygenxml.com/">dataLicense0</v_:dataLicense>
+    <v_:investigators>
+        <v_:investigator>
+            <v_:name>
+                <v_:title>title0</v_:title>
+                <v_:first>first0</v_:first>
+                <v_:middle>middle0</v_:middle>
+                <v_:last>last0</v_:last>
+                <v_:suffix>suffix0</v_:suffix>
+            </v_:name>
+            <v_:organization>organization0</v_:organization>
+            <v_:organization>organization1</v_:organization>
+            <v_:contactInfo>
+                <v_:address type="type0">
+                    <v_:deliveryPoint index="0">deliveryPoint0</v_:deliveryPoint>
+                    <v_:deliveryPoint index="0">deliveryPoint1</v_:deliveryPoint>
+                    <v_:city>city0</v_:city>
+                    <v_:administrativeArea>administrativeArea0</v_:administrativeArea>
+                    <v_:postalCode>postalCode0</v_:postalCode>
+                    <v_:country>country0</v_:country>
+                </v_:address>
+                <v_:phone>phone0</v_:phone>
+                <v_:email>email0</v_:email>
+                <v_:link>http://www.oxygenxml.com/</v_:link>
+            </v_:contactInfo>
+            <v_:identifier type="type1">identifier0</v_:identifier>
+            <v_:identifier type="type2">identifier1</v_:identifier>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+        </v_:investigator>
+        <v_:investigator>
+            <v_:name>
+                <v_:title>title1</v_:title>
+                <v_:first>first1</v_:first>
+                <v_:middle>middle1</v_:middle>
+                <v_:last>last1</v_:last>
+                <v_:suffix>suffix1</v_:suffix>
+            </v_:name>
+            <v_:organization>organization2</v_:organization>
+            <v_:organization>organization3</v_:organization>
+            <v_:contactInfo>
+                <v_:address type="type3">
+                    <v_:deliveryPoint index="0">deliveryPoint2</v_:deliveryPoint>
+                    <v_:deliveryPoint index="0">deliveryPoint3</v_:deliveryPoint>
+                    <v_:city>city1</v_:city>
+                    <v_:administrativeArea>administrativeArea1</v_:administrativeArea>
+                    <v_:postalCode>postalCode1</v_:postalCode>
+                    <v_:country>country1</v_:country>
+                </v_:address>
+                <v_:phone>phone1</v_:phone>
+                <v_:email>email1</v_:email>
+                <v_:link>http://www.oxygenxml.com/</v_:link>
+            </v_:contactInfo>
+            <v_:identifier type="type4">identifier2</v_:identifier>
+            <v_:identifier type="type5">identifier3</v_:identifier>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+        </v_:investigator>
+    </v_:investigators>
+    <v_:dataSubmitter>
+        <v_:name>
+            <v_:title>title2</v_:title>
+            <v_:first>first2</v_:first>
+            <v_:middle>middle2</v_:middle>
+            <v_:last>last2</v_:last>
+            <v_:suffix>suffix2</v_:suffix>
+        </v_:name>
+        <v_:organization>organization4</v_:organization>
+        <v_:organization>organization5</v_:organization>
+        <v_:contactInfo>
+            <v_:address type="type6">
+                <v_:deliveryPoint index="0">deliveryPoint4</v_:deliveryPoint>
+                <v_:deliveryPoint index="0">deliveryPoint5</v_:deliveryPoint>
+                <v_:city>city2</v_:city>
+                <v_:administrativeArea>administrativeArea2</v_:administrativeArea>
+                <v_:postalCode>postalCode2</v_:postalCode>
+                <v_:country>country2</v_:country>
+            </v_:address>
+            <v_:phone>phone2</v_:phone>
+            <v_:email>email2</v_:email>
+            <v_:link>http://www.oxygenxml.com/</v_:link>
+        </v_:contactInfo>
+        <v_:identifier type="type7">identifier4</v_:identifier>
+        <v_:identifier type="type8">identifier5</v_:identifier>
+        <v_:link>http://www.oxygenxml.com/</v_:link>
+        <v_:link>http://www.oxygenxml.com/</v_:link>
+    </v_:dataSubmitter>
+    <v_:title>title3</v_:title>
+    <v_:abstract>abstract0</v_:abstract>
+    <v_:useLimitation>useLimitation0</v_:useLimitation>
+    <v_:purpose>purpose0</v_:purpose>
+    <v_:temporalExtents>
+        <v_:startDate>2006-05-04</v_:startDate>
+        <v_:endDate>2006-05-04</v_:endDate>
+    </v_:temporalExtents>
+    <v_:spatialExtents>
+        <v_:westernBounds>0</v_:westernBounds>
+        <v_:easternBounds>0</v_:easternBounds>
+        <v_:northernBounds>0</v_:northernBounds>
+        <v_:southernBounds>0</v_:southernBounds>
+    </v_:spatialExtents>
+    <v_:spatialReference>spatialReference0</v_:spatialReference>
+    <v_:sampleCollectionRegions>
+        <v_:region>region0</v_:region>
+        <v_:region>region1</v_:region>
+    </v_:sampleCollectionRegions>
+    <v_:organismCollectionRegions>
+        <v_:region>region2</v_:region>
+        <v_:region>region3</v_:region>
+    </v_:organismCollectionRegions>
+    <v_:fundingInfo>
+        <v_:source>
+            <v_:agency>agency0</v_:agency>
+            <v_:title>title4</v_:title>
+            <v_:identifier type="type9">identifier6</v_:identifier>
+        </v_:source>
+        <v_:source>
+            <v_:agency>agency1</v_:agency>
+            <v_:title>title5</v_:title>
+            <v_:identifier type="type10">identifier7</v_:identifier>
+        </v_:source>
+    </v_:fundingInfo>
+    <v_:researchProjects>
+        <v_:project>project0</v_:project>
+        <v_:project>project1</v_:project>
+    </v_:researchProjects>
+    <v_:platforms>
+        <v_:platform>
+            <v_:name>name0</v_:name>
+            <v_:identifier type="type11">identifier8</v_:identifier>
+            <v_:type>type0</v_:type>
+            <v_:owner>owner0</v_:owner>
+            <v_:country>country3</v_:country>
+        </v_:platform>
+        <v_:platform>
+            <v_:name>name1</v_:name>
+            <v_:identifier type="type12">identifier9</v_:identifier>
+            <v_:type>type1</v_:type>
+            <v_:owner>owner1</v_:owner>
+            <v_:country>country4</v_:country>
+        </v_:platform>
+    </v_:platforms>
+    <v_:expocodes>
+        <v_:expocode>expocode0</v_:expocode>
+        <v_:expocode>expocode1</v_:expocode>
+    </v_:expocodes>
+    <v_:cruiseIds>
+        <v_:cruiseId>cruiseId0</v_:cruiseId>
+        <v_:cruiseId>cruiseId1</v_:cruiseId>
+    </v_:cruiseIds>
+    <v_:sections>
+        <v_:section>section0</v_:section>
+        <v_:section>section1</v_:section>
+    </v_:sections>
+    <v_:authors>
+        <v_:author>author0</v_:author>
+        <v_:author>author1</v_:author>
+    </v_:authors>
+    <v_:citation>citation0</v_:citation>
+    <v_:references>
+        <v_:reference>reference0</v_:reference>
+        <v_:reference>reference1</v_:reference>
+    </v_:references>
+    <v_:supplementalInfo>supplementalInfo0</v_:supplementalInfo>
+    <v_:keywords>
+        <v_:keyword>keyword0</v_:keyword>
+        <v_:keyword>keyword1</v_:keyword>
+    </v_:keywords>
+    <v_:variables>
+        <v_:variable name="name0">
+            <v_:fullName>fullName0</v_:fullName>
+            <v_:datasetVarName>datasetVarName0</v_:datasetVarName>
+            <v_:variableType>variableType0</v_:variableType>
+            <v_:measuredOrCalculated>measuredOrCalculated0</v_:measuredOrCalculated>
+            <v_:observationType>observationType0</v_:observationType>
+            <v_:units>units0</v_:units>
+            <v_:missingValue>missingValue0</v_:missingValue>
+            <v_:uncertainty>uncertainty0</v_:uncertainty>
+            <v_:qcFlag>
+                <v_:description>description0</v_:description>
+                <v_:qcFlagVarName>qcFlagVarName0</v_:qcFlagVarName>
+            </v_:qcFlag>
+            <v_:researcher>
+                <v_:name>name2</v_:name>
+                <v_:organization>organization6</v_:organization>
+            </v_:researcher>
+            <v_:methodReference>methodReference0</v_:methodReference>
+            <v_:calculationMethod>
+                <v_:description>description1</v_:description>
+                <v_:parameter name="name1">parameter0</v_:parameter>
+                <v_:parameter name="name2">parameter1</v_:parameter>
+            </v_:calculationMethod>
+            <v_:manipulationMethod>manipulationMethod0</v_:manipulationMethod>
+            <v_:samplingInstrument>samplingInstrument0</v_:samplingInstrument>
+            <v_:analyzingInstrument>analyzingInstrument0</v_:analyzingInstrument>
+            <v_:detailedInfo>detailedInfo0</v_:detailedInfo>
+            <v_:fieldReplicateHandling>fieldReplicateHandling0</v_:fieldReplicateHandling>
+            <v_:standardization>
+                <v_:description>description2</v_:description>
+                <v_:frequency>frequency0</v_:frequency>
+                <v_:temperature>temperature0</v_:temperature>
+                <v_:standardGas>
+                    <v_:manufacturer>manufacturer0</v_:manufacturer>
+                    <v_:concentration>concentration0</v_:concentration>
+                    <v_:uncertainty>uncertainty1</v_:uncertainty>
+                </v_:standardGas>
+                <v_:standardGas>
+                    <v_:manufacturer>manufacturer1</v_:manufacturer>
+                    <v_:concentration>concentration1</v_:concentration>
+                    <v_:uncertainty>uncertainty2</v_:uncertainty>
+                </v_:standardGas>
+                <v_:crm>
+                    <v_:manufacturer>manufacturer2</v_:manufacturer>
+                    <v_:batch>batch0</v_:batch>
+                    <v_:bottle>bottle0</v_:bottle>
+                </v_:crm>
+<!--                <v_:phOfStandards>phOfStandards0</v_:phOfStandards>-->
+            </v_:standardization>
+        </v_:variable>
+        <v_:variable name="name3">
+            <v_:fullName>fullName1</v_:fullName>
+            <v_:datasetVarName>datasetVarName1</v_:datasetVarName>
+            <v_:variableType>variableType1</v_:variableType>
+            <v_:measuredOrCalculated>measuredOrCalculated1</v_:measuredOrCalculated>
+            <v_:observationType>observationType1</v_:observationType>
+            <v_:units>units1</v_:units>
+            <v_:missingValue>missingValue1</v_:missingValue>
+            <v_:uncertainty>uncertainty3</v_:uncertainty>
+            <v_:qcFlag>
+                <v_:description>description3</v_:description>
+                <v_:qcFlagVarName>qcFlagVarName1</v_:qcFlagVarName>
+            </v_:qcFlag>
+            <v_:researcher>
+                <v_:name>name3</v_:name>
+                <v_:organization>organization7</v_:organization>
+            </v_:researcher>
+            <v_:methodReference>methodReference1</v_:methodReference>
+            <v_:calculationMethod>
+                <v_:description>description4</v_:description>
+                <v_:parameter name="name4">parameter2</v_:parameter>
+                <v_:parameter name="name5">parameter3</v_:parameter>
+            </v_:calculationMethod>
+            <v_:manipulationMethod>manipulationMethod1</v_:manipulationMethod>
+            <v_:samplingInstrument>samplingInstrument1</v_:samplingInstrument>
+            <v_:analyzingInstrument>analyzingInstrument1</v_:analyzingInstrument>
+            <v_:detailedInfo>detailedInfo1</v_:detailedInfo>
+            <v_:fieldReplicateHandling>fieldReplicateHandling1</v_:fieldReplicateHandling>
+            <v_:standardization>
+                <v_:description>description5</v_:description>
+                <v_:frequency>frequency1</v_:frequency>
+                <v_:temperature>temperature1</v_:temperature>
+<!--                <v_:standardGas>
+                    <v_:manufacturer>manufacturer3</v_:manufacturer>
+                    <v_:concentration>concentration2</v_:concentration>
+                    <v_:uncertainty>uncertainty4</v_:uncertainty>
+                </v_:standardGas>
+                <v_:standardGas>
+                    <v_:manufacturer>manufacturer4</v_:manufacturer>
+                    <v_:concentration>concentration3</v_:concentration>
+                    <v_:uncertainty>uncertainty5</v_:uncertainty>
+                </v_:standardGas>
+                <v_:crm>
+                    <v_:manufacturer>manufacturer5</v_:manufacturer>
+                    <v_:batch>batch1</v_:batch>
+                    <v_:bottle>bottle1</v_:bottle>
+                </v_:crm>
+-->
+                <v_:phOfStandards>phOfStandards1</v_:phOfStandards>
+            </v_:standardization>
+        </v_:variable>
+    </v_:variables>
+    <v_:update>2006-05-04</v_:update>
+</v_:oads_metadata>

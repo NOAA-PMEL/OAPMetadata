@@ -6,7 +6,6 @@
   xmlns:annox="http://annox.dev.java.net"
   xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
   xmlns:xew="http://github.com/jaxb-xew-plugin"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd"
   jaxb:extensionBindingPrefixes="xjc annox"
   version="2.1">
 
@@ -22,7 +21,7 @@
           <![CDATA[
     public void clearEmptyCollections() {
         System.out.println("Clearing person empty collections.");
-        if ( identifier != null && identifier.isEmpty()) { identifier = null; }
+        if ( identifiers != null && identifiers.isEmpty()) { identifiers = null; }
     }
           ]]>
         </ci:code>
@@ -30,6 +29,7 @@
     </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='person_type']//xs:element[@name='identifier']">
         <annox:annotate target="field">@lombok.Singular("addIdentifier")</annox:annotate>
+		<jaxb:property name="identifiers" />
     </jaxb:bindings>
 
     <jaxb:bindings node="xs:complexType[@name='person_name_type']">
@@ -38,6 +38,11 @@
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='person_type']//xs:element[@name='organization']">
+        <annox:annotate target="field">@lombok.Singular("addOrganization")</annox:annotate>
+		<jaxb:property name="organizations" />
+    </jaxb:bindings>
+
     <!--
     <jaxb:bindings node="xs:complexType[@name='person_name_type']//xs:element[@name='middle']">
         <annox:annotate target="field">@lombok.Singular("addMiddle")</annox:annotate>

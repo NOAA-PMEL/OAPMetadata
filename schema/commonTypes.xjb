@@ -4,7 +4,6 @@
   xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:annox="http://annox.dev.java.net"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd"
   jaxb:extensionBindingPrefixes="xjc annox"
   version="2.1">
 

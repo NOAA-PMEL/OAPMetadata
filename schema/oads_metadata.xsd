@@ -24,6 +24,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="dataLicense" type="data_license_type" minOccurs="0"/>
       <xs:element name="investigators">
         <xs:complexType>
           <xs:sequence>
@@ -198,6 +199,14 @@
       <xs:element name="link" type="xs:anyURI"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="data_license_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="url" type="xs:anyURI"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+ 
 
   <!-- collection wrapper elements
   <xs:complexType name="related_data_collection">
