@@ -1,0 +1,4 @@
+#!/bin/bash
+
+jar cfm oatransform.jar transform.mf a022to00.xsl -C test-classes  gov/noaa/pmel/oads/xml/a0_2_2/Transform.class 
+
