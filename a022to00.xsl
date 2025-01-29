@@ -159,11 +159,18 @@
       </xsl:if>
       <suppleInfo><xsl:value-of select="oa:supplementalInfo"/></suppleInfo>
       <!-- more NCEI internal stuff -->
+	  <!-- This was breaking the transformation somehow.  
+	  The Transformer didn't like link_landing there, even though it was in a comment.
+	  The issue was the version of the Transformer that gets picked up. 
+	  The default in java (8) version com/sun/org/apache/xalan/internal/xsltc/trax/TransformerImpl.class
+	  is ok, but when invoked in the environment of the Dashboard, it pickes up 
+	  /org/apache/xalan/transformer/TransformerImpl.class from the xalan-2.7.2.jar
       <xsl:comment>
       <link_landing>https://accession.nodc.noaa.gov/XXXXXXX</link_landing>
       <link_download>https://data.nodc.noaa.gov/ncei/ocads/data/XXXXXXX/</link_download>
       <link_img>https://data.nodc.noaa.gov/cgi-bin/gfx?id=gov.noaa.nodc:XXXXXXX</link_img>
       </xsl:comment>
+	  -->
       <xsl:apply-templates select="oa:variables"/>
     </metadata>
   </xsl:template>
