@@ -9,9 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -44,7 +41,9 @@ public class Transform {
      */
     private static Transformer getTransformer(InputStream xslStream, String obsType) throws Exception {
         TransformerFactory xfrmFactory = TransformerFactory.newInstance();
+        System.out.println(which(xfrmFactory));
         Transformer xfrm = xfrmFactory.newTransformer(new StreamSource(xslStream));
+        System.out.println(which(xfrm));
         xfrm.setOutputProperty(OutputKeys.INDENT, "yes");
 //        xfrm.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
         xfrm.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "3");
@@ -149,6 +148,35 @@ public class Transform {
             }
         }
         return resource;
+    }
+
+    static String which(Object object) {
+    	return which(object.getClass().getName());
+    }
+    /**
+     * Prints the absolute pathname of the class file
+     * containing the specified class name, as prescribed
+     * by the current classpath.
+     *
+     * @param className Name of the class.
+     */
+    public static String which(String className) {
+
+      String which = "N/A";
+      
+      if (!className.startsWith("/")) {
+        className = "/" + className;
+      }
+      className = className.replace('.', '/');
+      className = className + ".class";
+
+      java.net.URL classUrl = Transform.class.getResource(className);
+
+      which = "\nClass '" + className + 
+    		  	( classUrl != null ?
+		          "' found in \n'" + classUrl.getFile() + "'" :
+	              "' not found in \n'" + System.getProperty("java.class.path") + "'");
+	  return which;
     }
 
 }
