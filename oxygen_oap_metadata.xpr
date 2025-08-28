@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="20.1">
+<project>
     <meta>
         <filters directoryPatterns="" filePatterns="oxygen_oap_metadata.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="20.1" xml:space="preserve">
+            <serialized xml:space="preserve">
                 <serializableOrderedMap>
+                    <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
                     <entry>
                         <String>scenario.associations</String>
                         <scenarioAssociation-array>
@@ -21,6 +25,9 @@
                                     <list>
                                         <String>XML</String>
                                     </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list/>
                                 </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>
@@ -71,9 +78,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -121,6 +125,9 @@
         </options>
     </meta>
     <projectTree name="oxygen_oap_metadata.xpr">
+        <folder masterFiles="true" name="Main Files">
+            <file name="schema/dataset_metadata.xsd"/>
+        </folder>
         <folder path="."/>
     </projectTree>
 </project>

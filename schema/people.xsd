@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NS_HOST;/&PKG_NAME;/&VERSION;" xmlns="&NS_HOST;/&PKG_NAME;/&VERSION;"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  <!--   xmlns:annox="http://annox.dev.java.net" jaxb:extensionBindingPrefixes="annox" -->
+
+  <xs:include schemaLocation="common_types.xsd"/>
+  <xs:include schemaLocation="contact_info.xsd"/>
+  <xs:include schemaLocation="organizations.xsd"/>
+  <xs:include schemaLocation="references.xsd"/>
+
+  <xs:complexType name="orcid_reference">
+    <xs:annotation>
+      <xs:documentation> An ORCID persistant identifier. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="pid_reference">
+        <xs:attribute name="pid_type" fixed="ORCID"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="researcherid_reference">
+    <xs:annotation>
+      <xs:documentation> A ResearcherID persistant identifier. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="pid_reference">
+        <xs:attribute name="pid_type" fixed="ResearcherID"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ocean_expert_reference">
+    <xs:annotation>
+      <xs:documentation> An OceanExpert persistant identifier. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="pid_reference">
+        <xs:attribute name="pid_type" fixed="OceanExpert"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="person_PID_reference">
+    <xs:annotation>
+      <xs:documentation> Extensible list of Standard Identifiers for people. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="pid_reference"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="person_ref">
+    <xs:annotation>
+      <xs:documentation> An inline person element referencing a concrete representation in the
+        people collection. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="element_reference">
+        <xs:attribute name="object_class" type="xs:string" fixed="&NS_PREFIX;:Person"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="person" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="element_instance">
+        <xs:attribute name="object_class" type="xs:string" fixed="&NS_PREFIX;:Person"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="person" type="person"/>
+  <!--
+  <xs:complexType name="person_def" >
+    <xs:complexContent>
+        <xs:extension base="person_repr">
+          <xs:sequence>
+            <xs:element name="name" type="person_name" />
+            <xs:element name="organization" type="organization_or_ref" />
+            <xs:element name="contact_info" type="contact_info" minOccurs="0" maxOccurs="1" />
+          </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  -->
+  <xs:complexType name="person_pid">
+    <xs:complexContent>
+      <xs:extension base="person">
+        <xs:sequence>
+          <xs:element name="identifier" type="pid_reference"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="person_pid" type="person_pid" substitutionGroup="person"/>
+
+  <xs:complexType name="person_definition">
+    <xs:complexContent>
+      <xs:extension base="person">
+        <xs:sequence>
+          <xs:element name="name" type="person_name"/>
+          <xs:element name="organization" type="organization_or_ref" minOccurs="0"
+            maxOccurs="unbounded"/>
+          <xs:element name="contact_info" type="contact_info" minOccurs="0" maxOccurs="1"/>
+          <!-- ? multiple, with roles -->
+          <xs:element name="identifier" type="pid_reference" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="link" type="URI_reference" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="person_def" type="person_definition" substitutionGroup="person"/>
+
+  <xs:complexType name="person_name">
+    <xs:sequence>
+      <!-- 
+      <xs:element name="pre_title" type="xs:string" minOccurs="0"> Do we bother with all this stuff??
+        <xs:annotation>
+          <xs:documentation>
+            Dr, Mr, Hon, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+       -->
+      <xs:element name="first" type="xs:string"/>
+      <xs:element name="middle" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <!-- type="ordered_string_element" maxOccurs="unbounded" -->
+      <xs:element name="last" type="xs:string"/>
+      <xs:element name="suffix" type="xs:string" minOccurs="0" maxOccurs="1">
+        <!-- We probably will want this -->
+        <xs:annotation>
+          <xs:documentation> Jr, Sr, etc. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <!--
+       <xs:element name="post_titles" type="xs:string" minOccurs="0">  See above. 
+         <xs:annotation>
+           <xs:documentation>
+             PhD, MSc, CSE, etc.
+           </xs:documentation>
+         </xs:annotation>
+       </xs:element>
+       -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person_reference">
+    <xs:sequence>
+      <xs:element name="display" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="id_ref" type="xs:IDREF"/>
+  </xs:complexType>
+
+  <xs:element name="person_role" type="xs:string"/>
+
+  <xs:simpleType name="researcher_roles">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RESEARCHER"/>
+      <xs:enumeration value="INVESTIGATOR"/>
+      <xs:enumeration value="PRINCIPAL_INVESTIGATOR"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="researcher_role" type="researcher_roles" substitutionGroup="person_role"/>
+
+  <xs:complexType name="person_with_role">
+    <xs:complexContent>
+      <xs:extension base="person">
+        <xs:sequence>
+          <xs:element ref="person_role" maxOccurs="unbounded"/>
+          <!-- controlled vocab? -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="researcher_with_role">
+    <xs:complexContent>
+      <xs:extension base="person">
+        <xs:sequence>
+          <xs:element ref="researcher_role" maxOccurs="unbounded"/>
+          <!-- controlled vocab? -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="person_collection">
+    <xs:sequence>
+      <xs:element name="person" type="person" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person_test">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element ref="person_pid"/>
+      <xs:element ref="person_def"/>
+      <xs:element name="data_submitter" type="person_ref"/>
+      <xs:element name="people" type="person_collection"/>
+      <!--      <xs:element name="reference" type="person_ref"/>
+-->
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="person_test" type="person_test"/>
+
+</xs:schema>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NS_HOST;/&PKG_NAME;/&VERSION;" xmlns="&NS_HOST;/&PKG_NAME;/&VERSION;"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" >
+<!--  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
+  jaxb:extensionBindingPrefixes="xjc annox xew" >
+  <!-X- stuff for code generation.  It was causing some complaints. -->
+  
+  <xs:include schemaLocation="common_types.xsd"/>
+  <xs:include schemaLocation="dataset_fields.xsd"/>
+  <xs:include schemaLocation="people.xsd"/>
+  <xs:include schemaLocation="organizations.xsd"/>
+  <xs:include schemaLocation="variables.xsd"/>
+  <xs:include schemaLocation="instrumentation.xsd"/>
+
+  <xs:element name="dataset_metadata" type="ocean_carbon_data_metadata_document"/>
+
+  <xs:complexType name="ocean_carbon_data_metadata_document">
+    <xs:sequence>
+
+      <!-- metadata about this metadata document -->
+      <xs:element name="document_metadata" type="document_metadata">
+        <xs:annotation>
+          <xs:documentation> Metadata about the metadata document instance, ie. creation time, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:group ref="dataset_base_fields">
+        <xs:annotation>
+          <xs:documentation> The base dataset metadata fields, common to all classes of dataset data. </xs:documentation>
+        </xs:annotation>
+      </xs:group>
+
+      <!-- dataset category-specific fields 
+            - field observations
+            - experiment
+            - data product
+            - model output
+      -->
+
+      <!-- ?? should this be part of the <xs:choice>? -->
+<!--
+      <xs:element name="observations_info" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation> Fields relating to datasets of original observations.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence> -->
+            <xs:group ref="observations_ds_fields" minOccurs="0"/>
+<!--
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+-->          
+      <xs:choice minOccurs="0" maxOccurs="1">
+        
+        <xs:element name="physiological_response_study">
+          <xs:annotation>
+            <xs:documentation> Fields relating to datasets of physiological manipulation / response
+              studies. </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="manipulation_response_ds_fields"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ocean_alcalinity_enhancement_study">
+          <xs:annotation>
+            <xs:documentation> Fields relating to datasets of ocean alcalinity enhancement studies.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="ocean_alcalinity_enhancement_ds_fields"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="data_product" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation> Fields relating to data product datasets. </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="data_product_ds_fields"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="model_output" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation> Fields relating to model output datasets. </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group ref="model_ds_fields"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:choice>
+
+      <xs:group ref="dataset_collections">
+        <xs:annotation>
+          <xs:documentation> Separate collections of the concrete representations (PID references or
+            full definitions) of the elements referenced inline. These elements (people,
+            organizations, variables, instruments) are generally first-class elements and are likely
+            to be referenced in more that one place. By having inline references to singular
+            concrete instances, we eliminate duplication of information and the possibility of
+            inconsistencies. </xs:documentation>
+        </xs:annotation>
+      </xs:group>
+
+      <!-- provenance / change log / revision log -->
+    </xs:sequence>
+
+    <xs:attributeGroup ref="metadata_standard"/>
+
+  </xs:complexType>
+  <!-- end of dataset_metadata definition -->
+  <!-- END of top level schema -->
+
+  <xs:attributeGroup name="metadata_standard">
+    <xs:attribute name="metadata_standard" type="xs:string" use="optional" default="$PKG_VERSION;"/>
+    <xs:attribute name="metadata_version" type="xs:string" use="required" fixed="&VERSION;"/>
+  </xs:attributeGroup>
+
+  <xs:group name="dataset_collections">
+    <xs:sequence>
+      <xs:element name="variables" type="variable_collection"/>
+      <xs:element name="people" type="person_collection"/>
+      <xs:element name="organizations" type="organization_collection"/>
+      <xs:element name="instruments" type="instrument_collection"/>
+    </xs:sequence>
+  </xs:group>
+
+  <!-- element types -->
+
+  <!-- xs:element name="document_metadata" type="document_metadata"/ -->
+  <xs:complexType name="document_metadata">
+    <xs:annotation>
+      <xs:documentation> Metadata about *this* metadata document. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="document_date" type="&USE_DATE_TIME_TYPE;"/>
+      <xs:element name="document_source" type="organization_or_ref">
+        <xs:annotation>
+          <xs:documentation> The organization that produced *this* metadata document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dataset_citation">
+    <!-- TODO: needs work breaking out parts from "title" -->
+    <xs:sequence>
+      <xs:element name="DOI" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="title" type="xs:normalizedString"/>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="authors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="author" type="ordered_reference" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="publication" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- collection wrapper elements
+  <xs:complexType name="related_data_collection">
+    <xs:sequence>
+      <xs:element name="dataset" type="related_data" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="person_collection">
+    <xs:sequence>
+      <xs:element name="person" type="person" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="investigators_collection">
+    <xs:sequence>
+      <xs:element name="investigator" type="person" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="geographic_region_name_collection">
+    <xs:sequence>
+      <xs:element name="region" type="xs:string" maxOccurs="unbounded" /> <!-X- TODO: controlled vocabulary -X->
+    </xs:sequence>
+  </xs:complexType> -->
+
+</xs:schema>

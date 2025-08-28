@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NS_HOST;/&PKG_NAME;/&VERSION;" xmlns="&NS_HOST;/&PKG_NAME;/&VERSION;"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+
+  <xs:annotation>
+    <xs:documentation> Element type definitions for the basic "inline-element referencing collection
+      item definition-or-PID" pattern. </xs:documentation>
+  </xs:annotation>
+
+  <xs:complexType name="pid_reference">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute name="pid_type"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="element_instance" abstract="true">
+    <xs:attribute name="object_id" type="xs:ID" use="required"/>
+    <xs:attribute name="object_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="element_reference">
+    <xs:attribute name="object_id" type="xs:IDREF" use="required"/>
+    <xs:attribute name="object_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="instance_reference">
+    <xs:complexContent>
+      <xs:extension base="element_instance">
+        <xs:sequence>
+          <xs:element name="pid" type="pid_reference" nillable="true"/>
+          <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="instance_definition" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="instance_reference"> </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

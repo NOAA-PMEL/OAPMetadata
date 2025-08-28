@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified"
+  xmlns="&NS_HOST;/&PKG_NAME;/&VERSION;" targetNamespace="&NS_HOST;/&PKG_NAME;/&VERSION;"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  <!--targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" -->
+
+  <xs:complexType name="decimal_value">
+    <!-- experiment -->
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="positive_decimal_value">
+    <!-- experiment -->
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="dimensioned_quantity">
+    <xs:complexContent>
+      <xs:extension base="decimal_value">
+        <xs:attribute name="units" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="measured_value" abstract="false">
+    <xs:complexContent>
+      <xs:extension base="dimensioned_quantity"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="altitude_m">
+    <xs:annotation>
+      <xs:documentation> Units for altitude / elevation measurements. Units are meters, positive
+        values up. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="measured_value">
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="depth_m">
+    <xs:annotation>
+      <xs:documentation> Units for depth measurements. Units are meters, positive values down.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="measured_value">
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ordered_string_element">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="index" type="xs:int" default="0"/>
+        <!-- zero-based indexing -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="typed_element">
+    <xs:attribute name="type" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="typed_string">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="typed_identifier">
+    <!-- sugar -->
+    <xs:simpleContent>
+      <xs:extension base="typed_string"> </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="value_with_unit">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="units" type="xs:Name"/>
+        <!-- controlled vocabulary ??? -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="standard_identifier">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:anyURI"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <!-- ?? text | description | ?? -->
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!-- enforces a format, but then isn't treated as a date. 
+  <xs:simpleType name="utcDate">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[12]?[\d]{3}-[\d]{2}-[\d]{2}Z"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="id_object" abstract="true">
+    <xs:attribute name="object_id" type="xs:ID" use="required"/>
+    <xs:attribute name="object_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="id_reference">
+    <xs:attribute name="id_ref" type="xs:IDREF" use="required"/>
+    <xs:attribute name="target_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+  -->
+  <xs:complexType name="ordered_reference">
+    <xs:complexContent>
+      <xs:extension base="element_reference">
+        <xs:attribute name="index" type="xs:nonNegativeInteger"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="URI_reference">
+    <xs:sequence>
+      <xs:element name="uri" type="xs:anyURI"/>
+      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reference_or_description">
+    <xs:choice>
+      <xs:element name="reference" type="URI_reference"/>
+      <xs:element name="description" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="described_reference">
+    <xs:sequence>
+      <xs:element name="reference" type="citation"/>
+      <xs:element name="description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="citation">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="authors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="author" type="ordered_reference" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="data_reference">
+    <xs:complexContent>
+      <xs:extension base="URI_reference"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="country">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="code" type="countries_list" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="countries_list">
+    <xs:annotation>
+      <xs:documentation> This is to be a controled list of all countr codes. But updates would
+        require a new version of the schema... </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="country1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="longitude_180">
+    <!-- ? Do we insist on +/- 180? -->
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="-180.0"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="latitude">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-90.0"/>
+      <xs:maxInclusive value="90.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temporal_extents">
+    <xs:sequence>
+      <xs:element name="start_date" type="xs:date"/>
+      <!-- format YYYY-MM-DD'Z' -->
+      <xs:element name="end_date" type="xs:date"/>
+      <!-- format YYYY-MM-DD'Z' -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="datetime_duration">
+    <xs:sequence>
+      <xs:element name="start_time" type="xs:dateTime"/>
+      <!-- format YYYY-MM-DD'Z' -->
+      <xs:element name="end_time" type="xs:dateTime"/>
+      <!-- format YYYY-MM-DD'Z' -->
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- 
+    ? Do we need to support choice here? 
+    SOCAT does.
+    single location could be represented in bounds element.
+  -->
+  <xs:complexType name="spatial_extents">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="bounds" type="spatial_bounds"/>
+      <xs:element name="site_location" type="site_location"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="spatial_bounds">
+    <xs:sequence>
+      <xs:element name="western_bounds" type="longitude_180"/>
+      <xs:element name="eastern_bounds" type="longitude_180"/>
+      <xs:element name="northern_bounds" type="latitude"/>
+      <xs:element name="southern_bounds" type="latitude"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="site_location">
+    <xs:sequence>
+      <xs:element name="longitude" type="longitude_180"/>
+      <xs:element name="latitude" type="latitude"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="altitude_range">
+    <xs:annotation>
+      <xs:documentation> Min and max altitudes in the dataaset. Positive down. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="max_altitude" type="altitude_m"/>
+      <xs:element name="min_altitude" type="altitude_m"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depth_range">
+    <xs:annotation>
+      <xs:documentation> Min and max depths in the dataaset. Positive down. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="max_depth" type="depth_m"/>
+      <xs:element name="min_depth" type="depth_m"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="funding_source">
+    <xs:sequence>
+      <xs:element name="agency">
+        <!-- and/or org-ref -->
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="country" type="country"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="project_name" type="xs:string"/>
+      <xs:element name="project_identifier" type="xs:ID"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
