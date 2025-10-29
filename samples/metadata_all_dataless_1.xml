@@ -203,7 +203,7 @@
     </station_ids>
   </observation_identifiers>
   <observation_geometry/>
-  <!--  <physiological_response_study>
+  <physiological_response_study>
     <experiment_id/>
     <experiment_description/>
     <biological_subjects>
@@ -236,8 +236,8 @@
       <end_time/>
     </treatment_duration>
     <additional_details/>
-  </physiological_response_study> -->
-  <!--  <ocean_alcalinity_enhancement_study>
+  </physiological_response_study> 
+  <ocean_alcalinity_enhancement_study>
     <project_id></project_id>
     <experiment_id></experiment_id>
     <experiment_description></experiment_description>
@@ -270,8 +270,8 @@
     <permitting_authority></permitting_authority>
     <data_conflicts_and_unreported_data></data_conflicts_and_unreported_data>
     <additional_details></additional_details>
-  </ocean_alcalinity_enhancement_study>-->
-  <!--  <compilation_product>
+  </ocean_alcalinity_enhancement_study>
+  <compilation_product>
     <data_sources>
       <source>
         <uri></uri>
@@ -285,8 +285,8 @@
       </source>
     </data_sources>
     <data_quality_description></data_quality_description>
-  </compilation_product>-->
-  <!--  <gridded_product>
+  </compilation_product>
+  <gridded_product>
     <data_sources>
       <source>
         <uri></uri>
@@ -299,8 +299,8 @@
         <description></description>
       </source>
     </data_sources>
-  </gridded_product>-->
-  <!--  <model_output>
+  </gridded_product>
+  <model_output>
     <model_name></model_name>
     <model_version></model_version>
     <physics_component_name_and_version></physics_component_name_and_version>
@@ -372,7 +372,7 @@
       <description></description>
     </codebase_link>
     <additional_details></additional_details>
-  </model_output>-->
+  </model_output>
   <variables>
     <variable object_class="Variable" object_id="" xsi:type="basic_variable">
       <standard_identifier>
