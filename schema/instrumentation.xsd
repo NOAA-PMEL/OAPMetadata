@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" xmlns="http://ncei.noaa.gov/oads/&VERSION;"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
   elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   <!-- 
@@ -11,30 +11,32 @@
   jaxb:extensionBindingPrefixes="xjc annox xew" 
 -->
   <xs:include schemaLocation="common_types.xsd"/>
+  <xs:include schemaLocation="calibration.xsd"/>
   <xs:include schemaLocation="references.xsd"/>
 
-  <xs:complexType name="base_instrument">
+  <xs:group name="base_instrument">
     <xs:sequence>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
       <xs:element name="manufacturer" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="model" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="serial" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="reference" type="URI_reference" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="accuracy" type="measured_value" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="precision" type="measured_value" minOccurs="0" maxOccurs="1"/>
-      <xs:any minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="reference" type="URI_reference" minOccurs="0" maxOccurs="unbounded"/> <!-- ??? to what? -->
+      <xs:element name="accuracy" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="precision" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="uncertainty" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
+      <!--xs:any minOccurs="0" maxOccurs="unbounded"/-->
     </xs:sequence>
-    <xs:attribute name="instr_id" type="xs:ID" use="required"/>
-  </xs:complexType>
+  </xs:group>
 
-  <xs:complexType name="instrument_ref" abstract="true">
+  <xs:complexType name="instrument_ref" >  <!-- XXX not currently using instrument collection / refs. -->
     <xs:annotation>
       <xs:documentation> An inline instrument element referencing a concrete representation in the
         instruments collection. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:restriction base="element_reference">
-        <xs:attribute name="object_class" type="xs:string" fixed="&NS_PREFIX;:Instrument"/>
+        <xs:attribute name="object_class" type="xs:string" fixed="Instrument"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
@@ -42,58 +44,106 @@
   <xs:complexType name="instrument" abstract="true">
     <xs:complexContent>
       <xs:restriction base="element_instance">
-        <xs:attribute name="object_class" type="xs:string" fixed="&NS_PREFIX;:Instrument"/>
+        <xs:attribute name="object_class" type="xs:string" fixed="Instrument"/>
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="instrument" type="instrument"/>
-
-  <xs:complexType name="instrument_collection">
-    <xs:choice maxOccurs="unbounded">
-      <xs:element name="instrument" type="instrument" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:choice>
-  </xs:complexType>
-
-  <xs:complexType name="base_calibration_info">
-    <xs:sequence>
-      <xs:element name="technique_description" type="xs:string"/>
-      <xs:element name="method_reference" type="reference_or_description"/>
-      <xs:element name="frequency" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
-      <!-- free text? -->
-      <xs:element name="last_calibration" type="calibration_event" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="calibration_history" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="calibration" type="calibration_event" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="crm_calibration">
+  
+  <xs:complexType name="simple_instrument">
     <xs:complexContent>
-      <xs:extension base="base_calibration_info">
+      <xs:extension base="instrument">
+        <xs:sequence >  
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:assert test="exists(name) or exists(type) or exists(description)" />
+      </xs:extension>
+    </xs:complexContent>
+    <!-- <xs:assert test="exists(name) or exists(type) or exists(description)" /> -->
+  </xs:complexType>
+  
+  <xs:complexType name="instrument_base" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="instrument">
         <xs:sequence>
-          <xs:element name="certified_ref_matl"/>
+          <xs:group ref="base_instrument"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="calibration_event">
-    <xs:sequence>
-      <xs:element name="date" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="location" type="calibration_location" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
-    </xs:sequence>
+  <xs:complexType name="standard_instrument">
+    <xs:complexContent>
+      <xs:extension base="instrument_base">
+        <xs:sequence>
+          <xs:element name="calibration" type="basic_calibration_info"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="sensor">
+    <xs:complexContent>
+      <xs:extension base="standard_instrument">
+        <xs:sequence>
+       <!--   <xs:element name="sampling_rate" type="dimensioned_quantity" minOccurs="0"/> -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+    
+  <xs:complexType name="crm_instrument">
+    <xs:complexContent>
+      <xs:extension base="instrument_base">
+        <xs:sequence>
+          <xs:element name="calibration" type="crm_calibration"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="pH_instrument">
+    <xs:complexContent>
+      <xs:extension base="instrument_base">
+        <xs:sequence>
+          <xs:element name="calibration" type="pH_calibration"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="co2_gas_detector">
+    <xs:complexContent>
+      <xs:extension base="instrument_base">
+        <xs:sequence>
+          <xs:element name="calibration" type="co2_calibration" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="measurement_frequency" type="positive_dimensioned_quantity" />  <!-- ??? or just text ??? -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 
-  <xs:simpleType name="calibration_location">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="FACTORY"/>
-      <xs:enumeration value="LAB"/>
-      <xs:enumeration value="FIELD"/>
-    </xs:restriction>
-  </xs:simpleType>
+  <xs:complexType name="equilibrator">
+    <!--    <xs:complexContent>
+      <xs:extension base="instrument"> -->
+    <xs:sequence>
+      <xs:element name="type" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- XXX Controlled vocab -->
+      <xs:element name="volume" type="liter_volume" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="vented" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="gas_flow_rate" type="flow_rate" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="water_flow_rate" type="flow_rate" minOccurs="0" maxOccurs="1"/>
+      <!-- atmospheric -->
+    </xs:sequence>
+    <!--      </xs:extension>
+    </xs:complexContent> -->
+  </xs:complexType>
+  
+  <xs:complexType name="instrument_collection">
+    <xs:choice>
+      <xs:element name="instrument" type="instrument"  maxOccurs="unbounded"/>
+    </xs:choice>
+  </xs:complexType>
+
 </xs:schema>

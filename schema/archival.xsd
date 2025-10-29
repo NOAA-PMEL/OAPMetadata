@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="&NS_HOST;/&PKG_NAME;/&VERSION;" xmlns="&NS_HOST;/&PKG_NAME;/&VERSION;"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
 
   <xs:include schemaLocation="people.xsd"/>
@@ -15,7 +15,7 @@
 
   <xs:complexType name="archive_info">
     <xs:sequence>
-      <xs:element name="data_center" type="organization_or_ref"/>
+      <xs:element name="data_center" type="organization_ref"/>
       <!-- ? Do we need a status element, for perhaps "submitted" or "in-process" or whatever ? -->
 
       <xs:element name="archival_id" minOccurs="0" maxOccurs="1" type="xs:string"/>
@@ -29,15 +29,15 @@
       </xs:element>
       -->
       <!-- from SOCAT version -->
-      <xs:element name="dataset_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="dataset_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/> <!-- But which URL? Info? Download? ??? -->
       <xs:element name="metadata_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="date_published" type="xs:date" minOccurs="0" maxOccurs="1"/>
-      <!-- ? dateTime? -->
 
+      <!-- This should be pulled from the revision history.
+            Or at minimum be references to entries in revision history.
+      <xs:element name="date_published" type="xs:dateTime" minOccurs="0" maxOccurs="1"/> 
       <xs:element name="initial_submission" type="submission_info"/>
-      <!-- reference to rev_history? -->
       <xs:element name="latest_revision" type="submission_info"/>
-      <!-- reference to rev_history? -->
+      -->
       <xs:element name="revision_history">
         <xs:complexType>
           <xs:sequence>
@@ -67,14 +67,5 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
-  <!-- 
-  <xs:complexType name="archivey_info">
-    <xs:sequence>
-      <xs:element name="accession" type="xs:string" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="metadata_update" type="xs:date" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="doi" type="xs:string" minOccurs="0" maxOccurs="1" />
-     <xs:element name="date_last_revision" type="xs:date" minOccurs="0" maxOccurs="1"/> <!-X- ? metadata and/or data revision ? -X->
-  -->
 
 </xs:schema>

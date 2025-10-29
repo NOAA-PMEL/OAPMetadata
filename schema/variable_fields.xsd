@@ -1,70 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" xmlns="http://ncei.noaa.gov/oads/&VERSION;"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
-
+  
   <xs:include schemaLocation="common_types.xsd"/>
   <xs:include schemaLocation="instrumentation.xsd"/>
-
-  <xs:group name="base_variable_fields">
+  <xs:include schemaLocation="people.xsd"/>
+  
+  <xs:simpleType name="variable_class_types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MEASURED"/>  <!-- ??? What about subjective observations? -->
+      <xs:enumeration value="DERIVED"/> <!-- Calculated from other variables in dataset -->
+      <xs:enumeration value="COMPILATION"> 
+        <!-- compilation of observations from other datasets ??? what special information would be needed here? -->
+      </xs:enumeration>
+      <xs:enumeration value="MANIPULATION"/>
+      <xs:enumeration value="GENERATED"/> <!-- Calculated by model -->
+      <xs:enumeration value="SOCIAL"/> 
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:group name="minimum_variable_fields">
     <xs:sequence>
-      <xs:element name="standard_name" type="standard_identifier"/>
-      <!-- ?? multiple / different vocabs? -->
-      <xs:element name="dataset_varname" type="xs:string"/>
+      <xs:element name="standard_identifier" type="vocabulary_item_reference"/>
+      <!-- ?? multiple / different vocabs? 
+      <xs:element name="alt_identifier" type="vocabulary_item_reference" maxOccurs="unbounded" minOccurs="0"/> 
+      -->
+      <xs:element name="dataset_variable_name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            How the variable is identified in the dataset data file.
+            This could be, for example, the column header in a CSV 
+            or the variable name in a NetCDF file.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="long_name" type="xs:string" minOccurs="0"/>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:element name="variable_type" type="variable_type"/>
-      <!-- variable_type - what are these? variable_genesis? /> -->
-      <xs:element name="observation_type" type="xs:string"/>
-      <!-- observation_type - what are these? variable_class? /> -->
-      <xs:element name="units" type="xs:string">
-        <!-- preferrably from controlled vocab -->
-        <xs:annotation>
-          <xs:documentation> Use N/A when not used. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="missing_value" type="xs:string" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation> Required if different from dataet:default_missing_value, or default not
-            specified. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="appropriate_use_quality" type="appropriate_use" minOccurs="0"/>
-      <xs:element name="uncertainty" type="variable_uncertainty" minOccurs="0"/>
-      <xs:element name="researcher" type="person_with_role"/>
-      <!-- ??? multiple ? -->
+      <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab, ??? include pH types? quant/qualitative?-->
     </xs:sequence>
   </xs:group>
 
-  <xs:simpleType name="appropriate_use">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="climate"/>
-      <xs:enumeration value="weather"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="variable_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value=""/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="variable_uncertainty">
+  <xs:group name="common_var_additional_fields">
     <xs:sequence>
-      <xs:element name="value" type="dimensioned_quantity"/>
-      <xs:element name="uncertainty_description" type="xs:string" minOccurs="0"/>
+      <xs:element name="missing_value_indicator" type="xs:string" minOccurs="0"> <!-- ??? Numeric? -->
+        <xs:annotation><xs:documentation>
+            Required if different from dataset:default_missing_value, 
+            or default is not specified. 
+          </xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="qc_flagging_scheme" type="reference_or_description" minOccurs="0">
+        <xs:annotation><xs:documentation>
+            Required if different from dataset:default_qc_flagging_scheme, 
+            or default is not specified. 
+          </xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="qc_flag_variable" type="xs:string" minOccurs="0"/> 
+      <xs:element name="qc_steps_taken" type="xs:string" minOccurs="0"/>
+      <xs:element name="appropriate_use_quality" type="appropriate_use_quality" minOccurs="0"/> <!-- Weather, Climate, Other -->
+      <xs:element name="overall_uncertainty" type="variable_uncertainty" minOccurs="0"/>
+      <xs:element name="measurement_researcher" type="person_ref" minOccurs="0"/>
+      <xs:element name="qc_researcher" type="person_ref" minOccurs="0"/>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:group name="measured_variable_var_fields">
+  </xs:group>
+  
+  <xs:group name="all_common_fields">
     <xs:sequence>
-      <xs:element name="sampling" type="sampling_type" minOccurs="0"/>
-      <xs:element name="collection_method" type="xs:string"/>
-      <xs:element name="collection_instrument_type" type="xs:string"/>
-      <!-- controled vocab ? -->
-      <xs:element name="analyzing_instrument" type="instrument_ref"/>
-      <xs:element name="analysis_method" type="described_reference"/>
-      <xs:element name="qc_flagging" type="qc_flag_info" minOccurs="0"/>
+      <xs:group ref="minimum_variable_fields"/>
     </xs:sequence>
   </xs:group>
 
@@ -74,75 +77,116 @@
       <xs:enumeration value="discrete"/>
     </xs:restriction>
   </xs:simpleType>
-
-  <xs:group name="discrete_variable_var_fields">
+  
+  <xs:complexType name="sampling_info">
+    <xs:choice>
+      <xs:element name="discrete" type="discrete_var_sampling_info"/>
+      <xs:element name="continuous" type="continuous_var_sampling_info"/>
+    </xs:choice>
+  </xs:complexType>
+  
+  <xs:complexType name="discrete_var_sampling_info">
     <xs:sequence>
-      <xs:element name="storage_method"/>
-      <xs:element name="container_volume"/>
-      <xs:element name="container_airspace"/>
-      <xs:element name="field_replicate_info"/>
+      <xs:element name="storage_method" type="xs:string" minOccurs="0"/>
+      <xs:element name="container_volume" type="xs:string" minOccurs="0"/>
+      <xs:element name="container_airspace" type="xs:string" minOccurs="0"/>
+      <xs:element name="field_replicate_info" type="xs:string" minOccurs="0"/>
     </xs:sequence>
-  </xs:group>
-
-  <xs:group name="continuous_variable_var_fields">
+  </xs:complexType>
+  
+  <xs:complexType name="continuous_var_sampling_info">
     <xs:sequence>
       <xs:element name="intake_location" type="xs:string"/>
       <xs:element name="intake_depth" type="depth_m"/>
-      <xs:element name="sampling_rate" type="dimensioned_quantity"/>
-    </xs:sequence>
-  </xs:group>
-
-  <xs:group name="derived_variable_var_fields">
-    <xs:sequence>
-      <xs:element name="data_sources">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="source_variable" type="xs:IDREF" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="calculation_method" type="reference_or_description"/>
-    </xs:sequence>
-  </xs:group>
-
-  <xs:group name="synthesis_product_variable_var_fields">
-    <xs:sequence> </xs:sequence>
-  </xs:group>
-
-  <xs:group name="calculated_product_variable_var_fields">
-    <xs:sequence> </xs:sequence>
-  </xs:group>
-
-  <xs:group name="experiment_variable_var_fields">
-    <xs:sequence/>
-  </xs:group>
-
-  <xs:group name="biological_variable_var_fields">
-    <xs:sequence>
-      <!-- species identifier(s?) : standard vocab -->
-      <!-- collection location(s?) -->
-    </xs:sequence>
-  </xs:group>
-
-  <xs:group name="model_variable_var_fields">
-    <xs:sequence/>
-  </xs:group>
-
-  <xs:complexType name="qc_flag_info">
-    <xs:sequence>
-      <xs:element name="flagging_scheme">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element name="description" type="xs:string"/>
-            <xs:sequence>
-              <xs:element name="scheme" type="URI_reference"/>
-            </xs:sequence>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="qc_flag_varname" type="xs:string" minOccurs="0"/>
-      <!-- XXX ??? if missing, assume datasetVarName + "_qc" -->
     </xs:sequence>
   </xs:complexType>
-
+  
+  <xs:complexType name="variable_class">
+    <xs:choice>
+      <xs:element name="insitu" type="insitu_info"/>
+    </xs:choice>
+  </xs:complexType>
+  
+  <xs:complexType name="insitu_info">
+    <xs:sequence>
+      <xs:element name="observation_type" type="observation_geometry"/>
+      <xs:element name="sampling" type="sampling_type"/>
+      <xs:element name="genesis" type="genesis_type"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="genesis_type">
+    <xs:choice>
+      <xs:element name="measured"/>
+      <xs:element name="calculated"/>
+    </xs:choice>
+  </xs:complexType>
+  
+  <xs:complexType name="measured_var_info" abstract="false">
+    <xs:sequence>
+      <xs:element name="collection_method" type="xs:string"/>
+      <xs:element name="collection_instrument_type" type="xs:string"/>
+      <xs:element name="sampling" type="sampling_info"/>
+      <xs:element name="analysis_method" type="reference_or_description"/>
+      <xs:element name="deviations_from_method" type="xs:string" minOccurs="0"/>
+      <xs:element name="sensor_data_conversion" type="sensor_data_conversion" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="sensor_data_conversion">
+    <xs:sequence>
+      <xs:element name="conversion_calculation_method" type="xs:string" />
+      <xs:element name="conversion_software" type="software_info" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+ 
+  <xs:complexType name="calculated_var_info">
+    <xs:annotation>
+      <xs:documentation>
+        General info for calculated variables.
+      </xs:documentation>
+    </xs:annotation>
+        <xs:sequence>
+          <xs:element name="sampling" type="sampling_type"/>
+          <xs:element name="calculation_method" type="reference_or_description"/>
+          <xs:element name="calculation_parameters" type="xs:string" minOccurs="0"/> <!-- ??? break down? more specificity? -->
+          <xs:element name="sources" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="variable" type="variable_ref" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+  </xs:complexType>  
+ 
+  <xs:complexType name="gridded_var_info">
+  </xs:complexType>
+    
+  <xs:simpleType name="appropriate_use_quality">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="climate"/>
+      <xs:enumeration value="weather"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+ 
+  <xs:complexType name="variable_uncertainty">
+    <xs:sequence>
+      <xs:element name="value" type="dimensioned_quantity"/>
+      <xs:element name="uncertainty_description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Inline reference element types -->
+  <xs:complexType name="variable_ref">
+    <xs:annotation>
+      <xs:documentation>
+        An inline variable element referencing a concrete representation in the variables collection. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="object_id" type="xs:IDREF" use="required"/>
+    <xs:attribute name="object_class"  type="xs:string" fixed="Variable"/>
+  </xs:complexType>
+  
 </xs:schema>

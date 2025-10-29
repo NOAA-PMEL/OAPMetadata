@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  <!--   xmlns:annox="http://annox.dev.java.net" jaxb:extensionBindingPrefixes="annox" -->
+  
+  <xs:complexType name="calibration" abstract="true"/>
+  
+  <xs:complexType name="basic_calibration_info">
+    <xs:complexContent>
+      <xs:extension base="calibration">
+        <xs:sequence>
+          <xs:element name="technique_description" type="xs:string"/>
+          <xs:element name="method_reference" type="reference_or_description"/>
+          <xs:element name="frequency" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- not free text? -->
+          <xs:choice  minOccurs="0" maxOccurs="1">
+            <xs:element name="last_calibration" type="calibration_event"/>
+            <xs:element name="calibration_history">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="calibration" type="calibration_event" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+          <xs:element name="calibration_certificate_info" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="basic_calibration" type="basic_calibration_info"/>
+  
+  <xs:complexType name="crm_calibration">  <!-- DIC and TA -->
+    <xs:complexContent>
+      <xs:extension base="basic_calibration_info">
+        <xs:sequence>
+          <xs:element name="certified_reference_material" type="crm_info"/>
+          <xs:element name="reported_values_adjusted_to_crm" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="crm_info">
+    <xs:sequence>
+      <xs:element name="manufacturer" type="xs:string"/>
+      <xs:element name="batch_number" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="pH_calibration">
+    <xs:complexContent>
+      <xs:extension base="basic_calibration_info">
+        <xs:sequence>
+          <xs:element name="dye_information" type="ph_dye_info"/>
+          <xs:element name="ph_of_standards" type="xs:string"/> <!-- multiple values? definition of standards? -->
+          <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ph_dye_info">
+    <xs:sequence>
+      <xs:element name="dye_type" type="xs:string"/>
+      <xs:element name="manufacturer" type="xs:string"/>
+      <xs:element name="purified" type="xs:boolean"/>
+      <xs:element name="correction_for_unpurified_dye" type="xs:string" minOccurs="0"/>
+      <xs:element name="correction_method" type="xs:string" minOccurs="0"/> <!-- difference? -->
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="co2_calibration">
+    <xs:complexContent>
+      <xs:extension base="basic_calibration_info">
+        <xs:sequence>
+          <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
+          <xs:element name="standard_gases">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="gas" type="standard_gas" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="wmo_traceable" type="xs:boolean"/>  <!-- ??? Per gas or for all? -->
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="standard_gas">
+    <xs:sequence>
+      <xs:element name="manufacturer" type="xs:string"/>
+      <xs:element name="batch" type="xs:string" minOccurs="0"/>
+      <xs:element name="concentration" type="dimensioned_quantity"/>
+      <xs:element name="uncertainty" type="dimensioned_quantity"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="calibration_event">
+    <xs:sequence>
+      <xs:element name="date" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="location" type="calibration_location" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="calibration_location">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FACTORY"/>
+      <xs:enumeration value="LAB"/>
+      <xs:enumeration value="FIELD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" xmlns="http://ncei.noaa.gov/oads/&VERSION;"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
   xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   <!--  xmlns:annox="http://annox.dev.java.net" jaxb:extensionBindingPrefixes="annox" -->
 
   <xs:include schemaLocation="common_types.xsd"/>
   <xs:include schemaLocation="contact_info.xsd"/>
+  <xs:include schemaLocation="references.xsd"/>
 
-  <xs:complexType name="organization">
-    <xs:sequence>
-      <xs:element name="name" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="standard_id" type="typed_identifier" minOccurs="0" maxOccurs="unbounded"/>
-      <!-- common_id ? -->
-    </xs:sequence>
-    <xs:attribute name="org_id" type="xs:ID" use="required"/>
+  <!-- Inline reference element types -->
+  <xs:complexType name="organization_ref">
+    <xs:annotation>
+      <xs:documentation>
+        An inline organization element referencing a concrete representation in the organizations collection. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="element_reference">
+        <xs:attribute name="object_class" type="xs:string" fixed="Organization" />
+      </xs:restriction>
+    </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="organization_reference">
-    <!-- use common_types::standard_reference -->
-    <xs:sequence>
-      <xs:element name="display" type="xs:string" minOccurs="0" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute name="id_ref" type="xs:IDREF"/>
+  <xs:complexType name="organization" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="element_instance">
+        <xs:attribute name="object_class" type="xs:string" fixed="Organization"/> <!-- include prefix? -->
+      </xs:restriction>
+    </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="organization_or_ref">
-    <xs:choice>
-      <xs:element name="organization" type="organization"/>
-      <xs:element name="organization_ref" type="organization_reference"/>
-    </xs:choice>
+  <xs:complexType name="organization_definition">
+    <xs:complexContent>
+      <xs:extension base="organization">
+        <xs:sequence>
+          <xs:element name="identifier" type="pid_reference" minOccurs="0"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="organization_pid">
+    <xs:complexContent>
+      <xs:extension base="organization">
+        <xs:sequence>
+          <xs:element name="identifier" type="pid_reference"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="contact_info" type="contact_info" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
   <xs:complexType name="organization_collection">
     <xs:sequence>
-      <xs:element name="organization" type="organization" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="organization" type="organization" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
