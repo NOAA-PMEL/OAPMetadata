@@ -383,7 +383,7 @@
     </xs:sequence>
   </xs:group>
 
-  <xs:group name="ocean_alcalinity_enhancement_ds_fields">
+  <xs:group name="ocean_alkalinity_enhancement_ds_fields">
     <xs:sequence>
       <xs:element name="project_id" type="xs:string"/>
       <xs:group ref="experiment_ds_fields"/>

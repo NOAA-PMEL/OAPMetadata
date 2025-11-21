@@ -67,14 +67,14 @@
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="ocean_alcalinity_enhancement_study">
+        <xs:element name="ocean_alkalinity_enhancement_study">
           <xs:annotation>
-            <xs:documentation> Fields relating to datasets of ocean alcalinity enhancement studies.
+            <xs:documentation> Fields relating to datasets of ocean alkalinity enhancement studies.
             </xs:documentation>
           </xs:annotation>
           <xs:complexType>
             <xs:sequence>
-              <xs:group ref="ocean_alcalinity_enhancement_ds_fields"/>
+              <xs:group ref="ocean_alkalinity_enhancement_ds_fields"/>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
