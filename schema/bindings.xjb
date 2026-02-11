@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jaxb:bindings
-  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd"
   xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
-  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
-  xmlns:annox="http://annox.dev.java.net"
-  xmlns:xew="http://github.com/jaxb-xew-plugin"
-  jaxb:version="2.1">
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin" jaxb:version="2.1">
   <!-- xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_1xsd" -->
 
   <!--   jaxb:extensionBindingPrefixes="xjc annox xew" -->
-  <jaxb:globalBindings 
-    fixedAttributeAsConstantProperty="true"
-    generateIsSetMethod="true" >
-    <jaxb:javaType name="java.util.Date" xmlType="xs:date" 
-        parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTC" printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTC"/>
+  <jaxb:globalBindings fixedAttributeAsConstantProperty="true" generateIsSetMethod="true">
+    <jaxb:javaType name="java.util.Date" xmlType="xs:date"
+      parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTC"
+      printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTC"/>
     <xjc:serializable uid="101"/>
   </jaxb:globalBindings>
 
@@ -28,13 +24,13 @@
       </jaxb:nameXmlTransform>
       -->
     </jaxb:schemaBindings>
-    
+
     <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']">
-        <annox:annotate>@lombok.Builder(toBuilder=true)</annox:annotate>
-        <!-- <annox:annotate>@lombok.ToString</annox:annotate> -->
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
-        <ci:code>
+      <annox:annotate>@lombok.Builder(toBuilder=true)</annox:annotate>
+      <!-- <annox:annotate>@lombok.ToString</annox:annotate> -->
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <ci:code>
         <![CDATA[
     public void clearEmptyCollections() {
         System.out.println("Clearing empty collections.");
@@ -54,113 +50,131 @@
 		if ( variables != null && variables.isEmpty()) { variables = null; }
     }
         ]]>
-        </ci:code>
-        <!-- annox:annotate>@javax.xml.bind.annotation.XmlRootElement</annox:annotate>  -->
+      </ci:code>
+      <!-- annox:annotate>@javax.xml.bind.annotation.XmlRootElement</annox:annotate>  -->
     </jaxb:bindings>
     <!--
     <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='submissionDate']">
       <annox:annotate>@javax.xml.bind.annotation.XmlSchemaType(name="date")</annox:annotate>
     </jaxb:bindings>
     -->
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='relatedDataSets']">
-      <xew:xew instantiate="none" />
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='relatedDataSets']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addRelated")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='investigators']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='investigators']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addInvestigator")</annox:annotate>
     </jaxb:bindings>
-    
+
     <jaxb:bindings node="xs:complexType[@name='temporal_extents_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:complexType[@name='temporal_extents_type']//xs:element[@name='startDate']">
-        <jaxb:javaType name="java.util.Date" 
-          parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTCdate" printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTCdate"/>
+    <jaxb:bindings
+      node="xs:complexType[@name='temporal_extents_type']//xs:element[@name='startDate']">
+      <jaxb:javaType name="java.util.Date"
+        parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTCdate"
+        printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTCdate"/>
     </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='temporal_extents_type']//xs:element[@name='endDate']">
-        <jaxb:javaType name="java.util.Date" 
-          parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTCdate" printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTCdate"/>
+      <jaxb:javaType name="java.util.Date"
+        parseMethod="gov.noaa.pmel.oads.util.TimeUtils.parseUTCdate"
+        printMethod="gov.noaa.pmel.oads.util.TimeUtils.formatUTCdate"/>
     </jaxb:bindings>
 
     <jaxb:bindings node="xs:complexType[@name='spatial_extents_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='sampleCollectionRegions']">
-      <xew:xew instantiate="none" />
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='sampleCollectionRegions']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addSampleCollectionRegion")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='organismCollectionRegions']">
-      <xew:xew instantiate="none" />
-      <annox:annotate target="field">@lombok.Singular("addOrganismCollectionRegion")</annox:annotate>
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='organismCollectionRegions']">
+      <xew:xew instantiate="none"/>
+      <annox:annotate target="field"
+        >@lombok.Singular("addOrganismCollectionRegion")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='fundingInfo']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='fundingInfo']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addFunding")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='researchProjects']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='researchProjects']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addResearchProject")</annox:annotate>
     </jaxb:bindings>
 
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='platforms']">
-      <xew:xew instantiate="none" />
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='platforms']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addPlatform")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='expocodes']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='expocodes']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addExpocode")</annox:annotate>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='cruiseIds']">
-      <xew:xew instantiate="none" />
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='cruiseIds']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addCruiseId")</annox:annotate>
     </jaxb:bindings>
-<!--
+    <!--
     <jaxb:bindings node="xs:complexType[@name='cruise_identifiers_collection']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
         <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
         <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
--->    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='sections']">
-      <xew:xew instantiate="none" />
+-->
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='sections']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addSection")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='authors']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='authors']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addAuthor")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='references']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='references']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addReference")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='keywords']">
-      <xew:xew instantiate="none" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='keywords']">
+      <xew:xew instantiate="none"/>
       <annox:annotate target="field">@lombok.Singular("addKeyword")</annox:annotate>
     </jaxb:bindings>
-    
-    <jaxb:bindings node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='variables']">
-      <xew:xew instantiate="lazy" />
+
+    <jaxb:bindings
+      node="xs:complexType[@name='oads_metadata_document_type']//xs:element[@name='variables']">
+      <xew:xew instantiate="lazy"/>
       <annox:annotate target="field">@lombok.Singular("addVariable")</annox:annotate>
     </jaxb:bindings>
-    
-<!--
+
+    <!--
     <jaxb:bindings node="xs:complexType[@name='altitude_range_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
@@ -176,13 +190,13 @@
 -->
 
     <jaxb:bindings node="xs:complexType[@name='funding_source_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
-<!-- 
+    <!-- 
     <jaxb:bindings node="xs:complexType[@name='research_project_type']">
         <annox:annotate>@lombok.Builder</annox:annotate>
         <annox:annotate>@lombok.ToString</annox:annotate>
@@ -191,31 +205,31 @@
     </jaxb:bindings>
  -->
     <jaxb:bindings node="xs:complexType[@name='platform_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-    
+
     <jaxb:bindings node="xs:complexType[@name='data_license_type']">
       <annox:annotate>@lombok.Builder</annox:annotate>
       <annox:annotate>@lombok.ToString</annox:annotate>
       <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
       <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
-    
+
     <jaxb:bindings node="xs:complexType[@name='variable_collection']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
-        <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
-        <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.NoArgsConstructor</annox:annotate>
+      <annox:annotate>@lombok.AllArgsConstructor</annox:annotate>
     </jaxb:bindings>
 
     <jaxb:bindings node="xs:complexType[@name='archive_info_type']">
-        <annox:annotate>@lombok.Builder</annox:annotate>
-        <annox:annotate>@lombok.ToString</annox:annotate>
+      <annox:annotate>@lombok.Builder</annox:annotate>
+      <annox:annotate>@lombok.ToString</annox:annotate>
     </jaxb:bindings>
-    
+
 
   </jaxb:bindings>
 </jaxb:bindings>

@@ -4,7 +4,7 @@
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
 >
 
-  <xs:include schemaLocation="commonTypes.xsd" />
+  <!-- xs:include schemaLocation="commonTypes.xsd" / -->
   <!-- xs:include schemaLocation="instruments.xsd" / -->
   <xs:include schemaLocation="person.xsd" />
 
