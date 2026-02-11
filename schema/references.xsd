@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+
+  <xs:annotation>
+    <xs:documentation> Element type definitions for the basic "inline-element referencing collection
+      item definition-or-PID" pattern. </xs:documentation>
+  </xs:annotation>
+
+  <xs:complexType name="element_reference">
+    <xs:annotation>
+      <xs:documentation>
+        An inline reference to an object instance in the object-type collection.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="role" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="object_id" type="xs:IDREF" use="required"/>
+    <xs:attribute name="object_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+ 
+  <xs:complexType name="ordered_reference">
+    <xs:complexContent>
+      <xs:extension base="element_reference">
+        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="element_instance" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        An abstract base of an instance of an object type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="object_id" type="xs:ID" use="required"/>
+    <xs:attribute name="object_class" type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="instance_reference">
+    <xs:annotation>
+      <xs:documentation>
+        A concrete instance that is a reference to an online Persistent Identifier
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="element_instance">
+        <xs:sequence>
+          <xs:element name="pid" type="pid_reference"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="instance_definition" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Abstract base of a concrete instance that is a full definition of the object type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="element_reference">
+        <xs:sequence>
+          <xs:element name="pid" type="pid_reference" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

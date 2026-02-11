@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset_metadata xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns="http://ncei.noaa.gov/oa/v4.5a"
+  xmlns:saxon="http://saxon.sf.net/" xmlns:xerces="http://xerces.apache.org"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://ncei.noaa.gov/oa/v4.5a file:/Users/kamb/workspace/OAPMetadata_v4.1/schema/dataset_metadata.xsd"
+  metadata_standard="Ocean Carbon Metadata" metadata_version="v4.5a">
+  <document_metadata>
+    <document_date/>
+    <document_source object_class="Organization" object_id=""/>
+    <comment/>
+  </document_metadata>
+  <DOI/>
+  <project_id/>
+  <experiment_id/>
+  <data_submitter object_class="Person" object_id="">
+    <role/>
+    <comment/>
+  </data_submitter>
+  <dataset_type/>
+  <dataset_data_type/>
+  <dataset_contact>
+    <person object_class="Person" object_id="">
+      <role/>
+      <comment/>
+    </person>
+    <!--    <organization object_class="Organization" object_id=""/>-->
+  </dataset_contact>
+  <data_provider object_class="Organization" object_id=""/>
+  <dataset_title/>
+  <dataset_description/>
+  <cited_authors>
+    <author index="" object_class="Person" object_id="">
+      <role/>
+      <comment/>
+    </author>
+    <author index="" object_class="Person" object_id="">
+      <role/>
+      <comment/>
+    </author>
+  </cited_authors>
+  <researchers>
+    <researcher object_class="Person" object_id="">
+      <role/>
+      <comment/>
+    </researcher>
+    <researcher object_class="Person" object_id="">
+      <role/>
+      <comment/>
+    </researcher>
+  </researchers>
+  <data_license type=""/>
+  <data_coverage>
+    <temporal_extents>
+      <start_date/>
+      <end_date/>
+    </temporal_extents>
+    <geospatial_extents>
+      <bounds>
+        <western_bounds/>
+        <eastern_bounds/>
+        <northern_bounds/>
+        <southern_bounds/>
+      </bounds>
+    </geospatial_extents>
+    <depth_extents>
+      <min_depth units="meters"/>
+      <max_depth units="meters"/>
+    </depth_extents>
+  </data_coverage>
+  <sea_names>
+    <sea>
+      <term/>
+      <uri/>
+      <description/>
+    </sea>
+    <sea>
+      <term/>
+      <uri/>
+      <description/>
+    </sea>
+  </sea_names>
+  <mCDR/>
+  <funding>
+    <funding_source>
+      <funnding_agency>
+        <name/>
+        <country>
+          <term/>
+          <uri/>
+          <description/>
+        </country>
+      </funnding_agency>
+      <project_title/>
+      <project_identifier/>
+      <project_duration>
+        <start_date/>
+        <end_date/>
+      </project_duration>
+    </funding_source>
+    <funding_source>
+      <funnding_agency>
+        <name/>
+        <country>
+          <term/>
+          <uri/>
+          <description/>
+        </country>
+      </funnding_agency>
+      <project_title/>
+      <project_identifier/>
+      <project_duration>
+        <start_date/>
+        <end_date/>
+      </project_duration>
+    </funding_source>
+  </funding>
+  <publications>
+    <publication>
+      <DOI/>
+      <!--     <link></link>
+        <citation></citation>>-->
+      <name/>
+      <description/>
+    </publication>
+    <publication>
+      <DOI/>
+      <!--     <link></link>
+        <citation></citation>>-->
+      <name/>
+      <description/>
+    </publication>
+  </publications>
+  <related_datasets>
+    <dataset>
+      <DOI/>
+      <!--      <link></link>-->
+      <!--      <citation></citation>-->
+      <name/>
+      <description/>
+    </dataset>
+    <dataset>
+      <DOI/>
+      <!--      <link></link>-->
+      <!--      <citation></citation>-->
+      <name/>
+      <description/>
+    </dataset>
+  </related_datasets>
+  <default_qc_flagging_scheme>
+    <reference>
+      <DOI/>
+      <!--      <link></link>-->
+      <!--      <citation></citation>-->
+      <name/>
+      <description/>
+    </reference>
+    <!--    <description></description>-->
+  </default_qc_flagging_scheme>
+  <default_qc_variable_naming_scheme/>
+  <default_missing_value_indicator/>
+  <supplemental_information/>
+  <keywords>
+    <keyword/>
+    <keyword/>
+  </keywords>
+  <platforms>
+    <platform>
+      <name/>
+      <identifier type=""/>
+      <type/>
+      <owner/>
+      <country_code>
+        <term/>
+        <uri/>
+        <description/>
+      </country_code>
+    </platform>
+    <platform>
+      <name/>
+      <identifier type=""/>
+      <type/>
+      <owner/>
+      <country_code>
+        <term/>
+        <uri/>
+        <description/>
+      </country_code>
+    </platform>
+  </platforms>
+  <observation_identifiers>
+    <expocodes>
+      <expocode/>
+      <expocode/>
+    </expocodes>
+    <cruise_ids>
+      <cruise_id/>
+      <cruise_id/>
+    </cruise_ids>
+    <station_ids>
+      <station_id/>
+      <station_id/>
+    </station_ids>
+  </observation_identifiers>
+  <observation_geometry/>
+  <physiological_response_study>
+    <experiment_id/>
+    <experiment_description/>
+    <biological_subjects>
+      <subject>
+        <organism_description/>
+        <species_identifier type=""/>
+        <life_stage/>
+      </subject>
+      <subject>
+        <organism_description/>
+        <species_identifier type=""/>
+        <life_stage/>
+      </subject>
+    </biological_subjects>
+    <organism_collection_regions>
+      <region/>
+      <region/>
+    </organism_collection_regions>
+    <mcdr_pathway/>
+    <oae_treatment_type/>
+    <site/>
+    <targeted_acidity_or_alkalinity_levels/>
+    <seawater_source/>
+    <seawater_treatment/>
+    <manipulation_method/>
+    <location_where_the_experiment_was_carried_out/>
+    <location_where_biological_subject_was_collected/>
+    <treatment_duration>
+      <start_time/>
+      <end_time/>
+    </treatment_duration>
+    <additional_details/>
+  </physiological_response_study>
+  <ocean_alcalinity_enhancement_study>
+    <project_id/>
+    <experiment_id/>
+    <experiment_description/>
+    <mcdr_pathway/>
+    <oae_treatment_type/>
+    <phase/>
+    <site_description/>
+    <previous_mcdr_research_in_the_area/>
+    <co-located_operations/>
+    <meteorological_and_tidal_conditions/>
+    <alkalinity_feedstock_type/>
+    <alkalinity_feedstock_description/>
+    <dosing_location/>
+    <dosing_depth units="meters"/>
+    <dosing_duration>
+      <start_time/>
+      <end_time/>
+    </dosing_duration>
+    <dosing_mechanism/>
+    <dosing_effluent_density/>
+    <dosing_regimen/>
+    <dosing_rate_data/>
+    <total_alkalinity_feedstock_added/>
+    <permit_number/>
+    <permit_approval_document>
+      <uri/>
+      <name/>
+      <description/>
+    </permit_approval_document>
+    <permitting_authority/>
+    <data_conflicts_and_unreported_data/>
+    <additional_details/>
+  </ocean_alcalinity_enhancement_study>
+  <compilation_product>
+    <data_sources>
+      <source>
+        <uri/>
+        <name/>
+        <description/>
+      </source>
+      <source>
+        <uri/>
+        <name/>
+        <description/>
+      </source>
+    </data_sources>
+    <data_quality_description/>
+  </compilation_product>
+  <gridded_product>
+    <data_sources>
+      <source>
+        <uri/>
+        <name/>
+        <description/>
+      </source>
+      <source>
+        <uri/>
+        <name/>
+        <description/>
+      </source>
+    </data_sources>
+  </gridded_product>
+  <model_output>
+    <model_name/>
+    <model_version/>
+    <physics_component_name_and_version/>
+    <bgc_component_name_and_version/>
+    <modelled_region>
+      <description/>
+      <spatial_bounds>
+        <western_bounds/>
+        <eastern_bounds/>
+        <northern_bounds/>
+        <southern_bounds/>
+      </spatial_bounds>
+    </modelled_region>
+    <grid_resolution>
+      <longitudinal_resolution/>
+      <latitudinal_resolution/>
+      <vertical_resolution/>
+      <temporal_resolution/>
+    </grid_resolution>
+    <input_data_description/>
+    <output_data_description/>
+    <model_configuration>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </model_configuration>
+    <boundary_conditions>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </boundary_conditions>
+    <atmospheric_forcing>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </atmospheric_forcing>
+    <tidal_forcing>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </tidal_forcing>
+    <other_model_forcing_details>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </other_model_forcing_details>
+    <river_and_sediment_flux_details>
+      <reference>
+        <DOI/>
+        <name/>
+        <description/>
+      </reference>
+    </river_and_sediment_flux_details>
+    <spin_up_protocol/>
+    <description_of_acid_or_alkalinity_addition/>
+    <codebase_link>
+      <uri/>
+      <name/>
+      <description/>
+    </codebase_link>
+    <additional_details/>
+  </model_output>
+  <variables>
+    <variable object_class="Variable" object_id="" xsi:type="basic_variable">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="std_observed_variable">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <analyzing_instrument object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <certified_reference_material>
+            <manufacturer/>
+            <batch_number/>
+          </certified_reference_material>
+          <reported_values_adjusted_to_crm/>
+        </calibration>
+      </analyzing_instrument>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="DIC_measured">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+a        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <analyzing_instrument object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <certified_reference_material>
+            <manufacturer/>
+            <batch_number/>
+          </certified_reference_material>
+          <reported_values_adjusted_to_crm/>
+        </calibration>
+      </analyzing_instrument>
+      <sample_preservation>
+        <preservative/>
+        <volume/>
+        <correction_description/>
+      </sample_preservation>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="TA_measured">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <analyzing_instrument object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <certified_reference_material>
+            <manufacturer/>
+            <batch_number/>
+          </certified_reference_material>
+          <reported_values_adjusted_to_crm/>
+        </calibration>
+      </analyzing_instrument>
+      <sample_preservation>
+        <preservative/>
+        <volume/>
+        <correction_description/>
+      </sample_preservation>
+      <cell_type/>
+      <curve_fitting/>
+      <blank_correction/>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="pH_measured">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <analyzing_instrument object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <dye_information>
+            <dye_type/>
+            <manufacturer/>
+            <purified/>
+          </dye_information>
+          <ph_of_standards/>
+          <calibration_temperature units=""/>
+        </calibration>
+      </analyzing_instrument>
+      <measurement_temperature/>
+      <temperature_correction_method/>
+      <ph_report_temperature/>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="co2_discrete">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <water_vapor_correction/>
+      <temperature_correction_method/>
+      <gas_detector object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <calibration_temperature units=""/>
+          <standard_gases>
+            <wmo_traceable/>
+          </standard_gases>
+        </calibration>
+        <measurement_frequency units=""/>
+      </gas_detector>
+      <storage_method/>
+      <seawater_volume/>
+      <headspace_volume/>
+      <measurement_temperature/>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="co2_continuous">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+      <observation_type/>
+      <missing_value_indicator/>
+      <qc_flagging_scheme>
+        <reference>
+          <DOI/>
+          <!--          <link></link>-->
+          <!--          <citation></citation>-->
+          <name/>
+          <description/>
+        </reference>
+        <!--        <description></description>-->
+      </qc_flagging_scheme>
+      <qc_flag_variable/>
+      <qc_steps_taken/>
+      <appropriate_use_quality/>
+      <overall_uncertainty>
+        <value units=""/>
+        <uncertainty_description/>
+      </overall_uncertainty>
+      <measurement_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </measurement_researcher>
+      <qc_researcher object_class="Person" object_id="">
+        <role/>
+        <comment/>
+      </qc_researcher>
+      <measured>
+        <collection_method/>
+        <collection_instrument_type/>
+        <sampling>
+          <discrete> </discrete>
+          <!--          <continuous>
+            <intake_location></intake_location>
+            <intake_depth units="meters"></intake_depth>
+          </continuous>-->
+        </sampling>
+        <analysis_method>
+          <reference>
+            <!---->
+            <!---->
+          </reference>
+          <!--          <description></description>-->
+        </analysis_method>
+        <deviations_from_method/>
+        <sensor_data_conversion>
+          <conversion_calculation_method/>
+          <conversion_software>
+            <package_name/>
+          </conversion_software>
+        </sensor_data_conversion>
+      </measured>
+      <water_vapor_correction/>
+      <temperature_correction_method/>
+      <gas_detector object_class="Instrument" object_id="">
+        <type/>
+        <manufacturer/>
+        <model/>
+        <serial/>
+        <description/>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <reference>
+          <uri/>
+          <name/>
+          <description/>
+        </reference>
+        <accuracy units=""/>
+        <precision units=""/>
+        <uncertainty units=""/>
+        <calibration>
+          <technique_description/>
+          <method_reference>
+            <reference>
+              <!---->
+              <!---->
+            </reference>
+            <!--            <description></description>-->
+          </method_reference>
+          <frequency/>
+          <last_calibration> </last_calibration>
+          <!--          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>-->
+          <calibration_certificate_info/>
+          <calibration_temperature units=""/>
+          <standard_gases>
+            <wmo_traceable/>
+          </standard_gases>
+        </calibration>
+        <measurement_frequency units=""/>
+      </gas_detector>
+      <equilibrator>
+        <type/>
+        <volume units="liters"/>
+        <vented/>
+        <gas_flow_rate units="liters/minute"/>
+        <water_flow_rate units="liters/minute"/>
+      </equilibrator>
+      <co2_drying_method/>
+      <eq_pressure_measurement>
+        <method/>
+        <sensor object_class="Instrument" object_id="">
+          <type/>
+          <manufacturer/>
+          <model/>
+          <serial/>
+          <description/>
+          <reference>
+            <uri/>
+          </reference>
+          <reference>
+            <uri/>
+          </reference>
+          <accuracy units=""/>
+          <precision units=""/>
+          <uncertainty units=""/>
+          <calibration>
+            <technique_description/>
+            <method_reference>
+              <reference>
+                <!---->
+                <!---->
+              </reference>
+              <!--              <description></description>-->
+            </method_reference>
+            <last_calibration> </last_calibration>
+            <!--            <calibration_history>
+              <calibration>
+              </calibration>
+              <calibration>
+              </calibration>
+            </calibration_history>-->
+          </calibration>
+        </sensor>
+        <sensor_location/>
+        <comments/>
+      </eq_pressure_measurement>
+      <eq_temperature_measurement>
+        <method/>
+        <sensor object_class="Instrument" object_id="">
+          <type/>
+          <manufacturer/>
+          <model/>
+          <serial/>
+          <description/>
+          <reference>
+            <uri/>
+          </reference>
+          <reference>
+            <uri/>
+          </reference>
+          <accuracy units=""/>
+          <precision units=""/>
+          <uncertainty units=""/>
+          <calibration>
+            <technique_description/>
+            <method_reference>
+              <reference>
+                <!---->
+                <!---->
+              </reference>
+              <!--              <description></description>-->
+            </method_reference>
+            <last_calibration> </last_calibration>
+            <!--            <calibration_history>
+              <calibration>
+              </calibration>
+              <calibration>
+              </calibration>
+            </calibration_history>-->
+          </calibration>
+        </sensor>
+        <sensor_location/>
+        <comments/>
+      </eq_temperature_measurement>
+      <atm_pressure_measurement>
+        <method/>
+        <sensor object_class="Instrument" object_id="">
+          <type/>
+          <manufacturer/>
+          <model/>
+          <serial/>
+          <description/>
+          <reference>
+            <uri/>
+          </reference>
+          <reference>
+            <uri/>
+          </reference>
+          <accuracy units=""/>
+          <precision units=""/>
+          <uncertainty units=""/>
+          <calibration>
+            <technique_description/>
+            <method_reference>
+              <reference>
+                <!---->
+                <!---->
+              </reference>
+              <!--              <description></description>-->
+            </method_reference>
+            <last_calibration> </last_calibration>
+            <!--            <calibration_history>
+              <calibration>
+              </calibration>
+              <calibration>
+              </calibration>
+            </calibration_history>-->
+          </calibration>
+        </sensor>
+        <sensor_location/>
+        <comments/>
+      </atm_pressure_measurement>
+      <atm_co2 measured="">
+        <location/>
+        <height units="meters"/>
+        <measurement_interval/>
+      </atm_co2>
+      <xco2_pco2_calculation_method/>
+      <pco2_fco2_calculation_method/>
+    </variable>
+    <variable object_class="Variable" object_id="" xsi:type="co2_reported_variable">
+      <standard_identifier>
+        <term/>
+        <uri/>
+        <description/>
+      </standard_identifier>
+      <dataset_variable_name/>
+      <long_name/>
+      <description/>
+      <units/>
+    </variable>
+  </variables>
+  <people>
+    <person xsi:type="person_definition" object_class="Person" object_id="">
+      <identifier/>
+      <name>
+        <first/>
+        <middle/>
+        <last/>
+        <suffix/>
+      </name>
+      <organization object_class="Organization" object_id=""/>
+      <contact_info>
+        <address type="">
+          <delivery_address/>
+          <city/>
+          <administrative_area/>
+          <postal_code/>
+          <country>
+            <term/>
+            <uri/>
+          </country>
+        </address>
+        <phone/>
+        <email/>
+        <link/>
+      </contact_info>
+      <link>
+        <uri/>
+        <name/>
+        <description/>
+      </link>
+      <link>
+        <uri/>
+        <name/>
+        <description/>
+      </link>
+    </person>
+    <person xsi:type="person_pid" object_class="Person" object_id="">
+      <identifier/>
+      <description/>
+    </person>
+  </people>
+  <organizations>
+    <organization xsi:type="organization_pid" object_class="Organization" object_id="">
+      <identifier/>
+      <description/>
+      <contact_info>
+        <address type="">
+          <delivery_address/>
+          <city/>
+          <administrative_area/>
+          <postal_code/>
+          <country>
+            <term/>
+            <uri/>
+          </country>
+        </address>
+        <phone/>
+        <email/>
+        <link/>
+      </contact_info>
+    </organization>
+    <organization xsi:type="organization_pid" object_class="Organization" object_id="">
+      <identifier/>
+      <description/>
+      <contact_info>
+        <address type="">
+          <delivery_address/>
+          <city/>
+          <administrative_area/>
+          <postal_code/>
+          <country>
+            <term/>
+            <uri/>
+          </country>
+        </address>
+        <phone/>
+        <email/>
+        <link/>
+      </contact_info>
+    </organization>
+  </organizations>
+</dataset_metadata>

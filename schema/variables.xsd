@@ -1,256 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ncei.noaa.gov/oads/&VERSION;"
-  xmlns="http://ncei.noaa.gov/oads/&VERSION;" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
->
+  >
 
-  <xs:include schemaLocation="commonTypes.xsd" />
-  <xs:include schemaLocation="instrumentation.xsd" />
-  <xs:include schemaLocation="person.xsd" />
+  <xs:include schemaLocation="variable_fields.xsd"/>
 
-  <!-- This should probably be a controlled vocabulary as below. -->
-  <xs:simpleType name="variable_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="UNSPECIFIED" />
-      <xs:enumeration value="IN_SITU" /> <!-- measured in-stream-->
-      <xs:enumeration value="DISCRETE" /> <!-- discrete samples -->
-      <xs:enumeration value="COMPUTED" /> <!-- from other data, or model output -->
-      <xs:enumeration value="EXPERIMENT" />
-      <xs:enumeration value="MANIPULATION" />
-      <xs:enumeration value="RESPONSE" />
-    </xs:restriction>
-  </xs:simpleType>
+  <xs:complexType name="variable" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="element_instance">
+        <xs:attribute name="object_class" type="xs:string" fixed="Variable"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
 
-<!-- From observation type instructions:
-How the variable is observed, e.g., surface underway, profile, time series, model output, etc. 
-For experimental data, this could be: laboratory experiment, pelagic mesocosm, benthic mesocosm, 
-                                      benthic FOCE type studies, natural pertubration site studies, etc
- -->
-  <!-- It would be good if this were a controlled vocabulary like below, 
-       but that may be difficult. -->
-  <xs:simpleType name="observation_type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Point" />
-      <xs:enumeration value="Timeseries" />
-      <xs:enumeration value="Trajectory" /> <!-- aka (Surface) Underway -->
-      <xs:enumeration value="Profile" />
-      <xs:enumeration value="Timeseries_Profile" />  <!-- ??? Does this assume same sample rate for all profile vars ? -->
-      <xs:enumeration value="Trajectory_Profile" />
-    </xs:restriction>
-  </xs:simpleType>
+  <xs:complexType name="basic_variable">
+    <xs:complexContent>
+      <xs:extension base="variable">
+        <xs:sequence>
+          <xs:group ref="minimum_variable_fields"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:complexType name="base_variable_type">
+  <xs:complexType name="std_variable_base" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="basic_variable">
+        <xs:sequence>
+          <xs:element name="observation_type" type="xs:string"/>
+          <!-- ???  what will these be? DSG type? Exp type? /> -->
+          <xs:group ref="common_var_additional_fields"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="insitu_variable" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="std_variable_base">
+        <xs:sequence>
+          <!-- <xs:element name="sampling" type="sampling_type"/> -->
+          <xs:choice>
+            <xs:element name="measured" type="measured_var_info"/>
+            <xs:element name="calculated" type="calculated_var_info"/>
+            <xs:element name="gridded" type="gridded_var_info"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="basic_measured_observation_base" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="insitu_variable">
+        <xs:sequence>
+          <xs:group ref="minimum_variable_fields"/>
+          <xs:element name="observation_type" type="xs:string"/>
+          <xs:group ref="common_var_additional_fields"/>
+          <xs:element name="measured" type="measured_var_info"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="basic_calculated_observation_base">
+    <xs:complexContent>
+      <xs:restriction base="insitu_variable">
+        <xs:sequence>
+          <xs:group ref="minimum_variable_fields"/>
+          <xs:element name="observation_type" type="xs:string"/>
+          <xs:group ref="common_var_additional_fields"/>
+          <xs:element name="calculated" type="calculated_var_info"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="basic_calculated_variable">
+    <xs:complexContent>
+      <xs:extension base="basic_calculated_observation_base"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="calculated_variable" type="basic_calculated_variable"/>
+
+  <xs:complexType name="std_observed_variable">
+    <xs:complexContent>
+      <xs:extension base="basic_measured_observation_base">
+        <xs:sequence>
+          <xs:element name="analyzing_instrument" type="crm_instrument"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="observed_variable" type="std_observed_variable"/>
+
+  <xs:complexType name="DIC_measured">
+    <xs:complexContent>
+      <xs:extension base="basic_measured_observation_base">
+        <xs:sequence>
+          <xs:element name="analyzing_instrument" type="crm_instrument"/>
+          <xs:element name="sample_preservation" type="sample_preservation" minOccurs="0"
+            maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sample_preservation">
     <xs:sequence>
-        <xs:element name="fullName" type="xs:string" />
-        <xs:element name="datasetVarName" type="xs:string" />
-        <xs:element name="variableType" type="xs:string" /> <!-- variable_type"/> -->
-        <xs:element name="observationType" type="xs:string" /> <!-- observation_type"/> -->
-        <xs:element name="units" type="xs:string" minOccurs="0" />
-        <xs:element name="missingValue" type="xs:string" minOccurs="0"/>
-        <xs:element name="uncertainty" type="xs:string" minOccurs="0"/>
-        <xs:element name="qcFlag" type="qc_flag_info_type" minOccurs="0" />
-        <xs:element name="researcher" type="xs:IDREF" /> <!-- ??? multiple ? -->
-        <xs:element name="methodReference" type="xs:string" minOccurs="0" maxOccurs="unbounded" /> <!-- ??? multiple ? -->
-        <xs:element name="calculationMethod" type="calculation_method_type" minOccurs="0"/>
-        <xs:element name="manipulationMethod" type="xs:string" minOccurs="0" />   <!-- XXX only in manipulation type variables ? -->
-        <xs:element name="samplingInstrument" type="xs:IDREFS" minOccurs="0" /> 
-        <xs:element name="analyzingInstrument" type="xs:IDREFS" minOccurs="0" />
-        <xs:element name="detailedInfo" type="xs:string" minOccurs="0" />   <!-- XXX methodDescription -->
-        <xs:element name="fieldReplicateHandling" type="xs:string" minOccurs="0" /> 
-        <xs:element name="standardization" type="standardization_type" minOccurs="0" /> 
-      </xs:sequence>
-    <xs:attribute name="std_name" type="xs:string" use="required"/>  <!-- fixed vocabulary -->
+      <xs:element name="preservative" type="xs:string"/>
+      <xs:element name="volume" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="correction_description" type="xs:string"/>
+    </xs:sequence>
   </xs:complexType>
 
-  <!-- DIC-->
-  <xs:complexType name="dic_variable_type"> 
+  <xs:complexType name="TA_measured">
+    <!-- ??? spell it out? -->
     <xs:complexContent>
-      <xs:extension base="base_variable_type">
+      <xs:extension base="DIC_measured">
+        <!-- basic_observation + preservative -->
         <xs:sequence>
-          <xs:element name="poison" type="poison_type" minOccurs="0" /> 
-        </xs:sequence>
-     </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
- 
-  <xs:complexType name="ta_variable_type"> <!-- TA -->
-    <xs:complexContent>
-      <xs:extension base="dic_variable_type">
-        <xs:sequence>
-          <xs:element name="titrationType" type="xs:string" />
-          <xs:element name="cellType" type="xs:string" />
-          <xs:element name="curveFitting" type="xs:string" />
-          <xs:element name="blankCorrection"  type="xs:string" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  
-  <xs:complexType name="ph_variable_type">
-    <xs:complexContent>
-      <xs:extension base="base_variable_type">
-        <xs:sequence>
-          <xs:element name="phScale" type="xs:string" /> <!-- ??? controlled? -->
-          <xs:element name="measurementTemperature" type="xs:string" minOccurs="0" />
-          <xs:element name="temperatureCorrectionMethod" type="xs:string" minOccurs="0" />
-          <xs:element name="phReportTemperature" type="xs:string" />
+          <xs:element name="cell_type" type="xs:string"/>
+          <xs:element name="curve_fitting" type="xs:string"/>
+          <xs:element name="blank_correction" type="xs:string" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="co2_base">
+  <xs:complexType name="pH_measured">
     <xs:complexContent>
-      <xs:extension base="base_variable_type">
+      <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
-          <xs:element name="gasDetector" type="gas_detector_type"/>
-          <xs:element name="waterVaporCorrection" type="xs:string" />
-          <xs:element name="temperatureCorrectionMethod" type="xs:string" />
-          <xs:element name="co2ReportTemperature" type="xs:string" />
+          <xs:element name="analyzing_instrument" type="pH_instrument"/>
+          <xs:element name="measurement_temperature" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="temperature_correction_method" type="xs:string" minOccurs="0"
+            maxOccurs="1"/>
+          <xs:element name="ph_report_temperature" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
-  <xs:complexType name="co2_autonomous">
+
+  <xs:complexType name="co2_measured_base" abstract="true">
     <xs:complexContent>
-      <xs:extension base="co2_base">
+      <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
-          <xs:element name="locationSeawaterIntake" type="xs:string" minOccurs="0" />
-          <xs:element name="depthSeawaterIntake" type="xs:string" minOccurs="0" />
-          <xs:element name="equilibrator" minOccurs="0" type="equilibrator_type" />
+          <!-- <xs:element name="analyzing_instrument" type="instrument_ref"/>  gas_detector ??? -->
+          <xs:element name="water_vapor_correction" type="xs:string"/>
+          <xs:element name="temperature_correction_method" type="xs:string"/>
+          <!-- <xs:element name="co2_report_temperature" type="xs:string"/>  removed ??? -->
+          <xs:element name="gas_detector" type="co2_gas_detector"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
+  <xs:complexType name="co2_continuous">
+    <xs:complexContent>
+      <xs:extension base="co2_measured_base">
+        <xs:sequence>
+          <xs:element name="equilibrator" type="equilibrator" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="co2_drying_method" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="eq_pressure_measurement" type="sensor_measurement"/>
+          <xs:element name="eq_temperature_measurement" type="sensor_measurement"/>
+          <xs:element name="atm_pressure_measurement" type="sensor_measurement"/>
+          <xs:element name="atm_co2" type="atm_co2"/>
+          <xs:element name="xco2_pco2_calculation_method" type="xs:string" minOccurs="0"/>
+          <xs:element name="pco2_fco2_calculation_method" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="co2_discrete">
     <xs:complexContent>
-      <xs:extension base="co2_base">
+      <xs:extension base="co2_measured_base">
         <xs:sequence>
-          <xs:element name="storageMethod" type="xs:string" />
-          <xs:element name="seawaterVolume" type="xs:string" />
-          <xs:element name="headspaceVolume" type="xs:string" />
-          <xs:element name="measurementTemperature" type="xs:string" />
+          <xs:element name="storage_method" type="xs:string"/>
+          <xs:element name="seawater_volume" type="xs:string"/>
+          <xs:element name="headspace_volume" type="xs:string"/>
+          <xs:element name="measurement_temperature" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
-  <xs:complexType name="biological_variable">
+
+  <xs:complexType name="co2_calculated">
     <xs:complexContent>
-      <xs:extension base="base_variable_type">  <!-- Unsure about this. Perhaps "observered_variable" ? -->
-        <xs:sequence>
-          <xs:element name="duration" minOccurs="0" type="xs:string" />
-          <xs:element name="biologicalSubject" type="xs:string" />
-          <xs:element name="speciesID" type="xs:string" />
-          <xs:element name="lifeStage" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
+      <xs:extension base="basic_calculated_observation_base"/>
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="co2_reported_variable">
+    <xs:complexContent>
+      <xs:extension base="basic_variable"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:complexType name="qc_flag_info_type">
-    <xs:all>
-      <xs:element name="description" type="xs:string" />
-      <xs:element name="qcFlagVarName" type="xs:string" minOccurs="0"/> <!-- XXX ??? if missing, assume datasetVarName + "_qc" -->
-    </xs:all>
-  </xs:complexType>
-  
-  <xs:complexType name="equilibrator_type" >
+  <xs:complexType name="sensor_measurement">
     <xs:sequence>
-      <xs:element name="type" type="xs:string" minOccurs="0" />
-      <xs:element name="volume" type="xs:string" minOccurs="0" />
-      <xs:element name="vented" type="xs:string" minOccurs="0" />
-      <xs:element name="waterFlowRate" type="xs:string" minOccurs="0" />
-      <xs:element name="gasFlowRate" type="xs:string" minOccurs="0" />
-      <xs:element name="temperatureMeasurement" type="equilibrator_sensor_type" />
-      <xs:element name="pressureMeasurement" type="equilibrator_sensor_type" />
-      <xs:element name="dryMethod" type="xs:string" minOccurs="0" />  <!-- atmospheric -->
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="equilibrator_sensor_type">
-    <xs:sequence>
-      <xs:element name="method" type="xs:string" />
-      <xs:element name="sensor" >
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="location" type="xs:string" />
-            <xs:element name="manufacturer" type="xs:string" />
-            <xs:element name="model" type="xs:string" />
-            <xs:element name="accuracy" type="xs:string" />
-            <xs:element name="precision" type="xs:string" />
-            <xs:element name="calibration" type="xs:string" />
-            <xs:element name="warming" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="comments" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="gas_detector_type">
-    <xs:sequence>
-      <xs:element name="manufacturer" type="xs:string" minOccurs="0" />
-      <xs:element name="model" type="xs:string" minOccurs="0" />
-      <xs:element name="resolution" type="xs:string" minOccurs="0" />
-      <xs:element name="uncertainty" type="xs:string" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-        
-  <xs:complexType name="standardization_type">
-    <xs:sequence>
-      <xs:element name="description" type="xs:string" />
-      <xs:element name="frequency" type="xs:string" />
-      <xs:element name="temperature" type="xs:decimal" minOccurs="0" /> <!-- ph only -->
-      <xs:choice>
-        <xs:sequence>
-          <xs:element name="standardGas" type="standard_gas_type" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="crm" type="crm_type" minOccurs="0" />
-        </xs:sequence>
-        <xs:element name="phOfStandards"  type="xs:string" minOccurs="0"/>
-      </xs:choice>
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="crm_type">
-    <xs:sequence>
-      <xs:element name="manufacturer" type="xs:string" />
-      <xs:element name="batch"  type="xs:string" />
-      <xs:element name="bottle"   type="xs:string" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="standard_gas_type">
-    <xs:sequence>
-      <xs:element name="manufacturer" type="xs:string" minOccurs="0" />
-      <xs:element name="concentration" type="xs:string" minOccurs="0" />
-      <xs:element name="uncertainty" type="xs:string" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="poison_type">
-    <xs:sequence>
-      <xs:element name="name" type="xs:string" />
-      <xs:element name="description" type="xs:string" minOccurs="0" />
-      <xs:element name="volume" type="xs:string" minOccurs="0" /> <!-- value_with_unit_type -->
-      <xs:element name="correction" type="xs:string" />
+      <xs:element name="method" type="xs:string"/>
+      <xs:element name="sensor" type="sensor"/>
+      <xs:element name="sensor_location" type="xs:string"/>
+      <xs:element name="comments" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="calculation_method_type">
-    <xs:sequence>
-      <xs:element name="description" type="xs:string" />
-      <xs:element name="parameter" type="calculation_parameter_type" minOccurs="0" maxOccurs="unbounded" />
+  <xs:complexType name="atm_co2">
+    <xs:sequence minOccurs="0">
+      <xs:element name="location" type="xs:string"/>
+      <xs:element name="height" type="altitude_m"/>
+      <xs:element name="measurement_interval" type="xs:string" minOccurs="0"/>
     </xs:sequence>
-  </xs:complexType>    
-  
-  <xs:complexType name="calculation_parameter_type">
-    <xs:simpleContent>
-      <xs:extension base="xs:anySimpleType">
-        <xs:attribute name="name" type="xs:string" />
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:attribute name="measured" type="xs:boolean" use="required"/>
+    <!-- Just trying out conditional validation. -->
+    <xs:assert test="(@measured = true() and oa:location != '' ) or (@measured = false() and not(exists(oa:location)))"/>
+    <!--  saxon:message="saxon failure: " xerces:message="xerces failure: " -->
   </xs:complexType>
+  <xs:element name="atm_co2" type="atm_co2"/>
+
+  <xs:complexType name="phys_response_variable"/>
+  <xs:complexType name="sediment_variable"/>
+  <xs:complexType name="social_variable"/>
+  <xs:complexType name="model_variable"/>
+
+  <xs:complexType name="uniform_variable_collection">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="variable" type="variable"/>
+    </xs:choice>
+  </xs:complexType>
+  
+  <xs:complexType name="variable_list">
+    <xs:sequence>
+      <xs:element name="basic" type="basic_variable"/>
+      <xs:element name="observed" type="std_observed_variable"/>
+      <xs:element name="DIC" type="DIC_measured"/>
+      <xs:element name="TA" type="TA_measured"/>
+      <xs:element name="pH" type="pH_measured"/>
+      <xs:element name="co2_discrete" type="co2_discrete"/>
+      <xs:element name="co2_continuous" type="co2_continuous"/>
+      <xs:element name="co2_reported" type="co2_reported_variable"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="variable_collection">
+    <xs:complexContent>
+      <xs:extension base="variable_list"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="variables" type="variable_list"/>
+
+
 </xs:schema>

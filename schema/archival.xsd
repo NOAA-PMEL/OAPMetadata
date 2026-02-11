@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+
+  <xs:include schemaLocation="people.xsd"/>
+
+  <xs:complexType name="archival_info">
+    <xs:sequence>
+      <xs:element name="archive" type="archive_info" maxOccurs="unbounded"/>
+      <!-- include alternate repos / locations, or only primary here? -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="archive_info">
+    <xs:sequence>
+      <xs:element name="data_center" type="organization_ref"/>
+      <!-- ? Do we need a status element, for perhaps "submitted" or "in-process" or whatever ? -->
+
+      <xs:element name="archival_id" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <!-- eg accession # -->
+      <!--  This would be for NCEI accession #s
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="[0-9]{7}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      -->
+      <!-- from SOCAT version -->
+      <xs:element name="dataset_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/> <!-- But which URL? Info? Download? ??? -->
+      <xs:element name="metadata_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+
+      <!-- This should be pulled from the revision history.
+            Or at minimum be references to entries in revision history.
+      <xs:element name="date_published" type="xs:dateTime" minOccurs="0" maxOccurs="1"/> 
+      <xs:element name="initial_submission" type="submission_info"/>
+      <xs:element name="latest_revision" type="submission_info"/>
+      -->
+      <xs:element name="revision_history">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="revision" type="revision" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- xs:any minOccurs="0" maxOccurs="unbounded"/> # Why ?? -->
+    </xs:sequence>
+    <!-- socat refers to "alternative repositories ... -->
+    <xs:attribute name="primary" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="submission_info">
+    <xs:sequence>
+      <xs:element name="submitted_by" type="person_ref"/>
+      <xs:element name="submission_date" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revision">
+    <xs:complexContent>
+      <xs:extension base="submission_info">
+        <xs:sequence>
+          <xs:element name="revision_description" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

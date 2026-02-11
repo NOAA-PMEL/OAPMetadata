@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns="&NAMESPACE;" targetNamespace="&NAMESPACE;"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  <!--targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" -->
+
+  <!-- experiment 
+  <xs:simpleType name="decimal_value">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal"/>
+    </xs:simpleContent>
+  </xs:simpleType>
+-->
+  <xs:simpleType name="positive_decimal_value">
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="dimensioned_quantity">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="units" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="positive_dimensioned_quantity">
+    <xs:simpleContent>
+      <xs:extension base="positive_decimal_value">
+        <xs:attribute name="units" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+<!--
+  <xs:simpleType name="positive_decimal">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="positive_units">
+    <xs:simpleContent>
+      <xs:extension base="positive_decimal">
+        <xs:attribute name="units" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="measured_meters">
+    <xs:simpleContent>
+      <xs:restriction base="positive_units">
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="meters_type">
+    <xs:simpleContent>
+      <xs:restriction base="dimensioned_quantity">
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+-->  
+  <xs:complexType name="measured_value" >
+    <xs:simpleContent>
+      <xs:extension base="dimensioned_quantity"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="positive_measured_value">
+    <xs:simpleContent>
+      <xs:extension base="positive_dimensioned_quantity"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="depth_m">
+    <xs:annotation>
+      <xs:documentation> Units for depth measurements. Units are meters, positive values down.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="positive_dimensioned_quantity">
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="altitude_m">
+    <xs:annotation>
+      <xs:documentation> Units for altitude measurements. Units are meters, positive values up. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="measured_value"> <!-- positive ??? -->
+        <xs:attribute name="units" type="xs:string" fixed="meters" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="flow_rate">
+    <xs:complexContent>
+      <xs:restriction base="measured_value">
+        <xs:attribute name="units" type="xs:string" fixed="liters/minute" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="liter_volume">
+    <xs:complexContent>
+      <xs:restriction base="measured_value">
+        <xs:attribute name="units" type="xs:string" fixed="liters" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ordered_string_element">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="index" type="xs:int" default="0"/>
+        <!-- zero-based indexing -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="typed_element">
+    <xs:attribute name="type" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="typed_string">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="typed_identifier">
+    <!-- sugar -->
+    <xs:simpleContent>
+      <xs:extension base="typed_string"> </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="value_with_unit">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="units" type="xs:Name"/>
+        <!-- controlled vocabulary ??? -->
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- 
+  <xs:complexType name="standard_identifier">
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:anyURI"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  -->
+
+  <xs:complexType name="general_reference">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="DOI" type="pid_reference" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="citation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      </xs:choice>
+      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="related" type="general_reference"/>
+
+  <xs:complexType name="restricted_term_set">
+    <xs:sequence>
+      <xs:element name="term" type="xs:string"/>
+      <xs:element name="term_set_definition" type="xs:anyURI"/>      
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="vocabulary_item_reference">
+    <xs:sequence>
+      <xs:element name="term" type="xs:string"/>
+      <xs:element name="uri" type="xs:anyURI"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pid_reference">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="URI_reference">
+    <xs:sequence>
+      <xs:element name="uri" type="xs:anyURI"/>
+      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reference_or_description">
+    <xs:choice>
+      <xs:element name="reference" type="general_reference"/>
+      <xs:element name="description" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="data_reference">
+    <xs:complexContent>
+      <xs:extension base="URI_reference"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!-- ??? Use controled vocab reference instead?  Or maybe code from controlled vocab
+  <xs:complexType name="country">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="code" type="countries_list" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="countries_list">
+    <xs:annotation>
+      <xs:documentation> This is to be a controled list of all country codes. But updates would
+        require a new version of the schema... </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="US"/>
+    </xs:restriction>
+  </xs:simpleType>
+-->
+  
+  <xs:complexType name="software_info">
+    <xs:sequence>
+      <xs:element name="package_name" type="xs:string"/>
+      <xs:element name="version" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="longitude_180">
+    <!-- ? Do we insist on +/- 180? -->
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="-180.0"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="latitude">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-90.0"/>
+      <xs:maxInclusive value="90.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temporal_extents">
+    <xs:sequence>
+      <xs:element name="start_date" type="xs:date"/>
+      <xs:element name="end_date" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="datetime_duration">
+    <xs:sequence>
+      <xs:element name="start_time" type="xs:dateTime"/>
+      <xs:element name="end_time" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- 
+    ? Do we need to support choice here? 
+    SOCAT does.
+    single location could be represented in bounds element.
+    Support multiple spatial elements?
+    Support WKT polygons?
+  -->
+  <xs:complexType name="spatial_extents">
+    <xs:choice>
+      <xs:element name="bounds" type="spatial_bounds"/>
+      <xs:element name="site_location" type="site_location"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="spatial_bounds">
+    <xs:sequence>
+      <xs:element name="western_bound" type="longitude_180"/>
+      <xs:element name="eastern_bound" type="longitude_180"/>
+      <xs:element name="northern_bound" type="latitude"/>
+      <xs:element name="southern_bound" type="latitude"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="site_location">
+    <xs:sequence>
+      <xs:element name="longitude" type="longitude_180"/>
+      <xs:element name="latitude" type="latitude"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="altitude_range">
+    <xs:annotation>
+      <xs:documentation> Min and max altitudes in the dataaset. Positive down. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="min_altitude" type="altitude_m"/>
+      <xs:element name="max_altitude" type="altitude_m"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depth_range">
+    <xs:annotation>
+      <xs:documentation> Min and max depths in the dataaset. Positive down. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="min_depth" type="depth_m"/>
+      <xs:element name="max_depth" type="depth_m"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="funding_source">
+    <xs:sequence>
+      <xs:element name="funding_agency"> <!-- ??? organization_ref -->
+        <!-- and/or org-ref -->
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="country" type="vocabulary_item_reference"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="project_title" type="xs:string"/>
+      <xs:element name="project_identifier" type="xs:ID"/>
+      <xs:element name="project_duration" type="temporal_extents" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- It would be good if this were a controlled vocabulary. -->
+  <xs:simpleType name="observation_geometry">  <!-- ??? Is this a per-variable or per-dataset field? -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Point"/>  <!-- ??? CF types.  Acceptable? -->
+      <xs:enumeration value="Timeseries"/>
+      <xs:enumeration value="Trajectory"/> <!-- aka (Surface) Underway -->
+      <xs:enumeration value="Profile"/>
+      <xs:enumeration value="Timeseries_Profile"/>
+      <!-- ??? Does this assume same sample rate for all profile vars ? -->
+      <xs:enumeration value="Trajectory_Profile"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- From v6 observation type instructions:
+    How the variable is observed, e.g., surface underway, profile, time series, model output, etc. 
+    For experimental data, this could be: laboratory experiment, pelagic mesocosm, benthic mesocosm, 
+                                          benthic FOCE type studies, natural pertubration site studies, etc
+ -->
+  
+  <xs:simpleType name="experiment_location">  <!-- ??? Is this a per-variable or per-dataset field? -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lab"/>
+      <xs:enumeration value="field"/>
+      <xs:enumeration value="mesocosm"/>
+      <xs:enumeration value="natural_analogue"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="ncei_obs_types">
+    <xs:union memberTypes="observation_geometry experiment_location"/>
+  </xs:simpleType>
+</xs:schema>

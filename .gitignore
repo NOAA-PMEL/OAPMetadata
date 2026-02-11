@@ -1,5 +1,8 @@
 gen-src
 gen-classes
 build
+scratch
 /test-classes/
 /classes/
+/bin/
+*bak*

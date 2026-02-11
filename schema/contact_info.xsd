@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns="&NAMESPACE;"
+  targetNamespace="&NAMESPACE;" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  vc:minVersion="1.1">
+  <xs:include schemaLocation="common_types.xsd"/>
+
+  <xs:complexType name="contact_info">
+    <xs:sequence>
+      <xs:element name="address" type="address" minOccurs="0" maxOccurs="1"/>
+      <!-- maxOccurs="unbounded" -->
+      <xs:element name="phone" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <!-- type="typed_string"  maxOccurs="unbounded" -->
+      <xs:element name="email" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <!-- type="typed_string"  maxOccurs="unbounded" -->
+      <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+      <!-- maxOccurs="unbounded" -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="address">
+    <xs:complexContent>
+      <xs:extension base="typed_element">   <!-- what is the address type?  I guess home/office/etc ??? -->
+        <xs:sequence>
+          <xs:element name="delivery_address" type="xs:string">
+            <xs:annotation>
+              <xs:documentation> Free text: allows multiple lines / address elements. Should
+                preserve formatting (ie new-lines) </xs:documentation> <!-- This is difficult. -->
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="city" type="xs:string"/>
+          <xs:element name="administrative_area" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <!-- should we just call it "state" -->
+          <xs:element name="postal_code" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="country" type="vocabulary_item_reference"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

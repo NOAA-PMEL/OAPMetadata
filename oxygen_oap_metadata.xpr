@@ -6,6 +6,18 @@
             <serialized xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
+                        <String>key.editor.open.option.pane</String>
+                        <Boolean>false</Boolean>
+                    </entry>
+                    <entry>
+                        <String>key.editor.save.option.pane</String>
+                        <Boolean>false</Boolean>
+                    </entry>
+                    <entry>
                         <String>scenario.associations</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
@@ -123,6 +135,9 @@
         </options>
     </meta>
     <projectTree name="oxygen_oap_metadata.xpr">
+        <folder masterFiles="true" name="Main Files">
+            <file name="schema/dataset_metadata.xsd"/>
+        </folder>
         <folder path="."/>
     </projectTree>
 </project>

@@ -1,0 +1,357 @@
+
+package gnp.ocmd;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for equilibrator_sensor complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="equilibrator_sensor"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="method" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="sensor"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="accuracy" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="precision" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="calibration" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="warming" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="comments" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "equilibrator_sensor", namespace = "http://ncei.noaa.gov/oads/a4.1", propOrder = {
+    "method",
+    "sensor",
+    "comments"
+})
+public class EquilibratorSensor {
+
+    @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+    protected String method;
+    @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+    protected EquilibratorSensor.Sensor sensor;
+    @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+    protected String comments;
+
+    /**
+     * Gets the value of the method property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    /**
+     * Sets the value of the method property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMethod(String value) {
+        this.method = value;
+    }
+
+    /**
+     * Gets the value of the sensor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EquilibratorSensor.Sensor }
+     *     
+     */
+    public EquilibratorSensor.Sensor getSensor() {
+        return sensor;
+    }
+
+    /**
+     * Sets the value of the sensor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EquilibratorSensor.Sensor }
+     *     
+     */
+    public void setSensor(EquilibratorSensor.Sensor value) {
+        this.sensor = value;
+    }
+
+    /**
+     * Gets the value of the comments property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getComments() {
+        return comments;
+    }
+
+    /**
+     * Sets the value of the comments property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setComments(String value) {
+        this.comments = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="accuracy" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="precision" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="calibration" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="warming" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "location",
+        "manufacturer",
+        "model",
+        "accuracy",
+        "precision",
+        "calibration",
+        "warming"
+    })
+    public static class Sensor {
+
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String location;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String manufacturer;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String model;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String accuracy;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String precision;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String calibration;
+        @XmlElement(namespace = "http://ncei.noaa.gov/oads/a4.1", required = true)
+        protected String warming;
+
+        /**
+         * Gets the value of the location property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getLocation() {
+            return location;
+        }
+
+        /**
+         * Sets the value of the location property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setLocation(String value) {
+            this.location = value;
+        }
+
+        /**
+         * Gets the value of the manufacturer property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getManufacturer() {
+            return manufacturer;
+        }
+
+        /**
+         * Sets the value of the manufacturer property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setManufacturer(String value) {
+            this.manufacturer = value;
+        }
+
+        /**
+         * Gets the value of the model property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getModel() {
+            return model;
+        }
+
+        /**
+         * Sets the value of the model property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setModel(String value) {
+            this.model = value;
+        }
+
+        /**
+         * Gets the value of the accuracy property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getAccuracy() {
+            return accuracy;
+        }
+
+        /**
+         * Sets the value of the accuracy property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setAccuracy(String value) {
+            this.accuracy = value;
+        }
+
+        /**
+         * Gets the value of the precision property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getPrecision() {
+            return precision;
+        }
+
+        /**
+         * Sets the value of the precision property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setPrecision(String value) {
+            this.precision = value;
+        }
+
+        /**
+         * Gets the value of the calibration property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getCalibration() {
+            return calibration;
+        }
+
+        /**
+         * Sets the value of the calibration property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setCalibration(String value) {
+            this.calibration = value;
+        }
+
+        /**
+         * Gets the value of the warming property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getWarming() {
+            return warming;
+        }
+
+        /**
+         * Sets the value of the warming property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setWarming(String value) {
+            this.warming = value;
+        }
+
+    }
+
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+  <!--  xmlns:annox="http://annox.dev.java.net" jaxb:extensionBindingPrefixes="annox" -->
+
+  <xs:include schemaLocation="common_types.xsd"/>
+  <xs:include schemaLocation="contact_info.xsd"/>
+  <xs:include schemaLocation="references.xsd"/>
+
+  <!-- Inline reference element types -->
+  <xs:complexType name="organization_ref">
+    <xs:annotation>
+      <xs:documentation>
+        An inline organization element referencing a concrete representation in the organizations collection. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="element_reference">
+        <xs:attribute name="object_class" type="xs:string" fixed="Organization" />
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="organization" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="element_instance">
+        <xs:attribute name="object_class" type="xs:string" fixed="Organization"/> <!-- include prefix? -->
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="organization_definition">
+    <xs:complexContent>
+      <xs:extension base="organization">
+        <xs:sequence>
+          <xs:element name="identifier" type="pid_reference" minOccurs="0"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="organization_pid">
+    <xs:complexContent>
+      <xs:extension base="organization">
+        <xs:sequence>
+          <xs:element name="identifier" type="pid_reference"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="contact_info" type="contact_info" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="organization_collection">
+    <xs:sequence>
+      <xs:element name="organization" type="organization" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
