@@ -101,24 +101,10 @@
     </xs:sequence>
   </xs:complexType>
   
-  <xs:complexType name="variable_class">
-    <xs:choice>
-      <xs:element name="insitu" type="insitu_info"/>
-    </xs:choice>
-  </xs:complexType>
-  
-  <xs:complexType name="insitu_info">
-    <xs:sequence>
-      <xs:element name="observation_type" type="observation_geometry"/>
-      <xs:element name="sampling" type="sampling_type"/>
-      <xs:element name="genesis" type="genesis_type"/>
-    </xs:sequence>
-  </xs:complexType>
-  
   <xs:complexType name="genesis_type">
     <xs:choice>
-      <xs:element name="measured"/>
-      <xs:element name="calculated"/>
+      <xs:element name="measured" type="measured_var_info"/>
+      <xs:element name="calculated" type="calculated_var_info"/>
     </xs:choice>
   </xs:complexType>
   

@@ -77,6 +77,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="basic_calculated_variable">
     <xs:complexContent>
       <xs:extension base="basic_calculated_observation_base"/>

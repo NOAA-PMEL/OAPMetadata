@@ -117,18 +117,18 @@
   </funding>
   <publications>
     <publication>
-        <DOI/>
-        <!--     <link></link>
+      <DOI/>
+      <!--     <link></link>
         <citation></citation>>-->
-        <name></name>
-        <description></description>
+      <name/>
+      <description/>
     </publication>
     <publication>
       <DOI/>
       <!--     <link></link>
         <citation></citation>>-->
-      <name></name>
-      <description></description>
+      <name/>
+      <description/>
     </publication>
   </publications>
   <related_datasets>
@@ -236,142 +236,142 @@
       <end_time/>
     </treatment_duration>
     <additional_details/>
-  </physiological_response_study> 
+  </physiological_response_study>
   <ocean_alcalinity_enhancement_study>
-    <project_id></project_id>
-    <experiment_id></experiment_id>
-    <experiment_description></experiment_description>
-    <mcdr_pathway></mcdr_pathway>
-    <oae_treatment_type></oae_treatment_type>
-    <phase></phase>
-    <site_description></site_description>
-    <previous_mcdr_research_in_the_area></previous_mcdr_research_in_the_area>
-    <co-located_operations></co-located_operations>
-    <meteorological_and_tidal_conditions></meteorological_and_tidal_conditions>
-    <alkalinity_feedstock_type></alkalinity_feedstock_type>
-    <alkalinity_feedstock_description></alkalinity_feedstock_description>
-    <dosing_location></dosing_location>
-    <dosing_depth units="meters"></dosing_depth>
+    <project_id/>
+    <experiment_id/>
+    <experiment_description/>
+    <mcdr_pathway/>
+    <oae_treatment_type/>
+    <phase/>
+    <site_description/>
+    <previous_mcdr_research_in_the_area/>
+    <co-located_operations/>
+    <meteorological_and_tidal_conditions/>
+    <alkalinity_feedstock_type/>
+    <alkalinity_feedstock_description/>
+    <dosing_location/>
+    <dosing_depth units="meters"/>
     <dosing_duration>
-      <start_time></start_time>
-      <end_time></end_time>
+      <start_time/>
+      <end_time/>
     </dosing_duration>
-    <dosing_mechanism></dosing_mechanism>
-    <dosing_effluent_density></dosing_effluent_density>
-    <dosing_regimen></dosing_regimen>
-    <dosing_rate_data></dosing_rate_data>
-    <total_alkalinity_feedstock_added></total_alkalinity_feedstock_added>
-    <permit_number></permit_number>
+    <dosing_mechanism/>
+    <dosing_effluent_density/>
+    <dosing_regimen/>
+    <dosing_rate_data/>
+    <total_alkalinity_feedstock_added/>
+    <permit_number/>
     <permit_approval_document>
-      <uri></uri>
-      <name></name>
-      <description></description>
+      <uri/>
+      <name/>
+      <description/>
     </permit_approval_document>
-    <permitting_authority></permitting_authority>
-    <data_conflicts_and_unreported_data></data_conflicts_and_unreported_data>
-    <additional_details></additional_details>
+    <permitting_authority/>
+    <data_conflicts_and_unreported_data/>
+    <additional_details/>
   </ocean_alcalinity_enhancement_study>
   <compilation_product>
     <data_sources>
       <source>
-        <uri></uri>
-        <name></name>
-        <description></description>
+        <uri/>
+        <name/>
+        <description/>
       </source>
       <source>
-        <uri></uri>
-        <name></name>
-        <description></description>
+        <uri/>
+        <name/>
+        <description/>
       </source>
     </data_sources>
-    <data_quality_description></data_quality_description>
+    <data_quality_description/>
   </compilation_product>
   <gridded_product>
     <data_sources>
       <source>
-        <uri></uri>
-        <name></name>
-        <description></description>
+        <uri/>
+        <name/>
+        <description/>
       </source>
       <source>
-        <uri></uri>
-        <name></name>
-        <description></description>
+        <uri/>
+        <name/>
+        <description/>
       </source>
     </data_sources>
   </gridded_product>
   <model_output>
-    <model_name></model_name>
-    <model_version></model_version>
-    <physics_component_name_and_version></physics_component_name_and_version>
-    <bgc_component_name_and_version></bgc_component_name_and_version>
+    <model_name/>
+    <model_version/>
+    <physics_component_name_and_version/>
+    <bgc_component_name_and_version/>
     <modelled_region>
-      <description></description>
+      <description/>
       <spatial_bounds>
-        <western_bounds></western_bounds>
-        <eastern_bounds></eastern_bounds>
-        <northern_bounds></northern_bounds>
-        <southern_bounds></southern_bounds>
+        <western_bounds/>
+        <eastern_bounds/>
+        <northern_bounds/>
+        <southern_bounds/>
       </spatial_bounds>
     </modelled_region>
     <grid_resolution>
-      <longitudinal_resolution></longitudinal_resolution>
-      <latitudinal_resolution></latitudinal_resolution>
-      <vertical_resolution></vertical_resolution>
-      <temporal_resolution></temporal_resolution>
+      <longitudinal_resolution/>
+      <latitudinal_resolution/>
+      <vertical_resolution/>
+      <temporal_resolution/>
     </grid_resolution>
-    <input_data_description></input_data_description>
-    <output_data_description></output_data_description>
+    <input_data_description/>
+    <output_data_description/>
     <model_configuration>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </model_configuration>
     <boundary_conditions>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </boundary_conditions>
     <atmospheric_forcing>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </atmospheric_forcing>
     <tidal_forcing>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </tidal_forcing>
     <other_model_forcing_details>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </other_model_forcing_details>
     <river_and_sediment_flux_details>
       <reference>
-        <DOI></DOI>
-        <name></name>
-        <description></description>
+        <DOI/>
+        <name/>
+        <description/>
       </reference>
     </river_and_sediment_flux_details>
-    <spin_up_protocol></spin_up_protocol>
-    <description_of_acid_or_alkalinity_addition></description_of_acid_or_alkalinity_addition>
+    <spin_up_protocol/>
+    <description_of_acid_or_alkalinity_addition/>
     <codebase_link>
-      <uri></uri>
-      <name></name>
-      <description></description>
+      <uri/>
+      <name/>
+      <description/>
     </codebase_link>
-    <additional_details></additional_details>
+    <additional_details/>
   </model_output>
   <variables>
     <variable object_class="Variable" object_id="" xsi:type="basic_variable">
@@ -545,7 +545,7 @@
             <!---->
           </reference>
           <!--          <description></description>-->
-        </analysis_method>
+a        </analysis_method>
         <deviations_from_method/>
         <sensor_data_conversion>
           <conversion_calculation_method/>
@@ -1195,8 +1195,7 @@
     </variable>
   </variables>
   <people>
-    <person xsi:type="person_definition"
-      object_class="Person" object_id="">
+    <person xsi:type="person_definition" object_class="Person" object_id="">
       <identifier/>
       <name>
         <first/>
@@ -1231,15 +1230,13 @@
         <description/>
       </link>
     </person>
-    <person xsi:type="person_pid"
-      object_class="Person" object_id="">
+    <person xsi:type="person_pid" object_class="Person" object_id="">
       <identifier/>
       <description/>
     </person>
   </people>
   <organizations>
-    <organization xsi:type="organization_pid"
-      object_class="Organization" object_id="">
+    <organization xsi:type="organization_pid" object_class="Organization" object_id="">
       <identifier/>
       <description/>
       <contact_info>
@@ -1258,8 +1255,7 @@
         <link/>
       </contact_info>
     </organization>
-    <organization xsi:type="organization_pid"
-      object_class="Organization" object_id="">
+    <organization xsi:type="organization_pid" object_class="Organization" object_id="">
       <identifier/>
       <description/>
       <contact_info>

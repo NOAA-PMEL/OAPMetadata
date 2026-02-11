@@ -189,17 +189,7 @@
       <xs:element name="description" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="vocab_item" type="vocabulary_item_reference"/>
 
-  <xs:complexType name="vocab_identifier">
-    <xs:sequence>
-      <xs:choice>
-        <xs:element name="identifier" type="xs:string"/>
-        <xs:element name="uri" type="xs:anyURI" minOccurs="0"/>
-      </xs:choice>
-    </xs:sequence>
-  </xs:complexType>
-  
   <xs:complexType name="pid_reference">
     <xs:simpleContent>
       <xs:extension base="xs:anyURI"/>
@@ -298,10 +288,10 @@
   </xs:complexType>
   <xs:complexType name="spatial_bounds">
     <xs:sequence>
-      <xs:element name="western_bounds" type="longitude_180"/>
-      <xs:element name="eastern_bounds" type="longitude_180"/>
-      <xs:element name="northern_bounds" type="latitude"/>
-      <xs:element name="southern_bounds" type="latitude"/>
+      <xs:element name="western_bound" type="longitude_180"/>
+      <xs:element name="eastern_bound" type="longitude_180"/>
+      <xs:element name="northern_bound" type="latitude"/>
+      <xs:element name="southern_bound" type="latitude"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="site_location">
@@ -331,7 +321,7 @@
 
   <xs:complexType name="funding_source">
     <xs:sequence>
-      <xs:element name="funnding_agency"> <!-- ??? organization_ref -->
+      <xs:element name="funding_agency"> <!-- ??? organization_ref -->
         <!-- and/or org-ref -->
         <xs:complexType>
           <xs:sequence>

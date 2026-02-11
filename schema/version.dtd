@@ -1,8 +1,8 @@
 <!-- current version of the XML -->
-<!ENTITY PKG_NAME "oa" >
-<!ENTITY NS_PREFIX "oa" >
-<!ENTITY NS_HOST "http://ncei.noaa.gov">
 <!ENTITY VERSION "v4.5a">
+<!ENTITY PKG_NAME "ocads" >
+<!ENTITY NS_PREFIX "oa" >
+<!ENTITY NS_HOST "https://ncei.noaa.gov">
 <!ENTITY STANDARD_NAME "Ocean Carbon Metadata">
 <!ENTITY NAMESPACE "&NS_HOST;/&PKG_NAME;/&VERSION;">
 <!-- ENTITY ANNOX "annox" -->
