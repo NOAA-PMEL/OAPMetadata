@@ -172,7 +172,7 @@
       <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="related" type="general_reference"/>
+<!--  <xs:element name="related" type="general_reference"/> -->
 
   <xs:complexType name="restricted_term_set">
     <xs:sequence>

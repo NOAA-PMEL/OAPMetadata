@@ -60,6 +60,7 @@
       <xs:element name="qc_steps_taken" type="xs:string" minOccurs="0"/>
       <xs:element name="appropriate_use_quality" type="appropriate_use_quality" minOccurs="0"/> <!-- Weather, Climate, Other -->
       <xs:element name="overall_uncertainty" type="variable_uncertainty" minOccurs="0"/>
+      <xs:element name="additional_information" type="xs:string" minOccurs="0"/>
       <xs:element name="measurement_researcher" type="person_ref" minOccurs="0"/>
       <xs:element name="qc_researcher" type="person_ref" minOccurs="0"/>
     </xs:sequence>

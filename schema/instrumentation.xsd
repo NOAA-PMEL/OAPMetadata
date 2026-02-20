@@ -48,7 +48,6 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="instrument" type="instrument"/>
   
   <xs:complexType name="simple_instrument">
     <xs:complexContent>
@@ -58,7 +57,7 @@
           <xs:element name="type" type="xs:string" minOccurs="0"/>
           <xs:element name="description" type="xs:string" minOccurs="0"/>
         </xs:sequence>
-        <xs:assert test="exists(name) or exists(type) or exists(description)" />
+        <!-- <xs:assert test="exists(name) or exists(type) or exists(description)" /> java gen doesn't like this -->
       </xs:extension>
     </xs:complexContent>
     <!-- <xs:assert test="exists(name) or exists(type) or exists(description)" /> -->
