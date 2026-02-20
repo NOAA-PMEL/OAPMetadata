@@ -6,6 +6,8 @@
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   <!--   xmlns:annox="http://annox.dev.java.net" jaxb:extensionBindingPrefixes="annox" -->
   
+  <xs:include schemaLocation="common_types.xsd"/>
+  
   <xs:complexType name="calibration" abstract="true"/>
   
   <xs:complexType name="basic_calibration_info">

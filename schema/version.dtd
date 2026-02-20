@@ -1,6 +1,6 @@
 <!-- current version of the XML -->
-<!ENTITY VERSION "v4.5a">
-<!ENTITY PKG_NAME "ocads" >
+<!ENTITY VERSION "v4.6">
+<!ENTITY PKG_NAME "ocads" > <!--  /ocmd -->
 <!ENTITY NS_PREFIX "oa" >
 <!ENTITY NS_HOST "https://ncei.noaa.gov">
 <!ENTITY STANDARD_NAME "Ocean Carbon Metadata">

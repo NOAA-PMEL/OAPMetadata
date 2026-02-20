@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variables_by_type xmlns="https://ncei.noaa.gov/ocads/v4.6"
+ xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata_v4.1/test/schema/elements.xsd">
+<!--
+  ####
+  #### This document shows how the variables would look if we went with a generic "variable" element
+  #### and had the type identified with xsi:type attribute.
+  #### The actual contents of the variables may be slightly out-of-date.
+  #### This is my preferred approach, as using type-specific tags could lead to an explosion of different
+  #### elements in the variables collection.
+  #### Admittedly, it's 6's when it comes to the changes required to implement a new type,
+  #### at least as far as processing the elements is concerned.
+  ####
+      <xs:element name="basic" type="basic_variable"/>
+      <xs:element name="observed" type="std_observed_variable"/>
+      <xs:element name="calculated" type="basic_calculated_variable"/>
+      <xs:element name="DIC" type="DIC_measured"/>
+      <xs:element name="TA" type="TA_measured"/>
+      <xs:element name="pH" type="pH_measured"/>
+      <xs:element name="co2_discrete" type="co2_discrete"/>
+      <xs:element name="co2_continuous" type="co2_continuous"/>
+      <xs:element name="co2_reported" type="co2_reported_variable"/>
+      <xs:element name="biological_variable" type="biological_variable"/>
+      <xs:element name="model_variable" type="model_variable"/>
+      <xs:element name="phys_response_variable" type="phys_response_variable"/>
+      <xs:element name="sediment_variable" type="sediment_variable"/>
+      <xs:element name="social_variable" type="social_variable"/>
+-->
+  <variable xsi:type="basic_variable" object_class="Variable" object_id="ID001">
+    <standard_identifier>
+      <term>z</term>
+      <uri>http://ZKSuvsxW/</uri>
+    </standard_identifier>
+    <dataset_variable_name>ZPPG_</dataset_variable_name>
+    <units>OYnRK3</units>
+  </variable>
+  <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
+    <standard_identifier>
+      <term>tyo</term>
+      <uri>http://tgGzHibI/</uri>
+    </standard_identifier>
+    <dataset_variable_name>yquMqg1tR</dataset_variable_name>
+    <units>PbS</units>
+    <observation_type>fpLHyjhgVD</observation_type>
+    <measured>
+      <collection_method>D9W4</collection_method>
+      <collection_instrument_type>oAH-yREx</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>WARNdb</intake_location>
+          <intake_depth units="meters">308585567.544</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>xy</description>
+-->
+      </analysis_method>
+    </measured>
+    <analyzing_instrument object_class="Instrument" object_id="ID005">
+      <calibration>
+        <technique_description>WrtZ-</technique_description>
+        <method_reference>
+          <reference>
+<!---->
+          </reference>
+<!--
+          <description>tdzR</description>
+-->
+        </method_reference>
+        <last_calibration>
+        </last_calibration>
+<!--
+        <calibration_history>
+          <calibration>
+          </calibration>
+          <calibration>
+          </calibration>
+        </calibration_history>
+-->
+      </calibration>
+    </analyzing_instrument>
+  </variable>
+  <variable xsi:type="basic_calculated_variable" object_class="Variable" object_id="ID007">
+    <standard_identifier>
+      <term>G-v9v8Dig</term>
+      <uri>http://SHgdkVKu/</uri>
+    </standard_identifier>
+    <dataset_variable_name>CzMxWqhxeF</dataset_variable_name>
+    <units>EevhK</units>
+    <observation_type>XB_iG</observation_type>
+    <calculated>
+      <sampling>discrete</sampling>
+      <calculation_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>Ero</description>
+-->
+      </calculation_method>
+    </calculated>
+  </variable>
+  <variable xsi:type="DIC_measured" object_class="Variable" object_id="ID009">
+    <standard_identifier>
+      <term>kl8W2_</term>
+      <uri>http://pHKFHfje/</uri>
+    </standard_identifier>
+    <dataset_variable_name>fuUB.oBd</dataset_variable_name>
+    <units>IJ27o</units>
+    <observation_type>h</observation_type>
+    <measured>
+      <collection_method>KaB</collection_method>
+      <collection_instrument_type>Acpc5n</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>b3g7bqJ4uP</intake_location>
+          <intake_depth units="meters">599351742.507</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>weftQZN</description>
+-->
+      </analysis_method>
+    </measured>
+    <analyzing_instrument object_class="Instrument" object_id="ID011">
+      <calibration>
+        <technique_description>vaFR0nVk5c</technique_description>
+        <method_reference>
+          <reference>
+<!---->
+          </reference>
+<!--
+          <description>qYLr</description>
+-->
+        </method_reference>
+        <last_calibration>
+        </last_calibration>
+<!--
+        <calibration_history>
+          <calibration>
+          </calibration>
+          <calibration>
+          </calibration>
+        </calibration_history>
+-->
+        <certified_reference_material>
+          <manufacturer>woc0lq</manufacturer>
+          <batch_number>I4iS</batch_number>
+        </certified_reference_material>
+      </calibration>
+    </analyzing_instrument>
+  </variable>
+  <variable xsi:type="TA_measured" object_class="Variable" object_id="ID013">
+    <standard_identifier>
+      <term>q</term>
+      <uri>http://AOoGNBJr/</uri>
+    </standard_identifier>
+    <dataset_variable_name>Zib</dataset_variable_name>
+    <units>MmwmFL1LAM</units>
+    <observation_type>Pnz.K</observation_type>
+    <measured>
+      <collection_method>Z</collection_method>
+      <collection_instrument_type>SD8ZC5OLhS</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>tVQLY4a</intake_location>
+          <intake_depth units="meters">1730407561.347</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>PfE3f</description>
+-->
+      </analysis_method>
+    </measured>
+    <analyzing_instrument object_class="Instrument" object_id="ID015">
+      <calibration>
+        <technique_description>Pj8PR.NU</technique_description>
+        <method_reference>
+          <reference>
+<!---->
+          </reference>
+<!--
+          <description>ph0K6F0za</description>
+-->
+        </method_reference>
+        <last_calibration>
+        </last_calibration>
+<!--
+        <calibration_history>
+          <calibration>
+          </calibration>
+          <calibration>
+          </calibration>
+        </calibration_history>
+-->
+        <certified_reference_material>
+          <manufacturer>M9</manufacturer>
+          <batch_number>VWfrC3w</batch_number>
+        </certified_reference_material>
+      </calibration>
+    </analyzing_instrument>
+    <cell_type>q</cell_type>
+    <curve_fitting>yltC6Bf</curve_fitting>
+  </variable>
+  <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
+    <standard_identifier>
+      <term>ejJ.QRh</term>
+      <uri>http://hlQQOzlY/</uri>
+    </standard_identifier>
+    <dataset_variable_name>j7tn</dataset_variable_name>
+    <units>fT</units>
+    <observation_type>ybpCkK6BR3</observation_type>
+    <measured>
+      <collection_method>MF0</collection_method>
+      <collection_instrument_type>h</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>vx</intake_location>
+          <intake_depth units="meters">488203944.804</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>z6B</description>
+-->
+      </analysis_method>
+    </measured>
+    <analyzing_instrument object_class="Instrument" object_id="ID019">
+      <calibration>
+        <technique_description>p18Li</technique_description>
+        <method_reference>
+          <reference>
+<!---->
+          </reference>
+<!--
+          <description>tYWRvQj</description>
+-->
+        </method_reference>
+        <last_calibration>
+        </last_calibration>
+<!--
+        <calibration_history>
+          <calibration>
+          </calibration>
+          <calibration>
+          </calibration>
+        </calibration_history>
+-->
+        <dye_information>
+          <dye_type>dtKZH</dye_type>
+          <manufacturer>s_</manufacturer>
+          <purified>true</purified>
+        </dye_information>
+        <ph_of_standards>ArKW1suRZ</ph_of_standards>
+      </calibration>
+    </analyzing_instrument>
+    <ph_report_temperature>fftQOY5TI</ph_report_temperature>
+  </variable>
+  <variable xsi:type="co2_discrete_variable" object_class="Variable" object_id="ID021">
+    <standard_identifier>
+      <term>dSXUO-tvLA</term>
+      <uri>http://IOoLuXtc/</uri>
+    </standard_identifier>
+    <dataset_variable_name>Z_M1Nb</dataset_variable_name>
+    <units>y</units>
+    <observation_type>SUs</observation_type>
+    <measured>
+      <collection_method>A</collection_method>
+      <collection_instrument_type>qC7cE2</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>QhK78q-yq</intake_location>
+          <intake_depth units="meters">1899944359.775</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>eyl</description>
+-->
+      </analysis_method>
+    </measured>
+    <water_vapor_correction>yicHvYVdP3</water_vapor_correction>
+    <temperature_correction_method>n1dmTbMZKT</temperature_correction_method>
+    <gas_detector object_class="Instrument" object_id="ID023">
+      <measurement_frequency units="cj">792217806.286</measurement_frequency>
+    </gas_detector>
+    <storage_method>sTs</storage_method>
+    <seawater_volume>L</seawater_volume>
+    <headspace_volume>GDf5GFXk</headspace_volume>
+    <measurement_temperature>ULzxu</measurement_temperature>
+  </variable>
+  <variable xsi:type="co2_continuous_variable" object_class="Variable" object_id="ID025">
+    <standard_identifier>
+      <term>LX3m</term>
+      <uri>http://LfoeZYGB/</uri>
+    </standard_identifier>
+    <dataset_variable_name>IBjR</dataset_variable_name>
+    <units>w7Pejh6</units>
+    <observation_type>D</observation_type>
+    <measured>
+      <collection_method>NANv.3TsI2</collection_method>
+      <collection_instrument_type>Ux</collection_instrument_type>
+      <sampling>
+        <discrete>
+        </discrete>
+<!--
+        <continuous>
+          <intake_location>h.nZIUbBE9</intake_location>
+          <intake_depth units="meters">3415448.274</intake_depth>
+        </continuous>
+-->
+      </sampling>
+      <analysis_method>
+        <reference>
+<!---->
+        </reference>
+<!--
+        <description>Gg</description>
+-->
+      </analysis_method>
+    </measured>
+    <water_vapor_correction>d</water_vapor_correction>
+    <temperature_correction_method>H7Ppoxdob</temperature_correction_method>
+    <gas_detector object_class="Instrument" object_id="ID027">
+      <measurement_frequency units="ZaBEOQ4">172707630.876</measurement_frequency>
+    </gas_detector>
+    <eq_pressure_measurement>
+      <method>fPfD</method>
+      <sensor object_class="Instrument" object_id="ID029">
+        <calibration>
+          <technique_description>b8</technique_description>
+          <method_reference>
+            <reference>
+<!---->
+            </reference>
+<!--
+            <description>siOvuu2</description>
+-->
+          </method_reference>
+          <last_calibration>
+          </last_calibration>
+<!--
+          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>
+-->
+        </calibration>
+      </sensor>
+      <sensor_location>wQbbm22</sensor_location>
+      <comments>cN</comments>
+    </eq_pressure_measurement>
+    <eq_temperature_measurement>
+      <method>Tbw</method>
+      <sensor object_class="Instrument" object_id="ID031">
+        <calibration>
+          <technique_description>auWMPYwF8R</technique_description>
+          <method_reference>
+            <reference>
+<!---->
+            </reference>
+<!--
+            <description>P2OofhXAnI</description>
+-->
+          </method_reference>
+          <last_calibration>
+          </last_calibration>
+<!--
+          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>
+-->
+        </calibration>
+      </sensor>
+      <sensor_location>nel9gzqH</sensor_location>
+      <comments>ZO4</comments>
+    </eq_temperature_measurement>
+    <atm_pressure_measurement>
+      <method>NFUiypnJsv</method>
+      <sensor object_class="Instrument" object_id="ID033">
+        <calibration>
+          <technique_description>YBQi</technique_description>
+          <method_reference>
+            <reference>
+            </reference>
+<!--
+            <description>hzstt-</description>
+-->
+          </method_reference>
+          <last_calibration>
+          </last_calibration>
+<!--
+          <calibration_history>
+            <calibration>
+            </calibration>
+            <calibration>
+            </calibration>
+          </calibration_history>
+-->
+        </calibration>
+      </sensor>
+      <sensor_location>l9NV</sensor_location>
+      <comments>uZhBdh</comments>
+    </atm_pressure_measurement>
+    <atm_co2 measured="0">
+      <location>V1IHSLKvh</location>
+      <height units="meters"/>
+    </atm_co2>
+  </variable>
+  <variable xsi:type="co2_reported_variable" object_class="Variable" object_id="ID035">
+    <standard_identifier>
+      <term>Qt</term>
+      <uri>http://jRlGKdqV/</uri>
+    </standard_identifier>
+    <dataset_variable_name>fnT30i8</dataset_variable_name>
+    <units>yUyWGt</units>
+  </variable>
+  <variable xsi:type="biological_variable" object_class="Variable" object_id="ID037">
+    <standard_identifier>
+      <term>tFl6I6Rhqp</term>
+      <uri>http://GyHSTXQU/</uri>
+    </standard_identifier>
+    <dataset_variable_name>yXeh5</dataset_variable_name>
+    <units>P_VZ8</units>
+    <biological_var_fields>ugxswxupjD</biological_var_fields>
+  </variable>
+  <variable xsi:type="model_variable" object_class="Variable" object_id="ID039">
+    <standard_identifier>
+      <term>QLU2-88j7Z</term>
+      <uri>http://gznmypLo/</uri>
+    </standard_identifier>
+    <dataset_variable_name>f7M0</dataset_variable_name>
+    <units>PZrzfV</units>
+    <model_var_fields>nQ</model_var_fields>
+  </variable>
+  <variable xsi:type="phys_response_variable" object_class="Variable" object_id="ID041">
+    <standard_identifier>
+      <term>zXMG0rA5</term>
+      <uri>http://ALaqdtyp/</uri>
+    </standard_identifier>
+    <dataset_variable_name>q.xg</dataset_variable_name>
+    <units>O3slcoQEND</units>
+    <phys_response_var_fields>DFQoInzC8s</phys_response_var_fields>
+  </variable>
+  <variable xsi:type="sediment_variable" object_class="Variable" object_id="ID043">
+    <standard_identifier>
+      <term>g1NEcst4</term>
+      <uri>http://CwcIcYAT/</uri>
+    </standard_identifier>
+    <dataset_variable_name>bxRp</dataset_variable_name>
+    <units>l</units>
+    <sediment_var_fields>XsAW</sediment_var_fields>
+  </variable>
+  <variable xsi:type="social_variable" object_class="Variable" object_id="ID045">
+    <standard_identifier>
+      <term>gsYB</term>
+      <uri>http://cDlJocrT/</uri>
+    </standard_identifier>
+    <dataset_variable_name>N</dataset_variable_name>
+    <units>KGEMYXyY</units>
+    <social_var_fields>wSRGYNi</social_var_fields>
+  </variable>
+</variables_by_type>
