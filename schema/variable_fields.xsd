@@ -38,10 +38,21 @@
       </xs:element>
       <xs:element name="long_name" type="xs:string" minOccurs="0"/>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab, ??? include pH types? quant/qualitative?-->
+      <xs:choice>
+        <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
+        <xs:element name="ph_scale" type="ph_scale_types" /> <!-- XXX This isn't great here, because we want to be able to enforce this. --> 
+      </xs:choice>
     </xs:sequence>
   </xs:group>
 
+  <xs:simpleType name="ph_scale_types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="total" />
+      <xs:enumeration value="seawater"/>
+      <xs:enumeration value="NBS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
   <xs:group name="common_var_additional_fields">
     <xs:sequence>
       <xs:element name="missing_value_indicator" type="xs:string" minOccurs="0"> <!-- ??? Numeric? -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<variables xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
- xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+<variables xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
  xmlns="https://ncei.noaa.gov/ocads/v4.6"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata_v4.1/test/schema/elements.xsd">
@@ -14,6 +14,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
   </basic>
   <observed object_class="Variable" object_id="">
     <standard_identifier>
@@ -25,6 +26,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -111,8 +113,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -124,8 +129,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -142,6 +153,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -199,6 +211,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -285,8 +298,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -298,8 +314,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -315,6 +337,7 @@
       <volume></volume>
       <correction_description></correction_description>
     </sample_preservation>
+    <blank_correction></blank_correction>
   </DIC>
   <TA object_class="Variable" object_id="">
     <standard_identifier>
@@ -326,6 +349,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -412,8 +436,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -425,8 +452,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -442,9 +475,10 @@
       <volume></volume>
       <correction_description></correction_description>
     </sample_preservation>
+    <blank_correction></blank_correction>
+    <titration_type></titration_type>
     <cell_type></cell_type>
     <curve_fitting></curve_fitting>
-    <blank_correction></blank_correction>
   </TA>
   <pH object_class="Variable" object_id="">
     <standard_identifier>
@@ -456,6 +490,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -542,8 +577,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -555,8 +593,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -564,8 +608,16 @@
           <dye_type></dye_type>
           <manufacturer></manufacturer>
           <purified></purified>
-          <correction_for_unpurified_dye></correction_for_unpurified_dye>
-          <correction_method></correction_method>
+          <correction_for_unpurified_dye>
+            <description></description>
+            <method_reference>
+              <DOI></DOI>
+<!--              <link></link>-->
+<!--              <citation></citation>-->
+              <name></name>
+              <description></description>
+            </method_reference>
+          </correction_for_unpurified_dye>
         </dye_information>
         <ph_of_standards></ph_of_standards>
         <calibration_temperature units=""></calibration_temperature>
@@ -585,6 +637,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -650,6 +703,7 @@
     </measured>
     <water_vapor_correction></water_vapor_correction>
     <temperature_correction_method></temperature_correction_method>
+    <co2_report_temperature></co2_report_temperature>
     <gas_detector object_class="Instrument" object_id="">
       <type></type>
       <manufacturer></manufacturer>
@@ -673,8 +727,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -686,8 +743,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -695,11 +758,13 @@
         <standard_gases>
           <gas>
             <manufacturer></manufacturer>
+            <batch></batch>
             <concentration units=""></concentration>
             <uncertainty units=""></uncertainty>
           </gas>
           <gas>
             <manufacturer></manufacturer>
+            <batch></batch>
             <concentration units=""></concentration>
             <uncertainty units=""></uncertainty>
           </gas>
@@ -723,6 +788,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <observation_type></observation_type>
     <missing_value_indicator></missing_value_indicator>
     <qc_flagging_scheme>
@@ -788,6 +854,7 @@
     </measured>
     <water_vapor_correction></water_vapor_correction>
     <temperature_correction_method></temperature_correction_method>
+    <co2_report_temperature></co2_report_temperature>
     <gas_detector object_class="Instrument" object_id="">
       <type></type>
       <manufacturer></manufacturer>
@@ -811,8 +878,11 @@
         <technique_description></technique_description>
         <method_reference>
           <reference>
-<!---->
-<!---->
+            <DOI></DOI>
+<!--            <link></link>-->
+<!--            <citation></citation>-->
+            <name></name>
+            <description></description>
           </reference>
 <!--          <description></description>-->
         </method_reference>
@@ -824,8 +894,14 @@
         </last_calibration>
 <!--        <calibration_history>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
           <calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </calibration>
         </calibration_history>-->
         <calibration_certificate_info></calibration_certificate_info>
@@ -833,11 +909,13 @@
         <standard_gases>
           <gas>
             <manufacturer></manufacturer>
+            <batch></batch>
             <concentration units=""></concentration>
             <uncertainty units=""></uncertainty>
           </gas>
           <gas>
             <manufacturer></manufacturer>
+            <batch></batch>
             <concentration units=""></concentration>
             <uncertainty units=""></uncertainty>
           </gas>
@@ -879,18 +957,30 @@
           <technique_description></technique_description>
           <method_reference>
             <reference>
-<!---->
-<!---->
+              <DOI></DOI>
+<!--              <link></link>-->
+<!--              <citation></citation>-->
+              <name></name>
+              <description></description>
             </reference>
 <!--            <description></description>-->
           </method_reference>
           <frequency></frequency>
           <last_calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </last_calibration>
 <!--          <calibration_history>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
           </calibration_history>-->
           <calibration_certificate_info></calibration_certificate_info>
@@ -924,18 +1014,30 @@
           <technique_description></technique_description>
           <method_reference>
             <reference>
-<!---->
-<!---->
+              <DOI></DOI>
+<!--              <link></link>-->
+<!--              <citation></citation>-->
+              <name></name>
+              <description></description>
             </reference>
 <!--            <description></description>-->
           </method_reference>
           <frequency></frequency>
           <last_calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </last_calibration>
 <!--          <calibration_history>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
           </calibration_history>-->
           <calibration_certificate_info></calibration_certificate_info>
@@ -969,18 +1071,30 @@
           <technique_description></technique_description>
           <method_reference>
             <reference>
-<!---->
-<!---->
+              <DOI></DOI>
+<!--              <link></link>-->
+<!--              <citation></citation>-->
+              <name></name>
+              <description></description>
             </reference>
 <!--            <description></description>-->
           </method_reference>
           <frequency></frequency>
           <last_calibration>
+            <date></date>
+            <location></location>
+            <description></description>
           </last_calibration>
 <!--          <calibration_history>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
             <calibration>
+              <date></date>
+              <location></location>
+              <description></description>
             </calibration>
           </calibration_history>-->
           <calibration_certificate_info></calibration_certificate_info>
@@ -1007,6 +1121,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
   </co2_reported>
   <biological_variable object_class="Variable" object_id="">
     <standard_identifier>
@@ -1018,6 +1133,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <biological_var_fields></biological_var_fields>
   </biological_variable>
   <model_variable object_class="Variable" object_id="">
@@ -1030,6 +1146,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <model_var_fields></model_var_fields>
   </model_variable>
   <phys_response_variable object_class="Variable" object_id="">
@@ -1042,6 +1159,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <phys_response_var_fields></phys_response_var_fields>
   </phys_response_variable>
   <sediment_variable object_class="Variable" object_id="">
@@ -1054,6 +1172,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <sediment_var_fields></sediment_var_fields>
   </sediment_variable>
   <social_variable object_class="Variable" object_id="">
@@ -1066,6 +1185,7 @@
     <long_name></long_name>
     <description></description>
     <units></units>
+<!--    <ph_scale></ph_scale>-->
     <social_var_fields></social_var_fields>
   </social_variable>
 </variables>

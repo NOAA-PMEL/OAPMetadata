@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oads_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+ xmlns:annox="http://annox.dev.java.net"
+ xmlns:xew="http://github.com/jaxb-xew-plugin"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns="http://ncei.noaa.gov/oads/a0.4"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://ncei.noaa.gov/oads/a0.4 file:/Users/kamb/workspace/OAPMetadata-master/schema/oads_metadata.xsd" version="a0.4">
+    <archiveInfo>
+        <initialSubmission>
+            <submittedBy>ID000</submittedBy>
+            <submissionDate>2024-07-24Z</submissionDate>
+        </initialSubmission>
+        <revision>
+            <submittedBy>ID001</submittedBy>
+            <submissionDate>2026-02-07Z</submissionDate>
+        </revision>
+        <revision>
+            <submittedBy>ID002</submittedBy>
+            <submissionDate>2025-01-22</submissionDate>
+        </revision>
+        <metadataUpdate>2025-06-05</metadataUpdate>
+        <archiveId>hEfGp4sSDZI1h.RXVN</archiveId>
+        <doi>k3tC</doi>
+    </archiveInfo>
+    <relatedDataSets>
+        <dataset>
+            <dataset>ys1DD</dataset>
+            <link>http://WoWqvtnO/</link>
+        </dataset>
+        <dataset>
+            <dataset>fPh6zr9Vl-W9QTsMrOnTZok6</dataset>
+            <link>http://hyptlRPw/</link>
+        </dataset>
+    </relatedDataSets>
+    <investigators>
+        <investigator>ID003</investigator>
+        <investigator>ID004</investigator>
+    </investigators>
+    <title>BhcynBNvNyS</title>
+    <abstract>HRAjC5UF</abstract>
+    <purpose>Od6b</purpose>
+    <temporalExtents>
+        <startDate>2024-04-16</startDate>
+        <endDate>2024-10-08Z</endDate>
+    </temporalExtents>
+    <spatialExtents>
+        <westernBounds>1977767636.73</westernBounds>
+        <easternBounds>1200902116.989</easternBounds>
+        <northernBounds>920291062.819</northernBounds>
+        <southernBounds>-609612819.272</southernBounds>
+    </spatialExtents>
+    <spatialReference>EeY_bQy</spatialReference>
+    <sampleCollectionRegions>
+        <region>BuvM9ZObv052wcTs47QJZRbSSxE</region>
+        <region>VfwNkSmObr9v</region>
+    </sampleCollectionRegions>
+    <organismCollectionRegions>
+        <region>sdAQxkJC8p</region>
+        <region>QsQZ8MK0Rt4FY2x76LO-7FOPmHCY</region>
+    </organismCollectionRegions>
+    <fundingInfo>
+        <source>
+            <agency>szuxziBGGM9Rwmz517d</agency>
+            <title>J-Bl</title>
+            <identifier type="zEo516FG">yhZROIqlq7CdIemnGQ68ci9b1V</identifier>
+        </source>
+        <source>
+            <agency>WBINCyJsptM4iTl_R</agency>
+            <title>KuBVdVgx_1.</title>
+            <identifier type="QmhE5m8FeJQ1yBF.r5aGAFHcAApt">bi8Q2m97n6y</identifier>
+        </source>
+    </fundingInfo>
+    <researchProjects>
+        <project>Tz_ElaZAD</project>
+        <project>QMa</project>
+    </researchProjects>
+    <platforms>
+        <platform>
+            <name>h-0WZ</name>
+            <identifier type="Hds7ra2">TWlFDcdt</identifier>
+            <type>gbhiXjTMqZ51e5nXF-y</type>
+            <owner>KWzCTM1YrJG.NbXkDQKQ</owner>
+            <country>e2wM0rSP2-iiCk9Ya5DbST.yw</country>
+        </platform>
+        <platform>
+            <name>gE4S0fWgnJ</name>
+            <identifier type="FqqsGeljDnhe3XFeAqE9b">KP-BOKh4ZagIkh1</identifier>
+            <type>l0RaifRU-lw1qDbx0A</type>
+            <owner>ULOsu7qM4hZy</owner>
+            <country>t8By.7nFyeAR7eoHRJ9Iyy9GO4IUE</country>
+        </platform>
+    </platforms>
+    <expoCodes>
+        <expocode>CP9FZdTLjETxXDo4KgNxIl2zX</expocode>
+        <expocode>bbh0Nb</expocode>
+    </expoCodes>
+    <cruiseIds>
+        <cruiseId>A</cruiseId>
+        <cruiseId>Y4yBkr-_kKWphNl2Kv6FQNK0</cruiseId>
+    </cruiseIds>
+    <sections>
+        <section>bCTo5kqVFD_4p1</section>
+        <section>wvV</section>
+    </sections>
+    <citation>
+        <authors>
+            <author index="186605665" id_ref="ID016 ID017 ID018 ID019 ID020 ID021 ID022 ID023 ID024 ID025 ID026 ID027 ID028"/>
+            <author index="2018076498" id_ref="ID035 ID036 ID037 ID038 ID039 ID040 ID041"/>
+        </authors>
+        <title>oFSzm7C0jAZmVx2gfEJ</title>
+    </citation>
+    <useLimitation>bI.OKoWqB</useLimitation>
+    <dataUse>Ul9DfTDOKieHy-KA</dataUse>
+    <references>
+        <reference>
+            <name>peZHm8wlwV0H</name>
+            <link>http://lYCAMfEV/</link>
+        </reference>
+        <reference>
+            <name>m27rebX-0xWxKmIIQ.ghbA4D3d</name>
+            <link>http://WFqjqUHh/</link>
+        </reference>
+    </references>
+    <supplementalInfo>HgdZ1MKG2aNgxa3TpeyhUjyARwZl0p</supplementalInfo>
+    <keywords>
+        <keyword>l</keyword>
+        <keyword>Zk0Gp2CeaKyGW3c8l0fiD-c</keyword>
+    </keywords>
+    <variables>
+        <variable std_name="oR-sgjiPBVu-">
+            <fullName>pL_vhM244bEY1vrxeNk5kU</fullName>
+            <datasetVarName>o7eRNY_</datasetVarName>
+            <variableType>D9E6Av3Jvxx</variableType>
+            <observationType>S_v653Ulm</observationType>
+            <units>bP8OXmp.Q8yLURtvTq</units>
+            <missingValue>gwy8SFMzWFgNTGIt</missingValue>
+            <uncertainty>z_WuZt18MUx</uncertainty>
+            <qcFlag>
+                <description>brk7TRdWdL.u1rDH8bjW6QM</description>
+            </qcFlag>
+            <researcher>ID042</researcher>
+            <methodReference>uL</methodReference>
+            <methodReference>NNmTsKTN6sPUdAex6SD-</methodReference>
+            <calculationMethod>
+                <description>Mc.x4</description>
+            </calculationMethod>
+            <manipulationMethod>rOxqEksSM95-aR5KO</manipulationMethod>
+            <samplingInstrument>ID043 ID044 ID045 ID046</samplingInstrument>
+            <analyzingInstrument>ID047 ID048 ID049 ID050 ID051 ID052 ID053 ID054 ID055</analyzingInstrument>
+            <detailedInfo>ilHjND9HIM3UtnhZ57N0pRVv</detailedInfo>
+            <fieldReplicateHandling>m</fieldReplicateHandling>
+            <standardization>
+                <description>_</description>
+                <frequency>NNgQvAGXdiBOogyGWJ5to04q4zV</frequency>
+<!---->
+            </standardization>
+        </variable>
+        <variable std_name="ei3RFjd1DZiHOwabz.rByKknFY">
+            <fullName>pGGofF9cxSpXZ</fullName>
+            <datasetVarName>gdF0.JvghD3W6rkcSiVtFxBhb</datasetVarName>
+            <variableType>R4ijwe2lew4jFQ</variableType>
+            <observationType>O2SYzBdELtMTSbBN3Yyo</observationType>
+            <units>v</units>
+            <missingValue>WDJEg1voN-WIMkB_6BCgDGd-uA</missingValue>
+            <uncertainty>H4my3n5TDdBoYFMj4ohKH-4i</uncertainty>
+            <qcFlag>
+                <description>Wt0e</description>
+            </qcFlag>
+            <researcher>ID056</researcher>
+            <methodReference>Y5TaMiJh-.</methodReference>
+            <methodReference>wv6Ba2lZdzUbJ</methodReference>
+            <calculationMethod>
+                <description>zOuJmDs7FL</description>
+            </calculationMethod>
+            <manipulationMethod>bl7s</manipulationMethod>
+            <samplingInstrument>ID057 ID058 ID059 ID060 ID061 ID062 ID063 ID064 ID065 ID066 ID067 ID068 ID069 ID070</samplingInstrument>
+            <analyzingInstrument>ID071</analyzingInstrument>
+            <detailedInfo>H2iYy</detailedInfo>
+            <fieldReplicateHandling>eW0qWWA.1FadoFx5oLbr3kO</fieldReplicateHandling>
+            <standardization>
+                <description>U13OZ9RxcGhzwKb_zE1</description>
+                <frequency>v6MO_N5pQ6GCTOJ3unc</frequency>
+<!---->
+            </standardization>
+        </variable>
+    </variables>
+    <instrumentation>
+        <instrument ref_id="ID003">
+            <manufacturer>S-sBoHMZHgh0K5QbDmYNVTQvEkoSSj</manufacturer>
+            <model>J74IADP</model>
+            <serial>_Qcu</serial>
+            <description>D9yj</description>
+            <reference>
+                <name>cTNvnVEIwjeRvDSctQ8</name>
+                <link>http://QCHzgRQo/</link>
+            </reference>
+            <reference>
+                <name>raPWl50ADuD_v</name>
+                <link>http://vGkOLyDV/</link>
+            </reference>
+        </instrument>
+        <instrument ref_id="ID053">
+            <manufacturer>VuHmh4p9Ql3Z63t</manufacturer>
+            <model>Bo2tIqj_y38S_d9T7</model>
+            <serial>oh</serial>
+            <description>PK1b3HpK_dl1bSh6n</description>
+            <reference>
+                <name>WLna5VyS9wbzCzD</name>
+                <link>http://WSljvFRv/</link>
+            </reference>
+            <reference>
+                <name>h0Mfn9.ymvVwA_faX</name>
+                <link>http://oNprSkEu/</link>
+            </reference>
+        </instrument>
+    </instrumentation>
+    <people>
+        <person ref_id="ID064">
+            <name>
+                <first>bjHmKTK8QHSTMFlbQkFkF</first>
+                <last>ex4h-pU</last>
+            </name>
+            <organization>yeaLaVubMGbKWBJodptThBky.W</organization>
+            <contactInfo>
+            </contactInfo>
+            <identifier type="lgP1QWWvEko5MOzg">yaHgMc</identifier>
+            <identifier type="IvhXkKDnmU8GJDfX5SkW07Us3t">X-zhzCgvk5ClSZk</identifier>
+            <link>http://cpWbiJpH/</link>
+            <link>http://IjYtAkHX/</link>
+            <roles>
+                <role>CLDSJBL8x2ttPOByQZS62I4CtPZ</role>
+                <role>A6YlEzkWNzQ-E6</role>
+            </roles>
+        </person>
+        <person ref_id="ID040">
+            <name>
+                <first>xPUa5E7mkV0xDJsL0</first>
+                <last>CE</last>
+            </name>
+            <organization>km7GzxsOQ4zJVFjO9oPADPJV</organization>
+            <contactInfo>
+            </contactInfo>
+            <identifier type="wE4kEpjB_hBWfIwic4E2cQagGh5_6c">RLDG</identifier>
+            <identifier type="_pnXR4_ObgB">wSbl3LQ7</identifier>
+            <link>http://kSiOUrvk/</link>
+            <link>http://XBlWTTXW/</link>
+            <roles>
+                <role>GhkM7ZuKZR8</role>
+                <role>tfBDsZ</role>
+            </roles>
+        </person>
+    </people>
+</oads_metadata>

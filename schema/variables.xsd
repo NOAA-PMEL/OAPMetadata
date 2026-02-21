@@ -109,8 +109,8 @@
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
           <xs:element name="analyzing_instrument" type="crm_instrument"/>
-          <xs:element name="sample_preservation" type="sample_preservation" minOccurs="0"
-            maxOccurs="1"/>
+          <xs:element name="sample_preservation" type="sample_preservation" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="blank_correction" type="xs:string" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -130,9 +130,9 @@
       <xs:extension base="DIC_measured">
         <!-- basic_observation + preservative -->
         <xs:sequence>
+          <xs:element name="titration_type" type="xs:string"/>
           <xs:element name="cell_type" type="xs:string"/>
           <xs:element name="curve_fitting" type="xs:string"/>
-          <xs:element name="blank_correction" type="xs:string" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -159,7 +159,7 @@
           <!-- <xs:element name="analyzing_instrument" type="instrument_ref"/>  gas_detector ??? -->
           <xs:element name="water_vapor_correction" type="xs:string"/>
           <xs:element name="temperature_correction_method" type="xs:string"/>
-          <!-- <xs:element name="co2_report_temperature" type="xs:string"/>  removed ??? -->
+          <xs:element name="co2_report_temperature" type="xs:string"/>
           <xs:element name="gas_detector" type="co2_gas_detector"/>
         </xs:sequence>
       </xs:extension>

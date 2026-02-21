@@ -69,11 +69,16 @@
       <xs:element name="dye_type" type="xs:string"/>
       <xs:element name="manufacturer" type="xs:string"/>
       <xs:element name="purified" type="xs:boolean"/>
-      <xs:element name="correction_for_unpurified_dye" type="xs:string" minOccurs="0"/>
-      <xs:element name="correction_method" type="xs:string" minOccurs="0"/> <!-- difference? -->
+      <xs:element name="correction_for_unpurified_dye" type="dye_correction" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   
+  <xs:complexType name="dye_correction" >
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="method_reference" type="general_reference" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="co2_calibration">
     <xs:complexContent>
       <xs:extension base="basic_calibration_info">
