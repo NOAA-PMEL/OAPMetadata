@@ -327,11 +327,9 @@
   </xs:complexType>
   
   <xs:complexType name="variable_collection">
-    <!--
     <xs:complexContent>
       <xs:extension base="variable_list"/>
     </xs:complexContent>
-    -->
   </xs:complexType>
   
 </xs:schema>

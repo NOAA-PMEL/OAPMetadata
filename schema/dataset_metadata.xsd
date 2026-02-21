@@ -73,8 +73,6 @@
 
       </xs:choice>
 
-      <xs:element name="item_collections" type="xs:string"/>
-      <!--
       <xs:group ref="dataset_collections">
         <xs:annotation>
           <xs:documentation> 
@@ -87,7 +85,9 @@
           </xs:documentation>
         </xs:annotation>
       </xs:group>
--->
+      <!--
+      <xs:element name="item_collections" type="xs:string"/>
+      
       <!-- ??? provenance / change log / revision log -->
     </xs:sequence>
 
