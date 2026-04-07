@@ -57,13 +57,13 @@
           <xs:element name="type" type="xs:string" minOccurs="0"/>
           <xs:element name="description" type="xs:string" minOccurs="0"/>
         </xs:sequence>
-        <!-- <xs:assert test="exists(name) or exists(type) or exists(description)" /> java gen doesn't like this -->
+        <xs:assert test="exists(name) or exists(type) or exists(description)" /> <!--  java gen doesn't like this -->
       </xs:extension>
     </xs:complexContent>
     <!-- <xs:assert test="exists(name) or exists(type) or exists(description)" /> -->
   </xs:complexType>
   
-  <xs:complexType name="instrument_base" abstract="true">
+  <xs:complexType name="basic_instrument">
     <xs:complexContent>
       <xs:extension base="instrument">
         <xs:sequence>
@@ -75,9 +75,9 @@
 
   <xs:complexType name="standard_instrument">
     <xs:complexContent>
-      <xs:extension base="instrument_base">
+      <xs:extension base="basic_instrument">
         <xs:sequence>
-          <xs:element name="calibration" type="basic_calibration_info"/>
+          <xs:element name="calibration" type="standard_calibration"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -95,7 +95,7 @@
     
   <xs:complexType name="crm_instrument">
     <xs:complexContent>
-      <xs:extension base="instrument_base">
+      <xs:extension base="basic_instrument">
         <xs:sequence>
           <xs:element name="calibration" type="crm_calibration"/>
         </xs:sequence>
@@ -105,7 +105,7 @@
   
   <xs:complexType name="pH_instrument">
     <xs:complexContent>
-      <xs:extension base="instrument_base">
+      <xs:extension base="basic_instrument">
         <xs:sequence>
           <xs:element name="calibration" type="pH_calibration"/>
         </xs:sequence>
@@ -115,7 +115,7 @@
   
   <xs:complexType name="co2_gas_detector">
     <xs:complexContent>
-      <xs:extension base="instrument_base">
+      <xs:extension base="basic_instrument">
         <xs:sequence>
           <xs:element name="calibration" type="co2_calibration" minOccurs="0" maxOccurs="1"/>
           <xs:element name="measurement_frequency" type="positive_dimensioned_quantity" />  <!-- ??? or just text ??? -->
@@ -129,7 +129,7 @@
       <xs:extension base="instrument"> -->
     <xs:sequence>
       <xs:element name="type" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- XXX Controlled vocab -->
-      <xs:element name="volume" type="liter_volume" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="volume" type="measured_value" minOccurs="0" maxOccurs="1"/>
       <xs:element name="vented" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
       <xs:element name="gas_flow_rate" type="flow_rate" minOccurs="0" maxOccurs="1"/>
       <xs:element name="water_flow_rate" type="flow_rate" minOccurs="0" maxOccurs="1"/>
@@ -141,7 +141,7 @@
   
   <xs:complexType name="instrument_collection">
     <xs:choice>
-      <xs:element name="instrument" type="instrument"  maxOccurs="unbounded"/>
+      <xs:element name="instrument" type="instrument" minOccurs="0" maxOccurs="unbounded"/>
     </xs:choice>
   </xs:complexType>
 

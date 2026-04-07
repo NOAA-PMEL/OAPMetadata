@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  targetNamespace="https://ncei.noaa.gov/ocads/v4.6" xmlns="https://ncei.noaa.gov/ocads/v4.6"
+  xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   
   <xs:include schemaLocation="common_types.xsd"/>
@@ -23,7 +24,7 @@
   
   <xs:group name="minimum_variable_fields">
     <xs:sequence>
-      <xs:element name="standard_identifier" type="vocabulary_item_reference"/>
+      <xs:element name="standard_name" type="vocabulary_item_reference"/>
       <!-- ?? multiple / different vocabs? 
       <xs:element name="alt_identifier" type="vocabulary_item_reference" maxOccurs="unbounded" minOccurs="0"/> 
       -->
@@ -90,26 +91,46 @@
     </xs:restriction>
   </xs:simpleType>
   
+  <xs:complexType name="sampling_type_element">
+    <xs:attribute name="type" type="sampling_type" use="required"/>
+  </xs:complexType>
+  
   <xs:complexType name="sampling_info">
-    <xs:choice>
-      <xs:element name="discrete" type="discrete_var_sampling_info"/>
-      <xs:element name="continuous" type="continuous_var_sampling_info"/>
-    </xs:choice>
+    <xs:complexContent>
+      <xs:extension base="sampling_type_element">
+        <xs:choice minOccurs="0">
+          <xs:element name="capture" type="discrete_var_sampling_info"/>
+          <xs:element name="intake" type="continuous_var_sampling_info"/>
+        </xs:choice>
+        <!-- java code gen does not like asserts... -->
+        <xs:assert 
+          test="
+                (@type = 'discrete' and not(exists(oa:continuous))) or 
+                (@type = 'continuous' and not(exists(oa:discrete)))"/>  <!-- (not(exists(@type) and exists(ancestor::oa:measured)) or -->
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   
   <xs:complexType name="discrete_var_sampling_info">
     <xs:sequence>
-      <xs:element name="storage_method" type="xs:string" minOccurs="0"/>
-      <xs:element name="container_volume" type="xs:string" minOccurs="0"/>
-      <xs:element name="container_airspace" type="xs:string" minOccurs="0"/>
+      <xs:element name="sample_storage" type="sample_storage" minOccurs="0"/>
       <xs:element name="field_replicate_info" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="sample_storage">
+    <xs:sequence>
+      <xs:element name="method_description" type="xs:string"/>
+      <xs:element name="container_volume" type="xs:string" minOccurs="0"/>
+      <xs:element name="seawater_volume" type="xs:string" minOccurs="0"/>
+      <xs:element name="headspace_volume" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   
   <xs:complexType name="continuous_var_sampling_info">
     <xs:sequence>
-      <xs:element name="intake_location" type="xs:string"/>
-      <xs:element name="intake_depth" type="depth_m"/>
+      <xs:element name="location" type="xs:string"/>
+      <xs:element name="depth" type="depth_m"/>
     </xs:sequence>
   </xs:complexType>
   
@@ -127,17 +148,37 @@
       <xs:element name="sampling" type="sampling_info"/>
       <xs:element name="analysis_method" type="reference_or_description"/>
       <xs:element name="deviations_from_method" type="xs:string" minOccurs="0"/>
-      <xs:element name="sensor_data_conversion" type="sensor_data_conversion" minOccurs="0"/>
+      <xs:element name="sensor_data_conversion" type="sensor_raw_data_conversion" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   
-  <xs:complexType name="sensor_data_conversion">
+  <xs:complexType name="sensor_raw_data_conversion">
     <xs:sequence>
       <xs:element name="conversion_calculation_method" type="xs:string" />
       <xs:element name="conversion_software" type="software_info" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
  
+  <xs:complexType name="calculation_info">
+    <xs:sequence>
+      <xs:element name="calculation_method" type="reference_or_description"/>
+      <xs:element name="parameters" minOccurs="0">
+        <xs:complexType>
+         <xs:sequence>
+           <xs:element name="parameter" type="calc_param" maxOccurs="unbounded" />
+         </xs:sequence>
+        </xs:complexType>
+      </xs:element>      
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calc_param">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="calculated_var_info">
     <xs:annotation>
       <xs:documentation>
@@ -145,9 +186,8 @@
       </xs:documentation>
     </xs:annotation>
         <xs:sequence>
-          <xs:element name="sampling" type="sampling_type"/>
-          <xs:element name="calculation_method" type="reference_or_description"/>
-          <xs:element name="calculation_parameters" type="xs:string" minOccurs="0"/> <!-- ??? break down? more specificity? -->
+          <xs:element name="sampling" type="sampling_type_element"/>
+          <xs:element name="calculation" type="calculation_info" minOccurs="0"/> <!-- ??? break down? more specificity? -->
           <xs:element name="sources" minOccurs="0">
             <xs:complexType>
               <xs:sequence>

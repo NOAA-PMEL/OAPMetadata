@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns="https://ncei.noaa.gov/ocads/v4.6"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata-concessions/test/schema/elements.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.6">
+  <document_metadata>
+    <document_date>2026-02-18T14:33:30</document_date>
+    <document_source object_class="Organization" object_id="ID001"/>
+    <comment>e40-U</comment>
+  </document_metadata>
+  <doi>http://xOfJHzzC/</doi>
+  <project_id>okG</project_id>
+  <experiement_id>e</experiement_id>
+  <dataset_data_date>2027-09-24T14:33:30Z</dataset_data_date>
+  <dataset_metadata_date>2026-08-18T14:33:30</dataset_metadata_date>
+    <expocodes>
+      <expocode>zXjC</expocode>
+      <expocode>Onp_</expocode>
+    </expocodes>
+    <cruise_ids>
+      <cruise_id>p_</cruise_id>
+      <cruise_id>HG9Lxq</cruise_id>
+    </cruise_ids>
+  <data_submitter object_class="Person" object_id="ID003">
+    <role>xo-3</role>
+    <comment>iclnrdnd3</comment>
+  </data_submitter>
+  <dataset_contact> <!-- optional element -->
+    <person object_class="Person" object_id="ID017">
+      <role>UcGk</role>
+      <comment>xnc71</comment>
+    </person>
+<!--    <organization object_class="Organization" object_id="ID019"/>-->
+  </dataset_contact>
+  <data_provider object_class="Organization" object_id="ID021"/>
+  <investigators>
+    <investigator object_class="Person" object_id="ID023">
+      <role>mv9C5MPsO</role>
+      <comment>EN6A-</comment>
+    </investigator>
+    <investigator object_class="Person" object_id="ID025">
+      <role>x7jJ5pydmo</role>
+      <comment>b8PrH</comment>
+    </investigator>
+  </investigators>
+  <cited_authors>
+    <author index="1177183275" object_class="Person" object_id="ID027">
+      <role>ns-x</role>
+      <comment>Z</comment>
+    </author>
+    <author index="920655409" object_class="Person" object_id="ID029">
+      <role>Sth1Qr</role>
+      <comment>qOBFJ9beQ</comment>
+    </author>
+  </cited_authors>
+  <dataset_title>w41QRyP</dataset_title>
+  <dataset_description>KlAqhfM9T</dataset_description>
+  <dataset_purpose>YbddC</dataset_purpose>
+  <data_license type="dZgNgW"/>
+  <fair_use_request>M</fair_use_request>
+  <dataset_type>Gridded Product</dataset_type>
+  <dataset_data_type>Manipulated</dataset_data_type>
+  <mcdr>true</mcdr>
+  <data_coverage>
+    <temporal_extents>
+      <start_date>2026-02-28</start_date>
+      <end_date>2027-11-12Z</end_date>
+    </temporal_extents>
+    <geospatial_extents>
+      <bounds>
+        <western_bound>7.266</western_bound>
+        <eastern_bound>74.036</eastern_bound>
+        <northern_bound>-76.872</northern_bound>
+        <southern_bound>84.569</southern_bound>
+      </bounds>
+    </geospatial_extents>
+    <depth_extents>
+      <min_depth units="meters">1257310676.702</min_depth>
+      <max_depth units="meters">1197988583.922</max_depth>
+    </depth_extents>
+  </data_coverage>
+  <geographic_names>
+    <name>
+      <!--
+          This is a "controlled vocabulary reference.
+          The only required element is the URI. 
+          -->
+      <uri>http://AXvmceOi/</uri>
+      <term>FYL8nlI</term> 
+      <description>PWrIm</description>
+    </name>
+    <name>
+      <uri>http://vwXfHyyo/</uri>
+    </name>
+  </geographic_names>
+  <sections>
+    <section>C</section>
+    <section>EvjT_LJ</section>
+  </sections>
+  <platforms>
+    <platform>
+      <name>JoJc3</name>
+      <identifier type="C.Pxi7NPC">R</identifier>
+      <type>C21o</type>
+      <owner>mO</owner>
+      <country>
+        <uri>http://rvrIfcyK/</uri>
+        <term>FYL8nlI</term> 
+        <description>r</description>
+      </country>
+    </platform>
+    <platform>
+      <name>k4Zv8T-h</name>
+      <identifier type="h">we6E</identifier>
+      <type>y</type>
+      <owner>A6k5B</owner>
+      <country>
+        <uri>http://atLTlaCY/</uri>
+      </country>
+    </platform>
+  </platforms>
+  <funding>
+    <funding_source>
+      <funding_agency>
+        <name>BdXK</name>
+        <country>
+          <uri>http://DCOxHHAD/</uri>
+        </country>
+      </funding_agency>
+      <project_title>Blb0sR</project_title>
+      <project_identifier>ID005</project_identifier>
+      <project_duration>
+        <start_date>2027-03-16</start_date>
+        <end_date>2026-05-27</end_date>
+      </project_duration>
+    </funding_source>
+    <funding_source>
+      <funding_agency>
+        <name>iyDTc</name>
+        <country>
+          <uri>http://mPmHVEWj/</uri>
+        </country>
+      </funding_agency>
+      <project_title>CgiPmlkHE6</project_title>
+      <project_identifier>ID004</project_identifier>
+      <project_duration>
+        <start_date>2027-10-24Z</start_date>
+        <end_date>2027-11-22Z</end_date>
+      </project_duration>
+    </funding_source>
+  </funding>
+  <research_projects>
+    <project>
+      <title>Pfj3</title>
+      <organization object_class="Organization" object_id="ID004"/>
+      <description>l</description>
+      <url>http://SsWMoBib/</url>
+    </project>
+    <project>
+      <title>Kxut</title>
+      <organization object_class="Organization" object_id="ID005"/>
+      <description>kW.8joA</description>
+      <url>http://YqsTFgmh/</url>
+    </project>
+  </research_projects>
+  <publications>
+    <publication>
+      <!-- This is a general reference.
+        All of the following elements are optional,
+        but there must be at least one.
+        Name and description are one choice together.
+      -->
+      <doi>http://WSKnilbE/</doi>
+<!--      <link>http://yGdFhved/</link>-->
+<!--      <citation>F4.2</citation>-->
+      <name>TCa5</name>
+      <description>g_4WMjg</description>
+    </publication>
+    <publication>
+      <doi>http://aHcKatIZ/</doi>
+    </publication>
+  </publications>
+  <related_datasets>
+    <dataset>
+      <name>X</name>
+      <description>fBz</description>
+    </dataset>
+    <dataset>
+      <doi>http://noENcKdI/</doi>
+      <name>dh</name>
+      <description>Nv3ecNX0k</description>
+    </dataset>
+  </related_datasets>
+  <default_qc_flagging_scheme>
+    <!-- This is a "reference_or_description" element.
+         It is a choice of a general reference,
+         or simply a description. -->
+    <reference>
+      <doi>http://FIEYEqKI/</doi>
+    </reference>
+<!--    <description>uGZ9N.g</description>-->
+  </default_qc_flagging_scheme>
+  <default_missing_value_indicator>V57</default_missing_value_indicator>
+  <supplemental_information>VOguhm29D</supplemental_information>
+  <keywords>
+    <keyword>LEI</keyword>
+    <keyword>igdIH</keyword>
+  </keywords>
+  <observation_geometry>Timeseries_Profile</observation_geometry>
+  <biological_subjects>
+    <subject>
+      <organism_description>Fme__QhG</organism_description>
+      <species_identifier type="t">R-rwV</species_identifier>
+      <life_stage>juvenile</life_stage>
+      <collection_location>jhkfs;j</collection_location>
+    </subject>
+    <subject>
+      <organism_description>xRQM</organism_description>
+      <species_identifier type="Q1kG">UE</species_identifier>
+      <life_stage>juvenile</life_stage>
+      <collection_location>ksd;</collection_location>
+    </subject>
+  </biological_subjects>
+  <!-- item collections here. -->
+  <variables/>
+  <instruments/>
+  <people/>
+  <organizations/>
+</dataset_metadata>

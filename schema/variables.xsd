@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE schema SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
   >
+  <!-- targetNamespace="https://ncei.noaa.gov/ocads/v4.6" xmlns="https://ncei.noaa.gov/ocads/v4.6" xmlns:oa="https://ncei.noaa.gov/ocads/v4.6" -->
 
+  <!-- NAMESPACE "&NS_HOST;/&PKG_NAME;/&VERSION;" -->
+  <!-- https://ncei.noaa.gov/ocads/v4.6 -->
+  <!-- targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;" -->
+  
   <xs:include schemaLocation="variable_fields.xsd"/>
 
   <xs:complexType name="variable" abstract="true">
@@ -16,6 +22,11 @@
   </xs:complexType>
 
   <xs:complexType name="basic_variable">
+    <xs:annotation>
+      <xs:documentation>
+        Basic Variables are for simple variables, eq the so-called "non-measured" variables and the like.
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="variable">
         <xs:sequence>
@@ -25,7 +36,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="std_variable_base" abstract="true">
+  <xs:complexType name="std_variable_base" abstract="true"> <!-- Note this is abstract.  Is not instantiated by itself. -->
     <xs:complexContent>
       <xs:extension base="basic_variable">
         <xs:sequence>
@@ -42,7 +53,7 @@
       <xs:extension base="std_variable_base">
         <xs:sequence>
           <!-- <xs:element name="sampling" type="sampling_type"/> -->
-          <xs:choice>
+          <xs:choice minOccurs="0">
             <xs:element name="measured" type="measured_var_info"/>
             <xs:element name="calculated" type="calculated_var_info"/>
             <xs:element name="gridded" type="gridded_var_info"/>
@@ -52,14 +63,14 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="basic_measured_observation_base" abstract="true">
+  <xs:complexType name="basic_measured_observation_base" abstract="true"> <!-- must be abstract due to quirk of xml schema -->
     <xs:complexContent>
       <xs:restriction base="insitu_variable">
         <xs:sequence>
           <xs:group ref="minimum_variable_fields"/>
           <xs:element name="observation_type" type="xs:string"/>
           <xs:group ref="common_var_additional_fields"/>
-          <xs:element name="measured" type="measured_var_info"/>
+          <xs:element name="measured" type="measured_var_info" minOccurs="0"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
@@ -69,12 +80,31 @@
     <xs:complexContent>
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
+          <xs:element name="analysis" type="analysis_information" />
+        <!--
           <xs:element name="analyzing_instrument" type="standard_instrument"/>
+        -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="analysis_information">
+    <xs:sequence>
+      <xs:element name="analyzing_instrument" type="standard_instrument" />
+      <xs:element name="method_description" type="xs:string" />
+      <xs:element name="method_reference" type="reference_or_description" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ph_analysis_info">
+    <xs:sequence>
+      <xs:element name="analyzing_instrument" type="pH_instrument"/>
+      <xs:element name="method_description" type="xs:string" />
+      <xs:element name="method_reference" type="reference_or_description" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="basic_calculated_observation_base">
     <xs:complexContent>
       <xs:restriction base="insitu_variable">
@@ -98,7 +128,10 @@
     <xs:complexContent>
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
+          <xs:element name="analysis" type="analysis_information" minOccurs="0"/>
+        <!--
           <xs:element name="analyzing_instrument" type="standard_instrument"/>
+        -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -108,7 +141,10 @@
     <xs:complexContent>
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
-          <xs:element name="analyzing_instrument" type="crm_instrument"/>
+          <xs:element name="analysis" type="analysis_information" />
+        <!--
+          <xs:element name="analyzing_instrument" type="standard_instrument"/>
+        -->
           <xs:element name="sample_preservation" type="sample_preservation" minOccurs="0" maxOccurs="1"/>
           <xs:element name="blank_correction" type="xs:string" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
@@ -124,13 +160,12 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="TA_measured">
-    <!-- ??? spell it out? -->
+  <xs:complexType name="TA_measured">  <!-- ??? spell it out? -->
     <xs:complexContent>
       <xs:extension base="DIC_measured">
         <!-- basic_observation + preservative -->
         <xs:sequence>
-          <xs:element name="titration_type" type="xs:string"/>
+          <!-- <xs:element name="titration_type" type="xs:string"/> removed in v4.6 -->
           <xs:element name="cell_type" type="xs:string"/>
           <xs:element name="curve_fitting" type="xs:string"/>
         </xs:sequence>
@@ -142,7 +177,9 @@
     <xs:complexContent>
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
-          <xs:element name="analyzing_instrument" type="pH_instrument"/>
+          <xs:element name="analysis" type="analysis_information" />
+        <!--
+          <xs:element name="analyzing_instrument" type="standard_instrument"/> -->
           <xs:element name="measurement_temperature" type="xs:string" minOccurs="0" maxOccurs="1"/>
           <xs:element name="temperature_correction_method" type="xs:string" minOccurs="0"
             maxOccurs="1"/>
@@ -157,9 +194,9 @@
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
           <!-- <xs:element name="analyzing_instrument" type="instrument_ref"/>  gas_detector ??? -->
-          <xs:element name="water_vapor_correction" type="xs:string"/>
+          <xs:element name="water_vapor_correction_method" type="xs:string"/>
           <xs:element name="temperature_correction_method" type="xs:string"/>
-          <xs:element name="co2_report_temperature" type="xs:string"/>
+          <xs:element name="co2_report_temperature" type="xs:string"/> <!-- at what temperature was f/pCO2 reported -->
           <xs:element name="gas_detector" type="co2_gas_detector"/>
         </xs:sequence>
       </xs:extension>
@@ -172,10 +209,10 @@
         <xs:sequence>
           <xs:element name="equilibrator" type="equilibrator" minOccurs="0" maxOccurs="1"/>
           <xs:element name="co2_drying_method" type="xs:string" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="eq_pressure_measurement" type="sensor_measurement"/>
-          <xs:element name="eq_temperature_measurement" type="sensor_measurement"/>
-          <xs:element name="atm_pressure_measurement" type="sensor_measurement"/>
-          <xs:element name="atm_co2" type="atm_co2"/>
+          <xs:element name="eq_pressure_measurement" type="sensor_measurement" minOccurs="0"/>
+          <xs:element name="eq_temperature_measurement" type="sensor_measurement" minOccurs="0"/>
+          <xs:element name="atm_pressure_measurement" type="sensor_measurement" minOccurs="0"/>
+          <xs:element name="atm_co2" type="atm_co2" minOccurs="0"/>
           <xs:element name="xco2_pco2_calculation_method" type="xs:string" minOccurs="0"/>
           <xs:element name="pco2_fco2_calculation_method" type="xs:string" minOccurs="0"/>
         </xs:sequence>
@@ -187,10 +224,7 @@
     <xs:complexContent>
       <xs:extension base="co2_measured_base">
         <xs:sequence>
-          <xs:element name="storage_method" type="xs:string"/>
-          <xs:element name="seawater_volume" type="xs:string"/>
-          <xs:element name="headspace_volume" type="xs:string"/>
-          <xs:element name="measurement_temperature" type="xs:string"/>
+          <xs:element name="measurement_temperature" type="measured_value"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -213,6 +247,7 @@
       <xs:element name="method" type="xs:string"/>
       <xs:element name="sensor" type="sensor"/>
       <xs:element name="sensor_location" type="xs:string"/>
+      <!-- <xs:element name="calibration" type="xs:string"/>  an actual calibration exists under sensor  -->
       <xs:element name="comments" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
@@ -221,6 +256,7 @@
     <xs:sequence minOccurs="0">
       <xs:element name="location" type="xs:string"/>
       <xs:element name="height" type="altitude_m"/>
+      <xs:element name="drying_method" type="xs:string"/>
       <xs:element name="measurement_interval" type="xs:string" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="measured" type="xs:boolean" use="required"/>
@@ -262,7 +298,7 @@
     <xs:complexContent>
       <xs:extension base="basic_variable">
         <xs:sequence>
-          <xs:element name="sediment_var_fields" type="xs:string"/>
+          <xs:element name="additional_information" type="xs:string" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -284,7 +320,7 @@
   </xs:complexType>
   
   <xs:complexType name="variable_list">
-    <xs:choice maxOccurs="unbounded">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
       <xs:element name="basic" type="basic_variable"/>
       <xs:element name="observed" type="std_observed_variable"/>
       <xs:element name="DIC" type="DIC_measured"/>

@@ -3,7 +3,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
   xmlns="&NAMESPACE;" targetNamespace="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
-  <!--targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" -->
+  <!--targetNamespace="http://ncei.noaa.gov/oads/&VERSION;" 
+    targetNamespace="https://ncei.noaa.gov/ocads/v4.6" xmlns="https://ncei.noaa.gov/ocads/v4.6"
+       xmlns="&NAMESPACE;" targetNamespace="&NAMESPACE;"
+  -->
 
   <!-- experiment 
   <xs:simpleType name="decimal_value">
@@ -106,12 +109,25 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  
+ <!-- 
   <xs:complexType name="liter_volume">
     <xs:complexContent>
-      <xs:restriction base="measured_value">
+      <xs:restriction base="xs:decimal">
         <xs:attribute name="units" type="xs:string" fixed="liters" use="required"/>
       </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+ -->
+  <xs:complexType name="degrees_c_restriction">
+    <xs:complexContent>
+      <xs:restriction base="measured_value">
+        <xs:attribute name="units" type="xs:string" fixed="degrees C" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="degrees_c">
+    <xs:complexContent>
+      <xs:extension base="degrees_c_restriction"/>
     </xs:complexContent>
   </xs:complexType>
   
@@ -153,7 +169,7 @@
   </xs:complexType>
 
   <!-- 
-  <xs:complexType name="standard_identifier">
+  <xs:complexType name="standard_name">
     <xs:sequence>
       <xs:element name="identifier" type="xs:anyURI"/>
       <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -163,13 +179,15 @@
 
   <xs:complexType name="general_reference">
     <xs:sequence>
-      <xs:choice>
-        <xs:element name="DOI" type="pid_reference" minOccurs="0" maxOccurs="1"/>
+      <xs:choice minOccurs="1" maxOccurs="4">
+        <xs:element name="doi" type="pid_reference" minOccurs="0" maxOccurs="1"/>
         <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
         <xs:element name="citation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="name" type="xs:string"  maxOccurs="1"/>
+          <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
       </xs:choice>
-      <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 <!--  <xs:element name="related" type="general_reference"/> -->
@@ -184,8 +202,8 @@
   
   <xs:complexType name="vocabulary_item_reference">
     <xs:sequence>
-      <xs:element name="term" type="xs:string"/>
       <xs:element name="uri" type="xs:anyURI"/>
+      <xs:element name="term" type="xs:string" minOccurs="0"/>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -194,6 +212,14 @@
     <xs:simpleContent>
       <xs:extension base="xs:anyURI"/>
     </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="typed_reference">
+    <xs:complexContent>
+      <xs:extension base="pid_reference">
+        <xs:attribute name="pid_type" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   
   <xs:complexType name="URI_reference">
@@ -207,7 +233,7 @@
   <xs:complexType name="reference_or_description">
     <xs:choice>
       <xs:element name="reference" type="general_reference"/>
-      <xs:element name="description" type="xs:string"/>
+      <xs:element name="reference_description" type="xs:string"/>
     </xs:choice>
   </xs:complexType>
 
@@ -331,7 +357,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="project_title" type="xs:string"/>
-      <xs:element name="project_identifier" type="xs:ID"/>
+      <xs:element name="project_identifier" type="xs:string"/>
       <xs:element name="project_duration" type="temporal_extents" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -341,7 +367,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Point"/>  <!-- ??? CF types.  Acceptable? -->
       <xs:enumeration value="Timeseries"/>
-      <xs:enumeration value="Trajectory"/> <!-- aka (Surface) Underway -->
+      <xs:enumeration value="Trajectory"/> <!-- aka (Surface) Underway ( Does this term imply continuous sampling? ) -->
       <xs:enumeration value="Profile"/>
       <xs:enumeration value="Timeseries_Profile"/>
       <!-- ??? Does this assume same sample rate for all profile vars ? -->
@@ -363,6 +389,10 @@
       <xs:enumeration value="natural_analogue"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="extendable">
+    <xs:union memberTypes="experiment_location xs:string"/>
+  </xs:simpleType>
+  <xs:element name="extendable" type="extendable"/>
   
   <xs:simpleType name="ncei_obs_types">
     <xs:union memberTypes="observation_geometry experiment_location"/>

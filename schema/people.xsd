@@ -64,7 +64,7 @@
     <xs:complexContent>
       <xs:extension base="person">
         <xs:sequence>
-          <xs:element name="identifier" type="pid_reference" minOccurs="0" maxOccurs="unbounded"/>  <!-- ??? really unbounded? Should we order / indicate primary? Alt_IDs? -->
+          <xs:element name="identifier" type="typed_reference" minOccurs="0" maxOccurs="unbounded"/>  <!-- ??? really unbounded? Should we order / indicate primary? Alt_IDs? -->
           <xs:element name="name" type="person_name"/>
           <xs:element name="organization" type="organization_ref" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="contact_info" type="contact_info" minOccurs="0" maxOccurs="1"/> <!-- ? multiple, with roles -->
@@ -101,8 +101,7 @@
       <xs:element name="middle" minOccurs="0" maxOccurs="1" type="xs:string"/>
       <!-- type="ordered_string_element" maxOccurs="unbounded" -->
       <xs:element name="last" type="xs:string"/>
-      <xs:element name="suffix" type="xs:string" minOccurs="0" maxOccurs="1">
-        <!-- We probably will want this -->
+      <xs:element name="suffix" type="xs:string" minOccurs="0" maxOccurs="1"> <!-- We probably will want this -->
         <xs:annotation>
           <xs:documentation> Jr, Sr, etc. </xs:documentation>
         </xs:annotation>
@@ -130,7 +129,7 @@
 
   <xs:complexType name="person_collection">
     <xs:sequence >
-      <xs:element name="person" type="person" maxOccurs="unbounded"/>
+      <xs:element name="person" type="person" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   
