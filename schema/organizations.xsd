@@ -58,7 +58,7 @@
   
   <xs:complexType name="organization_collection">
     <xs:sequence>
-      <xs:element name="organization" type="organization" maxOccurs="unbounded" />
+      <xs:element name="organization" type="organization" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

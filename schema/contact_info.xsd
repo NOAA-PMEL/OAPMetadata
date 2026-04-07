@@ -33,7 +33,7 @@
           <xs:element name="administrative_area" type="xs:string" minOccurs="0" maxOccurs="1"/>
           <!-- should we just call it "state" -->
           <xs:element name="postal_code" type="xs:string" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="country" type="vocabulary_item_reference"/>
+          <xs:element name="country" type="typed_identifier"/> <!-- to allow code-only ?? -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
