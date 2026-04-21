@@ -14,7 +14,7 @@
     <xs:complexContent>
       <xs:extension base="calibration_info">
         <xs:sequence>
-          <xs:element name="technique_description" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
           <xs:element name="method_reference" type="reference_or_description"/>
           <xs:element name="frequency" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- not free text? -->
           <xs:choice  minOccurs="0" maxOccurs="1">
@@ -55,7 +55,7 @@
   <xs:complexType name="crm_info">
     <xs:sequence>
       <xs:element name="manufacturer" type="xs:string"/>
-      <xs:element name="batch_number" type="xs:string"/>
+      <xs:element name="batch_number" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -114,6 +114,7 @@
   <xs:complexType name="standard_gas">
     <xs:sequence>
       <xs:element name="manufacturer" type="xs:string"/>
+      <!-- apparently this is not relevant here. Leaving it for now as optional. -->
       <xs:element name="batch" type="xs:string" minOccurs="0"/>
       <xs:element name="concentration" type="dimensioned_quantity"/>
       <xs:element name="uncertainty" type="dimensioned_quantity"/>
