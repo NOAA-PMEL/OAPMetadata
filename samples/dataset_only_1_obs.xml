@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+<dataset_metadata_elements xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
  xmlns="https://ncei.noaa.gov/ocads/v4.6"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10,7 +10,6 @@
     <comment>e40-U</comment>
   </document_metadata>
   <doi>http://xOfJHzzC/</doi>
-  <project_id>okG</project_id>
   <experiement_id>e</experiement_id>
   <dataset_data_date>2027-09-24T14:33:30Z</dataset_data_date>
   <dataset_metadata_date>2026-08-18T14:33:30</dataset_metadata_date>
@@ -33,17 +32,6 @@
     </person>
 <!--    <organization object_class="Organization" object_id="ID019"/>-->
   </dataset_contact>
-  <data_provider object_class="Organization" object_id="ID021"/>
-  <investigators>
-    <investigator object_class="Person" object_id="ID023">
-      <role>mv9C5MPsO</role>
-      <comment>EN6A-</comment>
-    </investigator>
-    <investigator object_class="Person" object_id="ID025">
-      <role>x7jJ5pydmo</role>
-      <comment>b8PrH</comment>
-    </investigator>
-  </investigators>
   <cited_authors>
     <author index="1177183275" object_class="Person" object_id="ID027">
       <role>ns-x</role>
@@ -105,9 +93,8 @@
       <type>C21o</type>
       <owner>mO</owner>
       <country>
-        <uri>http://rvrIfcyK/</uri>
-        <term>FYL8nlI</term> 
-        <description>r</description>
+        <uri>http://AXvmceOi/</uri>
+        <term>FYL8nlI</term>
       </country>
     </platform>
     <platform>
@@ -116,7 +103,8 @@
       <type>y</type>
       <owner>A6k5B</owner>
       <country>
-        <uri>http://atLTlaCY/</uri>
+        <uri>http://AXvmceOi/</uri>
+        <term>FYL8nlI</term>
       </country>
     </platform>
   </platforms>
@@ -125,7 +113,8 @@
       <funding_agency>
         <name>BdXK</name>
         <country>
-          <uri>http://DCOxHHAD/</uri>
+          <uri>http://AXvmceOi/</uri>
+          <term>FYL8nlI</term>
         </country>
       </funding_agency>
       <project_title>Blb0sR</project_title>
@@ -139,7 +128,8 @@
       <funding_agency>
         <name>iyDTc</name>
         <country>
-          <uri>http://mPmHVEWj/</uri>
+          <uri>http://AXvmceOi/</uri>
+          <term>FYL8nlI</term>
         </country>
       </funding_agency>
       <project_title>CgiPmlkHE6</project_title>
@@ -196,10 +186,7 @@
     <!-- This is a "reference_or_description" element.
          It is a choice of a general reference,
          or simply a description. -->
-    <reference>
-      <doi>http://FIEYEqKI/</doi>
-    </reference>
-<!--    <description>uGZ9N.g</description>-->
+    <description>blah blah blah garbage here blah</description>
   </default_qc_flagging_scheme>
   <default_missing_value_indicator>V57</default_missing_value_indicator>
   <supplemental_information>VOguhm29D</supplemental_information>
@@ -227,4 +214,4 @@
   <instruments/>
   <people/>
   <organizations/>
-</dataset_metadata>
+</dataset_metadata_elements>

@@ -15,7 +15,7 @@
       <xs:extension base="calibration_info">
         <xs:sequence>
           <xs:element name="description" type="xs:string"/>
-          <xs:element name="method_reference" type="reference_or_description"/>
+          <xs:element name="method_reference" type="reference_or_description" minOccurs="0"/>
           <xs:element name="frequency" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- not free text? -->
           <xs:choice  minOccurs="0" maxOccurs="1">
             <xs:element name="last_calibration" type="calibration_event"/>

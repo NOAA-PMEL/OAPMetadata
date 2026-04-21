@@ -83,11 +83,11 @@
   <geographic_names>
     <name>
       <!--
-          This is a "controlled vocabulary reference.
-          The only required element is the URI. 
+          This is a controlled vocabulary reference.
+          The only required element is the URI.
           -->
       <uri>http://AXvmceOi/</uri>
-      <term>FYL8nlI</term> 
+      <term>FYL8nlI</term>
       <description>PWrIm</description>
     </name>
     <name>
@@ -225,10 +225,6 @@
   <model_output>
     <model_name>pU5</model_name>
     <model_version>uDgmUZ</model_version>
-    <mcdr_study>
-      <mcdr_pathway>direct ocean capture</mcdr_pathway>
-      <oae_treatment_type>river alkalinity addition</oae_treatment_type>
-    </mcdr_study>
     <physics_component_name_and_version>AF8BBzB0</physics_component_name_and_version>
     <bgc_component_name_and_version>fG</bgc_component_name_and_version>
     <grid_resolution>
@@ -241,43 +237,31 @@
     <output_data_description>jz_</output_data_description>
     <model_configuration>
       <reference>
-        <doi>http://kdsnWKGy/</doi>
-        <name>RmUz42HR</name>
         <description>D</description>
       </reference>
     </model_configuration>
     <boundary_conditions>
       <reference>
-        <doi>http://yTXYRKFF/</doi>
-        <name>uNjl</name>
         <description>P</description>
       </reference>
     </boundary_conditions>
     <atmospheric_forcing>
       <reference>
-        <doi>http://BDjiLxTJ/</doi>
-        <name>xa3qigwLF</name>
         <description>zBq4-</description>
       </reference>
     </atmospheric_forcing>
     <tidal_forcing>
       <reference>
-        <doi>http://QuQKMHRk/</doi>
-        <name>wiY</name>
         <description>xLN3sR</description>
       </reference>
     </tidal_forcing>
     <other_model_forcing_details>
       <reference>
-        <doi>http://lwVjzoMk/</doi>
-        <name>n3L</name>
         <description>_GbsJPR</description>
       </reference>
     </other_model_forcing_details>
     <river_and_sediment_flux_details>
       <reference>
-        <doi>http://EExtmBUe/</doi>
-        <name>PAOn9</name>
         <description>AMOPq59527</description>
       </reference>
     </river_and_sediment_flux_details>
@@ -285,8 +269,6 @@
     <description_of_acid_or_alkalinity_addition>mq</description_of_acid_or_alkalinity_addition>
     <codebase_link>
       <uri>http://lqVsnKsp/</uri>
-      <name>v</name>
-      <description>Kxiez</description>
     </codebase_link>
     <additional_details>Yqqm_Dxvp</additional_details>
   </model_output>
