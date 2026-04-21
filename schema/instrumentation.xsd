@@ -24,7 +24,7 @@
       <xs:element name="reference" type="URI_reference" minOccurs="0" maxOccurs="unbounded"/> <!-- ??? to what? -->
       <xs:element name="accuracy" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
       <xs:element name="precision" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="uncertainty" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/>
+      <!-- <xs:element name="uncertainty" type="dimensioned_quantity" minOccurs="0" maxOccurs="1"/> per LQ -->
       <!--xs:any minOccurs="0" maxOccurs="unbounded"/-->
     </xs:sequence>
   </xs:group>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE schema SYSTEM "version.dtd" >
+<!DOCTYPE schema SYSTEM "version.dtd" [
+  <!ENTITY LAX '0' >
+  ]>
+  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
   targetNamespace="https://ncei.noaa.gov/ocads/v4.6" xmlns="https://ncei.noaa.gov/ocads/v4.6" xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
@@ -152,7 +155,7 @@
       <!-- data provider / credited organization -->
       <xs:element name="data_provider" type="organization_ref" minOccurs="0" />
 
-      <!-- researchers REMOVED -->
+      <!-- researchers REMOVED per LQ
       <xs:element name="investigators">
         <xs:complexType>
           <xs:sequence>
@@ -160,7 +163,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-
+      -->
       
       <!-- author list -->
       <xs:element name="cited_authors">
@@ -591,7 +594,7 @@
   
   <xs:complexType name="data_product">
     <xs:sequence>
-      <xs:element name="data_sources">
+      <xs:element name="data_sources" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="source" type="data_reference" maxOccurs="unbounded"/>
@@ -678,7 +681,7 @@
     <xs:complexContent>
       <xs:extension base="data_product">
         <xs:sequence>
-          <xs:element name="grid_resolution" type="grid_resolution" minOccurs="0" />
+          <xs:element name="grid_resolution" type="grid_resolution" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -699,11 +702,6 @@
     <xs:sequence>
       <xs:element name="model_name" type="xs:string"/>
       <xs:element name="model_version" type="xs:string"/>
-      <xs:element name="mcdr_study" minOccurs="0"> <!-- TODO: Not sure if this is appropriate here. -->
-        <xs:complexType>
-          <xs:group ref="mcdr_ds_fields"/>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="physics_component_name_and_version" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="bgc_component_name_and_version" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <!-- Removed

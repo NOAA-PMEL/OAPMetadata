@@ -233,7 +233,7 @@
   <xs:complexType name="reference_or_description">
     <xs:choice>
       <xs:element name="reference" type="general_reference"/>
-      <xs:element name="reference_description" type="xs:string"/>
+      <xs:element name="description" type="xs:string"/>
     </xs:choice>
   </xs:complexType>
 
