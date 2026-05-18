@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataset_metadata [
+  <!ENTITY FILE "file:/Users/kamb/workspace/OAPMetadata-concessions/schema/dataset_metadata.xsd"> 
+  <!ENTITY WEB "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.6/dataset_metadata.xsd"> 
+  <!ENTITY SCHEMA_LOCATION "&FILE;"> 
+  <!ENTITY A_DATE "2026-01-02" >
+  <!ENTITY A_DATE_TIME "2026-01-02T12:01:02" >
+]>
+
+<dataset_metadata
+ xmlns="https://ncei.noaa.gov/ocads/v4.6"
+ xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 &SCHEMA_LOCATION;"
+        metadata_standard="Ocean Carbon Metadata" metadata_version="v4.6">
+  <document_metadata>
+    <document_date>&A_DATE_TIME;</document_date>
+    <document_source object_class="Organization" object_id="ORG_001"/>
+    <comment></comment>
+  </document_metadata>
+  <doi></doi>
+  <!-- mCDR IDs
+  <project_id></project_id>
+  <experiement_id></experiement_id>
+  -->
+  <dataset_data_date>&A_DATE_TIME;<!-- date of most recent version of the data --></dataset_data_date>
+  <dataset_metadata_date>&A_DATE_TIME;<!-- date of most recent version of the metadata --></dataset_metadata_date>
+  <!-- dropping the wrapper  <observation_identifiers> -->
+  <expocodes>
+    <expocode>18TL20210602</expocode>
+  </expocodes>
+  <cruise_ids>
+    <cruise_id>18TL21012</cruise_id>
+  </cruise_ids>
+
+  <data_submitter object_class="Person" object_id="PER_001">
+    <role>data_submitter</role>
+    <comment></comment>
+  </data_submitter>
+<!-- Removed for OCADS submission
+  <dataset_contact>
+    <person object_class="Person" object_id="">
+      <role></role>
+      <comment></comment>
+    </person>
+<!-X-   OR <organization object_class="Organization" object_id=""/>-X->
+  </dataset_contact>
+  <data_provider object_class="Organization" object_id=""/>
+  -->
+<!-- researchers removed.  We probably still want a top-level list of PIs -->
+  <cited_authors>
+    <author index="1" object_class="Person" object_id="PER_001">
+      <role></role>
+      <comment></comment>
+    </author>
+    <author index="2" object_class="Person" object_id="PER_002">
+      <role></role>
+      <comment></comment>
+    </author>
+  </cited_authors>
+  
+  <dataset_title></dataset_title>
+  <dataset_description></dataset_description>
+  <dataset_purpose></dataset_purpose>
+  
+  <data_license type=""/>
+  <fair_use_request></fair_use_request>
+  
+  <dataset_type>Individual</dataset_type>
+  <dataset_data_type>Natural</dataset_data_type>
+  
+  <!-- Question about sampling at this level -->
+  
+  <mcdr>false</mcdr>
+  <data_coverage>
+    <temporal_extents>
+      <start_date>&A_DATE;</start_date>
+      <end_date>&A_DATE;</end_date>
+    </temporal_extents>
+    <geospatial_extents>
+      <bounds>
+        <western_bound>-47</western_bound>
+        <eastern_bound>-42</eastern_bound>
+        <northern_bound>42</northern_bound>
+        <southern_bound>47</southern_bound>
+      </bounds>
+    </geospatial_extents>
+    <depth_extents>
+      <min_depth units="meters">32</min_depth>
+      <max_depth units="meters">42</max_depth>
+    </depth_extents>
+  </data_coverage>
+  <geographic_names>
+    <name>
+      <term></term>
+      <uri></uri>
+      <description></description>
+    </name>
+    <name>
+      <term></term>
+      <uri></uri>
+      <description></description>
+    </name>
+  </geographic_names>
+  <sections>
+    <section></section>
+    <section></section>
+  </sections>
+  <platforms>
+    <platform>
+      <name></name>
+      <identifier type=""></identifier>
+      <type></type>
+      <owner></owner>
+      <country_code>
+        <term></term>
+        <uri></uri>
+        <description></description>
+      </country_code>
+    </platform>
+  </platforms>
+  <funding>
+    <funding_source>
+      <funding_agency>
+        <name></name>
+        <country>
+          <term></term>
+          <uri></uri>
+          <description></description>
+        </country>
+      </funding_agency>
+      <project_title></project_title>
+      <project_identifier></project_identifier>
+      <project_duration>
+        <start_date>&A_DATE;</start_date>
+        <end_date>&A_DATE;</end_date>
+      </project_duration>
+    </funding_source>
+  </funding>
+  <research_projects>
+    <project>
+      <title></title>
+      <description></description> <!-- optional -->
+      <url></url> <!-- optional -->
+    </project>
+  </research_projects>
+  <publications>
+    <!-- All general references, such as publications, references to related datasets or qc schemes, etc
+         are elements that have a choice of a "reference" which allows doi, link(URL), or text citation, AND
+          an optional name and description of the scheme, 
+          OR a simple text description. 
+          The reference doi/url/citation could also be optional.   
+    --> 
+    <publication>
+      <doi></doi>
+<!--      <link></link>-->
+<!--      <citation></citation>-->
+      <name></name>
+      <description></description>
+    </publication>
+  </publications>
+  <related_datasets>
+    <dataset>
+      <doi></doi>
+<!--      <link></link>-->
+<!--      <citation></citation>-->
+      <name></name>
+      <description></description>
+    </dataset>
+  </related_datasets>
+
+  <default_qc_flagging_scheme>
+    <reference>
+      <doi></doi>
+<!--      <link></link>-->
+<!--      <citation></citation>-->
+      <name></name>
+      <description></description>
+    </reference>
+<!--    <description></description>-->
+  </default_qc_flagging_scheme>
+  
+  <default_missing_value_indicator></default_missing_value_indicator>
+  
+  <supplemental_information></supplemental_information>
+  
+  <keywords>
+    <keyword></keyword>
+    <keyword></keyword>
+  </keywords>
+  
+  <biological_subjects>
+    <subject>
+      <organism_description></organism_description>
+      <species_identifier type="name_of_taxonomic_code">species_identification_code</species_identifier>
+      <life_stage>other</life_stage>
+      <collection_regions>
+        <region></region>
+      </collection_regions>
+    </subject>
+  </biological_subjects>
+
+  <field_trial>
+    <experiment_description></experiment_description>
+    <mcdr_pathway>ocean alkalinity enhancement</mcdr_pathway> <!-- allowed values:
+        <xs:enumeration value="ocean alkalinity enhancement" />
+        <xs:enumeration value="macroalgal cultivation for CDR" />
+        <xs:enumeration value="direct ocean capture" />
+        <xs:enumeration value="ocean fertilization" />
+        <xs:enumeration value="artificial upwelling and downwelling" />
+        <xs:enumeration value="other"/> <!-X- ??? Allowed? XXX triggers value entry in UI ? -X->
+      -->
+    <oae_treatment_type>dissolved alkalinity addition</oae_treatment_type>  <!-- allowed values:
+        <xs:enumeration value="electrochemical alkalinity addition" />
+        <xs:enumeration value="mineral alkalinity addition" />
+        <xs:enumeration value="dissolved alkalinity addition" />
+        <xs:enumeration value="river alkalinity addition" />
+        <xs:enumeration value="coastal enhanced weathering" />
+    -->
+    
+    <phase>baseline</phase> <!-- allowed values:  
+        <xs:enumeration value="baseline"/>
+        <xs:enumeration value="intervention"/>
+        <xs:enumeration value="control"/>
+     -->
+    
+    <site_description></site_description>
+    <previous_mcdr_research_in_the_area></previous_mcdr_research_in_the_area>
+    <co-located_operations></co-located_operations>
+    <meteorological_and_tidal_conditions></meteorological_and_tidal_conditions>
+    <alkalinity_feedstock_type></alkalinity_feedstock_type>
+    <alkalinity_feedstock_description></alkalinity_feedstock_description>
+    <dosing_location></dosing_location>
+    <dosing_depth units="meters">42</dosing_depth>
+    <dosing_duration>
+      <start_time>&A_DATE_TIME;</start_time>
+      <end_time>&A_DATE_TIME;</end_time>
+    </dosing_duration>
+    <dosing_mechanism></dosing_mechanism>
+    <dosing_effluent_density></dosing_effluent_density>
+    <dosing_regimen></dosing_regimen>
+    <dosing_rate_data></dosing_rate_data>
+    <total_alkalinity_feedstock_added></total_alkalinity_feedstock_added>
+    <permits>
+      <permit>
+        <number></number>
+        <document>  <!-- repeatable -->
+          <uri></uri>
+          <name></name>
+          <description></description>
+        </document>
+        <permitting_authority></permitting_authority>
+      </permit>
+    </permits>
+    <data_conflicts_and_unreported_data></data_conflicts_and_unreported_data>
+    <additional_details></additional_details>
+  </field_trial>
+
+  <variables>
+    <!-- variables go here. -->
+  </variables>
+  <people>
+    <person xsi:type="oa:person_definition"
+      object_class="Person" object_id="PER_001">
+      <identifier>https://orcid.org/0000-0003-2307-884X</identifier>
+      <name>
+        <first>first0</first>
+        <middle>middle0</middle>
+        <last>last0</last>
+        <suffix>suffix0</suffix> <!-- ??? Do we want this? What about prefix? -->
+      </name>
+      <organization object_id="ORG_001" />
+      <contact_info>
+        <address type="default"> <!-- "type" is eg work, home, lab, ???   Could also be address type, eg US, UK, etc.. -->
+          <delivery_address>delivery_address0</delivery_address>
+          <city>city0</city>
+          <administrative_area>state</administrative_area>
+          <postal_code>postal_code0</postal_code>
+          <country>code</country>
+        </address>
+        <phone>phone0</phone>
+        <email>email0</email>
+        <link><!-- optional URL if desired --></link>
+      </contact_info>
+      <link>
+        <uri>http://www.oxygenxml.com/</uri>
+        <name>name25</name>
+        <description>description51</description>
+      </link>
+    </person>
+    <person xsi:type="oa:person_definition"
+      object_class="Person" object_id="PER_002">
+      <identifier>https://orcid.org/0000-0003-2307-884X</identifier>
+      <name>
+        <first>first0</first>
+        <middle>middle0</middle>
+        <last>last0</last>
+        <suffix>suffix0</suffix>
+      </name>
+      <organization object_id="ORG_001" />
+      <contact_info>
+        <address type="default"> <!-- "type" is eg work, home, lab, ???   Could also be address type, eg US, UK, etc.. -->
+          <delivery_address>delivery_address0</delivery_address>
+          <city>city0</city>
+          <administrative_area>state</administrative_area>
+          <postal_code>postal_code0</postal_code>
+          <country>code</country>
+        </address>
+        <phone>phone0</phone>
+        <email>email0</email>
+        <link><!-- optional URL if desired --></link>
+      </contact_info>
+      <link>
+        <uri>http://www.oxygenxml.com/</uri>
+        <name>name25</name>
+        <description>description51</description>
+      </link>
+    </person>
+  </people>
+  <organizations>
+    <organization object_id="ORG_001" xsi:type="organization_definition">
+      <identifier>https://ror.org/org-1-2-3</identifier>
+      <name>My Organization</name>
+    </organization>
+  </organizations>
+</dataset_metadata>

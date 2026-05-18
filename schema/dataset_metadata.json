@@ -1,0 +1,2282 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema#",
+  "id": "https://ncei.noaa.gov/ocads/v4.6#",
+  "definitions": {
+    "element_reference": {
+      "type": "object",
+      "required": ["object_id"],
+      "properties": {
+        "role": {"type": "string"},
+        "comment": {"type": "string"},
+        "object_id": {"type": "string"},
+        "object_class": {"type": "string"}
+      }
+    },
+    "organization_ref": {
+      "allOf": [
+        {"$ref": "#/definitions/element_reference"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "document_metadata": {
+      "type": "object",
+      "required": [
+        "document_date",
+        "document_source"
+      ],
+      "properties": {
+        "document_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "document_source": {"$ref": "#/definitions/organization_ref"},
+        "comment": {"type": "string"}
+      }
+    },
+    "ocean_carbon_data_metadata_document.expocodes": {
+      "type": "object",
+      "required": ["expocode"],
+      "properties": {
+        "expocode": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.cruise_ids": {
+      "type": "object",
+      "required": ["cruise_id"],
+      "properties": {
+        "cruise_id": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        }
+      }
+    },
+    "person_ref": {
+      "allOf": [
+        {"$ref": "#/definitions/element_reference"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "submission_info": {
+      "type": "object",
+      "required": [
+        "submitted_by",
+        "submission_date"
+      ],
+      "properties": {
+        "submitted_by": {"$ref": "#/definitions/person_ref"},
+        "submission_date": {"type": "string"}
+      }
+    },
+    "revision": {
+      "required": ["revision_description"],
+      "allOf": [
+        {"$ref": "#/definitions/submission_info"},
+        {
+          "type": "object",
+          "properties": {
+            "revision_description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "archive_info.revision_history": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/revision"},
+          "minItems": 0
+        }
+      }
+    },
+    "archive_info": {
+      "type": "object",
+      "required": [
+        "data_center",
+        "revision_history"
+      ],
+      "properties": {
+        "data_center": {"$ref": "#/definitions/organization_ref"},
+        "archival_id": {"type": "string"},
+        "dataset_URL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "metadata_URL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision_history": {"$ref": "#/definitions/archive_info.revision_history"},
+        "primary": {"type": "boolean"}
+      }
+    },
+    "archival_info": {
+      "type": "object",
+      "required": ["archive"],
+      "properties": {
+        "archive": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/archive_info"},
+          "minItems": 1
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.dataset_contact": {
+      "type": "object",
+      "required": [
+        "person",
+        "organization"
+      ],
+      "properties": {
+        "person": {"$ref": "#/definitions/person_ref"},
+        "organization": {"$ref": "#/definitions/organization_ref"}
+      }
+    },
+    "ordered_person_ref": {
+      "required": ["index"],
+      "allOf": [
+        {"$ref": "#/definitions/person_ref"},
+        {
+          "type": "object",
+          "properties": {
+            "index": {"type": "integer"}
+          }
+        }
+      ]
+    },
+    "ocean_carbon_data_metadata_document.cited_authors": {
+      "type": "object",
+      "required": ["author"],
+      "properties": {
+        "author": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/ordered_person_ref"},
+          "minItems": 1
+        }
+      }
+    },
+    "typed_element": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {"type": "string"}
+      }
+    },
+    "temporal_extents": {
+      "type": "object",
+      "required": [
+        "start_date",
+        "end_date"
+      ],
+      "properties": {
+        "start_date": {"type": "string"},
+        "end_date": {"type": "string"}
+      }
+    },
+    "spatial_bounds": {
+      "type": "object",
+      "required": [
+        "western_bound",
+        "eastern_bound",
+        "northern_bound",
+        "southern_bound"
+      ],
+      "properties": {
+        "western_bound": {"type": "number"},
+        "eastern_bound": {"type": "number"},
+        "northern_bound": {"type": "number"},
+        "southern_bound": {"type": "number"}
+      }
+    },
+    "site_location": {
+      "type": "object",
+      "required": [
+        "longitude",
+        "latitude"
+      ],
+      "properties": {
+        "longitude": {"type": "number"},
+        "latitude": {"type": "number"}
+      }
+    },
+    "spatial_extents": {
+      "type": "object",
+      "required": [
+        "bounds",
+        "site_location"
+      ],
+      "properties": {
+        "bounds": {"$ref": "#/definitions/spatial_bounds"},
+        "site_location": {"$ref": "#/definitions/site_location"}
+      }
+    },
+    "positive_dimensioned_quantity": {
+      "type": "object",
+      "required": ["units"],
+      "properties": {
+        "Value": {"type": "number"},
+        "units": {"type": "string"}
+      }
+    },
+    "depth_m": {
+      "allOf": [
+        {"$ref": "#/definitions/positive_dimensioned_quantity"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "depth_range": {
+      "type": "object",
+      "required": [
+        "min_depth",
+        "max_depth"
+      ],
+      "properties": {
+        "min_depth": {"$ref": "#/definitions/depth_m"},
+        "max_depth": {"$ref": "#/definitions/depth_m"}
+      }
+    },
+    "dimensioned_quantity": {
+      "type": "object",
+      "required": ["units"],
+      "properties": {
+        "Value": {"type": "number"},
+        "units": {"type": "string"}
+      }
+    },
+    "measured_value": {
+      "allOf": [
+        {"$ref": "#/definitions/dimensioned_quantity"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "altitude_m": {
+      "allOf": [
+        {"$ref": "#/definitions/measured_value"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "altitude_range": {
+      "type": "object",
+      "required": [
+        "min_altitude",
+        "max_altitude"
+      ],
+      "properties": {
+        "min_altitude": {"$ref": "#/definitions/altitude_m"},
+        "max_altitude": {"$ref": "#/definitions/altitude_m"}
+      }
+    },
+    "data_coverage_extents": {
+      "type": "object",
+      "required": [
+        "temporal_extents",
+        "geospatial_extents",
+        "depth_extents",
+        "altitude_extents"
+      ],
+      "properties": {
+        "temporal_extents": {"$ref": "#/definitions/temporal_extents"},
+        "geospatial_extents": {"$ref": "#/definitions/spatial_extents"},
+        "depth_extents": {"$ref": "#/definitions/depth_range"},
+        "altitude_extents": {"$ref": "#/definitions/altitude_range"}
+      }
+    },
+    "vocabulary_item_reference": {
+      "type": "object",
+      "required": ["uri"],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "term": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "ocean_carbon_data_metadata_document.geographic_names": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/vocabulary_item_reference"},
+          "minItems": 1
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.sections": {
+      "type": "object",
+      "required": ["section"],
+      "properties": {
+        "section": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        }
+      }
+    },
+    "typed_string": {
+      "type": "object",
+      "properties": {
+        "Value": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    },
+    "typed_identifier": {
+      "allOf": [
+        {"$ref": "#/definitions/typed_string"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "platform": {
+      "type": "object",
+      "required": [
+        "name",
+        "identifier",
+        "type",
+        "owner",
+        "country"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "identifier": {"$ref": "#/definitions/typed_identifier"},
+        "type": {"type": "string"},
+        "owner": {"type": "string"},
+        "country": {"$ref": "#/definitions/vocabulary_item_reference"}
+      }
+    },
+    "ocean_carbon_data_metadata_document.platforms": {
+      "type": "object",
+      "required": ["platform"],
+      "properties": {
+        "platform": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/platform"},
+          "minItems": 1
+        }
+      }
+    },
+    "funding_source.funding_agency": {
+      "type": "object",
+      "required": [
+        "name",
+        "country"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "country": {"$ref": "#/definitions/vocabulary_item_reference"}
+      }
+    },
+    "funding_source": {
+      "type": "object",
+      "required": [
+        "funding_agency",
+        "project_title",
+        "project_identifier"
+      ],
+      "properties": {
+        "funding_agency": {"$ref": "#/definitions/funding_source.funding_agency"},
+        "project_title": {"type": "string"},
+        "project_identifier": {"type": "string"},
+        "project_duration": {"$ref": "#/definitions/temporal_extents"}
+      }
+    },
+    "ocean_carbon_data_metadata_document.funding": {
+      "type": "object",
+      "required": ["funding_source"],
+      "properties": {
+        "funding_source": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/funding_source"},
+          "minItems": 1
+        }
+      }
+    },
+    "research_project": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string"},
+        "organization": {"$ref": "#/definitions/organization_ref"},
+        "description": {"type": "string"},
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.research_projects": {
+      "type": "object",
+      "required": ["project"],
+      "properties": {
+        "project": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/research_project"},
+          "minItems": 1
+        }
+      }
+    },
+    "pid_reference": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "general_reference": {
+      "type": "object",
+      "properties": {
+        "doiOrlinkOrcitation": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "doi": {"$ref": "#/definitions/pid_reference"}
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "link": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "citation": {"type": "string"}
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "name": {"type": "string"}
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "description": {"type": "string"}
+                }
+              }
+            ]
+          },
+          "maxItems": 8,
+          "minItems": 0
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.publications": {
+      "type": "object",
+      "required": ["publication"],
+      "properties": {
+        "publication": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/general_reference"},
+          "minItems": 1
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.related_datasets": {
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/general_reference"},
+          "minItems": 0
+        }
+      }
+    },
+    "reference_or_description": {
+      "type": "object",
+      "required": [
+        "reference",
+        "description"
+      ],
+      "properties": {
+        "reference": {"$ref": "#/definitions/general_reference"},
+        "description": {"type": "string"}
+      }
+    },
+    "ocean_carbon_data_metadata_document.keywords": {
+      "type": "object",
+      "required": ["keyword"],
+      "properties": {
+        "keyword": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        }
+      }
+    },
+    "biological_subject": {
+      "type": "object",
+      "required": [
+        "organism_description",
+        "species_identifier",
+        "life_stage"
+      ],
+      "properties": {
+        "organism_description": {"type": "string"},
+        "species_identifier": {"$ref": "#/definitions/typed_identifier"},
+        "life_stage": {"$ref": "#/definitions/biological_life_stage"},
+        "collection_location": {
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean",
+            "null",
+            "object",
+            "array"
+          ]
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document.biological_subjects": {
+      "type": "object",
+      "required": ["subject"],
+      "properties": {
+        "subject": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/biological_subject"},
+          "minItems": 1
+        }
+      }
+    },
+    "datetime_duration": {
+      "type": "object",
+      "required": [
+        "start_time",
+        "end_time"
+      ],
+      "properties": {
+        "start_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_time": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "physiological_response_study": {
+      "type": "object",
+      "required": [
+        "experiment_description",
+        "site_description",
+        "seawater_source",
+        "seawater_treatment",
+        "treatment_duration"
+      ],
+      "properties": {
+        "experiment_description": {"type": "string"},
+        "site_description": {"$ref": "#/definitions/experiment_location"},
+        "targeted_acidity_or_alkalinity_levels": {"type": "string"},
+        "seawater_source": {"$ref": "#/definitions/seawater_source"},
+        "seawater_treatment": {"$ref": "#/definitions/seawater_treatment"},
+        "manipulation_method": {"type": "string"},
+        "treatment_duration": {"$ref": "#/definitions/datetime_duration"},
+        "additional_details": {"type": "string"}
+      }
+    },
+    "URI_reference": {
+      "type": "object",
+      "required": ["uri"],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "name": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "permit_information": {
+      "type": "object",
+      "required": [
+        "number",
+        "permitting_authority"
+      ],
+      "properties": {
+        "number": {"type": "string"},
+        "document": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/URI_reference"},
+          "minItems": 0
+        },
+        "permitting_authority": {"type": "string"}
+      }
+    },
+    "field_trial.permits": {
+      "type": "object",
+      "required": ["permit"],
+      "properties": {
+        "permit": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/permit_information"},
+          "minItems": 1
+        }
+      }
+    },
+    "field_trial": {
+      "type": "object",
+      "required": [
+        "experiment_description",
+        "mcdr_pathway",
+        "phase"
+      ],
+      "properties": {
+        "experiment_description": {"type": "string"},
+        "mcdr_pathway": {"$ref": "#/definitions/mcdr_pathways"},
+        "oae_treatment_type": {"$ref": "#/definitions/oae_treatment_types"},
+        "phase": {"$ref": "#/definitions/experiment_phase"},
+        "site_description": {"type": "string"},
+        "previous_mcdr_research_in_the_area": {"type": "string"},
+        "colocated_operations": {"type": "string"},
+        "meteorological_and_tidal_conditions": {"type": "string"},
+        "alkalinity_feedstock_type": {"type": "string"},
+        "alkalinity_feedstock_description": {"type": "string"},
+        "dosing_location": {"type": "string"},
+        "dosing_depth": {"$ref": "#/definitions/depth_m"},
+        "dosing_duration": {"$ref": "#/definitions/datetime_duration"},
+        "dosing_mechanism": {"type": "string"},
+        "dosing_effluent_density": {"type": "string"},
+        "dosing_regimen": {"type": "string"},
+        "dosing_rate_data": {"type": "string"},
+        "total_alkalinity_feedstock_added": {"type": "string"},
+        "permits": {"$ref": "#/definitions/field_trial.permits"},
+        "data_conflicts_and_unreported_data": {"type": "string"},
+        "additional_details": {"type": "string"}
+      }
+    },
+    "data_reference": {
+      "allOf": [
+        {"$ref": "#/definitions/URI_reference"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "data_product.data_sources": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {
+        "source": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/data_reference"},
+          "minItems": 1
+        }
+      }
+    },
+    "data_product": {
+      "type": "object",
+      "properties": {
+        "data_sources": {"$ref": "#/definitions/data_product.data_sources"}
+      }
+    },
+    "grid_resolution": {
+      "type": "object",
+      "required": [
+        "longitudinal_resolution",
+        "latitudinal_resolution",
+        "vertical_resolution",
+        "temporal_resolution"
+      ],
+      "properties": {
+        "longitudinal_resolution": {"type": "string"},
+        "latitudinal_resolution": {"type": "string"},
+        "vertical_resolution": {"type": "string"},
+        "temporal_resolution": {"type": "string"}
+      }
+    },
+    "gridded_product": {
+      "required": ["grid_resolution"],
+      "allOf": [
+        {"$ref": "#/definitions/data_product"},
+        {
+          "type": "object",
+          "properties": {
+            "grid_resolution": {"$ref": "#/definitions/grid_resolution"}
+          }
+        }
+      ]
+    },
+    "model_output": {
+      "type": "object",
+      "required": [
+        "model_name",
+        "model_version",
+        "codebase_link"
+      ],
+      "properties": {
+        "model_name": {"type": "string"},
+        "model_version": {"type": "string"},
+        "physics_component_name_and_version": {"type": "string"},
+        "bgc_component_name_and_version": {"type": "string"},
+        "grid_resolution": {"$ref": "#/definitions/grid_resolution"},
+        "input_data_description": {"type": "string"},
+        "output_data_description": {"type": "string"},
+        "model_configuration": {"$ref": "#/definitions/reference_or_description"},
+        "boundary_conditions": {"$ref": "#/definitions/reference_or_description"},
+        "atmospheric_forcing": {"$ref": "#/definitions/reference_or_description"},
+        "tidal_forcing": {"$ref": "#/definitions/reference_or_description"},
+        "other_model_forcing_details": {"$ref": "#/definitions/reference_or_description"},
+        "river_and_sediment_flux_details": {"$ref": "#/definitions/reference_or_description"},
+        "spin_up_protocol": {"type": "string"},
+        "description_of_acid_or_alkalinity_addition": {"type": "string"},
+        "codebase_link": {"$ref": "#/definitions/URI_reference"},
+        "additional_details": {"type": "string"}
+      }
+    },
+    "sediment_study": {
+      "type": "object",
+      "required": [
+        "sediment_floor_setting",
+        "sediment_type",
+        "sediment_sampling_method"
+      ],
+      "properties": {
+        "sediment_floor_setting": {"$ref": "#/definitions/sediment_floor_setting"},
+        "sediment_type": {"$ref": "#/definitions/sediment_type"},
+        "sediment_sampling_method": {"$ref": "#/definitions/sediment_sampling_method"}
+      }
+    },
+    "element_instance": {
+      "type": "object",
+      "required": ["object_id"],
+      "properties": {
+        "object_id": {"type": "string"},
+        "object_class": {"type": "string"}
+      }
+    },
+    "variable": {
+      "allOf": [
+        {"$ref": "#/definitions/element_instance"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "basic_variable": {
+      "required": [
+        "standard_name",
+        "dataset_variable_name",
+        "units",
+        "ph_scale"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/variable"},
+        {
+          "type": "object",
+          "properties": {
+            "standard_name": {"$ref": "#/definitions/vocabulary_item_reference"},
+            "dataset_variable_name": {"type": "string"},
+            "long_name": {"type": "string"},
+            "description": {"type": "string"},
+            "units": {"type": "string"},
+            "ph_scale": {"$ref": "#/definitions/ph_scale_types"}
+          }
+        }
+      ]
+    },
+    "variable_uncertainty": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {"$ref": "#/definitions/dimensioned_quantity"},
+        "uncertainty_description": {"type": "string"}
+      }
+    },
+    "std_variable_base": {
+      "required": ["observation_type"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "observation_type": {"type": "string"},
+            "missing_value_indicator": {"type": "string"},
+            "qc_flagging_scheme": {"$ref": "#/definitions/reference_or_description"},
+            "qc_flag_variable": {"type": "string"},
+            "qc_steps_taken": {"type": "string"},
+            "appropriate_use_quality": {"$ref": "#/definitions/appropriate_use_quality"},
+            "overall_uncertainty": {"$ref": "#/definitions/variable_uncertainty"},
+            "additional_information": {"type": "string"},
+            "measurement_researcher": {"$ref": "#/definitions/person_ref"},
+            "qc_researcher": {"$ref": "#/definitions/person_ref"}
+          }
+        }
+      ]
+    },
+    "sampling_type_element": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {"$ref": "#/definitions/sampling_type"}
+      }
+    },
+    "sample_storage": {
+      "type": "object",
+      "required": ["method_description"],
+      "properties": {
+        "method_description": {"type": "string"},
+        "container_volume": {"type": "string"},
+        "seawater_volume": {"type": "string"},
+        "headspace_volume": {"type": "string"}
+      }
+    },
+    "discrete_var_sampling_info": {
+      "type": "object",
+      "properties": {
+        "sample_storage": {"$ref": "#/definitions/sample_storage"},
+        "field_replicate_info": {"type": "string"}
+      }
+    },
+    "continuous_var_sampling_info": {
+      "type": "object",
+      "required": [
+        "location",
+        "depth"
+      ],
+      "properties": {
+        "location": {"type": "string"},
+        "depth": {"$ref": "#/definitions/depth_m"}
+      }
+    },
+    "sampling_info": {
+      "required": [
+        "capture",
+        "intake"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/sampling_type_element"},
+        {
+          "type": "object",
+          "properties": {
+            "capture": {"$ref": "#/definitions/discrete_var_sampling_info"},
+            "intake": {"$ref": "#/definitions/continuous_var_sampling_info"}
+          }
+        }
+      ]
+    },
+    "measured_var_info": {
+      "type": "object",
+      "required": [
+        "collection_method",
+        "collection_instrument_type",
+        "sampling"
+      ],
+      "properties": {
+        "collection_method": {"type": "string"},
+        "collection_instrument_type": {"type": "string"},
+        "sampling": {"$ref": "#/definitions/sampling_info"}
+      }
+    },
+    "calc_param": {
+      "type": "object",
+      "required": [
+        "name",
+        "description",
+        "value"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    },
+    "calculation_info.parameters": {
+      "type": "object",
+      "required": ["parameter"],
+      "properties": {
+        "parameter": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/calc_param"},
+          "minItems": 1
+        }
+      }
+    },
+    "calculation_info": {
+      "type": "object",
+      "required": ["calculation_method"],
+      "properties": {
+        "calculation_method": {"$ref": "#/definitions/reference_or_description"},
+        "parameters": {"$ref": "#/definitions/calculation_info.parameters"}
+      }
+    },
+    "variable_ref": {
+      "type": "object",
+      "required": ["object_id"],
+      "properties": {
+        "object_id": {"type": "string"},
+        "object_class": {"type": "string"}
+      }
+    },
+    "calculated_var_info.sources": {
+      "type": "object",
+      "required": ["variable"],
+      "properties": {
+        "variable": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/variable_ref"},
+          "minItems": 1
+        }
+      }
+    },
+    "calculated_var_info": {
+      "type": "object",
+      "required": ["sampling"],
+      "properties": {
+        "sampling": {"$ref": "#/definitions/sampling_type_element"},
+        "calculation": {"$ref": "#/definitions/calculation_info"},
+        "sources": {"$ref": "#/definitions/calculated_var_info.sources"}
+      }
+    },
+    "gridded_var_info": {
+      "type": "object",
+      "properties": {}
+    },
+    "insitu_variable": {
+      "required": [
+        "measured",
+        "calculated",
+        "gridded"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/std_variable_base"},
+        {
+          "type": "object",
+          "properties": {
+            "measured": {"$ref": "#/definitions/measured_var_info"},
+            "calculated": {"$ref": "#/definitions/calculated_var_info"},
+            "gridded": {"$ref": "#/definitions/gridded_var_info"}
+          }
+        }
+      ]
+    },
+    "basic_measured_observation_base": {
+      "allOf": [
+        {"$ref": "#/definitions/insitu_variable"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "instrument": {
+      "allOf": [
+        {"$ref": "#/definitions/element_instance"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "basic_instrument": {
+      "allOf": [
+        {"$ref": "#/definitions/instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "type": {"type": "string"},
+            "manufacturer": {"type": "string"},
+            "model": {"type": "string"},
+            "serial": {"type": "string"},
+            "description": {"type": "string"},
+            "reference": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/URI_reference"},
+              "minItems": 0
+            },
+            "accuracy": {"$ref": "#/definitions/dimensioned_quantity"},
+            "precision": {"$ref": "#/definitions/dimensioned_quantity"}
+          }
+        }
+      ]
+    },
+    "calibration_info": {
+      "type": "object",
+      "properties": {}
+    },
+    "calibration_event": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "location": {"$ref": "#/definitions/calibration_location"},
+        "description": {"type": "string"}
+      }
+    },
+    "basic_calibration_info.calibration_history": {
+      "type": "object",
+      "required": ["calibration"],
+      "properties": {
+        "calibration": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/calibration_event"},
+          "minItems": 1
+        }
+      }
+    },
+    "basic_calibration_info": {
+      "required": [
+        "description",
+        "last_calibration",
+        "calibration_history"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/calibration_info"},
+        {
+          "type": "object",
+          "properties": {
+            "description": {"type": "string"},
+            "method_reference": {"$ref": "#/definitions/reference_or_description"},
+            "frequency": {"type": "string"},
+            "last_calibration": {"$ref": "#/definitions/calibration_event"},
+            "calibration_history": {"$ref": "#/definitions/basic_calibration_info.calibration_history"},
+            "calibration_certificate_info": {
+              "type": "array",
+              "items": {"type": "string"},
+              "minItems": 0
+            }
+          }
+        }
+      ]
+    },
+    "crm_info": {
+      "type": "object",
+      "required": ["manufacturer"],
+      "properties": {
+        "manufacturer": {"type": "string"},
+        "batch_number": {"type": "string"}
+      }
+    },
+    "crm_calibration": {
+      "required": ["certified_reference_material"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_calibration_info"},
+        {
+          "type": "object",
+          "properties": {
+            "certified_reference_material": {"$ref": "#/definitions/crm_info"},
+            "reported_values_adjusted_to_crm": {"type": "boolean"}
+          }
+        }
+      ]
+    },
+    "standard_calibration": {
+      "allOf": [
+        {"$ref": "#/definitions/crm_calibration"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "standard_instrument": {
+      "required": ["calibration"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "calibration": {"$ref": "#/definitions/standard_calibration"}
+          }
+        }
+      ]
+    },
+    "analysis_method": {
+      "type": "object",
+      "required": ["description"],
+      "properties": {
+        "description": {"type": "string"},
+        "reference": {"$ref": "#/definitions/general_reference"}
+      }
+    },
+    "software_info": {
+      "type": "object",
+      "required": ["package_name"],
+      "properties": {
+        "package_name": {"type": "string"},
+        "version": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "sensor_raw_data_conversion": {
+      "type": "object",
+      "required": ["conversion_calculation_method"],
+      "properties": {
+        "conversion_calculation_method": {"type": "string"},
+        "conversion_software": {"$ref": "#/definitions/software_info"}
+      }
+    },
+    "std_analysis_info": {
+      "type": "object",
+      "required": [
+        "analyzing_instrument",
+        "method"
+      ],
+      "properties": {
+        "analyzing_instrument": {"$ref": "#/definitions/standard_instrument"},
+        "method": {"$ref": "#/definitions/analysis_method"},
+        "deviations_from_method": {"type": "string"},
+        "sensor_data_conversion": {"$ref": "#/definitions/sensor_raw_data_conversion"}
+      }
+    },
+    "std_observed_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/basic_measured_observation_base"},
+        {
+          "type": "object",
+          "properties": {
+            "analysis": {"$ref": "#/definitions/std_analysis_info"}
+          }
+        }
+      ]
+    },
+    "sample_preservation": {
+      "type": "object",
+      "required": [
+        "preservative",
+        "correction_description"
+      ],
+      "properties": {
+        "preservative": {"type": "string"},
+        "volume": {"type": "string"},
+        "correction_description": {"type": "string"}
+      }
+    },
+    "DIC_measured": {
+      "required": ["analysis"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_measured_observation_base"},
+        {
+          "type": "object",
+          "properties": {
+            "analysis": {"$ref": "#/definitions/std_analysis_info"},
+            "sample_preservation": {"$ref": "#/definitions/sample_preservation"},
+            "blank_correction": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "TA_measured": {
+      "required": [
+        "cell_type",
+        "curve_fitting"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/DIC_measured"},
+        {
+          "type": "object",
+          "properties": {
+            "cell_type": {"type": "string"},
+            "curve_fitting": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "pH_measured": {
+      "required": [
+        "analysis",
+        "ph_report_temperature"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/basic_measured_observation_base"},
+        {
+          "type": "object",
+          "properties": {
+            "analysis": {"$ref": "#/definitions/std_analysis_info"},
+            "measurement_temperature": {"type": "string"},
+            "temperature_correction_method": {"type": "string"},
+            "ph_report_temperature": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "standard_gas": {
+      "type": "object",
+      "required": [
+        "manufacturer",
+        "concentration",
+        "uncertainty"
+      ],
+      "properties": {
+        "manufacturer": {"type": "string"},
+        "batch": {"type": "string"},
+        "concentration": {"$ref": "#/definitions/dimensioned_quantity"},
+        "uncertainty": {"$ref": "#/definitions/dimensioned_quantity"}
+      }
+    },
+    "co2_calibration.standard_gases": {
+      "type": "object",
+      "required": ["wmo_traceable"],
+      "properties": {
+        "gas": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/standard_gas"},
+          "minItems": 0
+        },
+        "wmo_traceable": {"type": "boolean"},
+        "non_zero": {"type": "integer"}
+      }
+    },
+    "co2_calibration": {
+      "required": ["standard_gases"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_calibration_info"},
+        {
+          "type": "object",
+          "properties": {
+            "calibration_temperature": {"$ref": "#/definitions/measured_value"},
+            "standard_gases": {"$ref": "#/definitions/co2_calibration.standard_gases"}
+          }
+        }
+      ]
+    },
+    "co2_gas_detector": {
+      "required": ["measurement_frequency"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "calibration": {"$ref": "#/definitions/co2_calibration"},
+            "measurement_frequency": {"$ref": "#/definitions/positive_dimensioned_quantity"}
+          }
+        }
+      ]
+    },
+    "co2_analysis": {
+      "type": "object",
+      "required": [
+        "gas_detector",
+        "method"
+      ],
+      "properties": {
+        "gas_detector": {"$ref": "#/definitions/co2_gas_detector"},
+        "method": {"$ref": "#/definitions/analysis_method"},
+        "deviations_from_method": {"type": "string"},
+        "sensor_data_conversion": {"$ref": "#/definitions/sensor_raw_data_conversion"}
+      }
+    },
+    "co2_measured_base": {
+      "required": [
+        "water_vapor_correction_method",
+        "temperature_correction_method",
+        "co2_report_temperature",
+        "analysis"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/basic_measured_observation_base"},
+        {
+          "type": "object",
+          "properties": {
+            "water_vapor_correction_method": {"type": "string"},
+            "temperature_correction_method": {"type": "string"},
+            "co2_report_temperature": {"type": "string"},
+            "analysis": {"$ref": "#/definitions/co2_analysis"}
+          }
+        }
+      ]
+    },
+    "co2_discrete_variable": {
+      "required": ["measurement_temperature"],
+      "allOf": [
+        {"$ref": "#/definitions/co2_measured_base"},
+        {
+          "type": "object",
+          "properties": {
+            "measurement_temperature": {"$ref": "#/definitions/measured_value"}
+          }
+        }
+      ]
+    },
+    "flow_rate": {
+      "allOf": [
+        {"$ref": "#/definitions/measured_value"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "equilibrator": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "volume": {"$ref": "#/definitions/measured_value"},
+        "vented": {"type": "boolean"},
+        "gas_flow_rate": {"$ref": "#/definitions/flow_rate"},
+        "water_flow_rate": {"$ref": "#/definitions/flow_rate"}
+      }
+    },
+    "sensor": {
+      "allOf": [
+        {"$ref": "#/definitions/standard_instrument"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "sensor_measurement": {
+      "type": "object",
+      "required": [
+        "method",
+        "sensor",
+        "sensor_location",
+        "comments"
+      ],
+      "properties": {
+        "method": {"type": "string"},
+        "sensor": {"$ref": "#/definitions/sensor"},
+        "sensor_location": {"type": "string"},
+        "comments": {"type": "string"}
+      }
+    },
+    "atm_co2": {
+      "type": "object",
+      "required": [
+        "location",
+        "height",
+        "drying_method",
+        "measured"
+      ],
+      "properties": {
+        "location": {"type": "string"},
+        "height": {"$ref": "#/definitions/altitude_m"},
+        "drying_method": {"type": "string"},
+        "measurement_interval": {"type": "string"},
+        "measured": {"type": "boolean"}
+      }
+    },
+    "co2_continuous_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/co2_measured_base"},
+        {
+          "type": "object",
+          "properties": {
+            "equilibrator": {"$ref": "#/definitions/equilibrator"},
+            "co2_drying_method": {"type": "string"},
+            "eq_pressure_measurement": {"$ref": "#/definitions/sensor_measurement"},
+            "eq_temperature_measurement": {"$ref": "#/definitions/sensor_measurement"},
+            "atm_pressure_measurement": {"$ref": "#/definitions/sensor_measurement"},
+            "atm_co2": {"$ref": "#/definitions/atm_co2"},
+            "xco2_pco2_calculation_method": {"type": "string"},
+            "pco2_fco2_calculation_method": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "co2_reported_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "biological_variable": {
+      "required": ["biological_var_fields"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "biological_var_fields": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "model_variable": {
+      "required": ["model_var_fields"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "model_var_fields": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "phys_response_variable": {
+      "required": ["phys_response_var_fields"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "phys_response_var_fields": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "sediment_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "additional_information": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "social_variable": {
+      "required": ["social_var_fields"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_variable"},
+        {
+          "type": "object",
+          "properties": {
+            "social_var_fields": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "variable_list": {
+      "type": "object",
+      "properties": {
+        "basicOrobservedOrDIC": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {"$ref": "#/definitions/basic_variable"},
+              {"$ref": "#/definitions/std_observed_variable"},
+              {"$ref": "#/definitions/DIC_measured"},
+              {"$ref": "#/definitions/TA_measured"},
+              {"$ref": "#/definitions/pH_measured"},
+              {"$ref": "#/definitions/co2_discrete_variable"},
+              {"$ref": "#/definitions/co2_continuous_variable"},
+              {"$ref": "#/definitions/co2_reported_variable"},
+              {"$ref": "#/definitions/biological_variable"},
+              {"$ref": "#/definitions/model_variable"},
+              {"$ref": "#/definitions/phys_response_variable"},
+              {"$ref": "#/definitions/sediment_variable"},
+              {"$ref": "#/definitions/social_variable"}
+            ]
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "variable_collection": {
+      "allOf": [
+        {"$ref": "#/definitions/variable_list"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "instrument_collection": {
+      "type": "object",
+      "properties": {
+        "instrument": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/instrument"},
+          "minItems": 0
+        }
+      }
+    },
+    "person": {
+      "allOf": [
+        {"$ref": "#/definitions/element_instance"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "person_collection": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/person"},
+          "minItems": 0
+        }
+      }
+    },
+    "organization": {
+      "allOf": [
+        {"$ref": "#/definitions/element_instance"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "organization_collection": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/organization"},
+          "minItems": 0
+        }
+      }
+    },
+    "ocean_carbon_data_metadata_document": {
+      "type": "object",
+      "required": [
+        "document_metadata",
+        "data_submitter",
+        "archival",
+        "cited_authors",
+        "dataset_title",
+        "dataset_description",
+        "dataset_type",
+        "dataset_data_type",
+        "data_coverage",
+        "physiological_response_study",
+        "field_trial",
+        "gridded_product",
+        "model_output",
+        "sediment_study",
+        "variables",
+        "instruments",
+        "people",
+        "organizations",
+        "metadata_version"
+      ],
+      "properties": {
+        "document_metadata": {"$ref": "#/definitions/document_metadata"},
+        "doi": {
+          "type": "string",
+          "format": "uri"
+        },
+        "project_id": {"type": "string"},
+        "experiement_id": {"type": "string"},
+        "dataset_data_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dataset_metadata_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expocodes": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.expocodes"},
+        "cruise_ids": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.cruise_ids"},
+        "data_submitter": {"$ref": "#/definitions/person_ref"},
+        "archival": {"$ref": "#/definitions/archival_info"},
+        "dataset_contact": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.dataset_contact"},
+        "data_provider": {"$ref": "#/definitions/organization_ref"},
+        "cited_authors": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.cited_authors"},
+        "dataset_title": {"type": "string"},
+        "dataset_description": {"type": "string"},
+        "dataset_purpose": {"type": "string"},
+        "data_license": {"$ref": "#/definitions/typed_element"},
+        "fair_use_request": {"type": "string"},
+        "dataset_type": {"$ref": "#/definitions/dataset_types"},
+        "dataset_data_type": {"$ref": "#/definitions/dataset_data_types"},
+        "mcdr": {"type": "boolean"},
+        "data_coverage": {"$ref": "#/definitions/data_coverage_extents"},
+        "geographic_names": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.geographic_names"},
+        "sections": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.sections"},
+        "platforms": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.platforms"},
+        "funding": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.funding"},
+        "research_projects": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.research_projects"},
+        "publications": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.publications"},
+        "related_datasets": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.related_datasets"},
+        "default_qc_flagging_scheme": {"$ref": "#/definitions/reference_or_description"},
+        "default_missing_value_indicator": {"type": "string"},
+        "supplemental_information": {"type": "string"},
+        "keywords": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.keywords"},
+        "observation_geometry": {"$ref": "#/definitions/observation_geometry"},
+        "biological_subjects": {"$ref": "#/definitions/ocean_carbon_data_metadata_document.biological_subjects"},
+        "physiological_response_study": {"$ref": "#/definitions/physiological_response_study"},
+        "field_trial": {"$ref": "#/definitions/field_trial"},
+        "gridded_product": {"$ref": "#/definitions/gridded_product"},
+        "model_output": {"$ref": "#/definitions/model_output"},
+        "sediment_study": {"$ref": "#/definitions/sediment_study"},
+        "variables": {"$ref": "#/definitions/variable_collection"},
+        "instruments": {"$ref": "#/definitions/instrument_collection"},
+        "people": {"$ref": "#/definitions/person_collection"},
+        "organizations": {"$ref": "#/definitions/organization_collection"},
+        "metadata_standard": {
+          "type": "string",
+          "default": "Ocean Carbon Metadata"
+        },
+        "metadata_version": {"type": "string"}
+      }
+    },
+    "dye_correction": {
+      "type": "object",
+      "properties": {
+        "description": {"type": "string"},
+        "method_reference": {"$ref": "#/definitions/general_reference"}
+      }
+    },
+    "ph_dye_info": {
+      "type": "object",
+      "required": [
+        "dye_type",
+        "manufacturer",
+        "purified"
+      ],
+      "properties": {
+        "dye_type": {"type": "string"},
+        "manufacturer": {"type": "string"},
+        "purified": {"type": "boolean"},
+        "correction_for_unpurified_dye": {"$ref": "#/definitions/dye_correction"}
+      }
+    },
+    "pH_calibration": {
+      "required": [
+        "dye_information",
+        "ph_of_standards"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/basic_calibration_info"},
+        {
+          "type": "object",
+          "properties": {
+            "dye_information": {"$ref": "#/definitions/ph_dye_info"},
+            "ph_of_standards": {"type": "string"},
+            "calibration_temperature": {"$ref": "#/definitions/measured_value"}
+          }
+        }
+      ]
+    },
+    "pH_instrument": {
+      "required": ["calibration"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "calibration": {"$ref": "#/definitions/pH_calibration"}
+          }
+        }
+      ]
+    },
+    "pH_analysis_info": {
+      "type": "object",
+      "required": [
+        "analyzing_instrument",
+        "method"
+      ],
+      "properties": {
+        "analyzing_instrument": {"$ref": "#/definitions/pH_instrument"},
+        "method": {"$ref": "#/definitions/analysis_method"},
+        "deviations_from_method": {"type": "string"},
+        "sensor_data_conversion": {"$ref": "#/definitions/sensor_raw_data_conversion"}
+      }
+    },
+    "instance_reference": {
+      "required": ["pid"],
+      "allOf": [
+        {"$ref": "#/definitions/element_instance"},
+        {
+          "type": "object",
+          "properties": {
+            "pid": {"$ref": "#/definitions/pid_reference"}
+          }
+        }
+      ]
+    },
+    "basic_calculated_observation_base": {
+      "allOf": [
+        {"$ref": "#/definitions/insitu_variable"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "basic_calculated_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/basic_calculated_observation_base"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "full_variable_list": {
+      "type": "object",
+      "required": [
+        "basic",
+        "observed",
+        "calculated",
+        "DIC",
+        "TA",
+        "pH",
+        "co2_discrete",
+        "co2_continuous",
+        "co2_reported",
+        "biological_variable",
+        "model_variable",
+        "phys_response_variable",
+        "sediment_variable",
+        "social_variable"
+      ],
+      "properties": {
+        "basic": {"$ref": "#/definitions/basic_variable"},
+        "observed": {"$ref": "#/definitions/std_observed_variable"},
+        "calculated": {"$ref": "#/definitions/basic_calculated_variable"},
+        "DIC": {"$ref": "#/definitions/DIC_measured"},
+        "TA": {"$ref": "#/definitions/TA_measured"},
+        "pH": {"$ref": "#/definitions/pH_measured"},
+        "co2_discrete": {"$ref": "#/definitions/co2_discrete_variable"},
+        "co2_continuous": {"$ref": "#/definitions/co2_continuous_variable"},
+        "co2_reported": {"$ref": "#/definitions/co2_reported_variable"},
+        "biological_variable": {"$ref": "#/definitions/biological_variable"},
+        "model_variable": {"$ref": "#/definitions/model_variable"},
+        "phys_response_variable": {"$ref": "#/definitions/phys_response_variable"},
+        "sediment_variable": {"$ref": "#/definitions/sediment_variable"},
+        "social_variable": {"$ref": "#/definitions/social_variable"}
+      }
+    },
+    "crm_instrument": {
+      "required": ["calibration"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "calibration": {"$ref": "#/definitions/crm_calibration"}
+          }
+        }
+      ]
+    },
+    "degrees_c_restriction": {
+      "allOf": [
+        {"$ref": "#/definitions/measured_value"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "degrees_c": {
+      "allOf": [
+        {"$ref": "#/definitions/degrees_c_restriction"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "basic_measured_variable": {
+      "required": ["analysis"],
+      "allOf": [
+        {"$ref": "#/definitions/basic_measured_observation_base"},
+        {
+          "type": "object",
+          "properties": {
+            "analysis": {"$ref": "#/definitions/std_analysis_info"}
+          }
+        }
+      ]
+    },
+    "co2_calculated_variable": {
+      "allOf": [
+        {"$ref": "#/definitions/basic_calculated_observation_base"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "ordered_reference": {
+      "required": ["index"],
+      "allOf": [
+        {"$ref": "#/definitions/element_reference"},
+        {
+          "type": "object",
+          "properties": {
+            "index": {"type": "integer"}
+          }
+        }
+      ]
+    },
+    "address": {
+      "required": [
+        "delivery_address",
+        "city",
+        "country"
+      ],
+      "allOf": [
+        {"$ref": "#/definitions/typed_element"},
+        {
+          "type": "object",
+          "properties": {
+            "delivery_address": {"type": "string"},
+            "city": {"type": "string"},
+            "administrative_area": {"type": "string"},
+            "postal_code": {"type": "string"},
+            "country": {"$ref": "#/definitions/typed_identifier"}
+          }
+        }
+      ]
+    },
+    "contact_info": {
+      "type": "object",
+      "properties": {
+        "address": {"$ref": "#/definitions/address"},
+        "phone": {"type": "string"},
+        "email": {"type": "string"},
+        "link": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "compilation_product": {
+      "allOf": [
+        {"$ref": "#/definitions/data_product"},
+        {
+          "type": "object",
+          "properties": {
+            "data_quality_description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "positive_measured_value": {
+      "allOf": [
+        {"$ref": "#/definitions/positive_dimensioned_quantity"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "simple_instrument": {
+      "allOf": [
+        {"$ref": "#/definitions/instrument"},
+        {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "type": {"type": "string"},
+            "description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "organization_pid": {
+      "required": ["identifier"],
+      "allOf": [
+        {"$ref": "#/definitions/organization"},
+        {
+          "type": "object",
+          "properties": {
+            "identifier": {"$ref": "#/definitions/pid_reference"},
+            "description": {"type": "string"},
+            "contact_info": {"$ref": "#/definitions/contact_info"}
+          }
+        }
+      ]
+    },
+    "value_with_unit": {
+      "type": "object",
+      "properties": {
+        "Value": {"type": "number"},
+        "units": {"type": "string"}
+      }
+    },
+    "instrument_ref": {
+      "allOf": [
+        {"$ref": "#/definitions/element_reference"},
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "person_name": {
+      "type": "object",
+      "required": [
+        "first",
+        "last"
+      ],
+      "properties": {
+        "first": {"type": "string"},
+        "middle": {"type": "string"},
+        "last": {"type": "string"},
+        "suffix": {"type": "string"}
+      }
+    },
+    "instance_definition": {
+      "allOf": [
+        {"$ref": "#/definitions/element_reference"},
+        {
+          "type": "object",
+          "properties": {
+            "pid": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/pid_reference"},
+              "minItems": 0
+            }
+          }
+        }
+      ]
+    },
+    "typed_reference": {
+      "allOf": [
+        {"$ref": "#/definitions/pid_reference"},
+        {
+          "type": "object",
+          "properties": {
+            "pid_type": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "person_definition": {
+      "required": ["name"],
+      "allOf": [
+        {"$ref": "#/definitions/person"},
+        {
+          "type": "object",
+          "properties": {
+            "identifier": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/typed_reference"},
+              "minItems": 0
+            },
+            "name": {"$ref": "#/definitions/person_name"},
+            "organization": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/organization_ref"},
+              "minItems": 0
+            },
+            "contact_info": {"$ref": "#/definitions/contact_info"},
+            "link": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/URI_reference"},
+              "minItems": 0
+            }
+          }
+        }
+      ]
+    },
+    "ordered_string_element": {
+      "type": "object",
+      "properties": {
+        "Value": {"type": "string"},
+        "index": {
+          "type": "integer",
+          "default": "0"
+        }
+      }
+    },
+    "person_pid": {
+      "required": ["identifier"],
+      "allOf": [
+        {"$ref": "#/definitions/person"},
+        {
+          "type": "object",
+          "properties": {
+            "identifier": {"$ref": "#/definitions/pid_reference"},
+            "description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "uniform_variable_collection": {
+      "type": "object",
+      "required": ["variable"],
+      "properties": {
+        "variable": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/variable"},
+          "minItems": 1
+        }
+      }
+    },
+    "generic_variables_collection": {
+      "type": "object",
+      "required": ["variable"],
+      "properties": {
+        "variable": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/variable"},
+          "minItems": 1
+        }
+      }
+    },
+    "genesis_type": {
+      "type": "object",
+      "required": [
+        "measured",
+        "calculated"
+      ],
+      "properties": {
+        "measured": {"$ref": "#/definitions/measured_var_info"},
+        "calculated": {"$ref": "#/definitions/calculated_var_info"}
+      }
+    },
+    "restricted_term_set": {
+      "type": "object",
+      "required": [
+        "term",
+        "term_set_definition"
+      ],
+      "properties": {
+        "term": {"type": "string"},
+        "term_set_definition": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {"type": "string"}
+      }
+    },
+    "calculated_product": {
+      "allOf": [
+        {"$ref": "#/definitions/data_product"},
+        {
+          "type": "object",
+          "properties": {
+            "calculation_method_reference": {"$ref": "#/definitions/reference_or_description"},
+            "calculation_method_description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "organization_definition": {
+      "required": ["name"],
+      "allOf": [
+        {"$ref": "#/definitions/organization"},
+        {
+          "type": "object",
+          "properties": {
+            "identifier": {"$ref": "#/definitions/pid_reference"},
+            "name": {"type": "string"},
+            "description": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "dataset_types": {
+      "type": "string",
+      "enum": [
+        "Individual",
+        "Data Compilation",
+        "Gridded Product"
+      ]
+    },
+    "dataset_data_types": {
+      "type": "string",
+      "enum": [
+        "Natural",
+        "Manipulated",
+        "Model Output",
+        "Social"
+      ]
+    },
+    "observation_geometry": {
+      "type": "string",
+      "enum": [
+        "Point",
+        "Timeseries",
+        "Trajectory",
+        "Profile",
+        "Timeseries_Profile",
+        "Trajectory_Profile"
+      ]
+    },
+    "biological_life_stage": {
+      "type": "string",
+      "enum": [
+        "egg",
+        "embryo",
+        "larva",
+        "juvenile",
+        "adult",
+        "other"
+      ]
+    },
+    "experiment_location": {
+      "type": "string",
+      "enum": [
+        "lab",
+        "field",
+        "mesocosm",
+        "natural_analogue"
+      ]
+    },
+    "seawater_source": {
+      "type": "string",
+      "enum": [
+        "natural",
+        "artificial"
+      ]
+    },
+    "seawater_treatment": {
+      "type": "string",
+      "enum": [
+        "filtered",
+        "sterilized",
+        "UVed",
+        "other",
+        "none"
+      ]
+    },
+    "mcdr_pathways": {
+      "type": "string",
+      "enum": [
+        "ocean alkalinity enhancement",
+        "macroalgal cultivation for CDR",
+        "direct ocean capture",
+        "ocean fertilization",
+        "artificial upwelling and downwelling",
+        "other"
+      ]
+    },
+    "oae_treatment_types": {
+      "type": "string",
+      "enum": [
+        "electrochemical alkalinity addition",
+        "mineral alkalinity addition",
+        "dissolved alkalinity addition",
+        "river alkalinity addition",
+        "coastal enhanced weathering"
+      ]
+    },
+    "experiment_phase": {
+      "type": "string",
+      "enum": [
+        "baseline",
+        "intervention",
+        "control"
+      ]
+    },
+    "sediment_floor_setting": {
+      "type": "string",
+      "enum": [
+        "River",
+        "Estuary",
+        "Continental Shelf",
+        "Slope",
+        "Abyssal Plain"
+      ]
+    },
+    "sediment_type": {
+      "type": "string",
+      "enum": [
+        "Mud",
+        "Clay",
+        "Silt",
+        "Sand",
+        "Gravel",
+        "Ooze",
+        "Mixed",
+        "Other"
+      ]
+    },
+    "sediment_sampling_method": {
+      "type": "string",
+      "enum": [
+        "Core",
+        "Grab",
+        "Dredging",
+        "Drilling",
+        "Other"
+      ]
+    },
+    "ph_scale_types": {
+      "type": "string",
+      "enum": [
+        "total",
+        "seawater",
+        "NBS"
+      ]
+    },
+    "appropriate_use_quality": {
+      "type": "string",
+      "enum": [
+        "climate",
+        "weather",
+        "other"
+      ]
+    },
+    "sampling_type": {
+      "type": "string",
+      "enum": [
+        "continuous",
+        "discrete"
+      ]
+    },
+    "calibration_location": {
+      "type": "string",
+      "enum": [
+        "FACTORY",
+        "LAB",
+        "FIELD"
+      ]
+    },
+    "variable_class_types": {
+      "type": "string",
+      "enum": [
+        "MEASURED",
+        "DERIVED",
+        "COMPILATION",
+        "MANIPULATION",
+        "GENERATED",
+        "SOCIAL"
+      ]
+    },
+    "researcher_roles": {
+      "type": "string",
+      "enum": [
+        "RESEARCHER",
+        "INVESTIGATOR",
+        "PRINCIPAL_INVESTIGATOR"
+      ]
+    }
+  },
+  "properties": {
+    "dataset_metadata": {"$ref": "#/definitions/ocean_carbon_data_metadata_document"},
+    "extendable": {"type": "string"},
+    "doi": {"$ref": "#/definitions/pid_reference"},
+    "link": {
+      "type": "string",
+      "format": "uri"
+    },
+    "citation": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"}
+  }
+}

@@ -190,7 +190,7 @@
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
-<!--  <xs:element name="related" type="reference_or_description"/> -->
+<!--  <xs:element name="related" type="general_reference"/> -->
 
   <xs:complexType name="restricted_term_set">
     <xs:sequence>

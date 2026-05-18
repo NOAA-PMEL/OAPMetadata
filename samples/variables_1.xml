@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <variables_by_type xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
- xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
- xmlns="https://ncei.noaa.gov/ocads/v4.6" xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:../test/schema/elements.xsd">
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns="https://ncei.noaa.gov/ocads/v4.6"
+  xmlns:oa="https://ncei.noaa.gov/ocads/v4.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:../test/schema/elements.xsd">
   <!-- NOTES 
        This version has instument definitions in-line in the variables.
        But if more than one variable can be associated with a given instrument,
@@ -14,46 +13,20 @@
   <variable xsi:type="basic_variable" object_class="Variable" object_id="ID001">
     <standard_name>
       <uri>http://lpNKveiy/</uri>
-      <term>x</term>
-      <description>oeMrF</description>
     </standard_name>
     <dataset_variable_name>eJTJaO7</dataset_variable_name>
     <long_name>IQsYHNfkj</long_name>
-    <description>KDS5</description>
     <units>A7Sd</units>
   </variable>
 
   <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
     <standard_name>
       <uri>http://zKOVwKdj/</uri>
-      <term>JF</term>
-      <description>csO510Ev</description>
     </standard_name>
     <dataset_variable_name>cx9xNnHA9</dataset_variable_name>
     <long_name>eSim</long_name>
-    <description>DM4_h4sBrW</description>
     <units>XZZs</units>
     <observation_type>E</observation_type>
-    <missing_value_indicator>Yhumu</missing_value_indicator>
-    <qc_flagging_scheme> 
-      <!-- This (and all similar "references") is a "reference_or_description" element" - a choice between
-             a "reference" element, which is a choice between:  (could possibly include more than one, although doesn't currently)
-                a "doi" (perhaps should be a "pid" ?)
-                a "link" - URL
-                a "citation" - "standard" textual citation reference
-           OR
-             a textual "description"
-       -->
-      <reference>
-        <doi>http://GxbGHsmf/</doi>
-<!--        <link>http://AuVaIZtG/</link>-->
-<!--        <citation>FwwokO</citation>-->
-        <name>yO5s9zuIK</name>
-        <description>Vs</description>
-      </reference>
-<!--      <description>N..2</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>WSpO6ji</qc_flag_variable>
     <qc_steps_taken>g.LYdMXSdU</qc_steps_taken>
     <appropriate_use_quality>other</appropriate_use_quality>
     <overall_uncertainty>
@@ -73,7 +46,8 @@
       <collection_method>HEw</collection_method>
       <collection_instrument_type>_Y</collection_instrument_type>
       <sampling type="discrete">
-        <capture> <!-- perhaps a weird name, but had to have some container element -->
+        <capture>
+          <!-- perhaps a weird name, but had to have some container element -->
           <sample_storage>
             <method_description>qycDRg</method_description>
             <container_volume>pFFqaM</container_volume>
@@ -82,22 +56,6 @@
           <field_replicate_info>xmZv</field_replicate_info>
         </capture>
       </sampling>
-      <analysis_method>
-        <reference>
-          <doi>http://JiXdmeUJ/</doi>
-          <name>FW5Hk</name>
-          <description>Vtj2fOZ0MH</description>
-        </reference>
-      </analysis_method>
-      <deviations_from_method>_CRIHpzoR</deviations_from_method>
-      <sensor_data_conversion>
-        <conversion_calculation_method>Y</conversion_calculation_method>
-        <conversion_software>
-          <package_name>qoggJhE3Vc</package_name>
-          <version>G</version>
-          <description>G</description>
-        </conversion_software>
-      </sensor_data_conversion>
     </measured>
     <analysis>
       <analyzing_instrument object_class="Instrument" object_id="ID009">
@@ -106,28 +64,12 @@
         <model>KnQz</model>
         <serial>b</serial>
         <description>KCPqbeDmyq</description>
-        <reference>
-          <uri>http://vzPBwfZs/</uri>
-          <name>AJ7</name>
-          <description>livs.fP</description>
-        </reference>
-        <reference>
-          <uri>http://foo.bar</uri>
-          <name>M0fiIwt</name>
-          <description>K.s</description>
-        </reference>
         <accuracy units="w2">-1452282680.197</accuracy>
         <precision units="VZhC">203603991.761</precision>
-        <uncertainty units="GY5vtU3Cz">-1461689793.023</uncertainty>
         <calibration>
-          <technique_description>KOE5Sij</technique_description>
+          <description>KOE5Sij</description>
           <method_reference>
-            <reference>
-              <doi>http://xPrMqLMs/</doi>
-              <name>dpGF7</name>
-              <description>U</description>
-            </reference>
-  <!--          <description>bhuy</description>-->
+            <description>bhuy</description>
           </method_reference>
           <frequency>IuUT</frequency>
           <calibration_history>
@@ -145,12 +87,13 @@
           <calibration_certificate_info>nPn-B5</calibration_certificate_info>
         </calibration>
       </analyzing_instrument>
-      <method_description/>
-      <method_reference>
+      <method>
+        <description>blah blah</description>
         <reference>
           <doi/>
         </reference>
-      </method_reference>
+      </method>
+      <deviations_from_method>j3S_HA6oC</deviations_from_method>
     </analysis>
   </variable>
 
@@ -166,26 +109,6 @@
     <description>DM4_h4sBrW</description>
     <units>XZZs</units>
     <observation_type>E</observation_type>
-    <missing_value_indicator>Yhumu</missing_value_indicator>
-    <qc_flagging_scheme> 
-      <!-- This (and all similar "references") is a "reference_or_description" element" - a choice between
-             a "reference" element, which is a choice between:  (could possibly include more than one, although doesn't currently)
-                a "doi" (perhaps should be a "pid" ?)
-                a "link" - URL
-                a "citation" - "standard" textual citation reference
-           OR
-             a textual "description"
-       -->
-      <reference>
-        <doi>http://GxbGHsmf/</doi>
-<!--        <link>http://AuVaIZtG/</link>-->
-<!--        <citation>FwwokO</citation>-->
-        <name>yO5s9zuIK</name>
-        <description>Vs</description>
-      </reference>
-<!--      <description>N..2</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>WSpO6ji</qc_flag_variable>
     <qc_steps_taken>g.LYdMXSdU</qc_steps_taken>
     <appropriate_use_quality>other</appropriate_use_quality>
     <overall_uncertainty>
@@ -215,18 +138,6 @@
     <description>sb.ZZz4_n</description>
     <units>w</units>
     <observation_type>ULDKLs7</observation_type>
-    <missing_value_indicator>SShwe</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://xrwBcrVk/</doi>
-<!--        <link>http://FfNLINRj/</link>-->
-<!--        <citation>F0xSzM</citation>-->
-        <name>S2jV</name>
-        <description>uCC</description>
-      </reference>
-<!--      <description>e</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>zQF1</qc_flag_variable>
     <qc_steps_taken>mU19MAXDfp</qc_steps_taken>
     <appropriate_use_quality>climate</appropriate_use_quality>
     <overall_uncertainty>
@@ -257,9 +168,9 @@
         </calculation_method>
         <parameters>
           <parameter>
-            <name></name>
-            <description></description>
-            <value></value>
+            <name/>
+            <description/>
+            <value/>
           </parameter>
         </parameters>
       </calculation>
@@ -277,18 +188,6 @@
     <description>HHu.LG</description>
     <units>EK.t</units>
     <observation_type>usS9E2</observation_type>
-    <missing_value_indicator>Aa</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://nKKOQkKH/</doi>
-<!--        <link>http://gynvsUVv/</link>-->
-<!--        <citation>o</citation>-->
-        <name>Lsua</name>
-        <description>h_4wr</description>
-      </reference>
-<!--      <description>LTMW1b1S</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>mpjwma</qc_flag_variable>
     <qc_steps_taken>QNHR</qc_steps_taken>
     <appropriate_use_quality>other</appropriate_use_quality>
     <overall_uncertainty>
@@ -317,18 +216,68 @@
           <field_replicate_info>JOXmzIsE5W</field_replicate_info>
         </capture>
       </sampling>
-      <analysis_method>
+    </measured>
+    <analysis>
+      <analyzing_instrument object_class="Instrument" object_id="ID011">
+        <type>f7ulSm_</type>
+        <manufacturer>tl37U-</manufacturer>
+        <model>c</model>
+        <serial>aZ</serial>
+        <description>yju5c19t</description>
         <reference>
-          <doi>http://NMwScezE/</doi>
-<!--          <link>http://CKjizTGi/</link>-->
-<!--          <citation>Dd-EpTLve</citation>-->
-          <name>RKvA</name>
-          <description>Wd201sGt</description>
+          <uri>http://RnLNKFvr/</uri>
+          <name>j38Yd</name>
+          <description>kUd-D6X_</description>
         </reference>
-<!--        <description>QcbgIsiI</description>-->
-      </analysis_method>
-      <deviations_from_method>WI</deviations_from_method>
-      <sensor_data_conversion>
+        <reference>
+          <uri>http://TOKUrZOp/</uri>
+          <name>t_ir7wde0m</name>
+          <description>VnF</description>
+        </reference>
+        <accuracy units="w3nETDSCkY">349952714.263</accuracy>
+        <precision units="XD">-1599886199.637</precision>
+        <calibration>
+          <description>xkP_JSaT</description>
+          <method_reference>
+            <reference>
+              <doi>http://PQofDRCY/</doi>
+              <!--            <link>http://WVOTwuHc/</link>-->
+              <!--            <citation>n</citation>-->
+              <name>qtlt7uNE</name>
+              <description>rtY</description>
+            </reference>
+            <!--          <description>dPE2R</description>-->
+          </method_reference>
+          <frequency>Y3pVUgGhAX</frequency>
+          <calibration_history>
+            <calibration>
+              <date>2026-05-21T14:33:30Z</date>
+              <location>LAB</location>
+              <description>l9vaP0fEGR</description>
+            </calibration>
+            <calibration>
+              <date>2026-11-04T14:33:30</date>
+              <location>FACTORY</location>
+              <description>sFuPo</description>
+            </calibration>
+          </calibration_history>
+          <calibration_certificate_info>mvyXc4</calibration_certificate_info>
+          <calibration_certificate_info>mvyXc4</calibration_certificate_info>
+          <certified_reference_material>
+            <manufacturer>QO</manufacturer>
+            <batch_number>O0lpk9m</batch_number>
+          </certified_reference_material>
+          <reported_values_adjusted_to_crm>0</reported_values_adjusted_to_crm>
+        </calibration>
+      </analyzing_instrument>
+      <method>
+        <description/>
+        <reference>
+          <doi/>
+        </reference>
+      </method>
+      <deviations_from_method>j3S_HA6oC</deviations_from_method>
+      <sensor_data_conversion>  <!-- this is optional, only for sensor data -->
         <conversion_calculation_method>mfw</conversion_calculation_method>
         <conversion_software>
           <package_name>S__J0Cjd</package_name>
@@ -336,67 +285,6 @@
           <description>hlB8</description>
         </conversion_software>
       </sensor_data_conversion>
-    </measured>
-    <analysis>
-      <analyzing_instrument object_class="Instrument" object_id="ID011">
-      <type>f7ulSm_</type>
-      <manufacturer>tl37U-</manufacturer>
-      <model>c</model>
-      <serial>aZ</serial>
-      <description>yju5c19t</description>
-      <reference>
-        <uri>http://RnLNKFvr/</uri>
-        <name>j38Yd</name>
-        <description>kUd-D6X_</description>
-      </reference>
-      <reference>
-        <uri>http://TOKUrZOp/</uri>
-        <name>t_ir7wde0m</name>
-        <description>VnF</description>
-      </reference>
-      <accuracy units="w3nETDSCkY">349952714.263</accuracy>
-      <precision units="XD">-1599886199.637</precision>
-      <uncertainty units="S0-d">1103314383.167</uncertainty>
-      <calibration>
-        <technique_description>xkP_JSaT</technique_description>
-        <method_reference>
-          <reference>
-            <doi>http://PQofDRCY/</doi>
-<!--            <link>http://WVOTwuHc/</link>-->
-<!--            <citation>n</citation>-->
-            <name>qtlt7uNE</name>
-            <description>rtY</description>
-          </reference>
-<!--          <description>dPE2R</description>-->
-        </method_reference>
-        <frequency>Y3pVUgGhAX</frequency>
-        <calibration_history>
-          <calibration>
-            <date>2026-05-21T14:33:30Z</date>
-            <location>LAB</location>
-            <description>l9vaP0fEGR</description>
-          </calibration>
-          <calibration>
-            <date>2026-11-04T14:33:30</date>
-            <location>FACTORY</location>
-            <description>sFuPo</description>
-          </calibration>
-        </calibration_history>
-        <calibration_certificate_info>mvyXc4</calibration_certificate_info>
-        <calibration_certificate_info>mvyXc4</calibration_certificate_info>
-        <certified_reference_material>
-          <manufacturer>QO</manufacturer>
-          <batch_number>O0lpk9m</batch_number>
-        </certified_reference_material>
-        <reported_values_adjusted_to_crm>0</reported_values_adjusted_to_crm>
-      </calibration>
-    </analyzing_instrument>
-      <method_description/>
-      <method_reference>
-        <reference>
-          <doi/>
-        </reference>
-      </method_reference>
     </analysis>
     <sample_preservation>
       <preservative>AI6_Q</preservative>
@@ -417,18 +305,6 @@
     <description>qeQR</description>
     <units>nx827n</units>
     <observation_type>djDsJJO</observation_type>
-    <missing_value_indicator>VQljIc</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://TAtuDuBq/</doi>
-<!--        <link>http://GCeQFrkK/</link>-->
-<!--        <citation>NfaYA</citation>-->
-        <name>tDedrXSh</name>
-        <description>c6</description>
-      </reference>
-<!--      <description>sB</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>sB6EVQo</qc_flag_variable>
     <qc_steps_taken>VUi</qc_steps_taken>
     <appropriate_use_quality>weather</appropriate_use_quality>
     <overall_uncertainty>
@@ -457,25 +333,6 @@
           <field_replicate_info>Txbfvfeizq</field_replicate_info>
         </capture>
       </sampling>
-      <analysis_method>
-        <reference>
-          <doi>http://CWLGckfL/</doi>
-<!--          <link>http://PsmOfGJH/</link>-->
-<!--          <citation>i0EKo</citation>-->
-          <name>pwgor</name>
-          <description>zbX.a-V</description>
-        </reference>
-<!--        <description>rca</description>-->
-      </analysis_method>
-      <deviations_from_method>eYLrX</deviations_from_method>
-      <sensor_data_conversion>
-        <conversion_calculation_method>UI6bGF</conversion_calculation_method>
-        <conversion_software>
-          <package_name>XuQ</package_name>
-          <version>X0U6x1k</version>
-          <description>QuklusNJIE</description>
-        </conversion_software>
-      </sensor_data_conversion>
     </measured>
     <analysis>
       <analyzing_instrument object_class="Instrument" object_id="ID006">
@@ -496,9 +353,8 @@
         </reference>
         <accuracy units="w2">-1452282680.197</accuracy>
         <precision units="VZhC">203603991.761</precision>
-        <uncertainty units="GY5vtU3Cz">-1461689793.023</uncertainty>
         <calibration>
-          <technique_description>KOE5Sij</technique_description>
+          <description>KOE5Sij</description>
           <method_reference>
             <reference>
               <doi>http://xPrMqLMs/</doi>
@@ -523,14 +379,23 @@
           <calibration_certificate_info>nPn-B5</calibration_certificate_info>
         </calibration>
       </analyzing_instrument>
-      <method_description/>
-      <method_reference>
-          <reference>
-            <doi>http://xPrMqLMs/</doi>
-            <name>dpGF7</name>
-            <description>U</description>
-          </reference>
-      </method_reference>
+      <method>
+        <description/>
+        <reference>
+          <doi>http://xPrMqLMs/</doi>
+          <name>dpGF7</name>
+          <description>U</description>
+        </reference>
+      </method>
+      <deviations_from_method>j3S_HA6oC</deviations_from_method>
+      <sensor_data_conversion>    <!-- this is optional, only for sensor data -->
+        <conversion_calculation_method>J</conversion_calculation_method>
+        <conversion_software>
+          <package_name>onyPNL</package_name>
+          <version>FLGYV</version>
+          <description>wA</description>
+        </conversion_software>
+      </sensor_data_conversion>
     </analysis>
     <sample_preservation>
       <preservative>X</preservative>
@@ -542,7 +407,7 @@
     <cell_type>c7</cell_type>
     <curve_fitting>egXk_</curve_fitting>
   </variable>
- 
+
   <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
     <standard_name>
       <uri>http://xYoOFZhU/</uri>
@@ -554,18 +419,6 @@
     <description>NsEm8JrVr</description>
     <ph_scale>seawater</ph_scale>
     <observation_type>h</observation_type>
-    <missing_value_indicator>nKkAC</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://HqOEGFZR/</doi>
-<!--        <link>http://Vucjlbrw/</link>-->
-<!--        <citation>XEplY</citation>-->
-        <name>lVBDzzdl2</name>
-        <description>yi</description>
-      </reference>
-<!--      <description>p6485</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>yVw-f</qc_flag_variable>
     <qc_steps_taken>Cp</qc_steps_taken>
     <appropriate_use_quality>climate</appropriate_use_quality>
     <overall_uncertainty>
@@ -584,7 +437,7 @@
     <measured>
       <collection_method>tTn6rFy4</collection_method>
       <collection_instrument_type>mx3bX</collection_instrument_type>
-      <sampling type="discrete" >
+      <sampling type="discrete">
         <capture>
           <sample_storage>
             <method_description>qycDRg</method_description>
@@ -594,25 +447,6 @@
           <field_replicate_info>Gl4-WAuu</field_replicate_info>
         </capture>
       </sampling>
-      <analysis_method>
-        <reference>
-          <doi>http://MXQBLjCw/</doi>
-<!--          <link>http://zcsqvYLw/</link>-->
-<!--          <citation>zl_CpRUtF</citation>-->
-          <name>c.SYo</name>
-          <description>x</description>
-        </reference>
-<!--        <description>DhDG3iaKAr</description>-->
-      </analysis_method>
-      <deviations_from_method>yJwQLZi5Hj</deviations_from_method>
-      <sensor_data_conversion>
-        <conversion_calculation_method>g9efCQt3qX</conversion_calculation_method>
-        <conversion_software>
-          <package_name>NfkNbXM.L</package_name>
-          <version>PQ0amj53am</version>
-          <description>cVvSYWVc</description>
-        </conversion_software>
-      </sensor_data_conversion>
     </measured>
     <analysis>
       <analyzing_instrument object_class="Instrument" object_id="ID008">
@@ -633,9 +467,8 @@
         </reference>
         <accuracy units="w2">-1452282680.197</accuracy>
         <precision units="VZhC">203603991.761</precision>
-        <uncertainty units="GY5vtU3Cz">-1461689793.023</uncertainty>
         <calibration>
-          <technique_description>KOE5Sij</technique_description>
+          <description>KOE5Sij</description>
           <method_reference>
             <reference>
               <doi>http://xPrMqLMs/</doi>
@@ -660,14 +493,21 @@
           <calibration_certificate_info>nPn-B5</calibration_certificate_info>
         </calibration>
       </analyzing_instrument>
-      <method_description/>
-      <method_reference>
+      <method>
+        <description/>
         <reference>
-          <doi>http://xPrMqLMs/</doi>
-          <name>dpGF7</name>
-          <description>U</description>
+          <citation>hjroihs</citation>
         </reference>
-      </method_reference>
+      </method>
+      <deviations_from_method>j3S_HA6oC</deviations_from_method>
+      <sensor_data_conversion>    <!-- this is optional, only for sensor data -->
+        <conversion_calculation_method>g9efCQt3qX</conversion_calculation_method>
+        <conversion_software>
+          <package_name>NfkNbXM.L</package_name>
+          <version>PQ0amj53am</version>
+          <description>cVvSYWVc</description>
+        </conversion_software>
+      </sensor_data_conversion>
     </analysis>
     <measurement_temperature>__KTaTs</measurement_temperature>
     <temperature_correction_method>_jCeb</temperature_correction_method>
@@ -685,18 +525,6 @@
     <description>TznA4O35nw</description>
     <units>sjLuah0S7</units>
     <observation_type>aMiHLpT</observation_type>
-    <missing_value_indicator>uIjx</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://MGFrKTZm/</doi>
-<!--        <link>http://DOtipZzf/</link>-->
-<!--        <citation>E0dYeL9</citation>-->
-        <name>SFpNwfiXEN</name>
-        <description>rC4</description>
-      </reference>
-<!--      <description>Ljk</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>eA5ncPod</qc_flag_variable>
     <qc_steps_taken>ZgS49</qc_steps_taken>
     <appropriate_use_quality>weather</appropriate_use_quality>
     <overall_uncertainty>
@@ -725,93 +553,80 @@
           <field_replicate_info>jIP</field_replicate_info>
         </capture>
       </sampling>
-      <analysis_method>
-        <reference>
-          <doi>http://PcZHYdhk/</doi>
-<!--          <link>http://YpFPuMIv/</link>-->
-<!--          <citation>qHb</citation>-->
-          <name>K.</name>
-          <description>zc0-Ns</description>
-        </reference>
-<!--        <description>caKZT8TbuR</description>-->
-      </analysis_method>
-      <deviations_from_method>LsGXcysA</deviations_from_method>
-      <sensor_data_conversion>
-        <conversion_calculation_method>mUbPxj8.</conversion_calculation_method>
-        <conversion_software>
-          <package_name>y</package_name>
-          <version>y</version>
-          <description>T</description>
-        </conversion_software>
-      </sensor_data_conversion>
     </measured>
     <water_vapor_correction_method>GfI0LYT</water_vapor_correction_method>
     <temperature_correction_method>MJCIdTs3</temperature_correction_method>
     <co2_report_temperature>KCS2zI</co2_report_temperature>
-    <gas_detector object_class="Instrument" object_id="ID023">
-      <type>no</type>
-      <manufacturer>vAv</manufacturer>
-      <model>j</model>
-      <serial>QKF2</serial>
-      <description>NDt8VZ3Y3</description>
-      <reference>
-        <uri>http://rIFMgNJh/</uri>
-        <name>ModjjFY</name>
-        <description>boX</description>
-      </reference>
-      <reference>
-        <uri>http://xiGYRgKc/</uri>
-        <name>pmpjQAWSzk</name>
-        <description>S0EWoRf_pX</description>
-      </reference>
-      <accuracy units="f">-1726144588.743</accuracy>
-      <precision units="Oqd">1506560987.476</precision>
-      <uncertainty units="o">-1051235428.059</uncertainty>
-      <calibration>
-        <technique_description>L1</technique_description>
-        <method_reference>
-          <reference>
-            <doi>http://wwSCHHeg/</doi>
-<!--            <link>http://vfQwZuPV/</link>-->
-<!--            <citation>Hs</citation>-->
-            <name>MgD.UX0</name>
-            <description>lL</description>
-          </reference>
-<!--          <description>Hl5n</description>-->
-        </method_reference>
-        <frequency>n5t-1G0ek</frequency>
-        <calibration_history>
-          <calibration>
-            <date>2027-01-27T14:33:30</date>
-            <location>FIELD</location>
-            <description>Fnw1_</description>
-          </calibration>
-          <calibration>
-            <date>2026-10-28T14:33:30</date>
-            <location>LAB</location>
-            <description>sh39J</description>
-          </calibration>
-        </calibration_history>
-        <calibration_certificate_info>Ox</calibration_certificate_info>
-        <calibration_temperature units="AW6r1C">1796952253.646</calibration_temperature>
-        <standard_gases>
-          <gas>
-            <manufacturer>KsNyyM8CZ</manufacturer>
-            <batch>bdqjwVNT3G</batch>
-            <concentration units="MbL9lz">-1355614690.244</concentration>
-            <uncertainty units="IYp4YRopro">-122052177.411</uncertainty>
-          </gas>
-          <gas>
-            <manufacturer>Fa3QwPo</manufacturer>
-            <batch>O.</batch>
-            <concentration units="W9oEw_eA">-1573860376.157</concentration>
-            <uncertainty units="dTWTESfS">-264428184.366</uncertainty>
-          </gas>
-          <wmo_traceable>0</wmo_traceable>
-        </standard_gases>
-      </calibration>
-      <measurement_frequency units="hH6y">17754939.332</measurement_frequency>
-    </gas_detector>
+    <analysis>
+     <gas_detector object_class="Instrument" object_id="ID023">
+       <type>no</type>
+       <manufacturer>vAv</manufacturer>
+       <model>j</model>
+       <serial>QKF2</serial>
+       <description>NDt8VZ3Y3</description>
+       <reference>
+         <uri>http://rIFMgNJh/</uri>
+         <name>ModjjFY</name>
+         <description>boX</description>
+       </reference>
+       <reference>
+         <uri>http://xiGYRgKc/</uri>
+         <name>pmpjQAWSzk</name>
+         <description>S0EWoRf_pX</description>
+       </reference>
+       <accuracy units="f">-1726144588.743</accuracy>
+       <precision units="Oqd">1506560987.476</precision>
+       <calibration>
+         <description>L1</description>
+         <method_reference>
+           <reference>
+             <doi>http://wwSCHHeg/</doi>
+             <!--            <link>http://vfQwZuPV/</link>-->
+             <!--            <citation>Hs</citation>-->
+             <name>MgD.UX0</name>
+             <description>lL</description>
+           </reference>
+           <!--          <description>Hl5n</description>-->
+         </method_reference>
+         <frequency>n5t-1G0ek</frequency>
+         <calibration_history>
+           <calibration>
+             <date>2027-01-27T14:33:30</date>
+             <location>FIELD</location>
+             <description>Fnw1_</description>
+           </calibration>
+           <calibration>
+             <date>2026-10-28T14:33:30</date>
+             <location>LAB</location>
+             <description>sh39J</description>
+           </calibration>
+         </calibration_history>
+         <calibration_certificate_info>Ox</calibration_certificate_info>
+         <calibration_temperature units="AW6r1C">1796952253.646</calibration_temperature>
+         <standard_gases>
+           <gas>
+             <manufacturer>KsNyyM8CZ</manufacturer>
+             <batch>bdqjwVNT3G</batch>
+             <concentration units="MbL9lz">-1355614690.244</concentration>
+             <uncertainty units="IYp4YRopro">-122052177.411</uncertainty>
+           </gas>
+           <gas>
+             <manufacturer>Fa3QwPo</manufacturer>
+             <batch>O.</batch>
+             <concentration units="W9oEw_eA">-1573860376.157</concentration>
+             <uncertainty units="dTWTESfS">-264428184.366</uncertainty>
+           </gas>
+           <wmo_traceable>0</wmo_traceable>
+         </standard_gases>
+       </calibration>
+       <measurement_frequency units="hH6y">17754939.332</measurement_frequency>
+     </gas_detector>
+      <method>
+        <description></description>
+        <reference></reference>
+      </method>
+      <deviations_from_method></deviations_from_method>
+    </analysis>
     <measurement_temperature units="degrees C">42.0</measurement_temperature>
   </variable>
 
@@ -826,18 +641,6 @@
     <description>Zryho6</description>
     <units>WGfa</units>
     <observation_type>_18OGR7</observation_type>
-    <missing_value_indicator>LRIorBUB</missing_value_indicator>
-    <qc_flagging_scheme>
-      <reference>
-        <doi>http://othYSwiK/</doi>
-<!--        <link>http://IXrhHXan/</link>-->
-<!--        <citation>AGCy</citation>-->
-        <name>B-vk.XRN</name>
-        <description>drbZYOT</description>
-      </reference>
-<!--      <description>e</description>-->
-    </qc_flagging_scheme>
-    <qc_flag_variable>V3LJ2i48i</qc_flag_variable>
     <qc_steps_taken>U2kJPh</qc_steps_taken>
     <appropriate_use_quality>weather</appropriate_use_quality>
     <overall_uncertainty>
@@ -862,93 +665,88 @@
           <depth units="meters">729626859.95</depth>
         </intake>
       </sampling>
-      <analysis_method>
-        <reference>
-          <doi>http://iQjSdAFM/</doi>
-<!--          <link>http://DcyEOSlQ/</link>-->
-<!--          <citation>dm8kfstj</citation>-->
-          <name>U</name>
-          <description>GA4</description>
-        </reference>
-<!--        <description>zG8</description>-->
-      </analysis_method>
-      <deviations_from_method>j3S_HA6oC</deviations_from_method>
-      <sensor_data_conversion>
-        <conversion_calculation_method>J</conversion_calculation_method>
-        <conversion_software>
-          <package_name>onyPNL</package_name>
-          <version>FLGYV</version>
-          <description>wA</description>
-        </conversion_software>
-      </sensor_data_conversion>
     </measured>
     <water_vapor_correction_method>eyqw</water_vapor_correction_method>
     <temperature_correction_method>hUjU</temperature_correction_method>
     <co2_report_temperature>nRYh</co2_report_temperature>
-    <gas_detector object_class="Instrument" object_id="ID027">
-      <type>l_Cd3lj</type>
-      <manufacturer>y-YXOQ</manufacturer>
-      <model>TTUUgf</model>
-      <serial>De</serial>
-      <description>d1Wv4iL</description>
-      <reference>
-        <uri>http://DsunnmzV/</uri>
-        <name>z.biadI</name>
-        <description>eMY.lB</description>
-      </reference>
-      <reference>
-        <uri>http://PGWSkKVo/</uri>
-        <name>V</name>
-        <description>Li</description>
-      </reference>
-      <accuracy units="SzGch9">757926926.019</accuracy>
-      <precision units="sx7VqG0jU">1991778113.981</precision>
-      <uncertainty units="VMABylRrZb">1050073161.107</uncertainty>
-      <calibration>
-        <technique_description>D1X9JfvX</technique_description>
-        <method_reference>
-          <reference>
-            <doi>http://cegkwpCm/</doi>
-<!--            <link>http://xbugItsB/</link>-->
-<!--            <citation>Njm2p</citation>-->
-            <name>CEoi7</name>
-            <description>UoyQ7u</description>
-          </reference>
-<!--          <description>QF</description>-->
-        </method_reference>
-        <frequency>LRiTy_GkX</frequency>
-        <calibration_history>
-          <calibration>
-            <date>2027-12-10T14:33:30</date>
-            <location>FIELD</location>
-            <description>bSQwHdxwMS</description>
-          </calibration>
-          <calibration>
-            <date>2026-10-18T14:33:30</date>
-            <location>FIELD</location>
-            <description>P</description>
-          </calibration>
-        </calibration_history>
-        <calibration_certificate_info>YfZhv</calibration_certificate_info>
-        <calibration_temperature units="A8Do">-302955267.853</calibration_temperature>
-        <standard_gases>
-          <gas>
-            <manufacturer>ZrJbg</manufacturer>
-            <batch>UUOE8uY</batch>
-            <concentration units="Qe8">-753956239.805</concentration>
-            <uncertainty units="VdPv3Kt">-659587317.02</uncertainty>
-          </gas>
-          <gas>
-            <manufacturer>sdzW579pv</manufacturer>
-            <batch>xcOqrK</batch>
-            <concentration units="rS">-1937940162.064</concentration>
-            <uncertainty units="uXWX8hN4z2">-1245481011.433</uncertainty>
-          </gas>
-          <wmo_traceable>0</wmo_traceable>
-        </standard_gases>
-      </calibration>
-      <measurement_frequency units="hn">236863389.198</measurement_frequency>
-    </gas_detector>
+    <analysis>
+      <gas_detector object_class="Instrument" object_id="ID027">
+        <type>no</type>
+        <manufacturer>vAv</manufacturer>
+        <model>j</model>
+        <serial>QKF2</serial>
+        <description>NDt8VZ3Y3</description>
+        <reference>
+          <uri>http://rIFMgNJh/</uri>
+          <name>ModjjFY</name>
+          <description>boX</description>
+        </reference>
+        <reference>
+          <uri>http://xiGYRgKc/</uri>
+          <name>pmpjQAWSzk</name>
+          <description>S0EWoRf_pX</description>
+        </reference>
+        <accuracy units="f">-1726144588.743</accuracy>
+        <precision units="Oqd">1506560987.476</precision>
+        <calibration>
+          <description>L1</description>
+          <method_reference>
+            <reference>
+              <doi>http://wwSCHHeg/</doi>
+              <!--            <link>http://vfQwZuPV/</link>-->
+              <!--            <citation>Hs</citation>-->
+              <name>MgD.UX0</name>
+              <description>lL</description>
+            </reference>
+            <!--          <description>Hl5n</description>-->
+          </method_reference>
+          <frequency>n5t-1G0ek</frequency>
+          <calibration_history>
+            <calibration>
+              <date>2027-01-27T14:33:30</date>
+              <location>FIELD</location>
+              <description>Fnw1_</description>
+            </calibration>
+            <calibration>
+              <date>2026-10-28T14:33:30</date>
+              <location>LAB</location>
+              <description>sh39J</description>
+            </calibration>
+          </calibration_history>
+          <calibration_certificate_info>Ox</calibration_certificate_info>
+          <calibration_temperature units="AW6r1C">1796952253.646</calibration_temperature>
+          <standard_gases>
+            <gas>
+              <manufacturer>KsNyyM8CZ</manufacturer>
+              <batch>bdqjwVNT3G</batch>
+              <concentration units="MbL9lz">-1355614690.244</concentration>
+              <uncertainty units="IYp4YRopro">-122052177.411</uncertainty>
+            </gas>
+            <gas>
+              <manufacturer>Fa3QwPo</manufacturer>
+              <batch>O.</batch>
+              <concentration units="W9oEw_eA">-1573860376.157</concentration>
+              <uncertainty units="dTWTESfS">-264428184.366</uncertainty>
+            </gas>
+            <wmo_traceable>0</wmo_traceable>
+          </standard_gases>
+        </calibration>
+        <measurement_frequency units="hH6y">17754939.332</measurement_frequency>
+      </gas_detector>
+      <method>
+        <description></description>
+        <reference></reference>
+      </method>
+      <deviations_from_method></deviations_from_method>
+      <sensor_data_conversion>  
+        <conversion_calculation_method>mfw</conversion_calculation_method>
+        <conversion_software>
+          <package_name>S__J0Cjd</package_name>
+          <version>XlYlNn</version>
+          <description>hlB8</description>
+        </conversion_software>
+      </sensor_data_conversion>
+    </analysis>
     <equilibrator>
       <type>tbwgku-R.</type>
       <volume units="liters">42</volume>
@@ -965,31 +763,10 @@
         <model>IQ</model>
         <serial>ynFMXUv_XV</serial>
         <description>JyMb0s9</description>
-        <reference>
-          <uri>http://LeDsZlqx/</uri>
-          <name>lFSFqQb</name>
-          <description>zzn</description>
-        </reference>
-        <reference>
-          <uri>http://bKcseiNp/</uri>
-          <name>tscUoldSu8</name>
-          <description>uMFN0OLs</description>
-        </reference>
         <accuracy units="VBcCbBAF8">277069086.301</accuracy>
         <precision units="V">-1730172932.085</precision>
-        <uncertainty units="wjX0j">1683931491.916</uncertainty>
         <calibration>
-          <technique_description>qdc27BNY9x</technique_description>
-          <method_reference>
-            <reference>
-              <doi>http://gUBLWfMd/</doi>
-<!--              <link>http://CoZdntJC/</link>-->
-<!--              <citation>HUcuoU9</citation>-->
-              <name>QhStovg5</name>
-              <description>KXc1-F</description>
-            </reference>
-<!--            <description>F_tatpR_</description>-->
-          </method_reference>
+          <description>qdc27BNY9x</description>
           <frequency>lOiLZ</frequency>
           <calibration_history>
             <calibration>
@@ -1017,31 +794,10 @@
         <model>X</model>
         <serial>C3K</serial>
         <description>JjWE</description>
-        <reference>
-          <uri>http://XmHJjQdP/</uri>
-          <name>egga</name>
-          <description>fxXqS</description>
-        </reference>
-        <reference>
-          <uri>http://wIWXpVSh/</uri>
-          <name>Bryib</name>
-          <description>Xtp</description>
-        </reference>
         <accuracy units="C6bldI4qqs">607027199.941</accuracy>
         <precision units="R9kMJ9BSR">1857619800.164</precision>
-        <uncertainty units="d">-660293882.981</uncertainty>
         <calibration>
-          <technique_description>Eu9ehSclOJ</technique_description>
-          <method_reference>
-            <reference>
-              <doi>http://bWEjMqmj/</doi>
-<!--              <link>http://TeYuAPWv/</link>-->
-<!--              <citation>tG</citation>-->
-              <name>Gdn8</name>
-              <description>UXo</description>
-            </reference>
-<!--            <description>HXjk</description>-->
-          </method_reference>
+          <description>Eu9ehSclOJ</description>
           <frequency>wSgm</frequency>
           <calibration_history>
             <calibration>
@@ -1069,31 +825,10 @@
         <model>xt7oAglKbj</model>
         <serial>j_zPc</serial>
         <description>lQ20x</description>
-        <reference>
-          <uri>http://BYzINbIX/</uri>
-          <name>Upfh7</name>
-          <description>M</description>
-        </reference>
-        <reference>
-          <uri>http://pIOMQdUF/</uri>
-          <name>Pc5rSPXnV</name>
-          <description>HtfTU</description>
-        </reference>
         <accuracy units="gTXo-3">-295435481.565</accuracy>
         <precision units="ZrP8">-1507872621.091</precision>
-        <uncertainty units="gLwqlkHEUV">-159065891.477</uncertainty>
         <calibration>
-          <technique_description>wUv9k</technique_description>
-          <method_reference>
-            <reference>
-              <doi>http://PpDHutGk/</doi>
-<!--              <link>http://mjqfrrLa/</link>-->
-<!--              <citation>Jq</citation>-->
-              <name>aaT2x0L</name>
-              <description>Zb.OTiqGG</description>
-            </reference>
-<!--            <description>R96VW-L</description>-->
-          </method_reference>
+          <description>wUv9k</description>
           <frequency>N6ze8Cag</frequency>
           <calibration_history>
             <calibration>
@@ -1116,7 +851,7 @@
     <atm_co2 measured="false">
       <location>i569</location>
       <height units="meters"/>
-      <drying_method></drying_method>
+      <drying_method/>
       <measurement_interval>R5T</measurement_interval>
     </atm_co2>
     <xco2_pco2_calculation_method>CwoR-</xco2_pco2_calculation_method>

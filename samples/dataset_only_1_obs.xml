@@ -9,18 +9,17 @@
     <document_source object_class="Organization" object_id="ID001"/>
     <comment>e40-U</comment>
   </document_metadata>
-  <doi>http://xOfJHzzC/</doi>
-  <experiement_id>e</experiement_id>
   <dataset_data_date>2027-09-24T14:33:30Z</dataset_data_date>
   <dataset_metadata_date>2026-08-18T14:33:30</dataset_metadata_date>
-    <expocodes>
-      <expocode>zXjC</expocode>
-      <expocode>Onp_</expocode>
-    </expocodes>
-    <cruise_ids>
-      <cruise_id>p_</cruise_id>
-      <cruise_id>HG9Lxq</cruise_id>
-    </cruise_ids>
+  <doi>http://xOfJHzzC/</doi>
+  <expocodes>
+    <expocode>zXjC</expocode>
+    <expocode>Onp_</expocode>
+  </expocodes>
+  <cruise_ids>
+    <cruise_id>p_</cruise_id>
+    <cruise_id>HG9Lxq</cruise_id>
+  </cruise_ids>
   <data_submitter object_class="Person" object_id="ID003">
     <role>xo-3</role>
     <comment>iclnrdnd3</comment>
@@ -155,38 +154,42 @@
     </project>
   </research_projects>
   <publications>
+    <publication>  <!-- this is a "reference_or_description" element.
+                        a choice of general_reference "reference" or 
+                        free-text "description" content. -->
+        <description>
+          Free text
+        </description>
+    </publication>
     <publication>
-      <!-- This is a general reference.
+      <reference>
+        <!-- This is a general reference.
         All of the following elements are optional,
         but there must be at least one.
         Name and description are one choice together.
       -->
-      <doi>http://WSKnilbE/</doi>
-<!--      <link>http://yGdFhved/</link>-->
-<!--      <citation>F4.2</citation>-->
-      <name>TCa5</name>
-      <description>g_4WMjg</description>
-    </publication>
-    <publication>
-      <doi>http://aHcKatIZ/</doi>
+        <doi>http://WSKnilbE/</doi>
+        <!--      <link>http://yGdFhved/</link>-->
+        <!--      <citation>F4.2</citation>-->
+        <name>TCa5</name>
+        <description>g_4WMjg</description>
+      </reference>
     </publication>
   </publications>
   <related_datasets>
     <dataset>
-      <name>X</name>
-      <description>fBz</description>
+      <description>
+        free text
+      </description>
     </dataset>
     <dataset>
-      <doi>http://noENcKdI/</doi>
-      <name>dh</name>
-      <description>Nv3ecNX0k</description>
+      <reference>
+        <doi>http://noENcKdI/</doi>
+      </reference>
     </dataset>
   </related_datasets>
   <default_qc_flagging_scheme>
-    <!-- This is a "reference_or_description" element.
-         It is a choice of a general reference,
-         or simply a description. -->
-    <description>blah blah blah garbage here blah</description>
+    <description>uGZ9N.g</description>
   </default_qc_flagging_scheme>
   <default_missing_value_indicator>V57</default_missing_value_indicator>
   <supplemental_information>VOguhm29D</supplemental_information>

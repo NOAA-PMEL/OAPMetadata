@@ -1,0 +1,2 @@
+/oa:variables_by_type/oa:variable[@xsi:type='basic_calculated_variable']/(oa:measured|oa:calculated)/oa:sampling/@type
+

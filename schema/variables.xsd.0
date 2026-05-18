@@ -89,7 +89,7 @@
   <xs:complexType name="analysis_method">
     <xs:sequence>
       <xs:element name="description" type="xs:string" />
-      <xs:element name="reference" type="reference_or_description" minOccurs="0"/>
+      <xs:element name="reference" type="general_reference" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   

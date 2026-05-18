@@ -12,6 +12,14 @@
   <dataset_data_date>2027-09-24T14:33:30Z</dataset_data_date>
   <dataset_metadata_date>2026-08-18T14:33:30</dataset_metadata_date>
   <doi>http://xOfJHzzC/</doi>
+  <expocodes>
+    <expocode>zXjC</expocode>
+    <expocode>Onp_</expocode>
+  </expocodes>
+  <cruise_ids>
+    <cruise_id>p_</cruise_id>
+    <cruise_id>HG9Lxq</cruise_id>
+  </cruise_ids>
   <data_submitter object_class="Person" object_id="ID003">
     <role>xo-3</role>
     <comment>iclnrdnd3</comment>
@@ -21,7 +29,6 @@
       <role>UcGk</role>
       <comment>xnc71</comment>
     </person>
-<!--    <organization object_class="Organization" object_id="ID019"/>-->
   </dataset_contact>
   <data_provider object_class="Organization" object_id="ID021"/>
   <cited_authors>
@@ -63,11 +70,11 @@
   <geographic_names>
     <name>
       <!--
-          This is a controlled vocabulary reference.
-          The only required element is the URI.
+          This is a "controlled vocabulary reference.
+          The only required element is the URI. 
           -->
       <uri>http://AXvmceOi/</uri>
-      <term>FYL8nlI</term>
+      <term>FYL8nlI</term> 
       <description>PWrIm</description>
     </name>
     <name>
@@ -144,64 +151,36 @@
       <url>http://YqsTFgmh/</url>
     </project>
   </research_projects>
+  <related_datasets>
+    <dataset>
+      <description>
+        free text
+      </description>
+    </dataset>
+    <dataset>
+      <reference>
+        <doi>http://noENcKdI/</doi>
+      </reference>
+    </dataset>
+  </related_datasets>
+  <default_qc_flagging_scheme>
+    <description>uGZ9N.g</description>
+  </default_qc_flagging_scheme>
+  <default_missing_value_indicator>V57</default_missing_value_indicator>
   <supplemental_information>VOguhm29D</supplemental_information>
   <keywords>
     <keyword>LEI</keyword>
     <keyword>igdIH</keyword>
   </keywords>
   <observation_geometry>Timeseries_Profile</observation_geometry>
-  <biological_subjects>
-    <subject>
-      <organism_description>Fme__QhG</organism_description>
-      <species_identifier type="t">R-rwV</species_identifier>
-      <life_stage>juvenile</life_stage>
-      <collection_location>jhkfs;j</collection_location>
-    </subject>
-    <subject>
-      <organism_description>xRQM</organism_description>
-      <species_identifier type="Q1kG">UE</species_identifier>
-      <life_stage>juvenile</life_stage>
-      <collection_location>ksd;</collection_location>
-    </subject>
-  </biological_subjects>
-  <model_output>
-    <model_name>pU5</model_name>
-    <model_version>uDgmUZ</model_version>
-    <physics_component_name_and_version>AF8BBzB0</physics_component_name_and_version>
-    <bgc_component_name_and_version>fG</bgc_component_name_and_version>
+  <gridded_product>
     <grid_resolution>
-      <longitudinal_resolution>_QZ</longitudinal_resolution>
-      <latitudinal_resolution>do</latitudinal_resolution>
-      <vertical_resolution>EQ</vertical_resolution>
-      <temporal_resolution>JcSyTf1</temporal_resolution>
+      <longitudinal_resolution>vFb</longitudinal_resolution>
+      <latitudinal_resolution>fM</latitudinal_resolution>
+      <vertical_resolution>pRqh</vertical_resolution>
+      <temporal_resolution>Z</temporal_resolution>
     </grid_resolution>
-    <input_data_description>ZK</input_data_description>
-    <output_data_description>jz_</output_data_description>
-    <model_configuration>
-         <description>D</description>
-    </model_configuration>
-    <boundary_conditions>
-        <description>P</description>
-    </boundary_conditions>
-    <atmospheric_forcing>
-         <description>zBq4-</description>
-    </atmospheric_forcing>
-    <tidal_forcing>
-        <description>xLN3sR</description>
-    </tidal_forcing>
-    <other_model_forcing_details>
-        <description>_GbsJPR</description>
-    </other_model_forcing_details>
-    <river_and_sediment_flux_details>
-        <description>AMOPq59527</description>
-    </river_and_sediment_flux_details>
-    <spin_up_protocol>sAuts_</spin_up_protocol>
-    <description_of_acid_or_alkalinity_addition>mq</description_of_acid_or_alkalinity_addition>
-    <codebase_link>
-      <uri>http://lqVsnKsp/</uri>
-    </codebase_link>
-    <additional_details>Yqqm_Dxvp</additional_details>
-  </model_output>
+  </gridded_product>
   <!-- item collections here. -->
   <variables/>
   <instruments/>

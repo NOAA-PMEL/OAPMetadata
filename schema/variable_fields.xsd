@@ -102,11 +102,13 @@
           <xs:element name="capture" type="discrete_var_sampling_info"/>
           <xs:element name="intake" type="continuous_var_sampling_info"/>
         </xs:choice>
-        <!-- java code gen does not like asserts... -->
+        <!-- java code gen does not like asserts...
         <xs:assert 
           test="
                 (@type = 'discrete' and not(exists(oa:continuous))) or 
-                (@type = 'continuous' and not(exists(oa:discrete)))"/>  <!-- (not(exists(@type) and exists(ancestor::oa:measured)) or -->
+                (@type = 'continuous' and not(exists(oa:discrete)))"/>  
+                <!-X- (not(exists(@type) and exists(ancestor::oa:measured)) or -X->
+        -->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -146,9 +148,6 @@
       <xs:element name="collection_method" type="xs:string"/>
       <xs:element name="collection_instrument_type" type="xs:string"/>
       <xs:element name="sampling" type="sampling_info"/>
-      <xs:element name="analysis_method" type="reference_or_description"/>
-      <xs:element name="deviations_from_method" type="xs:string" minOccurs="0"/>
-      <xs:element name="sensor_data_conversion" type="sensor_raw_data_conversion" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   

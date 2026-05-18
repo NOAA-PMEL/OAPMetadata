@@ -3,28 +3,82 @@
  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
  xmlns="https://ncei.noaa.gov/ocads/v4.6"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata-concessions/test/schema/elements.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.6">
+ xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata_v4.1/test/schema/elements.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.6">
   <document_metadata>
     <document_date>2026-02-18T14:33:30</document_date>
     <document_source object_class="Organization" object_id="ID001"/>
     <comment>e40-U</comment>
   </document_metadata>
+  <doi>http://xOfJHzzC/</doi>
+  <project_id>okG</project_id>
+  <experiement_id>e</experiement_id>
   <dataset_data_date>2027-09-24T14:33:30Z</dataset_data_date>
   <dataset_metadata_date>2026-08-18T14:33:30</dataset_metadata_date>
-  <doi>http://xOfJHzzC/</doi>
-  <expocodes>
-    <expocode>zXjC</expocode>
-    <expocode>Onp_</expocode>
-  </expocodes>
-  <cruise_ids>
-    <cruise_id>p_</cruise_id>
-    <cruise_id>HG9Lxq</cruise_id>
-  </cruise_ids>
+  <identifiers>
+    <expocodes>
+      <expocode>zXjC</expocode>
+      <expocode>Onp_</expocode>
+    </expocodes>
+    <cruise_ids>
+      <cruise_id>p_</cruise_id>
+      <cruise_id>HG9Lxq</cruise_id>
+    </cruise_ids>
+    <station_ids>
+      <station_id>cuenzWkxlF</station_id>
+      <station_id>TzDZ</station_id>
+    </station_ids>
+    <transect_ids>
+      <transect_id>WDrdZbcd47</transect_id>
+      <transect_id>XLa</transect_id>
+    </transect_ids>
+  </identifiers>
   <data_submitter object_class="Person" object_id="ID003">
     <role>xo-3</role>
     <comment>iclnrdnd3</comment>
   </data_submitter>
-  <dataset_contact> <!-- optional element -->
+<!--  <archival>
+    <archive primary="true">
+      <data_center object_class="Organization" object_id="ID005"/>
+      <archival_id>fFoM0oJND</archival_id>
+      <dataset_URL>http://LllyczcL/</dataset_URL>
+      <metadata_URL>http://ELTsCLYs/</metadata_URL>
+      <revision_history>
+        <revision>
+          <submitted_by object_class="Person" object_id="ID007">
+          </submitted_by>
+          <submission_date>2027-03-03Z</submission_date>
+          <revision_description>GAY8RIx</revision_description>
+        </revision>
+        <revision>
+          <submitted_by object_class="Person" object_id="ID009">
+          </submitted_by>
+          <submission_date>2026-06-14Z</submission_date>
+          <revision_description>v_OAjIj</revision_description>
+        </revision>
+      </revision_history>
+    </archive>
+    <archive primary="0">
+      <data_center object_class="Organization" object_id="ID011"/>
+      <archival_id>skIdfP</archival_id>
+      <dataset_URL>http://vmWrETBh/</dataset_URL>
+      <metadata_URL>http://CKttycBy/</metadata_URL>
+      <revision_history>
+        <revision>
+          <submitted_by object_class="Person" object_id="ID013">
+          </submitted_by>
+          <submission_date>2026-11-03Z</submission_date>
+          <revision_description>kW3hd1ha</revision_description>
+        </revision>
+        <revision>
+          <submitted_by object_class="Person" object_id="ID015">
+          </submitted_by>
+          <submission_date>2027-03-06</submission_date>
+          <revision_description>HP6jvfjXl2</revision_description>
+        </revision>
+      </revision_history>
+    </archive>
+  </archival>-->
+  <dataset_contact>
     <person object_class="Person" object_id="ID017">
       <role>UcGk</role>
       <comment>xnc71</comment>
@@ -32,6 +86,16 @@
 <!--    <organization object_class="Organization" object_id="ID019"/>-->
   </dataset_contact>
   <data_provider object_class="Organization" object_id="ID021"/>
+  <researchers>
+    <researcher object_class="Person" object_id="ID023">
+      <role>mv9C5MPsO</role>
+      <comment>EN6A-</comment>
+    </researcher>
+    <researcher object_class="Person" object_id="ID025">
+      <role>x7jJ5pydmo</role>
+      <comment>b8PrH</comment>
+    </researcher>
+  </researchers>
   <cited_authors>
     <author index="1177183275" object_class="Person" object_id="ID027">
       <role>ns-x</role>
@@ -49,6 +113,8 @@
   <fair_use_request>M</fair_use_request>
   <dataset_type>Gridded Product</dataset_type>
   <dataset_data_type>Manipulated</dataset_data_type>
+  <observation_type>Y</observation_type>
+  <sampling>continuous</sampling>
   <mcdr>true</mcdr>
   <data_coverage>
     <temporal_extents>
@@ -62,24 +128,30 @@
         <northern_bound>-76.872</northern_bound>
         <southern_bound>84.569</southern_bound>
       </bounds>
+<!--      <site_location>
+        <longitude>-7.153</longitude>
+        <latitude>30.901</latitude>
+      </site_location>-->
     </geospatial_extents>
     <depth_extents>
       <min_depth units="meters">1257310676.702</min_depth>
       <max_depth units="meters">1197988583.922</max_depth>
     </depth_extents>
+<!--    <altitude_extents>
+      <min_altitude units="meters"/>
+      <max_altitude units="meters"/>
+    </altitude_extents>-->
   </data_coverage>
   <geographic_names>
     <name>
-      <!--
-          This is a "controlled vocabulary reference.
-          The only required element is the URI. 
-          -->
+      <term>FYL8nlI</term>
       <uri>http://AXvmceOi/</uri>
-      <term>FYL8nlI</term> 
       <description>PWrIm</description>
     </name>
     <name>
+      <term>oHgW</term>
       <uri>http://vwXfHyyo/</uri>
+      <description>TQd</description>
     </name>
   </geographic_names>
   <sections>
@@ -92,20 +164,22 @@
       <identifier type="C.Pxi7NPC">R</identifier>
       <type>C21o</type>
       <owner>mO</owner>
-      <country>
+      <country_code>
+        <term>yaeGJD</term>
         <uri>http://rvrIfcyK/</uri>
-        <term>FYL8nlI</term> 
         <description>r</description>
-      </country>
+      </country_code>
     </platform>
     <platform>
       <name>k4Zv8T-h</name>
       <identifier type="h">we6E</identifier>
       <type>y</type>
       <owner>A6k5B</owner>
-      <country>
+      <country_code>
+        <term>x7</term>
         <uri>http://atLTlaCY/</uri>
-      </country>
+        <description>cJ1j</description>
+      </country_code>
     </platform>
   </platforms>
   <funding>
@@ -113,7 +187,9 @@
       <funding_agency>
         <name>BdXK</name>
         <country>
+          <term>LMYp3</term>
           <uri>http://DCOxHHAD/</uri>
+          <description>iAwTw1Oo_</description>
         </country>
       </funding_agency>
       <project_title>Blb0sR</project_title>
@@ -127,7 +203,9 @@
       <funding_agency>
         <name>iyDTc</name>
         <country>
+          <term>PjCn9</term>
           <uri>http://mPmHVEWj/</uri>
+          <description>pw2dec4-</description>
         </country>
       </funding_agency>
       <project_title>CgiPmlkHE6</project_title>
@@ -142,53 +220,57 @@
     <project>
       <title>Pfj3</title>
       <organization object_class="Organization" object_id="ID004"/>
-      <description>l</description>
+      <desription>l</desription>
       <url>http://SsWMoBib/</url>
     </project>
     <project>
       <title>Kxut</title>
       <organization object_class="Organization" object_id="ID005"/>
-      <description>kW.8joA</description>
+      <desription>kW.8joA</desription>
       <url>http://YqsTFgmh/</url>
     </project>
   </research_projects>
   <publications>
-    <publication>  <!-- this is a "reference_or_description" element.
-                        a choice of general_reference "reference" or 
-                        free-text "description" content. -->
-      <description>
-        Free text
-      </description>
+    <publication>
+      <DOI>http://WSKnilbE/</DOI>
+<!--      <link>http://yGdFhved/</link>-->
+<!--      <citation>F4.2</citation>-->
+      <name>TCa5</name>
+      <description>g_4WMjg</description>
     </publication>
     <publication>
-      <reference>
-        <!-- This is a general reference.
-        All of the following elements are optional,
-        but there must be at least one.
-        Name and description are one choice together.
-      -->
-        <doi>http://WSKnilbE/</doi>
-        <!--      <link>http://yGdFhved/</link>-->
-        <!--      <citation>F4.2</citation>-->
-        <name>TCa5</name>
-        <description>g_4WMjg</description>
-      </reference>
+      <DOI>http://aHcKatIZ/</DOI>
+<!--      <link>http://VGGpdMMW/</link>-->
+<!--      <citation>HJ</citation>-->
+      <name>l27h7q_0</name>
+      <description>QtDU-H</description>
     </publication>
   </publications>
   <related_datasets>
     <dataset>
-      <description>
-        free text
-      </description>
+      <DOI>http://aBAZhuVF/</DOI>
+<!--      <link>http://rNsdzCgW/</link>-->
+<!--      <citation>rtQN2sfz</citation>-->
+      <name>X</name>
+      <description>fBz</description>
     </dataset>
     <dataset>
-      <reference>
-        <doi>http://noENcKdI/</doi>
-      </reference>
+      <DOI>http://noENcKdI/</DOI>
+<!--      <link>http://hbodaQNJ/</link>-->
+<!--      <citation>wLiIK6M</citation>-->
+      <name>dh</name>
+      <description>Nv3ecNX0k</description>
     </dataset>
   </related_datasets>
   <default_qc_flagging_scheme>
-    <description>uGZ9N.g</description>
+    <reference>
+      <DOI>http://FIEYEqKI/</DOI>
+<!--      <link>http://CMIFeIQd/</link>-->
+<!--      <citation>hXB0gORIkz</citation>-->
+      <name>ad3WAm1-</name>
+      <description>siJ5P</description>
+    </reference>
+<!--    <description>uGZ9N.g</description>-->
   </default_qc_flagging_scheme>
   <default_missing_value_indicator>V57</default_missing_value_indicator>
   <supplemental_information>VOguhm29D</supplemental_information>
@@ -202,22 +284,44 @@
       <organism_description>Fme__QhG</organism_description>
       <species_identifier type="t">R-rwV</species_identifier>
       <life_stage>juvenile</life_stage>
-      <collection_location>jhkfs;j</collection_location>
     </subject>
     <subject>
       <organism_description>xRQM</organism_description>
       <species_identifier type="Q1kG">UE</species_identifier>
       <life_stage>juvenile</life_stage>
-      <collection_location>ksd;</collection_location>
     </subject>
   </biological_subjects>
+  <organism_collection_regions>
+    <region>o8</region>
+    <region>ZlMWK3O</region>
+  </organism_collection_regions>
   <physiological_response_study>
     <experiment_description>Q6z</experiment_description>
-    <site_description>field</site_description>
+    <biological_subjects>
+      <subject>
+        <organism_description>ANUd3vBO</organism_description>
+        <species_identifier type="lZaa">b_QeK</species_identifier>
+        <life_stage>larva</life_stage>
+      </subject>
+      <subject>
+        <organism_description>VF</organism_description>
+        <species_identifier type="ZR3.PppD">j</species_identifier>
+        <life_stage>embryo</life_stage>
+      </subject>
+    </biological_subjects>
+    <organism_collection_regions>
+      <region>ai</region>
+      <region>jr1Or</region>
+    </organism_collection_regions>
+    <mcdr_pathway>macroalgal cultivation for CDR</mcdr_pathway>
+    <oae_treatment_type>river alkalinity addition</oae_treatment_type>
+    <site>mesocosm</site>
     <targeted_acidity_or_alkalinity_levels>Jb4</targeted_acidity_or_alkalinity_levels>
     <seawater_source>artificial</seawater_source>
-    <seawater_treatment>none</seawater_treatment>
+    <seawater_treatment>f_</seawater_treatment>
     <manipulation_method>pg</manipulation_method>
+    <location_where_the_experiment_was_carried_out>M2eQ2_A</location_where_the_experiment_was_carried_out>
+    <location_where_biological_subject_was_collected>Ve2rsH</location_where_biological_subject_was_collected>
     <treatment_duration>
       <start_time>2026-04-02T14:33:30</start_time>
       <end_time>2026-08-04T14:33:30Z</end_time>
@@ -298,42 +402,42 @@
     <output_data_description>jz_</output_data_description>
     <model_configuration>
       <reference>
-        <doi>http://kdsnWKGy/</doi>
+        <DOI>http://kdsnWKGy/</DOI>
         <name>RmUz42HR</name>
         <description>D</description>
       </reference>
     </model_configuration>
     <boundary_conditions>
       <reference>
-        <doi>http://yTXYRKFF/</doi>
+        <DOI>http://yTXYRKFF/</DOI>
         <name>uNjl</name>
         <description>P</description>
       </reference>
     </boundary_conditions>
     <atmospheric_forcing>
       <reference>
-        <doi>http://BDjiLxTJ/</doi>
+        <DOI>http://BDjiLxTJ/</DOI>
         <name>xa3qigwLF</name>
         <description>zBq4-</description>
       </reference>
     </atmospheric_forcing>
     <tidal_forcing>
       <reference>
-        <doi>http://QuQKMHRk/</doi>
+        <DOI>http://QuQKMHRk/</DOI>
         <name>wiY</name>
         <description>xLN3sR</description>
       </reference>
     </tidal_forcing>
     <other_model_forcing_details>
       <reference>
-        <doi>http://lwVjzoMk/</doi>
+        <DOI>http://lwVjzoMk/</DOI>
         <name>n3L</name>
         <description>_GbsJPR</description>
       </reference>
     </other_model_forcing_details>
     <river_and_sediment_flux_details>
       <reference>
-        <doi>http://EExtmBUe/</doi>
+        <DOI>http://EExtmBUe/</DOI>
         <name>PAOn9</name>
         <description>AMOPq59527</description>
       </reference>
@@ -352,9 +456,5 @@
     <sediment_type>Mud</sediment_type>
     <sediment_sampling_method>Dredging</sediment_sampling_method>
   </sediment_study>-->
-  <!-- item collections here. -->
-  <variables/>
-  <instruments/>
-  <people/>
-  <organizations/>
+  <item_collections>iyX</item_collections>
 </dataset_metadata>

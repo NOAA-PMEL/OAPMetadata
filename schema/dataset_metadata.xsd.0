@@ -264,7 +264,7 @@
       <xs:element name="publications" minOccurs="0" maxOccurs="1">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="publication" type="reference_or_description"  minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="publication" type="general_reference"  maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -276,7 +276,7 @@
       <xs:element name="related_datasets" minOccurs="0" maxOccurs="1">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="dataset" type="reference_or_description" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="dataset" type="general_reference" minOccurs="0" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
