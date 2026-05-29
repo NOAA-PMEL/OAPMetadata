@@ -15,7 +15,6 @@
       <uri>http://lpNKveiy/</uri>
     </standard_name>
     <dataset_variable_name>eJTJaO7</dataset_variable_name>
-    <long_name>IQsYHNfkj</long_name>
     <units>A7Sd</units>
   </variable>
 
@@ -24,7 +23,6 @@
       <uri>http://zKOVwKdj/</uri>
     </standard_name>
     <dataset_variable_name>cx9xNnHA9</dataset_variable_name>
-    <long_name>eSim</long_name>
     <units>XZZs</units>
     <observation_type>E</observation_type>
     <qc_steps_taken>g.LYdMXSdU</qc_steps_taken>
@@ -105,8 +103,6 @@
       <description>csO510Ev</description>
     </standard_name>
     <dataset_variable_name>cx9xNnHA9</dataset_variable_name>
-    <long_name>eSim</long_name>
-    <description>DM4_h4sBrW</description>
     <units>XZZs</units>
     <observation_type>E</observation_type>
     <qc_steps_taken>g.LYdMXSdU</qc_steps_taken>
@@ -134,8 +130,6 @@
       <description>kVlp4rK1</description>
     </standard_name>
     <dataset_variable_name>P4uxmsc</dataset_variable_name>
-    <long_name>y6Bjz</long_name>
-    <description>sb.ZZz4_n</description>
     <units>w</units>
     <observation_type>ULDKLs7</observation_type>
     <qc_steps_taken>mU19MAXDfp</qc_steps_taken>
@@ -184,8 +178,6 @@
       <description>f1zJ6h</description>
     </standard_name>
     <dataset_variable_name>lOGaHq</dataset_variable_name>
-    <long_name>urZwI</long_name>
-    <description>HHu.LG</description>
     <units>EK.t</units>
     <observation_type>usS9E2</observation_type>
     <qc_steps_taken>QNHR</qc_steps_taken>
@@ -301,8 +293,6 @@
       <description>SJVORcyu</description>
     </standard_name>
     <dataset_variable_name>OIwq0</dataset_variable_name>
-    <long_name>YDbsO4RIk</long_name>
-    <description>qeQR</description>
     <units>nx827n</units>
     <observation_type>djDsJJO</observation_type>
     <qc_steps_taken>VUi</qc_steps_taken>
@@ -410,8 +400,6 @@
       <description>BgPO</description>
     </standard_name>
     <dataset_variable_name>OtjbagI</dataset_variable_name>
-    <long_name>GbN3Bl</long_name>
-    <description>NsEm8JrVr</description>
     <ph_scale>seawater</ph_scale>
     <observation_type>h</observation_type>
     <qc_steps_taken>Cp</qc_steps_taken>
@@ -513,8 +501,6 @@
       <description>HYyj9vwx</description>
     </standard_name>
     <dataset_variable_name>nmCqbr3</dataset_variable_name>
-    <long_name>odtWEyT7w</long_name>
-    <description>TznA4O35nw</description>
     <units>sjLuah0S7</units>
     <observation_type>aMiHLpT</observation_type>
     <qc_steps_taken>ZgS49</qc_steps_taken>
@@ -629,8 +615,6 @@
       <description>iq</description>
     </standard_name>
     <dataset_variable_name>Y</dataset_variable_name>
-    <long_name>cd</long_name>
-    <description>Zryho6</description>
     <units>WGfa</units>
     <observation_type>_18OGR7</observation_type>
     <qc_steps_taken>U2kJPh</qc_steps_taken>
