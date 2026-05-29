@@ -20,17 +20,7 @@
     <cruise_id>p_</cruise_id>
     <cruise_id>HG9Lxq</cruise_id>
   </cruise_ids>
-  <data_submitter object_class="Person" object_id="ID003">
-    <role>xo-3</role>
-    <comment>iclnrdnd3</comment>
-  </data_submitter>
-  <dataset_contact> <!-- optional element -->
-    <person object_class="Person" object_id="ID017">
-      <role>UcGk</role>
-      <comment>xnc71</comment>
-    </person>
-<!--    <organization object_class="Organization" object_id="ID019"/>-->
-  </dataset_contact>
+  <data_submitter object_class="Person" object_id="ID003"/>
   <cited_authors>
     <author index="1177183275" object_class="Person" object_id="ID027">
       <role>ns-x</role>

@@ -89,7 +89,6 @@
       </analyzing_instrument>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
       <sensor_data_conversion>
@@ -164,14 +163,7 @@
       <sampling type="continuous"/>
       <calculation>
         <calculation_method>
-          <reference>
-            <doi>http://yVQPNsXk/</doi>
-            <!--          <link>http://gSUSktgd/</link>-->
-            <!--          <citation>KA</citation>-->
-            <name>zv888</name>
-            <description>EA07WpZGT-</description>
-          </reference>
-          <!--        <description>ViM6c77</description>-->
+          <description>akjnnfsd </description>
         </calculation_method>
         <parameters>
           <parameter>
@@ -231,16 +223,6 @@
         <model>c</model>
         <serial>aZ</serial>
         <description>yju5c19t</description>
-        <reference>
-          <uri>http://RnLNKFvr/</uri>
-          <name>j38Yd</name>
-          <description>kUd-D6X_</description>
-        </reference>
-        <reference>
-          <uri>http://TOKUrZOp/</uri>
-          <name>t_ir7wde0m</name>
-          <description>VnF</description>
-        </reference>
         <accuracy units="w3nETDSCkY">349952714.263</accuracy>
         <precision units="XD">-1599886199.637</precision>
         <calibration>
@@ -279,7 +261,6 @@
       </analyzing_instrument>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
       <sensor_data_conversion>
@@ -387,7 +368,6 @@
       </analyzing_instrument>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
       <sensor_data_conversion>
@@ -458,16 +438,6 @@
         <model>KnQz</model>
         <serial>b</serial>
         <description>KCPqbeDmyq</description>
-        <reference>
-          <uri>http://vzPBwfZs/</uri>
-          <name>AJ7</name>
-          <description>livs.fP</description>
-        </reference>
-        <reference>
-          <uri>http://foo.bar</uri>
-          <name>M0fiIwt</name>
-          <description>K.s</description>
-        </reference>
         <accuracy units="w2">-1452282680.197</accuracy>
         <precision units="VZhC">203603991.761</precision>
         <calibration>
@@ -498,7 +468,9 @@
       </analyzing_instrument>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
+        <reference>
+          <uri>hajhkjoidh</uri>
+        </reference>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
       <sensor_data_conversion>
@@ -561,21 +533,11 @@
     <co2_report_temperature>KCS2zI</co2_report_temperature>
     <analysis>
       <gas_detector object_class="Instrument" object_id="ID023">
-        <type>no</type>
+        <type>arhf</type>
         <manufacturer>vAv</manufacturer>
         <model>j</model>
         <serial>QKF2</serial>
         <description>NDt8VZ3Y3</description>
-        <reference>
-          <uri>http://rIFMgNJh/</uri>
-          <name>ModjjFY</name>
-          <description>boX</description>
-        </reference>
-        <reference>
-          <uri>http://xiGYRgKc/</uri>
-          <name>pmpjQAWSzk</name>
-          <description>S0EWoRf_pX</description>
-        </reference>
         <accuracy units="f">-1726144588.743</accuracy>
         <precision units="Oqd">1506560987.476</precision>
         <calibration>
@@ -625,7 +587,9 @@
       </gas_detector>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
+        <reference> <!-- optional -->
+          <uri>jhkjhafjasdfhj</uri>
+        </reference>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
     </analysis>
@@ -737,7 +701,6 @@
       </gas_detector>
       <method>
         <description>Vtj2fOZ0MH</description>
-        <reference/>
       </method>
       <deviations_from_method>_CRIHpzoR</deviations_from_method>
       <sensor_data_conversion>

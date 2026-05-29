@@ -135,7 +135,7 @@
 
       <xs:choice> <!-- XXX If we don't have an archival or published version of the metadata, this choice is not necessary. -->
         <xs:element name="data_submitter" type="person_ref"/>
-        <xs:element name="archival" type="archival_info"/>
+        <xs:element name="archival" type="archival_info" minOccurs="0"/>
       </xs:choice>
 
       <!-- dataset contact 

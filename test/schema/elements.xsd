@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../schema/version.dtd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" >
+  
+  <!-- stuff for JAva code generation.  It was causing some validation complaints.
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
+  jaxb:extensionBindingPrefixes="xjc annox xew" >
+   -->
+  <xs:include schemaLocation="../../schema/archival.xsd"/>
+  <xs:include schemaLocation="../../schema/common_types.xsd"/>
+  <xs:include schemaLocation="../../schema/dataset_metadata.xsd"/>
+  <xs:include schemaLocation="../../schema/instrumentation.xsd"/>
+  <xs:include schemaLocation="../../schema/organizations.xsd"/>
+  <xs:include schemaLocation="../../schema/people.xsd"/>
+  <xs:include schemaLocation="../../schema/variables.xsd"/>
+  
+  <xs:element name="dataset_metadata_elements" >
+    <xs:complexType>
+      <xs:group ref="dataset_base_fields"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="data_coverage" type="data_coverage_extents"/>
+
+  <xs:element name="instrument" type="instrument"/>
+
+  <xs:element name="element_reference" type="element_reference" />
+  <xs:element name="element_instance" type="element_instance" />
+   
+  <xs:element name="atm_co2" type="atm_co2"/>
+  <xs:element name="calculated_variable" type="basic_calculated_variable"/>
+  <xs:element name="observed_variable" type="std_observed_variable"/>
+  <xs:element name="variables" type="full_variable_list"/>
+  <xs:element name="variables_by_type" type="generic_variables_collection"/>
+  
+</xs:schema>

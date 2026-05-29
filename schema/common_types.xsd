@@ -181,7 +181,7 @@
     <xs:sequence>
       <xs:choice minOccurs="1" maxOccurs="4">
         <xs:element name="doi" type="pid_reference" minOccurs="0" maxOccurs="1"/>
-        <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="uri" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
         <xs:element name="citation" type="xs:string" minOccurs="0" maxOccurs="1"/>
         <xs:sequence minOccurs="0" maxOccurs="1">
           <xs:element name="name" type="xs:string"  maxOccurs="1"/>

@@ -90,7 +90,7 @@
       <method>
         <description>blah blah</description>
         <reference>
-          <doi/>
+          <uri>https://bkjafasdh</uri>
         </reference>
       </method>
       <deviations_from_method>j3S_HA6oC</deviations_from_method>
@@ -273,7 +273,7 @@
       <method>
         <description/>
         <reference>
-          <doi/>
+          <uri/>
         </reference>
       </method>
       <deviations_from_method>j3S_HA6oC</deviations_from_method>
@@ -381,11 +381,6 @@
       </analyzing_instrument>
       <method>
         <description/>
-        <reference>
-          <doi>http://xPrMqLMs/</doi>
-          <name>dpGF7</name>
-          <description>U</description>
-        </reference>
       </method>
       <deviations_from_method>j3S_HA6oC</deviations_from_method>
       <sensor_data_conversion>    <!-- this is optional, only for sensor data -->
@@ -495,9 +490,6 @@
       </analyzing_instrument>
       <method>
         <description/>
-        <reference>
-          <citation>hjroihs</citation>
-        </reference>
       </method>
       <deviations_from_method>j3S_HA6oC</deviations_from_method>
       <sensor_data_conversion>    <!-- this is optional, only for sensor data -->

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<v4.6:extenable xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
- xmlns:v4.6="https://ncei.noaa.gov/ocads/v4.6"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 
- file:/Users/kamb/workspace/OAPMetadata-concessions/schema/common_types.xsd">foobar</v4.6:extenable>

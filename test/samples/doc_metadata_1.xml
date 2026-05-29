@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oa:dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:/Users/kamb/workspace/OAPMetadata-concessions/test/schema/elements.xsd" metadata_version="v4.6">
+  <oa:document_metadata>
+    <oa:document_date>2028-04-27T10:18:40Z</oa:document_date>
+    <oa:document_source object_id="ID000"/>
+  </oa:document_metadata>
+  <oa:archival>
+    <oa:archive>
+      <oa:data_center object_id="ID001"/>
+      <oa:revision_history>
+      </oa:revision_history>
+    </oa:archive>
+    <oa:archive>
+      <oa:data_center object_id="ID002"/>
+      <oa:revision_history>
+      </oa:revision_history>
+    </oa:archive>
+  </oa:archival>
+  <oa:cited_authors>
+    <oa:author index="468298458" object_id="ID003">
+    </oa:author>
+    <oa:author index="1262698576" object_id="ID004">
+    </oa:author>
+  </oa:cited_authors>
+  <oa:dataset_title>YqEPGMSvM9sDX.Hq</oa:dataset_title>
+  <oa:dataset_description>cWgoNOoTa</oa:dataset_description>
+  <oa:dataset_type>Individual</oa:dataset_type>
+  <oa:dataset_data_type>Social</oa:dataset_data_type>
+  <oa:data_coverage>
+    <oa:temporal_extents>
+      <oa:start_date>2026-09-30Z</oa:start_date>
+      <oa:end_date>2027-07-03Z</oa:end_date>
+    </oa:temporal_extents>
+    <oa:geospatial_extents>
+      <oa:bounds>
+        <oa:western_bound>-175.936</oa:western_bound>
+        <oa:eastern_bound>-118.17</oa:eastern_bound>
+        <oa:northern_bound>-22.909</oa:northern_bound>
+        <oa:southern_bound>-89.652</oa:southern_bound>
+      </oa:bounds>
+    </oa:geospatial_extents>
+  </oa:data_coverage>
+  <oa:variables/>
+  <oa:instruments>
+  </oa:instruments>
+  <oa:people>
+  </oa:people>
+  <oa:organizations>
+  </oa:organizations>
+</oa:dataset_metadata>
