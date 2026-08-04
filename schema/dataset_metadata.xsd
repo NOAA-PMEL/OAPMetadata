@@ -244,9 +244,10 @@
       <!-- platforms -->
       <xs:element name="platforms" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="platform" type="platform" maxOccurs="unbounded"/>
-          </xs:sequence>
+          <xs:choice>
+            <xs:element name="platform" type="platform" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="platform_type" type="platform_type" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
 
