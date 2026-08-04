@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "version.dtd">
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="https://ncei.noaa.gov/ocads/v4.6" xmlns="https://ncei.noaa.gov/ocads/v4.6"
-  xmlns:oa="https://ncei.noaa.gov/ocads/v4.6"
+  targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;"
+  xmlns:oa="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   
   <xs:include schemaLocation="common_types.xsd"/>
@@ -22,12 +22,12 @@
     </xs:restriction>
   </xs:simpleType>
   
-  <xs:group name="minimum_variable_fields">
+  <xs:group name="minimum_unitless_variable_fields">
     <xs:sequence>
-      <xs:element name="standard_name" type="vocabulary_item_reference"/>
-      <!-- ?? multiple / different vocabs? 
+      <xs:element name="standard_identifier" type="vocabulary_item_reference"/>
+      <!-- ?? multiple / different vocabs? -->
       <xs:element name="alt_identifier" type="vocabulary_item_reference" maxOccurs="unbounded" minOccurs="0"/> 
-      -->
+
       <xs:element name="dataset_variable_name" type="xs:string">
         <xs:annotation>
           <xs:documentation>
@@ -37,15 +37,18 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      
       <xs:element name="long_name" type="xs:string" minOccurs="0"/>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:choice>
-        <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
-        <xs:element name="ph_scale" type="ph_scale_types" /> <!-- XXX This isn't great here, because we want to be able to enforce this. --> 
-      </xs:choice>
     </xs:sequence>
   </xs:group>
 
+  <xs:group name="minimum_variable_fields">
+    <xs:sequence>
+      <xs:group ref="minimum_unitless_variable_fields"/>
+    </xs:sequence>
+  </xs:group>
+      
   <xs:simpleType name="ph_scale_types">
     <xs:restriction base="xs:string">
       <xs:enumeration value="total" />
@@ -54,8 +57,17 @@
     </xs:restriction>
   </xs:simpleType>
   
+  <xs:complexType name="related_variables">
+    <xs:sequence>
+      <xs:element name="variable" type="described_item" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:group name="common_var_additional_fields">
     <xs:sequence>
+      <xs:element name="related_variables" type="related_variables" minOccurs="0"/>    
+      <!-- ???  what will these be? DSG type? Exp type? /> -->
+      <xs:element name="observation_type" type="xs:string"/>
       <xs:element name="missing_value_indicator" type="xs:string" minOccurs="0"> <!-- ??? Numeric? -->
         <xs:annotation><xs:documentation>
             Required if different from dataset:default_missing_value, 
@@ -77,12 +89,6 @@
       <xs:element name="qc_researcher" type="person_ref" minOccurs="0"/>
     </xs:sequence>
   </xs:group>
-  
-  <xs:group name="all_common_fields">
-    <xs:sequence>
-      <xs:group ref="minimum_variable_fields"/>
-    </xs:sequence>
-  </xs:group>
 
   <xs:simpleType name="sampling_type">
     <xs:restriction base="xs:string">
@@ -99,10 +105,14 @@
     <xs:complexContent>
       <xs:extension base="sampling_type_element">
         <xs:choice minOccurs="0">
-          <xs:element name="capture" type="discrete_var_sampling_info"/>
+          <xs:sequence>  <!-- discrete sampling -->
+            <xs:element name="sample_storage" type="sample_storage" minOccurs="0"/>
+            <xs:element name="field_replicate_info" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
           <xs:element name="intake" type="continuous_var_sampling_info"/>
         </xs:choice>
         <!-- java code gen does not like asserts...
+          <xs:element name="capture" type="discrete_var_sampling_info"/>
         <xs:assert 
           test="
                 (@type = 'discrete' and not(exists(oa:continuous))) or 
@@ -161,19 +171,23 @@
   <xs:complexType name="calculation_info">
     <xs:sequence>
       <xs:element name="calculation_method" type="reference_or_description"/>
-      <xs:element name="parameters" minOccurs="0">
-        <xs:complexType>
-         <xs:sequence>
-           <xs:element name="parameter" type="calc_param" maxOccurs="unbounded" />
-         </xs:sequence>
-        </xs:complexType>
-      </xs:element>      
+      <xs:choice minOccurs="0">
+        <xs:element name="parameters_description" type="xs:string"/>
+        <xs:element name="parameters" minOccurs="0">
+          <xs:complexType>
+           <xs:sequence>
+             <xs:element name="parameter" type="calc_param" maxOccurs="unbounded" />
+           </xs:sequence>
+          </xs:complexType>
+        </xs:element>      
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
+  
   <xs:complexType name="calc_param">
     <xs:sequence>
       <xs:element name="name" type="xs:string" />
-      <xs:element name="description" type="xs:string" />
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
       <xs:element name="value" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

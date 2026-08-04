@@ -1,5 +1,5 @@
 <!-- current version of the XML -->
-<!ENTITY VERSION "v4.6">
+<!ENTITY VERSION "v4.9">
 <!ENTITY PKG_NAME "ocads" > <!--  /ocmd -->
 <!ENTITY NS_PREFIX "oa" >
 <!ENTITY NS_HOST "https://ncei.noaa.gov">

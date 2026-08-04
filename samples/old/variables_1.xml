@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <variables_by_type xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns="https://ncei.noaa.gov/ocads/v4.6"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns="https://ncei.noaa.gov/ocads/v4.9"
   xmlns:oa="https://ncei.noaa.gov/ocads/v4.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.6 file:../test/schema/elements.xsd">
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 file:../test/schema/elements.xsd">
   <!-- NOTES 
        This version has instument definitions in-line in the variables.
        But if more than one variable can be associated with a given instrument,
@@ -11,17 +11,17 @@
        -->
 
   <variable xsi:type="basic_variable" object_class="Variable" object_id="ID001">
-    <standard_name>
+    <standard_identifier>
       <uri>http://lpNKveiy/</uri>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>eJTJaO7</dataset_variable_name>
     <units>A7Sd</units>
   </variable>
 
   <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
-    <standard_name>
+    <standard_identifier>
       <uri>http://zKOVwKdj/</uri>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>cx9xNnHA9</dataset_variable_name>
     <units>XZZs</units>
     <observation_type>E</observation_type>
@@ -97,11 +97,11 @@
 
   <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID042">
     <!-- without measured or calculated -->
-    <standard_name>
+    <standard_identifier>
       <uri>http://zKOVwKdj/</uri>
       <term>JF</term>
       <description>csO510Ev</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>cx9xNnHA9</dataset_variable_name>
     <units>XZZs</units>
     <observation_type>E</observation_type>
@@ -124,11 +124,11 @@
   </variable>
 
   <variable xsi:type="basic_calculated_variable" object_class="Variable" object_id="ID007">
-    <standard_name>
+    <standard_identifier>
       <uri>http://VSNMKFbh/</uri>
       <term>KKV_R</term>
       <description>kVlp4rK1</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>P4uxmsc</dataset_variable_name>
     <units>w</units>
     <observation_type>ULDKLs7</observation_type>
@@ -172,11 +172,11 @@
   </variable>
 
   <variable xsi:type="DIC_measured" object_class="Variable" object_id="ID029">
-    <standard_name>
+    <standard_identifier>
       <uri>http://QfSpFujC/</uri>
       <term>_wmQ03KrvU</term>
       <description>f1zJ6h</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>lOGaHq</dataset_variable_name>
     <units>EK.t</units>
     <observation_type>usS9E2</observation_type>
@@ -287,11 +287,11 @@
   </variable>
 
   <variable xsi:type="TA_measured" object_class="Variable" object_id="ID013">
-    <standard_name>
+    <standard_identifier>
       <uri>http://tKNoHQdd/</uri>
       <term>O2ZrHCF</term>
       <description>SJVORcyu</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>OIwq0</dataset_variable_name>
     <units>nx827n</units>
     <observation_type>djDsJJO</observation_type>
@@ -394,11 +394,11 @@
   </variable>
 
   <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
-    <standard_name>
+    <standard_identifier>
       <uri>http://xYoOFZhU/</uri>
       <term>k3A3</term>
       <description>BgPO</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>OtjbagI</dataset_variable_name>
     <ph_scale>seawater</ph_scale>
     <observation_type>h</observation_type>
@@ -495,11 +495,11 @@
   </variable>
 
   <variable xsi:type="co2_discrete_variable" object_class="Variable" object_id="ID021">
-    <standard_name>
+    <standard_identifier>
       <uri>http://ukolHVxk/</uri>
       <term>s7fdHHiiqd</term>
       <description>HYyj9vwx</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>nmCqbr3</dataset_variable_name>
     <units>sjLuah0S7</units>
     <observation_type>aMiHLpT</observation_type>
@@ -609,11 +609,11 @@
   </variable>
 
   <variable xsi:type="co2_continuous_variable" object_class="Variable" object_id="ID025">
-    <standard_name>
+    <standard_identifier>
       <uri>http://rXCGNmSI/</uri>
       <term>o7wUw</term>
       <description>iq</description>
-    </standard_name>
+    </standard_identifier>
     <dataset_variable_name>Y</dataset_variable_name>
     <units>WGfa</units>
     <observation_type>_18OGR7</observation_type>

@@ -6,3 +6,4 @@ scratch
 /classes/
 /bin/
 *bak*
+*.[0-9]

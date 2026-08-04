@@ -14,7 +14,7 @@
     <xs:complexContent>
       <xs:extension base="calibration_info">
         <xs:sequence>
-          <xs:element name="description" type="xs:string"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
           <xs:element name="method_reference" type="reference_or_description" minOccurs="0"/>
           <xs:element name="frequency" type="xs:string" minOccurs="0" maxOccurs="1"/> <!-- not free text? -->
           <xs:choice  minOccurs="0" maxOccurs="1">
@@ -45,7 +45,7 @@
     <xs:complexContent>
       <xs:extension base="basic_calibration_info">
         <xs:sequence minOccurs="0" >
-          <xs:element name="certified_reference_material" type="crm_info"/>
+          <xs:element name="certified_reference_material" type="crm_info" minOccurs="0"/>
           <xs:element name="reported_values_adjusted_to_crm" type="xs:boolean" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
@@ -69,9 +69,21 @@
     <xs:complexContent>
       <xs:extension base="basic_calibration_info">
         <xs:sequence>
-          <xs:element name="dye_information" type="ph_dye_info"/>
-          <xs:element name="ph_of_standards" type="xs:string"/> <!-- multiple values? definition of standards? -->
-          <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
+          <xs:element name="pH_standards" >
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="standard" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="value" type="xs:decimal"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="indicator_dye_information" type="ph_dye_info"/>
+           <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -89,7 +101,7 @@
   <xs:complexType name="dye_correction" >
     <xs:sequence>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:element name="method_reference" type="reference_or_description" minOccurs="0"/>
+      <xs:element name="method" type="reference_or_description" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="co2_calibration">

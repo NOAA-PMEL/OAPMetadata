@@ -25,6 +25,16 @@
     </xs:complexType>
   </xs:element>
   
+  <xs:element name="archival_metadata">
+    <xs:complexType>
+      <xs:choice minOccurs="1"> <!-- XXX If we don't have an archival or published version of the metadata, this choice is not necessary. -->
+        <xs:element name="initial_submission" type="submission_info"/>
+        <xs:element name="revision" type="revision"/>
+        <xs:element name="archival_info" type="archive_info"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
   <xs:element name="data_coverage" type="data_coverage_extents"/>
 
   <xs:element name="instrument" type="instrument"/>

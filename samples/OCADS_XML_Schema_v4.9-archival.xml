@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  xmlns="https://ncei.noaa.gov/ocads/v4.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 file:/Users/kamb/workspace/OAPMetadata-concessions/schema/dataset_metadata.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
+
+ <document_metadata>
+   <document_date>2026-02-18T14:33:30</document_date>
+   <document_source object_class="Organization" object_id="ID001"/>
+   <comment>Example comments</comment>
+ </document_metadata>
+
+ <doi>http://doi.org/xOfJHzzC/</doi> <!-- if available -->
+  
+  <archival_info>  <!-- This should not be included in submission / updates.  -->
+    <!-- to some extent, all of these could be optional, 
+         so you only use what your want. -->
+    <data_center object_id="ORG1234"/>  <!-- organization_ref : you could leave this out. It would be covered by the 
+                                             <document_metadata><document_source/> element -->
+    
+    <archival_id>1234</archival_id>  <!-- eg accession #  -->
+    
+    <!-- Would these ever change with the version? -->
+    <data_url>
+      <uri>"any://uri"</uri>
+      <description>data download</description> <!-- optional -->
+    </data_url>
+    <data_url>  <!-- Example of multiple data access elements -->
+      <uri>"https://ncei.gov/erddap"</uri>
+      <description>ERDDAP endpoint</description> <!-- optional -->
+    </data_url>
+    
+    <metadata_url>any://uri</metadata_url>
+    <landing_page_url>any://uri</landing_page_url>
+    
+    <dataset_graphic_url>   <!-- could be multiple -->
+      <uri>"any://uri"</uri>
+      <description>dataset graphic</description> <!-- optional -->
+    </dataset_graphic_url>
+    <dataset_graphic_url>
+      <uri>"any://uri"</uri>
+      <description>coverage map</description> <!-- optional -->
+    </dataset_graphic_url>  <!-- could be multiple -->
+    
+    <publication_date>2026-04-01</publication_date>  <!-- the <data_revision_date/>  
+                                                           or would that be different and need its own field? -->
+    <metadata_revision_date>2026-04-02</metadata_revision_date>
+    
+    <version_history>  <!-- or "revision_history" if you prefer. -->
+      <revision version="2.2">  <!-- current version at top. 
+                                                     Alternatively: <version number="xxx"/>  
+                                                     (or maybe version_id instead of number0-->
+        <submitted_by object_id="PERSON1234"/>
+        <submission_date>2026-04-01</submission_date>
+        <revision_description/>
+      </revision>
+      <revision version="1.1">
+        <submitted_by object_id="PERSON1234"/>
+        <submission_date>2026-03-01</submission_date>
+        <revision_description/>
+      </revision> <!-- repeats as necessary -->
+      <initial_submission>  
+        <!-- original data submitter information
+           - the only content included on submission -->
+        <submitted_by object_id="PERSON1234"/>
+        <submission_date>2026-02-01</submission_date>
+      </initial_submission>
+    </version_history>
+  </archival_info> 
+ <expocodes>
+   <expocode>EXPOCODE1</expocode>
+   <expocode>EXPOCODE2</expocode>
+ </expocodes>
+
+ <cruise_ids>
+   <cruise_id>Cruise_ID1</cruise_id>
+   <cruise_id>Cruise_ID2</cruise_id>
+ </cruise_ids>
+
+ <experiment_ids>
+   <experiment_id>Experiment_ID1</experiment_id>
+   <experiment_id>Experiment_ID2</experiment_id>
+ </experiment_ids>
+
+ <dataset_contact> <!-- optional element -->
+   <person object_class="Person" object_id="ID017">
+     <role>Data point of contact</role>
+     <comment></comment>
+   </person>
+ </dataset_contact>
+
+ <cited_authors>
+   <author index="1177183275" object_class="Person" object_id="ID027">
+     <role>Investigators</role>
+     <comment></comment>
+   </author>
+   <author index="920655409" object_class="Person" object_id="ID029">
+     <role>Investigators</role>
+     <comment></comment>
+   </author>
+ </cited_authors>
+
+ <dataset_title>Dataset title</dataset_title>
+
+ <dataset_description>Dataset description</dataset_description>
+
+ <dataset_purpose>Purpose</dataset_purpose>
+
+ <data_license>Data license</data_license>
+
+ <fair_use_request>Fair data use request</fair_use_request>
+
+ <dataset_type>Individual data collection</dataset_type>
+  <!-- OR: 
+    <dataset_type>Data compilation</dataset_type>
+    <dataset_type>Gridded product</dataset_type>
+    -->
+
+  <dataset_data_type>Natural</dataset_data_type>
+  <!-- OR:
+    <dataset_data_type>Manipulated</dataset_data_type>
+    <dataset_data_type>Model output</dataset_data_type>
+    <dataset_data_type>Social studies</dataset_data_type>
+    -->
+
+ <mcdr>true</mcdr>
+
+ <data_coverage>
+
+   <temporal_extents>
+     <start_date>2023-02-28</start_date>
+     <end_date>2024-11-12</end_date>
+   </temporal_extents>
+
+   <geospatial_extents>
+     <bounds>
+       <western_bound>7.266</western_bound>
+       <eastern_bound>74.036</eastern_bound>
+       <northern_bound>84.569</northern_bound>
+       <southern_bound>-76.872</southern_bound>
+     </bounds>
+   </geospatial_extents>
+
+   <depth_extents>
+     <min_depth units="meters">5</min_depth>
+     <max_depth units="meters">3000</max_depth>
+   </depth_extents>
+
+ </data_coverage>
+
+<!--
+ <gridded_product>
+   <grid_resolution>
+     <longitudinal_resolution>2 degree</longitudinal_resolution>
+     <latitudinal_resolution>1 degree</latitudinal_resolution>
+     <vertical_resolution>100 meters</vertical_resolution>
+     <temporal_resolution>monthly</temporal_resolution>
+   </grid_resolution>
+ </gridded_product>
+-->
+
+ <geographic_names>
+   <name>
+     <term>North Atlantic Ocean</term>
+   </name>
+   <name>
+     <term>U.S. East Coast</term>
+   </name>
+ </geographic_names>
+
+ <sections>
+   <section>P16 transect</section>
+ </sections>
+
+ <platforms>
+
+   <platform>
+     <name>Platform name</name>
+     <identifier type="C.Pxi7NPC">Platform ID</identifier>
+     <type>Platform type</type>
+     <owner>Platform owner</owner>
+     <country>
+       <term>FYL8nlI</term>
+     </country>
+   </platform>
+
+   <platform>
+     <name>Platform name</name>
+     <identifier type="C.Pxi7NPC">Platform ID</identifier>
+     <type>Platform type</type>
+     <owner>Platform owner</owner>
+     <country>
+       <term>United States</term>
+     </country>
+   </platform>
+
+ </platforms>
+
+ <funding>
+
+   <funding_source>
+     <funding_agency>
+       <name>NOAA Ocean Acidification Program (OAP)</name>
+       <!-- <uri>https://ror.org/02bfn4816</uri> -->
+       <country>
+         <term>United States</term>
+       </country>
+     </funding_agency>
+     <project_title>Blb0sR</project_title>
+     <project_identifier>ID005</project_identifier>
+     <project_duration>
+       <start_date>2023-03-16</start_date>
+       <end_date>2026-05-27</end_date>
+     </project_duration>
+   </funding_source>
+
+   <funding_source>
+     <funding_agency>
+       <name>NOAA Global Ocean Monitoring and Observing (GOMO) Program</name>
+       <!-- <uri>https://doi.org/10.13039/100018302</uri> -->
+       <country>
+         <term>United States</term>
+       </country>
+     </funding_agency>
+     <project_title>Blb0sR</project_title>
+     <project_identifier>ID005</project_identifier>
+     <project_duration>
+       <start_date>2023-03-16</start_date>
+       <end_date>2026-05-27</end_date>
+     </project_duration>
+   </funding_source>
+
+ </funding>
+
+ <research_projects>
+   <project>
+     <title>Title of the research project, e.g., West Coastal Ocean Acidification (WCOA) Project
+        </title>
+   </project>
+ </research_projects>
+
+ <publications>
+
+   <publication>
+     <reference>
+       <citation>Jiang, L.-Q., et al.: Synthesis of data products for ocean carbonate chemistry, Earth Syst. Sci. Data, 18, 1405–1462, https://doi.org/10.5194/essd-18-1405-2026, 2026</citation>
+     </reference>
+   </publication>
+
+   <publication>
+     <reference>
+       <citation>g_4WMjg</citation>
+     </reference>
+   </publication>
+
+ </publications>
+
+ <related_datasets>
+
+   <dataset>
+     <uri></uri>
+     <description>Free text</description>
+   </dataset>
+
+   <dataset>
+     <uri></uri>
+     <description>Free text</description>
+   </dataset>
+
+ </related_datasets>
+
+ <default_qc_flagging_scheme>
+   <description>2 is for good, 3 for questionable and 4 for bad</description>
+ </default_qc_flagging_scheme>
+
+<default_missing_value_indicator>-999</default_missing_value_indicator>
+
+ <supplemental_information></supplemental_information>
+
+ <keywords>
+   <keyword>Keyword1</keyword>
+   <keyword>Keyword2</keyword>
+ </keywords>
+  
+<!-- This is not a top-level element
+ <observation_geometry>
+   <term>Profile</term>
+   <term>Discrete measurements</term>   
+ </observation_geometry>
+-->
+
+ <biological_subjects>
+
+   <subject>
+     <organism_description>Organism or community</organism_description>
+     <species_identifier type="Taxonomic code system used">Species identification code
+       </species_identifier>
+     <life_stage>juvenile</life_stage>
+     <collection_location>Location where biological subject was collected 
+       </collection_location>
+   </subject>
+
+   <subject>
+     <organism_description>Organism or community</organism_description>
+     <species_identifier type="Taxonomic code system used">Species identification code  
+        </species_identifier>
+     <life_stage>Juvenile</life_stage>
+     <collection_location>Location where biological subject was collected  
+        </collection_location>
+   </subject>
+
+ </biological_subjects>
+
+ <physiological_response_study>
+   <experiment_description>Experiment description</experiment_description>
+   <site_description>Location where the experiment was carried out</site_description>
+   <targeted_acidity_or_alkalinity_levels>Targeted acidity or alkalinity levels
+      </targeted_acidity_or_alkalinity_levels>
+   <seawater_source>natural</seawater_source>
+   <!-- OR:
+   <seawater_source>artificial</seawater_source>
+   -->
+   <seawater_treatment>filtered</seawater_treatment>
+   <!-- OR
+   <seawater_treatment>sterilized</seawater_treatment>
+   <seawater_treatment>UVed</seawater_treatment>
+   -->
+   <manipulation_method>Manipulation method</manipulation_method>
+   <treatment_duration>
+     <start_time>2026-04-02T14:33:30</start_time>
+     <end_time>2026-08-04T14:33:30Z</end_time>
+   </treatment_duration>
+   <additional_details>Additional details</additional_details>
+ </physiological_response_study>
+
+<!--
+ <field_trial>
+   <experiment_description>Experiment description
+      </experiment_description>
+   <mcdr_pathway>mCDR Pathway</mcdr_pathway>
+   <oae_treatment_type>OAE treatment type</oae_treatment_type>
+   <phase>Baseline, control, or intervention</phase>
+   <site_description>Site description</site_description>
+   <previous_mcdr_research_in_the_area>Previous mCDR research in the area</previous_mcdr_research_in_the_area>
+   <co-located_operations>Co-located operations</co-located_operations>
+   <meteorological_and_tidal_conditions>Meteorological and tidal condition</meteorological_and_tidal_conditions>
+   <alkalinity_feedstock_type>Alkalinity feedstock type
+      </alkalinity_feedstock_type>
+   <alkalinity_feedstock_description>Alkalinity feedstock description
+      </alkalinity_feedstock_description>
+   <dosing_location>Dosing location</dosing_location>
+   <dosing_depth units="meters">Dosing depth</dosing_depth>
+   <dosing_duration>
+     <start_time>2026-03-01T14:33:30Z</start_time>
+     <end_time>2026-07-28T14:33:30Z</end_time>
+   </dosing_duration>
+   <dosing_mechanism>Dosing mechanism</dosing_mechanism>
+   <dosing_effluent_density>Dosing effluent density</dosing_effluent_density>
+   <dosing_regimen>Dosing regimen</dosing_regimen>
+   <dosing_rate_data>Dosing rate data</dosing_rate_data>
+   <total_alkalinity_feedstock_added>Total alkalinity feedstock added
+      </total_alkalinity_feedstock_added>
+   <permits>
+     <permit>
+       <number>Permit number</number>
+       <document>
+         <description>Permit approval document</description>
+       </document>
+       <permitting_authority>Permitting authority</permitting_authority>
+     </permit>
+   </permits>
+   <data_conflicts_and_unreported_data>Data conflicts and unreported data
+      </data_conflicts_and_unreported_data>
+   <additional_details>Additional details</additional_details>
+ </field_trial>
+
+ <model_output>
+   <model_name>Model name</model_name>
+   <model_version>Model version</model_version>
+   <physics_component_name_and_version>Physics component name and version
+      </physics_component_name_and_version>
+   <bgc_component_name_and_version>BGC component name and version
+      </bgc_component_name_and_version>
+   <grid_resolution>
+     <longitudinal_resolution>_QZ</longitudinal_resolution>
+     <latitudinal_resolution>do</latitudinal_resolution>
+     <vertical_resolution>EQ</vertical_resolution>
+     <temporal_resolution>JcSyTf1</temporal_resolution>
+   </grid_resolution>
+   <input_data_description>Description of input data</input_data_description>
+   <output_data_description>Description of output data</output_data_description>
+   <model_configuration>
+        <description>Model configuration</description>
+   </model_configuration>
+   <boundary_conditions>
+       <description>Boundary conditions</description>
+   </boundary_conditions>
+   <atmospheric_forcing>
+        <description>Atmospheric forcing</description>
+   </atmospheric_forcing>
+   <tidal_forcing>
+       <description>Tidal forcing</description>
+   </tidal_forcing>
+   <other_model_forcing_details>
+       <description>Other model forcing details</description>
+   </other_model_forcing_details>
+   <river_and_sediment_flux_details>
+       <description>River and sediment flux details</description>
+   </river_and_sediment_flux_details>
+   <spin_up_protocol>
+       <description>Spin up protocol</description>
+   </spin_up_protocol>
+   <description_of_acid_or_alkalinity_addition>
+       <description>Description of acid or alkalinity addition</description>
+   </description_of_acid_or_alkalinity_addition>
+   <codebase_link>
+     <uri>http://lqVsnKsp/</uri>
+   </codebase_link>
+   <additional_details>Additional details</additional_details>
+ </model_output>
+
+ <sediment_study>
+   <sediment_floor_setting>Abyssal Plain</sediment_floor_setting>
+   <sediment_type>Mud</sediment_type>
+   <sediment_sampling_method>Dredging</sediment_sampling_method>
+ </sediment_study>
+-->
+ <variables>
+
+ <!-- #1. Observed properties (generic) -->
+ <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
+
+   <standard_identifier>
+     <term>Sea surface temperature</term>
+   </standard_identifier>
+
+   <dataset_variable_name>SST</dataset_variable_name>
+
+   <units>degrees Celsius</units>
+
+   <related_variables>
+     <variable name="sst_deg_f"/>
+   </related_variables>
+   
+   <observation_type>Profile</observation_type>
+
+   <qc_flag_variable>SST_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+   
+   <appropriate_use_quality>climate</appropriate_use_quality>
+   <!-- OR weather, other -->
+
+   <overall_uncertainty>
+     <value units="%">2</value>
+     <uncertainty_description>How was the uncertainty defined</uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information about this variable
+      </additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID003">
+     <role>otuwMJo</role>
+     <comment>FrOZU</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID001">
+     <role>GHq.hqd5h</role>
+     <comment>bc</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="discrete">
+
+<!-- What's this doing here?
+         <sample_preservation>
+           <preservative>Preservative used to kill the sample</preservative>
+           <volume>50 uL</volume>
+           <correction_description>Preservative correction description
+              </correction_description>
+         </sample_preservation>
+-->
+         <sample_storage>
+           <method_description>Method description</method_description>
+           <container_volume>500 mL</container_volume>
+           <headspace_volume>20 mL</headspace_volume>
+         </sample_storage>
+
+         <field_replicate_info>Field replicate information</field_replicate_info>
+
+     </sampling>
+
+   </measured>
+
+   <analysis>
+  
+     <analyzing_instrument object_class="Instrument" object_id="ID009">
+
+       <type>Instrument type, e.g., spectrophotometer</type>
+       <manufacturer>Manufacturer of the instrument</manufacturer>
+       <model>Model number</model>
+       <serial>Serial number</serial>
+       <accuracy units="w2">-1452282680.197</accuracy>
+       <precision units="VZhC">203603991.761</precision>
+
+       <calibration>
+         <description>Calibration technique description</description>
+         <!-- This is already in the calibration history
+             XXX <type>Factory calibration, lab calibration, field calibration</type>
+           -->
+         <!-- <method_reference> This is optional.
+           <description>Calibration method reference</description>
+         </method_reference> -->
+         <frequency>Frequency of calibration</frequency>
+         <calibration_history>
+           <calibration>
+             <date>2026-07-02T14:33:30Z</date>
+             <location>FIELD</location>
+             <description>YZ</description>
+           </calibration>
+           <calibration>
+             <date>2028-02-10T14:33:30</date>
+             <location>FACTORY</location>
+             <description>kFxCB.k</description>
+           </calibration>
+         </calibration_history>
+
+         <calibration_certificate_info>Information about the calibration certificates
+            </calibration_certificate_info>
+
+         <certified_reference_material>
+           <manufacturer>CRM manufacturer</manufacturer>
+           <batch_number>CRM batch number</batch_number>
+         </certified_reference_material>
+         <reported_values_adjusted_to_crm>true</reported_values_adjusted_to_crm>
+        
+       </calibration>
+     </analyzing_instrument>
+
+     <analysis_method>
+       <description>Analyzing method description</description>
+       <reference>
+         <citation>Method reference (citation)</citation>
+       </reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviations from the method</deviations_from_method>
+
+     <sensor_data_conversion>  
+       <conversion_calculation_method>Method to calculate reported values from raw data</conversion_calculation_method>
+       <conversion_software>
+         <package_name>Software package name</package_name>
+         <version>Software version</version>
+       </conversion_software>
+     </sensor_data_conversion>
+
+   </analysis>
+
+ </variable>
+
+ <!-- #2.m Dissolved inorganic carbon (measured) -->
+
+ <variable xsi:type="DIC_measured" object_class="Variable" object_id="ID029">
+
+   <standard_identifier>
+     <term>Dissolved Inorganic Carbon</term>
+   </standard_identifier>
+
+   <dataset_variable_name>DIC</dataset_variable_name>
+   <!--   <qc_variable_name>DIC_flag</qc_variable_name>  Already included as <qc_flag_variable/> -->
+
+   <units>umol/kg</units>
+
+   <observation_type>Profile</observation_type>
+
+   <qc_flag_variable>DIC_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>weather</appropriate_use_quality>
+   <!-- OR:
+     <appropriate_use_quality>climate</appropriate_use_quality>
+     -->
+
+   <overall_uncertainty>
+     <value units="%">2</value>
+     <uncertainty_description>How was the uncertainty defined
+        </uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information about this variable
+      </additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID007">
+     <role>x4L1ERQn01</role>
+     <comment>z8A4D-</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID004">
+     <role>hF</role>
+     <comment>M4vMWPX</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="discrete">
+
+         <sample_storage>
+           <method_description>Storage Method description</method_description>
+           <container_volume>500 mL</container_volume>
+           <headspace_volume>20 mL</headspace_volume>
+         </sample_storage>
+       
+       <field_replicate_info>Field replicate information</field_replicate_info>
+              
+     </sampling>
+   </measured>
+
+   <analysis>
+
+     <analyzing_instrument object_class="Instrument" object_id="ID011">
+
+       <type>Instrument type, e.g., spectrophotometer</type>
+       <manufacturer>Manufacturer of the instrument</manufacturer>
+       <model>Model number</model>
+       <serial>Serial number</serial>
+       <accuracy units="w3nETDSCkY">349952714.263</accuracy>
+       <precision units="XD">-1599886199.637</precision>
+
+       <calibration>
+         <description>Calibration technique description</description>
+         <method_reference>
+           <description>Calibration method reference</description>
+         </method_reference>
+         <frequency>Every 3 hours</frequency>
+         <calibration_history>
+           <calibration>
+             <date>2026-05-21T14:33:30Z</date>
+             <location>LAB</location>
+             <description>l9vaP0fEGR</description>
+           </calibration>
+           <calibration>
+             <date>2026-11-04T14:33:30</date>
+             <location>FACTORY</location>
+             <description>sFuPo</description>
+           </calibration>
+         </calibration_history>
+
+         <calibration_certificate_info>Information about the calibration certificates
+            </calibration_certificate_info>
+
+         <certified_reference_material>
+           <manufacturer>CRM manufacturer</manufacturer>
+           <batch_number>CRM batch number</batch_number>
+         </certified_reference_material>
+
+         <reported_values_adjusted_to_crm>false</reported_values_adjusted_to_crm>
+
+       </calibration>
+
+     </analyzing_instrument>
+     
+     <analysis_method>
+       <description>Analyzing method description</description>
+       <reference><citation>Method reference (citation)</citation></reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviations from the method</deviations_from_method>
+
+     <sensor_data_conversion>  
+       <conversion_calculation_method>Method to calculate reported values from raw data</conversion_calculation_method>
+       <conversion_software>
+         <package_name>Software package name</package_name>
+         <version>Software version</version>
+       </conversion_software>
+     </sensor_data_conversion>
+
+   </analysis>
+   
+   <sample_preservation>
+     <preservative>Preservative used to kill the sample</preservative>
+     <volume>50 uL</volume>
+     <correction_description>Preservative correction description</correction_description>
+   </sample_preservation>
+   
+   <blank_correction>Were blank corrections applied</blank_correction>
+  
+ </variable>
+
+ <!-- #2.c Dissolved inorganic carbon (calculated) -->
+ <variable xsi:type="DIC_calculated" object_class="Variable" object_id="ID0292">
+
+   <standard_identifier>
+     <term>Dissolved Inorganic Carbon</term>
+   </standard_identifier>
+
+   <dataset_variable_name>DIC</dataset_variable_name>
+   
+   <units>umol/kg</units>
+
+   <related_variables>
+     <variable name="DIC_g">
+       <description>DIC in grams</description>
+     </variable>
+   </related_variables>
+   
+   <observation_type>Profile</observation_type>
+
+   <qc_flag_variable>DIC_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>weather</appropriate_use_quality>
+   <!-- OR:
+     <appropriate_use_quality>climate</appropriate_use_quality>
+     -->
+
+   <overall_uncertainty>
+     <value units="%">2</value>
+     <uncertainty_description>How was the uncertainty defined</uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information about this variable</additional_information>
+
+   <qc_researcher object_class="Person" object_id="ID004">
+     <role>hF</role>
+     <comment>M4vMWPX</comment>
+   </qc_researcher>
+
+  <calculated>
+    <sampling type="continuous"/>
+    <calculation>
+      <calculation_method>
+        <description>Calculation method and parameters</description>
+      </calculation_method>
+     </calculation>
+   </calculated>
+ </variable>
+
+ <!-- #3. Total alkalinity -->
+
+ <variable xsi:type="TA_measured" object_class="Variable" object_id="ID013">
+
+   <standard_identifier>
+     <term>Total alkalinity</term>
+   </standard_identifier>
+
+   <dataset_variable_name>TALK</dataset_variable_name>
+
+   <units>umol/kg</units>
+
+   <observation_type>Profile</observation_type>
+
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>climate</appropriate_use_quality>
+
+   <overall_uncertainty>
+     <value units="%">0.5</value>
+     <uncertainty_description>How was the uncertainty defined
+        </uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information about this variable
+       </additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID006">
+     <role>cfcL</role>
+     <comment>CFl5IS</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID007">
+     <role>P7fprWAVo</role>
+     <comment>sa</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="discrete">
+
+         <sample_storage>
+           <method_description>Storage method description</method_description>
+           <container_volume>500 mL</container_volume>
+           <headspace_volume>20 mL</headspace_volume>
+         </sample_storage>
+
+         <field_replicate_info>Field replicate information</field_replicate_info>
+
+     </sampling>
+
+   </measured>
+
+   <analysis>
+
+     <analyzing_instrument object_class="Instrument" object_id="ID006">
+
+       <type>Instrument type, e.g., spectrophotometer</type>
+       <manufacturer>Manufacturer of the instrument</manufacturer>
+       <model>Model number</model>
+       <serial>Serial number</serial>
+       <accuracy units="w2">-1452282680.197</accuracy>
+       <precision units="VZhC">203603991.761</precision>
+
+       <calibration>
+
+         <description>Calibration technique description</description>
+         <method_reference>
+           <description>Calibration method reference</description>
+         </method_reference>
+         <frequency>Frequency of calibration</frequency>
+         <calibration_history>
+           <calibration>
+             <date>2026-07-02T14:33:30Z</date>
+             <location>FIELD</location>
+             <description>YZ</description>
+           </calibration>
+           <calibration>
+             <date>2028-02-10T14:33:30</date>
+             <location>FACTORY</location>
+             <description>kFxCB.k</description>
+           </calibration>
+         </calibration_history>
+
+         <calibration_certificate_info>Information about the calibration certificates
+            </calibration_certificate_info>
+
+         <certified_reference_material>
+           <manufacturer>CRM manufacturer</manufacturer>
+           <batch_number>CRM batch number</batch_number>
+         </certified_reference_material>
+
+         <reported_values_adjusted_to_crm>true</reported_values_adjusted_to_crm>
+
+       </calibration>
+
+     </analyzing_instrument>
+
+     <analysis_method>
+       <description>Analyzing method description</description>
+       <reference><citation>Method reference (citation)</citation></reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviations from the method</deviations_from_method>
+
+     <sensor_data_conversion>  <!-- this is optional, only for sensor data -->
+       <conversion_calculation_method>Method to calculate reported values from raw data
+          </conversion_calculation_method>
+       <conversion_software>
+         <package_name>Software package name</package_name>
+         <version>Software version</version>
+       </conversion_software>
+     </sensor_data_conversion>
+
+   </analysis>
+
+   <blank_correction>Were blank corrections applied</blank_correction>
+   <cell_type>Cell type</cell_type>
+   <curve_fitting>Curve fitting method</curve_fitting>
+
+   <!-- SEE DIC for example of calculated "Big 5" variables 
+     Essentially, the common fields are still there. 
+     All the items related to the measurement are removed.
+  <calculated>
+    <sampling type="continuous"/>
+    <calculation>
+      <calculation_method>
+        <description>Calculation method and parameters</description>
+      </calculation_method>
+     </calculation>
+   </calculated>
+  -->
+
+ </variable>
+
+ <!-- #4. pH -->
+
+ <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
+
+   <standard_identifier>
+     <term>pH</term>
+   </standard_identifier>
+
+   <dataset_variable_name>pH_TS_measured</dataset_variable_name>
+   <!--   <term>Temp_pH</term>   What is this?  Is it Measurement Temperature? -->
+
+   <ph_scale>seawater</ph_scale>
+   <observation_type>Profile</observation_type>
+
+   <qc_flag_variable>pH_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>climate</appropriate_use_quality>
+
+   <overall_uncertainty>
+     <value units="Wa4S2MuZ">-1589957917.492</value>
+     <uncertainty_description>How was the uncertainty defined
+        </uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information about this variable
+       </additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID002">
+     <role>Dkgyfq</role>
+     <comment>K</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID003">
+     <role>jjzN</role>
+     <comment>EIl</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="discrete">
+
+     <!-- Not in pH, and not here anyways.    <sample_preservation> -->
+
+     <sample_storage>  <!-- This is optional.  It can be left out. -->
+       <method_description>Storage method description</method_description>
+       <container_volume>500 mL</container_volume>
+       <headspace_volume>20 mL</headspace_volume>
+     </sample_storage>
+
+     <field_replicate_info>Field replicate information</field_replicate_info>
+
+     </sampling>
+
+   </measured>
+
+   <analysis>
+
+     <analyzing_instrument object_class="Instrument" object_id="ID008">
+
+       <type>Instrument type, e.g., spectrophotometer</type>
+       <manufacturer>Manufacturer of the instrument</manufacturer>
+       <model>Model number</model>
+       <serial>Serial number</serial>
+       <accuracy units="w2">-1452282680.197</accuracy>
+       <precision units="VZhC">203603991.761</precision>
+
+       <calibration>
+         <description>Calibration method description</description>
+         <method_reference>
+            <description>Calibration method reference</description>
+         </method_reference>
+
+         <frequency>Every 3 hours</frequency>
+         
+         <calibration_history>
+           <calibration>
+             <date>2026-07-02T14:33:30Z</date>
+             <location>FIELD</location>
+             <description>YZ</description>
+           </calibration>
+           <calibration>
+             <date>2028-02-10T14:33:30</date>
+             <location>FACTORY</location>
+             <description>kFxCB.k</description>
+           </calibration>
+         </calibration_history>
+         <calibration_certificate_info>Calibration certificate information</calibration_certificate_info>
+         
+         <pH_standards>
+             <standard>
+                 <value>4.0</value>
+             </standard>
+             <standard>
+                 <value>7.1</value>
+             </standard>
+             <standard>
+                 <value>9.0</value>
+             </standard>
+         </pH_standards>
+
+          <indicator_dye_information>
+            <dye_type>Type</dye_type>
+            <manufacturer>Manufacturer of the pH dye</manufacturer>
+            <purified>true</purified>
+            <correction_for_unpurified_dye> <!-- the above is true, then this would not be included -->
+              <description>Correction for unpurified dye or not</description>
+              <method><description>Correction method for unpurified dye</description></method>
+            </correction_for_unpurified_dye>
+          </indicator_dye_information>
+
+         <calibration_temperature units="degrees Celsius">25</calibration_temperature>
+       </calibration>
+
+     </analyzing_instrument>
+
+     <analysis_method>
+       <description>Analyzing method description</description>
+       <reference><citation>Method reference</citation></reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviation from the method</deviations_from_method>
+
+     <sensor_data_conversion>  
+       <conversion_calculation_method>Method to calculate reported values from raw data
+         </conversion_calculation_method>
+       <conversion_software>
+         <package_name>Software package name</package_name>
+         <version>Software version</version>
+       </conversion_software>
+     </sensor_data_conversion>
+
+   </analysis>
+
+   <measurement_temperature>Temperature of pH measurement</measurement_temperature>
+   <temperature_correction_method>Temperature correction method</temperature_correction_method>
+   
+   <ph_report_temperature>At what temperature is pH reported</ph_report_temperature>
+
+
+   <!-- SEE DIC for example of calculated "Big 5" variables 
+     Essentially, the common fields are still there. 
+     All the items related to the measurement are removed.
+  <calculated>
+    <sampling type="continuous"/>
+    <calculation>
+      <calculation_method>
+        <description>Calculation method and parameters</description>
+      </calculation_method>
+     </calculation>
+   </calculated>
+  -->
+
+ </variable>
+
+ <!-- #5. CO2 (discrete) -->
+
+ <variable xsi:type="co2_discrete_variable" object_class="Variable" object_id="ID021">
+
+   <standard_identifier>
+     <term>Partial pressure or fugacity of carbon dioxide in seawater</term>
+   </standard_identifier>
+
+   <dataset_variable_name>fCO2_discrete</dataset_variable_name>
+
+   <units>uatm</units>
+   <observation_type>Profile</observation_type>
+
+   <qc_flag_variable>fCO2_discrete_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>weather</appropriate_use_quality>
+
+   <overall_uncertainty>
+     <value units="%">1</value>
+     <uncertainty_description>How was the uncertainty defined
+        </uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information</additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID019">
+     <role>Rex</role>
+     <comment>LtKJtN</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID009">
+     <role>sUmn</role>
+     <comment>woX-zXvBWP</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="discrete">
+
+         <sample_storage>
+           <method_description>Storage method description</method_description>
+           <container_volume>Container volume (mL)</container_volume>
+           <headspace_volume>Headspace volume (mL)</headspace_volume>
+         </sample_storage>
+
+         <field_replicate_info>Field replicate information</field_replicate_info>
+
+     </sampling>
+   </measured>
+
+   <water_vapor_correction_method>Water vapor correction method
+      </water_vapor_correction_method>
+
+   <temperature_correction_method>Temperature correction method
+       </temperature_correction_method>
+
+   <co2_report_temperature>At what temperature was fCO2 reported
+      </co2_report_temperature>
+
+   <analysis>
+
+    <gas_detector object_class="Instrument" object_id="ID023">
+
+      <type>Detector type, e.g., infrared gas analyzer</type>
+      <manufacturer>E.g., LI-COR</manufacturer>
+      <model>E.g., 7200</model>
+      <serial>Serial number</serial>
+      <accuracy units="f">-1726144588.743</accuracy>
+      <precision units="Oqd">1506560987.476</precision>
+
+      <calibration>
+        <description>Calibration technique description</description>
+        <method_reference>
+          <description>Calibration method reference</description>
+        </method_reference>
+        <frequency>Frequency of calibration</frequency>
+
+        <calibration_history>
+          <calibration>
+            <date>2027-01-27T14:33:30</date>
+            <location>FIELD</location>
+            <description>Fnw1_</description>
+          </calibration>
+          <calibration>
+            <date>2026-10-28T14:33:30</date>
+            <location>LAB</location>
+            <description>sh39J</description>
+          </calibration>
+        </calibration_history>
+
+        <calibration_certificate_info>Information about the calibration certificates</calibration_certificate_info>
+
+        <calibration_temperature units="degrees Celsius">42.2</calibration_temperature>
+       
+        <standard_gases>
+          <gas>
+            <manufacturer>Manufacturer of standard gas</manufacturer>
+            <concentration units="ppm">201</concentration>
+            <uncertainty units="ppm">0.2</uncertainty>
+          </gas>
+          <gas>
+            <manufacturer>Manufacturer of standard gas</manufacturer>
+            <concentration units="ppm">498</concentration>
+            <uncertainty units="ppm">0.2</uncertainty>
+          </gas>
+
+          <wmo_traceable>true</wmo_traceable>
+
+        </standard_gases>
+      </calibration>
+
+    </gas_detector>
+
+     <analysis_method>
+       <description>Analyzing method</description>
+       <reference><citation>Method reference (citation)</citation></reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviation from method</deviations_from_method>
+
+   </analysis>
+
+   <measurement_temperature units="degrees C">20</measurement_temperature>
+
+ </variable>
+
+ <!-- #6. CO2 (continuous) -->
+
+ <variable xsi:type="co2_continuous_variable" object_class="Variable" object_id="ID025">
+
+   <standard_identifier>
+     <term>Partial pressure or fugacity of carbon dioxide</term>
+   </standard_identifier>
+
+   <dataset_variable_name>fCO2</dataset_variable_name>
+
+   <units>uatm</units>
+   <observation_type>Surface underway</observation_type>
+
+   <qc_flag_variable>fCO2_flag</qc_flag_variable>
+   <qc_steps_taken>QC steps taken</qc_steps_taken>
+
+   <appropriate_use_quality>climate</appropriate_use_quality>
+
+   <overall_uncertainty>
+     <value units="nNyOQid5Vn">2051825903.457</value>
+     <uncertainty_description>How was the uncertainty defined</uncertainty_description>
+   </overall_uncertainty>
+
+   <additional_information>Additional information</additional_information>
+
+   <measurement_researcher object_class="Person" object_id="ID017">
+     <role>D4</role>
+     <comment>c</comment>
+   </measurement_researcher>
+
+   <qc_researcher object_class="Person" object_id="ID014">
+     <role>x</role>
+     <comment>t</comment>
+   </qc_researcher>
+
+   <measured>
+
+     <collection_method>Sampling method</collection_method>
+     <collection_instrument_type>Sampling instrument type</collection_instrument_type>
+
+     <sampling type="continuous">
+       <intake>
+         <location>Location of the seawater intake</location>
+         <depth units="meters">8.2</depth>
+       </intake>
+     </sampling>
+   </measured>
+
+   <water_vapor_correction_method>Water vapor correction method
+      </water_vapor_correction_method>
+
+   <temperature_correction_method>Temperature correction method
+      </temperature_correction_method>
+
+   <co2_report_temperature>At what temperature was pCO2 or fCO2 reported
+      </co2_report_temperature>
+
+   <analysis>
+
+     <gas_detector object_class="Instrument" object_id="ID027">
+
+       <type>Detector type</type>
+       <manufacturer>Manufacturer</manufacturer>
+       <model>Model</model>
+       <serial>Serial number</serial>
+       <accuracy units="f">-1726144588.743</accuracy>
+       <precision units="Oqd">1506560987.476</precision>
+       <measurement_frequency >Measurement frequency</measurement_frequency>
+       
+      <calibration>
+        <description>Calibration technique description</description>
+        <method_reference>
+          <description>Calibration method reference</description>
+        </method_reference>
+        <frequency>Frequency of calibration</frequency>
+        <calibration_history>
+          <calibration>
+            <date>2027-01-27T14:33:30</date>
+            <location>FIELD</location>
+            <description>Fnw1_</description>
+          </calibration>
+          <calibration>
+            <date>2026-10-28T14:33:30</date>
+            <location>LAB</location>
+            <description>sh39J</description>
+          </calibration>
+        </calibration_history>
+
+        <calibration_certificate_info>Information about the calibration certificates
+        </calibration_certificate_info>
+
+        <calibration_temperature units="degrees Celsius">24</calibration_temperature>
+
+        <standard_gases>
+          <gas>
+            <manufacturer>Manufacturer of standard gas</manufacturer>
+            <concentration units="ppm">200</concentration>
+            <uncertainty units="ppm">5</uncertainty>
+          </gas>
+          <gas>
+            <manufacturer>Manufacturer of standard gas</manufacturer>
+            <concentration units="ppm">407</concentration>
+            <uncertainty units="ppm">2.5</uncertainty>
+          </gas>
+
+          <wmo_traceable>false</wmo_traceable>
+
+        </standard_gases>
+
+      </calibration>
+
+     </gas_detector>
+
+     <analysis_method>
+       <description>Analyzing method</description>
+       <reference><citation>Method reference (citation)</citation></reference>
+     </analysis_method>
+
+     <deviations_from_method>Deviations from method</deviations_from_method>
+
+     <sensor_data_conversion>  <!-- this is optional, only for sensor data -->
+       <conversion_calculation_method>Method to calculate reported values from raw data
+          </conversion_calculation_method>
+       <conversion_software>
+         <package_name>Software package name</package_name>
+         <version>Software version</version>
+       </conversion_software>
+     </sensor_data_conversion>
+
+   </analysis>
+
+   <equilibrator>
+     <type>Equilibrator type</type>
+     <volume units="liters">42</volume>
+     <vented>false</vented>
+     <gas_flow_rate units="liters/minute">42</gas_flow_rate>
+     <water_flow_rate units="liters/minute">32</water_flow_rate>
+   </equilibrator>
+
+   <co2_drying_method>Drying method for CO2 gas</co2_drying_method>
+
+   <eq_pressure_measurement>
+     <sensor object_class="Instrument" object_id="ID039">
+       <manufacturer>Manufacturer</manufacturer>
+       <model>Model</model>
+       <serial>Serial number</serial>
+       <accuracy units="VBcCbBAF8">277069086.301</accuracy>
+       <precision units="V">-1730172932.085</precision>
+       <calibration>
+         <description>Calibration</description>
+       </calibration>
+     </sensor>
+     <sensor_location>Location</sensor_location>
+     <comments>Comments</comments>
+   </eq_pressure_measurement>
+  
+   <eq_temperature_measurement>
+     <sensor object_class="Instrument" object_id="ID031">
+       <manufacturer>Manufacturer</manufacturer>
+       <model>Model</model>
+       <serial>Serial number</serial>
+       <accuracy units="C6bldI4qqs">607027199.941</accuracy>
+       <precision units="R9kMJ9BSR">1857619800.164</precision>
+       <calibration>
+         <description>Calibration</description>
+       </calibration>
+     </sensor>
+     <sensor_location>Location</sensor_location>
+     <comments>Comments</comments>
+   </eq_temperature_measurement>
+
+   <atm_pressure_measurement>
+     <sensor object_class="Instrument" object_id="ID033">
+       <manufacturer>Manufacturer</manufacturer>
+       <model>Model</model>
+       <serial>Serial</serial>
+       <description>Description</description>
+       <accuracy units="gTXo-3">-295435481.565</accuracy>
+       <precision units="ZrP8">-1507872621.091</precision>
+       <calibration>
+         <description>Calibration</description>
+       </calibration>
+     </sensor>
+     <sensor_location>Location</sensor_location>
+     <comments>Comments</comments>
+   </atm_pressure_measurement>
+
+   <atm_co2 measured="false">
+     <location>Location</location>
+     <height units="meters">4.2</height>
+     <drying_method>Drying method</drying_method>
+     <measurement_interval>Measurement interval</measurement_interval>
+   </atm_co2>
+
+   <xco2_pco2_calculation_method>Method to calculate pCO2 from xCO2</xco2_pco2_calculation_method>
+
+   <pco2_fco2_calculation_method>Method to calculate fCO2 from pCO2</pco2_fco2_calculation_method>
+
+ </variable>
+
+</variables>
+
+ <instruments/>
+ <people/>
+ <organizations/>
+
+</dataset_metadata>
