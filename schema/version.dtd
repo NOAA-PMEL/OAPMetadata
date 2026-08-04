@@ -2,9 +2,14 @@
 <!ENTITY VERSION "v4.9">
 <!ENTITY PKG_NAME "ocads" > <!--  /ocmd -->
 <!ENTITY NS_PREFIX "oa" >
-<!ENTITY NS_HOST "https://ncei.noaa.gov">
+<!ENTITY NS_HOST_NCEI "https://ncei.noaa.gov">
+<!ENTITY SCHEMA_HOST_PMEL "https://data.pmel.noaa.gov/sdig/oap/schema">
+<!ENTITY NS_HOST "&NS_HOST_NCEI;">
 <!ENTITY STANDARD_NAME "Ocean Carbon Metadata">
 <!ENTITY NAMESPACE "&NS_HOST;/&PKG_NAME;/&VERSION;">
+
+<!ENTITY SCHEMA_LOCATION "&SCHEMA_HOST;/&PKG_NAME;/&VERSION;" >
+
 <!-- ENTITY ANNOX "annox" -->
 
 <!ENTITY DATE_TIME_TYPE "xs:dateTime">

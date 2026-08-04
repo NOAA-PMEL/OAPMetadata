@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataset_metadata [
+  <!ENTITY SCHEMA_LOCATION "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
+]>
 
 <dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   xmlns="https://ncei.noaa.gov/ocads/v4.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 file:/Users/kamb/workspace/OAPMetadata-concessions/schema/dataset_metadata.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 &SCHEMA_LOCATION;/dataset_metadata.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
 
  <document_metadata>
    <document_date>2026-02-18T14:33:30</document_date>
