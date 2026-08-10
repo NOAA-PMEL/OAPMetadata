@@ -64,11 +64,14 @@
     <xs:complexContent>
       <xs:extension base="person">
         <xs:sequence>
-          <xs:element name="identifier" type="typed_reference" minOccurs="0" maxOccurs="unbounded"/>  <!-- ??? really unbounded? Should we order / indicate primary? Alt_IDs? -->
+          <xs:element name="identifier" type="typed_pid" minOccurs="0" maxOccurs="unbounded"/>  <!-- ??? really unbounded? Should we order / indicate primary? Alt_IDs? -->
           <xs:element name="name" type="person_name"/>
           <xs:element name="organization" type="organization_ref" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="contact_info" type="contact_info" minOccurs="0" maxOccurs="1"/> <!-- ? multiple, with roles -->
-          <xs:element name="link" type="URI_reference" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:choice maxOccurs="unbounded">  <!-- Really should just have the URI_reference.. -->
+            <xs:element name="url" type="xs:anyURI" minOccurs="0"/>
+            <xs:element name="link" type="URI_reference" minOccurs="0" />
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -129,7 +132,7 @@
 
   <xs:complexType name="person_collection">
     <xs:sequence >
-      <xs:element name="person" type="person" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="person" type="person_definition" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   

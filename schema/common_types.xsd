@@ -165,9 +165,13 @@
   </xs:complexType>
 
   <xs:complexType name="typed_element">
+    <xs:attribute name="type" type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="typed_element_required">
     <xs:attribute name="type" type="xs:string" use="required"/>
   </xs:complexType>
-
+  
   <xs:complexType name="typed_string">
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -254,7 +258,7 @@
     </xs:simpleContent>
   </xs:complexType>
   
-  <xs:complexType name="typed_reference">
+  <xs:complexType name="typed_pid">
     <xs:complexContent>
       <xs:extension base="pid_reference">
         <xs:attribute name="pid_type" type="xs:string"/>
@@ -396,14 +400,20 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="project_title" type="xs:string"/>
-      <xs:element name="project_identifier" type="xs:string"/>
+      <xs:element name="project_title" type="xs:string" minOccurs="0"/>
+      <xs:element name="project_identifier" type="xs:string" minOccurs="0"/>
       <xs:element name="project_duration" type="temporal_extents" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="observation_geometry">
+    <xs:sequence>
+      <xs:element name="type" type="observation_geometry_type" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
   <!-- It would be good if this were a controlled vocabulary. -->
-  <xs:simpleType name="observation_geometry">  <!-- ??? Is this a per-variable or per-dataset field? -->
+  <xs:simpleType name="observation_geometry_type">  <!-- ??? Is this a per-variable or per-dataset field? -->
     <xs:restriction base="xs:string">
       <xs:enumeration value="Point"/>  <!-- ??? CF types.  Acceptable? -->
       <xs:enumeration value="Timeseries"/>
@@ -435,6 +445,6 @@
   <xs:element name="extendable" type="extendable_experiment_location"/>
   
   <xs:simpleType name="ncei_obs_types">
-    <xs:union memberTypes="observation_geometry experiment_location"/>
+    <xs:union memberTypes="observation_geometry_type experiment_location"/>
   </xs:simpleType>
 </xs:schema>

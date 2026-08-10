@@ -24,7 +24,7 @@
   
   <xs:group name="minimum_unitless_variable_fields">
     <xs:sequence>
-      <xs:element name="standard_identifier" type="vocabulary_item_reference"/>
+      <xs:element name="standard_name" type="vocabulary_item_reference"/>
       <!-- ?? multiple / different vocabs? -->
       <xs:element name="alt_identifier" type="vocabulary_item_reference" maxOccurs="unbounded" minOccurs="0"/> 
 
@@ -155,8 +155,8 @@
   
   <xs:complexType name="measured_var_info" abstract="false">
     <xs:sequence>
-      <xs:element name="collection_method" type="xs:string"/>
-      <xs:element name="collection_instrument_type" type="xs:string"/>
+      <xs:element name="collection_method" type="xs:string" minOccurs="0"/>
+      <xs:element name="collection_instrument_type" type="xs:string" minOccurs="0"/>
       <xs:element name="sampling" type="sampling_info"/>
     </xs:sequence>
   </xs:complexType>

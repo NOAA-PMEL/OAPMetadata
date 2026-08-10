@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dataset_metadata [
-  <!ENTITY SCHEMA_LOCATION "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
+  <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
+  <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
+
 ]>
 
 <dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
@@ -10,7 +13,7 @@
   xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 &SCHEMA_LOCATION;/dataset_metadata.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
 
  <document_metadata>
-   <document_date>2026-02-18T14:33:30</document_date>
+   <document_date>2026-02-18</document_date>
    <document_source object_class="Organization" object_id="ID001"/>
    <comment>Example comments</comment>
  </document_metadata>
@@ -35,8 +38,12 @@
       <description>ERDDAP endpoint</description> <!-- optional -->
     </data_url>
     
-    <metadata_url>any://uri</metadata_url>
-    <landing_page_url>any://uri</landing_page_url>
+    <metadata_url>
+      <uri>any://uri</uri>
+    </metadata_url>
+    <landing_page_url>
+      <uri>any://uri</uri>
+    </landing_page_url>
     
     <dataset_graphic_url>   <!-- could be multiple -->
       <uri>"any://uri"</uri>
@@ -64,12 +71,12 @@
         <submission_date>2026-03-01</submission_date>
         <revision_description/>
       </revision> <!-- repeats as necessary -->
-      <initial_submission>  
+      <submission>  
         <!-- original data submitter information
            - the only content included on submission -->
         <submitted_by object_id="PERSON1234"/>
         <submission_date>2026-02-01</submission_date>
-      </initial_submission>
+      </submission>
     </version_history>
   </archival_info> 
  <expocodes>
@@ -435,9 +442,9 @@
  <!-- #1. Observed properties (generic) -->
  <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
 
-   <standard_identifier>
+   <standard_name>
      <term>Sea surface temperature</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>SST</dataset_variable_name>
 
@@ -570,9 +577,9 @@
 
  <variable xsi:type="DIC_measured" object_class="Variable" object_id="ID029">
 
-   <standard_identifier>
+   <standard_name>
      <term>Dissolved Inorganic Carbon</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>DIC</dataset_variable_name>
    <!--   <qc_variable_name>DIC_flag</qc_variable_name>  Already included as <qc_flag_variable/> -->
@@ -700,9 +707,9 @@
  <!-- #2.c Dissolved inorganic carbon (calculated) -->
  <variable xsi:type="DIC_calculated" object_class="Variable" object_id="ID0292">
 
-   <standard_identifier>
+   <standard_name>
      <term>Dissolved Inorganic Carbon</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>DIC</dataset_variable_name>
    
@@ -750,9 +757,9 @@
 
  <variable xsi:type="TA_measured" object_class="Variable" object_id="ID013">
 
-   <standard_identifier>
+   <standard_name>
      <term>Total alkalinity</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>TALK</dataset_variable_name>
 
@@ -888,9 +895,9 @@
 
  <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
 
-   <standard_identifier>
+   <standard_name>
      <term>pH</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>pH_TS_measured</dataset_variable_name>
    <!--   <term>Temp_pH</term>   What is this?  Is it Measurement Temperature? -->
@@ -1046,9 +1053,9 @@
 
  <variable xsi:type="co2_discrete_variable" object_class="Variable" object_id="ID021">
 
-   <standard_identifier>
+   <standard_name>
      <term>Partial pressure or fugacity of carbon dioxide in seawater</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>fCO2_discrete</dataset_variable_name>
 
@@ -1176,9 +1183,9 @@
 
  <variable xsi:type="co2_continuous_variable" object_class="Variable" object_id="ID025">
 
-   <standard_identifier>
+   <standard_name>
      <term>Partial pressure or fugacity of carbon dioxide</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>fCO2</dataset_variable_name>
 

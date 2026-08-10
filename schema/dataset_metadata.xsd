@@ -6,7 +6,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
   targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
-  >
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="http://annox.dev.java.net"
+  xmlns:xew="http://github.com/jaxb-xew-plugin"
+  jaxb:extensionBindingPrefixes="xjc annox xew"
+>
   
   <!-- NAMESPACE "&NS_HOST;/&PKG_NAME;/&VERSION;" -->
   <!-- https://ncei.noaa.gov/ocads/v4.6 -->
@@ -140,7 +145,7 @@
       <xs:element name="archive_specific_content" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:any maxOccurs="unbounded"  minOccurs="0"/>
+            <xs:any maxOccurs="unbounded"  minOccurs="0" processContents="lax"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -775,7 +780,7 @@
       <xs:documentation> Metadata about *this* metadata document. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="document_date" type="&USE_DATE_TIME_TYPE;"/>
+      <xs:element name="document_date" type="xs:date"/>
       <xs:element name="document_source" type="organization_ref">  <!-- ??? And/Or Person -->
         <xs:annotation>
           <xs:documentation> The organization that produced *this* metadata document.

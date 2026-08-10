@@ -1325,7 +1325,13 @@
 </variables>
 
  <instruments/>
- <people/>
+ <people>
+   <person xsi:type="person_definition" object_id="person_bdk_k2n_dkc">
+     <name>
+       
+     </name>
+   </person>
+ </people>
  <organizations/>
 
 </dataset_metadata>

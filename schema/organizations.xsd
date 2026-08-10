@@ -36,7 +36,7 @@
     <xs:complexContent>
       <xs:extension base="organization">
         <xs:sequence>
-          <xs:element name="identifier" type="pid_reference" minOccurs="0"/>
+          <xs:element name="identifier" type="typed_pid" minOccurs="0"/>
           <xs:element name="name" type="xs:string"/>
           <xs:element name="description" type="xs:string" minOccurs="0"/>
          </xs:sequence>
@@ -58,7 +58,7 @@
   
   <xs:complexType name="organization_collection">
     <xs:sequence>
-      <xs:element name="organization" type="organization" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="organization" type="organization_definition" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -102,7 +102,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+ 
   <xs:complexType name="pH_instrument">
     <xs:complexContent>
       <xs:extension base="basic_instrument">

@@ -36,8 +36,8 @@
       <xs:element name="metadata_URL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
       -->
       <xs:element name="data_url" type="described_uri" minOccurs="0" maxOccurs="unbounded"/>   <!-- ostensibly the download URL, but there might be API access URL(s) -->
-      <xs:element name="metadata_url" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>   <!-- same -->
-      <xs:element name="landing_page_url" type="xs:anyURI" minOccurs="0"/>
+      <xs:element name="metadata_url" type="described_uri" minOccurs="0" maxOccurs="unbounded"/>   <!-- same -->
+      <xs:element name="landing_page_url" type="described_uri" minOccurs="0"/>
       <xs:element name="dataset_graphic_url" type="described_uri" minOccurs="0" maxOccurs="unbounded"/>  <!-- could be multiple -->
 
       <xs:element name="publication_date" type="xs:date" minOccurs="0"/>  <!-- the <data_revision_date/>  
@@ -54,7 +54,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="revision" type="revision" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="initial_submission" type="submission_info"/>
+            <xs:element name="submission" type="submission_info"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -66,8 +66,8 @@
 
   <xs:complexType name="submission_info">
     <xs:sequence>
-      <xs:element name="submitted_by" type="person_ref"/>
-      <xs:element name="submission_date" type="xs:date"/>
+      <xs:element name="submitted_by" type="person_ref" minOccurs="0"/>
+      <xs:element name="submission_date" type="xs:date" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="version" type="xs:string" use="optional"/>
   </xs:complexType>
@@ -76,7 +76,7 @@
     <xs:complexContent>
       <xs:extension base="submission_info">
         <xs:sequence>
-          <xs:element name="revision_description" type="xs:string"/>
+          <xs:element name="revision_description" type="xs:string" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
