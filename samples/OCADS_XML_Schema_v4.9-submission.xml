@@ -3,14 +3,17 @@
   <!ENTITY SCHEMA_LOCATION "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
 ]>
 
+<!-- *** NOTE This document does not fully validate as it has object references 
+          that don't point to actual definitions. -->
 <dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   xmlns="https://ncei.noaa.gov/ocads/v4.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 &SCHEMA_LOCATION;/dataset_metadata.xsd" metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 &SCHEMA_LOCATION;/dataset_metadata.xsd" 
+  metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
 
  <document_metadata>
-   <document_date>2026-02-18T14:33:30</document_date>
+   <document_date>2026-02-18</document_date>
    <document_source object_class="Organization" object_id="ID001"/>
    <comment>Example comments</comment>
  </document_metadata>
@@ -385,9 +388,9 @@
  <!-- #1. Observed properties (generic) -->
  <variable xsi:type="std_observed_variable" object_class="Variable" object_id="ID003">
 
-   <standard_identifier>
+   <standard_name>
      <term>Sea surface temperature</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>SST</dataset_variable_name>
 
@@ -520,9 +523,9 @@
 
  <variable xsi:type="DIC_measured" object_class="Variable" object_id="ID029">
 
-   <standard_identifier>
+   <standard_name>
      <term>Dissolved Inorganic Carbon</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>DIC</dataset_variable_name>
    <!--   <qc_variable_name>DIC_flag</qc_variable_name>  Already included as <qc_flag_variable/> -->
@@ -650,9 +653,9 @@
  <!-- #2.c Dissolved inorganic carbon (calculated) -->
  <variable xsi:type="DIC_calculated" object_class="Variable" object_id="ID0292">
 
-   <standard_identifier>
+   <standard_name>
      <term>Dissolved Inorganic Carbon</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>DIC</dataset_variable_name>
    
@@ -700,9 +703,9 @@
 
  <variable xsi:type="TA_measured" object_class="Variable" object_id="ID013">
 
-   <standard_identifier>
+   <standard_name>
      <term>Total alkalinity</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>TALK</dataset_variable_name>
 
@@ -838,9 +841,9 @@
 
  <variable xsi:type="pH_measured" object_class="Variable" object_id="ID017">
 
-   <standard_identifier>
+   <standard_name>
      <term>pH</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>pH_TS_measured</dataset_variable_name>
    <!--   <term>Temp_pH</term>   What is this?  Is it Measurement Temperature? -->
@@ -996,9 +999,9 @@
 
  <variable xsi:type="co2_discrete_variable" object_class="Variable" object_id="ID021">
 
-   <standard_identifier>
+   <standard_name>
      <term>Partial pressure or fugacity of carbon dioxide in seawater</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>fCO2_discrete</dataset_variable_name>
 
@@ -1126,9 +1129,9 @@
 
  <variable xsi:type="co2_continuous_variable" object_class="Variable" object_id="ID025">
 
-   <standard_identifier>
+   <standard_name>
      <term>Partial pressure or fugacity of carbon dioxide</term>
-   </standard_identifier>
+   </standard_name>
 
    <dataset_variable_name>fCO2</dataset_variable_name>
 
@@ -1326,12 +1329,66 @@
 
  <instruments/>
  <people>
-   <person xsi:type="person_definition" object_id="person_bdk_k2n_dkc">
+   <person object_class="Person" object_id="PERS001">
+     <identifier pid_type="ORCID">0009-0008-0874-270X</identifier>
      <name>
-       
+       <first>Alex</first>
+       <last>Kozyr</last>
      </name>
+     <organization object_id="ORG002" object_class="Organization"/>
+     <contact_info>
+       <address type="office"> <!-- type is optional.  allows multiple addresses -->
+         <delivery_address>University of Maryland</delivery_address>
+         <city>College Park</city>
+         <administrative_area>MD</administrative_area>
+         <country>UNITED STATES</country>
+       </address>
+       <phone>865-216-4499</phone>
+       <email>Alex.Kozyr@noaa.gov</email>
+     </contact_info>
+     <link>
+       <uri>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/2220</uri>
+       <description>NCEI persons database</description>
+     </link>
+     <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/2220</url>
+   </person>
+   <person object_class="Person" object_id="PERS002">
+     <identifier pid_type="ORCID">0000-0003-3245-3568</identifier>
+     <name>
+       <first>Richard</first>
+       <middle>A.</middle>
+       <last>Feely</last>
+     </name>
+     <organization object_class="Organization" object_id="ORG001"/>
+     <contact_info>
+       <address>
+         <delivery_address>ERL MRRD 7600 SAND POINT WAY NE, BLDG 32</delivery_address>
+         <city>Seattle</city>
+         <administrative_area>WA</administrative_area>
+         <postal_code>98115-0070</postal_code>
+         <country>UNITED STATES</country>
+       </address>
+       <phone>206-526-6214</phone>
+       <email>Richard.A.Feely@noaa.gov</email>
+     </contact_info>
+     <!--     <role>Investigator</role>  There is no <role> in person definition.  This is just the person.
+           Furthermore, Investigators were taken out, apparently all we need is cited_authors. -->
+     <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/970</url>
    </person>
  </people>
- <organizations/>
+ <organizations>
+   <organization object_id="org_ncei">
+     <identifier pid_type="ROR">https://ror.org/04r0wrp59</identifier>
+     <name>NOAA National Centers for Environmental Information (NCEI)</name>
+   </organization>
+   <organization object_id="ORG001">
+     <identifier pid_type="ROR">https://ror.org/03crn0n59</identifier>
+     <name>NOAA Pacific Marine Environmental Laboratory (PMEL)</name>
+   </organization>
+   <organization object_id="ORG002">
+     <identifier pid_type="ROR">https://ror.org/019r5yk13</identifier>
+     <name>Cooperative Institute for Satellite Earth System Studies (CISESS)</name>
+   </organization>
+ </organizations>
 
 </dataset_metadata>
