@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dataset_metadata [
+  <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9.1" >
+  <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
+]>
+<dataset_metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="https://ncei.noaa.gov/ocads/v4.9" 
+  xsi:schemaLocation="https://ncei.noaa.gov/ocads/v4.9 &SCHEMA_LOCATION;/dataset_metadata.xsd" 
+  metadata_standard="Ocean Carbon Metadata" metadata_version="v4.9">
+
+  <document_metadata>
+    <document_date>2026-08-05</document_date>
+    <document_source object_class="Organization" object_id="org_ncei"/>
+  </document_metadata>
+  
+  <doi>10.3334/cdiac/otg.ndp052</doi>
+
+  <archival_info>
+    <archival_id>0000183</archival_id> <!-- accession -->
+
+    <data_url>
+      <uri>https://www.ncei.noaa.gov/data/oceans/ncei/ocads/data/0000183/</uri>
+      <description>download link</description>
+    </data_url>
+    <!-- There is also a <metadata_url/> element -->
+    <landing_page_url>
+      <uri>https://www.ncei.noaa.gov/archive/accession/0000183</uri>
+    </landing_page_url>
+    <dataset_graphic_url>
+      <uri>https://www.ncei.noaa.gov/access/metadata/landing-page/bin/gfx?id=gov.noaa.nodc:0000183</uri>
+    </dataset_graphic_url>
+
+    <version_history>
+      <revision version="1.1">
+        <submission_date>2016-12-10</submission_date>
+      </revision>
+      <submission>
+        <submitted_by object_class="Person" object_id="PERS001" />
+        <submission_date>2001-04-16</submission_date>
+      </submission>
+    </version_history>
+
+  </archival_info>
+
+  <archive_specific_content>
+    <image>/Images/nceilogo-banner.png</image>
+  </archive_specific_content>
+
+  <expocodes>
+    <expocode>33MW19900222</expocode>
+  </expocodes>
+  <cruise_ids>
+    <cruise_id>3175CG90_1</cruise_id>
+  </cruise_ids>
+  <cited_authors>
+    <author index="1" object_class="Person" object_id="PERS002">
+      <role>Author</role>
+    </author>
+    <author index="2" object_class="Person" object_id="PERS001">
+      <role>Author</role>
+    </author>
+    <!--
+    <author index="3" object_class="Person" object_id="INV004">
+      <role>Author</role>
+    </author>
+    <author index="4" object_class="Person" object_id="INV005">
+      <role>Author</role>
+    </author>
+    -->
+  </cited_authors>
+  <dataset_title>Dissolved inorganic carbon, total alkalinity, water temperature, salinity and other variables collected from discrete sample and profile observations during NOAA Ship Malcolm Baldrige cruise CGC_90 (EXPOCODE 33MW19900222) in the Pacific and Southern Oceans from 1990-02-22 to 1990-04-16 (NCEI Accession 0000183)</dataset_title>
+  <dataset_description>This dataset includes dissolved inorganic carbon, total alkalinity, water temperature, salinity, chlorofluorocarbons (CFCs), carbon-13 and other variables collected from discrete sample and profile observations during NOAA Ship Malcolm Baldrige cruise CGC_90 (EXPOCODE 33MW19900222) in the Pacific and Southern Oceans from 1990-02-22 to 1990-04-16. The instruments used to collect these data include CTD, Coulometer for DIC measurement and bottle. These data were collected by David P. Wisegarver, Marilyn F. Lamb, and Richard A. Feely of NOAA Pacific Marine Environmental Laboratory (PMEL) as part of the CARINA_CGC_90 and CGC-90_32MW19900222 dataset. CDIAC associated the following cruise ID(s) with this dataset: 3175CG90_1 and CGC_90.  The World Ocean Circulation Experiment (WOCE) was a major component of the World Climate Research Program with the overall goal of better understanding the ocean's role in climate and climatic changes resulting from both natural and anthropogenic causes. The CO2 survey took advantage of the sampling opportunities provided by the WOCE Hydrographic Program (WHP) cruises during this period between 1990 and 1998. The final collection covers approximately 23,000 stations from 94 WOCE cruises.</dataset_description>
+  <dataset_type>Individual data collection</dataset_type>
+  <dataset_data_type>Natural</dataset_data_type>
+  <mcdr>false</mcdr>
+  <data_coverage>
+    <temporal_extents>
+      <start_date>1990-02-22</start_date>
+      <end_date>1990-04-16</end_date>
+    </temporal_extents>
+    <geospatial_extents>
+      <bounds>
+        <western_bound>179.745</western_bound>
+        <eastern_bound>-169.503</eastern_bound>
+        <northern_bound>5.2283</northern_bound>
+        <southern_bound>-60.0117</southern_bound>
+      </bounds>
+    </geospatial_extents>
+  </data_coverage>
+  <geographic_names>
+    <name>
+      <term>Pacific Ocean</term>
+    </name>
+    <name>
+      <term>Southern Ocean</term>
+    </name>
+  </geographic_names>
+  <sections>
+    <section>WOCE P15S</section>
+  </sections>
+  <platforms>
+    <platform>
+      <name>Malcom Baldrige</name>
+      <identifier type="">33MW</identifier>
+      <type>Research Vessel</type>
+      <owner>Department of Commerce, NOAA</owner>
+      <country>
+        <term>UNITED STATES</term>
+      </country>
+    </platform>
+  </platforms>
+  <funding>
+    <funding_source>
+      <funding_agency>
+        <name>NOAA Climate Program</name>
+        <!-- <country> is required here.  Should i  be optional? -->
+      </funding_agency>
+    </funding_source>
+  </funding>
+  <publications>
+    <publication> 
+      <!-- These elements are "reference_or_description" type elements.
+            As such, they can have a free-text <description> element, 
+            or a <reference> element which has the choice of <doi>,<uri>, or <citation> child elements. 
+            Both formats shown below. (Normally I would not expect to mix formats.) -->
+      <reference>
+        <citation>Lamb, Marilyn F.; Feely, Richard A.; Moore, Lloyd; Atwood, Donald K. (2001). Dissolved inorganic carbon, total alkalinity, water temperature, salinity and other variables collected from discrete sample and profile observations during NOAA Ship Malcolm Baldrige cruise CGC_90 (EXPOCODE 33MW19900222) in the Pacific and Southern Oceans from 1990-02-22 to 1990-04-16 (NCEI Accession 0000183). [indicate subset used]. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.3334/cdiac/otg.ndp052. Accessed [date].</citation>
+      </reference>
+    </publication>
+    <publication>
+      <description>McTaggart, K.E., D. Wilson, and L.J. Mangum. 1993. CTD measurements collected on Climate and Global Change Cruise along 170˚W during February-April 1990. NOAA Data Report ERL PMEL-44, NTIS: PB93-226041, 265 pp. https://repository.library.noaa.gov/view/noaa/11300</description>
+    </publication>
+    <publication>
+      <reference>
+        <citation>Lamb, M.F., R.A. Feely, L. Moore, and D.A. Atwood. 1993. Total CO2 and nitrate measurements in the southwest Pacific during austral autumn. 1990. NOAA Data Report ERL PMEL-42, NTIS: PB93-188415, 62 pp.</citation>
+      </reference>
+    </publication>
+    <publication>
+      <description>Wisegarver, D.P., J.L. Bullister, F.A. Van Woy, F.A. Menzia, R.F. Weiss, A.H. Orsi, and P.K. Salameh. 1995. Chlorofluorocarbon measurements in the southwestern Pacific during the CGC-90 Expedition. NOAA Data Report ERL PMEL-57, 98 pp. https://repository.library.noaa.gov/view/noaa/11330</description>
+    </publication>
+  </publications>
+  <related_datasets>
+    <dataset>
+      <uri>https://www.ncei.noaa.gov/access/ocean-carbon-acidification-data-system/oceans/RepeatSections/clivar_p15s.html</uri>
+      <description>CLIVAR Repeat Section P15S</description>
+    </dataset>
+    <dataset>
+      <uri>https://www.ncei.noaa.gov/archive/accession/0000769</uri>
+      <description>Roberts, Marilyn F.; NOAA Pacific Marine Environmental Laboratory (2002). Nutrients and meteorological data collected from CTD and bottle casts on cruise CGC90 in the Pacific Ocean from NOAA Ship MALCOLM BALDRIGE from 1990-02-24 to 1990-04-12 (NCEI Accession 0000769). NOAA National Centers for Environmental Information. Dataset. https://www.ncei.noaa.gov/archive/accession/0000769.</description>
+    </dataset>
+    <dataset>
+      <uri>https://www.ncei.noaa.gov/archive/accession/0000183/1.1/data/0-data/</uri>
+      <description>Version 1.1</description>
+    </dataset>
+    <dataset>
+      <uri>https://www.ncei.noaa.gov/archive/accession/0000183/1.2/data/0-data/</uri>
+      <description>Version 1.2</description>
+    </dataset>
+    <dataset>
+      <uri>https://www.ncei.noaa.gov/archive/accession/0000183/2.3/data/0-data/</uri>
+      <description>Version 2.3</description>
+    </dataset>
+  </related_datasets>
+  <!-- these are optional.  
+    Used in the case where all variables use the same flagging scheme,
+    in which case, they would not be included in the per-variable fields.
+  <default_qc_flagging_scheme/>
+  <default_missing_value_indicator/>
+  -->
+  <!--  <supplemental_information/>  empty elements can be ommitted -->
+  <observation_geometry>
+    <type>Profile</type>
+  </observation_geometry>
+  <!-- Only included for those particular types of datasets
+  <sediment_study/>
+  <physiological_response_study/>
+  <field_trial/>
+  -->
+  <variables>
+    <variable object_class="Variable" object_id="VAR001" xsi:type="DIC_measured">
+      <standard_name>
+        <term>Dissolved inorganic carbon</term>
+      </standard_name>
+      <dataset_variable_name>DIC</dataset_variable_name>
+      <!-- optional
+      <long_name/>
+      <description/>
+      -->
+      <!-- Units required here. Is it possible to not have units? -->
+      <observation_type>Profile</observation_type>
+      <additional_information>[Measured field] Calculated</additional_information>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete">
+          <field_replicate_info>Replicates analyzed at three different stations throughout the cruise yielded a precision of &lt; or = 0.05%. The reported TCO2 data have been corrected to reflect the difference in accuracy to the CRM; the correction applied is +3 μmol/kg TCO2.</field_replicate_info>
+        </sampling>
+      </measured>
+      <analysis>
+        <analyzing_instrument object_class="Instrument" object_id="INST001">
+          <calibration>
+            <description>Upon retrieval of the CTD-rosette package on deck, samples for TCO2 were collected in 500-mL glass-stoppered bottles and poisoned with 0.5 mL of saturated HgCl2 solution to decrease bacterial oxidation of organic matter prior to analysis. The samples were analyzed immediately when possible, but always within 24 h after collection.</description>
+            <certified_reference_material>
+              <manufacturer></manufacturer>  <!-- manufacturer is required here.  Should it be optional? -->
+              <batch_number>1</batch_number>
+            </certified_reference_material>
+          </calibration>
+        </analyzing_instrument>
+        <analysis_method/>
+      </analysis>
+    </variable>
+    <variable object_class="Variable" object_id="VAR002" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>WATER TEMPERATURE</term>
+      </standard_name>
+      <dataset_variable_name>CTDTMP</dataset_variable_name>
+      <units>DEG_C</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="continuous"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR003" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>SALINITY</term>
+      </standard_name>
+      <dataset_variable_name>CTDSAL</dataset_variable_name>
+      <!-- same with the units -->
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="continuous"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR004" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>SALINITY</term>
+      </standard_name>
+      <dataset_variable_name>SALNTY</dataset_variable_name>
+      <!-- same with the units -->
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR005" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>NITRATE</term>
+      </standard_name>
+      <dataset_variable_name>NITRAT</dataset_variable_name>
+      <units>UMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR006" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>CHLOROFLUOROCARBON-11 (CFC-11)</term>
+      </standard_name>
+      <dataset_variable_name>CFC-11</dataset_variable_name>
+      <units>PMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR007" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>CHLOROFLUOROCARBON-12 (CFC-12)</term>
+      </standard_name>
+      <dataset_variable_name>CFC-12</dataset_variable_name>
+      <units>PMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR008" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>DISSOLVED INORGANIC CARBON (DIC)</term>
+      </standard_name>
+      <dataset_variable_name>TCARBN</dataset_variable_name>
+      <units>UMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR009" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>Tritium (Hydrogen isotope)</term>
+      </standard_name>
+      <dataset_variable_name>TRITUM</dataset_variable_name>
+      <units>TU</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR010" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>TRITER</term>
+      </standard_name>
+      <dataset_variable_name>TRITER</dataset_variable_name>
+      <units>NMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR011" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>HELIUM</term>
+      </standard_name>
+      <dataset_variable_name>HELIUM</dataset_variable_name>
+      <units>NMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR012" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>HELIER</term>
+      </standard_name>
+      <dataset_variable_name>HELIER</dataset_variable_name>
+      <units>NMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR013" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>DELTA HELIUM-3</term>
+      </standard_name>
+      <dataset_variable_name>DELHE3</dataset_variable_name>
+      <units>PERCNT</units>
+      <related_variables>
+        <variable name="DELHER"/>
+      </related_variables>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR014" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>DELHER</term>
+      </standard_name>
+      <dataset_variable_name>DELHER</dataset_variable_name>
+      <!-- optional <long_name/> and <description/> elements here. -->
+      <units>PERCNT</units>
+      <related_variables>
+        <variable name="DELHE3"/>
+      </related_variables>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR015" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>NEON</term>
+      </standard_name>
+      <dataset_variable_name>NEON</dataset_variable_name>
+      <units>NMOL/KG</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+    <variable object_class="Variable" object_id="VAR016" xsi:type="std_observed_variable">
+      <standard_name>
+        <term>DELTA CARBON-13</term>
+      </standard_name>
+      <dataset_variable_name>DELC13</dataset_variable_name>
+      <units>/MILLE</units>
+      <observation_type>Profile</observation_type>
+      <measured>
+        <collection_method>in-situ observation</collection_method>
+        <sampling type="discrete"/>
+      </measured>
+    </variable>
+  </variables>
+  <instruments/>
+  <people>
+    <person object_class="Person" object_id="PERS001">
+      <identifier pid_type="ORCID">0009-0008-0874-270X</identifier>
+      <name>
+        <first>Alex</first>
+        <last>Kozyr</last>
+      </name>
+      <organization object_id="ORG002" object_class="Organization"/>
+      <contact_info>
+        <address type="office"> <!-- type is optional.  allows multiple addresses -->
+          <delivery_address>University of Maryland</delivery_address>
+          <city>College Park</city>
+          <administrative_area>MD</administrative_area>
+          <country>UNITED STATES</country>
+        </address>
+        <phone>865-216-4499</phone>
+        <email>Alex.Kozyr@noaa.gov</email>
+      </contact_info>
+      <link>
+        <uri>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/2220</uri>
+        <description>NCEI persons database</description>
+      </link>
+      <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/2220</url>
+    </person>
+    <person object_class="Person" object_id="PERS002">
+      <identifier pid_type="ORCID">0000-0003-3245-3568</identifier>
+      <name>
+        <first>Richard</first>
+        <middle>A.</middle>
+        <last>Feely</last>
+      </name>
+      <organization object_class="Organization" object_id="ORG001"/>
+      <contact_info>
+        <address>
+          <delivery_address>ERL MRRD 7600 SAND POINT WAY NE, BLDG 32</delivery_address>
+          <city>Seattle</city>
+          <administrative_area>WA</administrative_area>
+          <postal_code>98115-0070</postal_code>
+          <country>UNITED STATES</country>
+        </address>
+        <phone>206-526-6214</phone>
+        <email>Richard.A.Feely@noaa.gov</email>
+      </contact_info>
+ <!--     <role>Investigator</role>  There is no <role> in person definition.  This is just the person.
+           Furthermore, Investigators were taken out, apparently all we need is cited_authors. -->
+      <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/970</url>
+    </person>
+    <!-- Commenting out the rest, as the changes and comments are the same.
+    <person object_class="Person" object_id="INV002">
+      <name>David P. Wisegarver</name>
+      <organization>NOAA/PMEL</organization>
+      <role>Investigator</role>
+      <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/2536</url>
+    </person>
+    <person object_class="Person" object_id="INV003">
+      <name>Marilyn F. Lamb</name>
+      <organization></organization>
+      <role>Investigator</role>
+    </person>
+    <person object_class="Person" object_id="INV004">
+      <name>Lloyd Moore</name>
+      <organization>NOAA Atlantic Oceanographic and Meteorological Laboratory (AOML)</organization>
+      <role>Collaborator</role>
+    </person>
+    <person object_class="Person" object_id="INV005">
+      <name>Donald K. Atwood</name>
+      <organization>NOAA Atlantic Oceanographic and Meteorological Laboratory (AOML)</organization>
+      <address>
+        <delivery_point>4301 Rickenbacker Causeway</delivery_point>
+        <city>Miami</city>
+        <administrative_area>FL</administrative_area>
+        <postal_code>33149-1026</postal_code>
+        <country>UNITED STATES</country>
+      </address>
+      <phone>305-361-4450</phone>
+      <role>Collaborator</role>
+      <url>https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/person/details/316</url>
+    </person>
+    -->
+  </people>
+  <organizations>
+    <organization object_id="org_ncei">
+      <identifier pid_type="ROR">https://ror.org/04r0wrp59</identifier>
+      <name>NOAA National Centers for Environmental Information (NCEI)</name>
+    </organization>
+    <organization object_id="ORG001">
+      <identifier pid_type="ROR">https://ror.org/03crn0n59</identifier>
+      <name>NOAA Pacific Marine Environmental Laboratory (PMEL)</name>
+    </organization>
+    <organization object_id="ORG002">
+      <identifier pid_type="ROR">https://ror.org/019r5yk13</identifier>
+      <name>Cooperative Institute for Satellite Earth System Studies (CISESS)</name>
+    </organization>
+  </organizations>
+</dataset_metadata>
