@@ -2,7 +2,7 @@
 <!DOCTYPE dataset_metadata [
   <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9.1" >
   <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
-  <!ENTITY SCHEMA_LOCATION "&SCHEMA_FILE;" >
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
 ]>
 <dataset_metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns="https://ncei.noaa.gov/ocads/v4.9" 
