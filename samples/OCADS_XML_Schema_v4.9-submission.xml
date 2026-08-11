@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dataset_metadata [
-  <!ENTITY SCHEMA_LOCATION "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
+  <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9.1" >
+  <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
 ]>
-
 <!-- *** NOTE This document does not fully validate as it has object references 
           that don't point to actual definitions. -->
 <dataset_metadata xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
@@ -929,7 +930,7 @@
          </calibration_history>
          <calibration_certificate_info>Calibration certificate information</calibration_certificate_info>
          
-         <pH_standards>
+         <ph_standards>
              <standard>
                  <value>4.0</value>
              </standard>
@@ -939,7 +940,7 @@
              <standard>
                  <value>9.0</value>
              </standard>
-         </pH_standards>
+         </ph_standards>
 
           <indicator_dye_information>
             <dye_type>Type</dye_type>

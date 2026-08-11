@@ -69,7 +69,7 @@
     <xs:complexContent>
       <xs:extension base="basic_calibration_info">
         <xs:sequence>
-          <xs:element name="pH_standards" >
+          <xs:element name="ph_standards" minOccurs="0" >
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="standard" maxOccurs="unbounded">

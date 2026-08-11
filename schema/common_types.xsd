@@ -317,7 +317,7 @@
   <xs:simpleType name="longitude_180">
     <!-- ? Do we insist on +/- 180? -->
     <xs:restriction base="xs:decimal">
-      <xs:minExclusive value="-180.0"/>
+      <xs:minInclusive value="-180.0"/>
       <xs:maxInclusive value="180"/>
     </xs:restriction>
   </xs:simpleType>
@@ -396,7 +396,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="country" type="vocabulary_item_reference"/>
+            <xs:element name="country" type="vocabulary_item_reference" minOccurs="0"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -408,20 +408,20 @@
 
   <xs:complexType name="observation_geometry">
     <xs:sequence>
-      <xs:element name="type" type="observation_geometry_type" maxOccurs="unbounded"/>
+      <xs:element name="type" type="xs:string" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   
   <!-- It would be good if this were a controlled vocabulary. -->
   <xs:simpleType name="observation_geometry_type">  <!-- ??? Is this a per-variable or per-dataset field? -->
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Point"/>  <!-- ??? CF types.  Acceptable? -->
-      <xs:enumeration value="Timeseries"/>
-      <xs:enumeration value="Trajectory"/> <!-- aka (Surface) Underway ( Does this term imply continuous sampling? ) -->
-      <xs:enumeration value="Profile"/>
-      <xs:enumeration value="Timeseries_Profile"/>
+      <xs:enumeration value="point"/>  <!-- ??? CF types.  Acceptable? -->
+      <xs:enumeration value="timeseries"/>
+      <xs:enumeration value="trajectory"/> <!-- aka (Surface) Underway ( Does this term imply continuous sampling? ) -->
+      <xs:enumeration value="profile"/>
+      <xs:enumeration value="timeseries_profile"/>
       <!-- ??? Does this assume same sample rate for all profile vars ? -->
-      <xs:enumeration value="Trajectory_Profile"/>
+      <xs:enumeration value="trajectory_profile"/>
     </xs:restriction>
   </xs:simpleType>
   
@@ -444,7 +444,7 @@
   </xs:simpleType>
   <xs:element name="extendable" type="extendable_experiment_location"/>
   
-  <xs:simpleType name="ncei_obs_types">
-    <xs:union memberTypes="observation_geometry_type experiment_location"/>
+  <xs:simpleType name="dataset_observation_types">
+    <xs:union memberTypes="observation_geometry_type extendable_experiment_location"/>
   </xs:simpleType>
 </xs:schema>

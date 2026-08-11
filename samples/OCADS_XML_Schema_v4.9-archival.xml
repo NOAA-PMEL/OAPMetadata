@@ -136,7 +136,13 @@
     <dataset_data_type>Model output</dataset_data_type>
     <dataset_data_type>Social studies</dataset_data_type>
     -->
-
+  
+  <dataset_observation_types>
+    <observation_type>profile</observation_type>
+    <observation_type>lab</observation_type> 
+  </dataset_observation_types>
+  
+  
  <mcdr>true</mcdr>
 
  <data_coverage>
@@ -296,13 +302,6 @@
    <keyword>Keyword2</keyword>
  </keywords>
   
-<!-- This is not a top-level element
- <observation_geometry>
-   <term>Profile</term>
-   <term>Discrete measurements</term>   
- </observation_geometry>
--->
-
  <biological_subjects>
 
    <subject>
@@ -985,7 +984,7 @@
          </calibration_history>
          <calibration_certificate_info>Calibration certificate information</calibration_certificate_info>
          
-         <pH_standards>
+         <ph_standards>
              <standard>
                  <value>4.0</value>
              </standard>
@@ -995,7 +994,7 @@
              <standard>
                  <value>9.0</value>
              </standard>
-         </pH_standards>
+         </ph_standards>
 
           <indicator_dye_information>
             <dye_type>Type</dye_type>

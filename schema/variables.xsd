@@ -42,8 +42,8 @@
     <xs:complexContent>
       <xs:extension base="basic_variable">
         <xs:sequence>
-          <xs:choice>
-            <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
+          <xs:choice minOccurs="0">
+            <xs:element name="units" type="xs:string" minOccurs="0" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
             <xs:element name="ph_scale" type="ph_scale_types" /> <!-- XXX This isn't great here, because we want to be able to enforce this. --> 
           </xs:choice>
           <xs:group ref="common_var_additional_fields"/>
@@ -72,7 +72,7 @@
       <xs:restriction base="insitu_variable">
         <xs:sequence>
           <xs:group ref="minimum_unitless_variable_fields"/>
-          <xs:element name="units" type="xs:string" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
+          <xs:element name="units" type="xs:string" minOccurs="0" /> <!-- preferrably from controlled vocab,  quant/qualitative?-->
           <xs:group ref="common_var_additional_fields"/>
           <xs:element name="measured" type="measured_var_info" minOccurs="0"/>
         </xs:sequence>
@@ -85,7 +85,7 @@
       <xs:restriction base="insitu_variable">
         <xs:sequence>
           <xs:group ref="minimum_unitless_variable_fields"/>
-          <xs:element name="ph_scale" type="ph_scale_types"/>
+          <xs:element name="ph_scale" type="ph_scale_types" minOccurs="0" />
           <xs:group ref="common_var_additional_fields"/>
           <xs:element name="measured" type="measured_var_info" minOccurs="0"/>
         </xs:sequence>
@@ -146,7 +146,7 @@
       <xs:restriction base="insitu_variable">
         <xs:sequence>
           <xs:group ref="minimum_unitless_variable_fields"/>
-          <xs:element name="units" type="xs:string"/>
+          <xs:element name="units" type="xs:string" minOccurs="0" />
           <xs:group ref="common_var_additional_fields"/>
           <xs:element name="calculated" type="calculated_var_info"/>
         </xs:sequence>
@@ -165,9 +165,6 @@
       <xs:extension base="basic_measured_observation_base">
         <xs:sequence>
           <xs:element name="analysis" type="std_analysis_info" minOccurs="0"/>
-        <!--
-          <xs:element name="analyzing_instrument" type="standard_instrument"/>
-        -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -236,7 +233,7 @@
       <xs:restriction base="insitu_variable">
         <xs:sequence>
           <xs:group ref="minimum_unitless_variable_fields"/>
-          <xs:element name="ph_scale" type="ph_scale_types"/>
+          <xs:element name="ph_scale" type="ph_scale_types" minOccurs="0"/>
           <xs:group ref="common_var_additional_fields"/>
           <xs:element name="calculated" type="calculated_var_info"/>
         </xs:sequence>
@@ -284,7 +281,7 @@
     <xs:complexContent>
       <xs:extension base="co2_measured_base">
         <xs:sequence>
-          <xs:element name="measurement_temperature" type="measured_value"/>
+          <xs:element name="measurement_temperature" type="measured_value" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

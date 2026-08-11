@@ -2,7 +2,7 @@
 <!DOCTYPE dataset_metadata [
   <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9.1" >
   <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
-  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_FILE;" >
 ]>
 <dataset_metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns="https://ncei.noaa.gov/ocads/v4.9" 
@@ -73,6 +73,9 @@
   <dataset_description>This dataset includes dissolved inorganic carbon, total alkalinity, water temperature, salinity, chlorofluorocarbons (CFCs), carbon-13 and other variables collected from discrete sample and profile observations during NOAA Ship Malcolm Baldrige cruise CGC_90 (EXPOCODE 33MW19900222) in the Pacific and Southern Oceans from 1990-02-22 to 1990-04-16. The instruments used to collect these data include CTD, Coulometer for DIC measurement and bottle. These data were collected by David P. Wisegarver, Marilyn F. Lamb, and Richard A. Feely of NOAA Pacific Marine Environmental Laboratory (PMEL) as part of the CARINA_CGC_90 and CGC-90_32MW19900222 dataset. CDIAC associated the following cruise ID(s) with this dataset: 3175CG90_1 and CGC_90.  The World Ocean Circulation Experiment (WOCE) was a major component of the World Climate Research Program with the overall goal of better understanding the ocean's role in climate and climatic changes resulting from both natural and anthropogenic causes. The CO2 survey took advantage of the sampling opportunities provided by the WOCE Hydrographic Program (WHP) cruises during this period between 1990 and 1998. The final collection covers approximately 23,000 stations from 94 WOCE cruises.</dataset_description>
   <dataset_type>Individual data collection</dataset_type>
   <dataset_data_type>Natural</dataset_data_type>
+  <dataset_observation_types>
+    <observation_type>profile</observation_type>
+  </dataset_observation_types>
   <mcdr>false</mcdr>
   <data_coverage>
     <temporal_extents>
@@ -169,9 +172,6 @@
   <default_missing_value_indicator/>
   -->
   <!--  <supplemental_information/>  empty elements can be ommitted -->
-  <observation_geometry>
-    <type>Profile</type>
-  </observation_geometry>
   <!-- Only included for those particular types of datasets
   <sediment_study/>
   <physiological_response_study/>

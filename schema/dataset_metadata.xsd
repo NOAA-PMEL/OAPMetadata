@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE schema SYSTEM "version.dtd" [
-  <!ENTITY LAX '0' >
-  ]>
+<!DOCTYPE schema SYSTEM "version.dtd">
   
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
   targetNamespace="&NAMESPACE;" xmlns="&NAMESPACE;" xmlns:oa="&NAMESPACE;"
@@ -59,15 +57,17 @@
             - model output
       -->
 
-      <!-- ?? should this be part of the <xs:choice>? # moved identifiers and platforms to top level -->
-      <xs:group ref="observations_ds_fields" minOccurs="0">
+      <xs:group ref="biological_ds_fields" minOccurs="0" />
+      
+      <!-- ?? should this be part of the <xs:choice>? # moved identifiers and platforms to top level 
+      <xs:group ref="observations_ds_fields" minOccurs="0"> -X- REMOVED -X-
         <xs:annotation>
           <xs:documentation>
             Includes observation geometry and biological subject elements.
           </xs:documentation>
         </xs:annotation>
       </xs:group>
-
+      -->
       <xs:choice minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
@@ -140,7 +140,7 @@
     -->
       
       <xs:element name="project_id" type="xs:string" minOccurs="0" /> <!-- mCDR only? -->
-      <xs:element name="experiement_id" type="xs:string" minOccurs="0" /> <!-- mCDR only? -->
+      <xs:element name="experiment_id" type="xs:string" minOccurs="0" /> <!-- mCDR only? -->
       
       <xs:element name="archive_specific_content" minOccurs="0">
         <xs:complexType>
@@ -218,8 +218,15 @@
       <xs:element name="dataset_type" type="dataset_types" maxOccurs="1"/>
       <xs:element name="dataset_data_type" type="dataset_data_types"/>
       
-      <!-- geometries will be at the variable level. <xs:element name="observation_type" type="dataset_observation_types"/> <!-X- ??? repeatable? -->
-      <!-- At the variable level.  <xs:element name="sampling" type="sampling_type"/>  <!-X- ??? repeatable? -->
+      <xs:element name="dataset_observation_types" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="observation_type"  type="dataset_observation_types" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <!-- geometries will be at the variable level. -->
 
 	    <xs:element name="mcdr" type="xs:boolean" minOccurs="0"/> <!-- absence equals "false" -->
       
@@ -249,9 +256,9 @@
       <!-- platforms -->
       <xs:element name="platforms" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:choice>
-            <xs:element name="platform" type="platform" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="platform_type" type="platform_type" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element name="platform" type="platform" />
+            <xs:element name="platform_type" type="platform_type" />
           </xs:choice>
         </xs:complexType>
       </xs:element>
@@ -339,17 +346,17 @@
     </xs:restriction>
   </xs:simpleType>
   
-  <xs:simpleType name="dataset_observation_types">
+  <xs:complexType name="dataset_free_text_observation_types">
     <xs:annotation>
       <xs:appinfo>
         I suppose this will be an "extensible currated list", 
         which in turn will be a subclass of controlled vocabulary 
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <!-- still arguing over what should go here. -->
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:sequence>
+      <xs:element name="type" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="data_coverage_extents">
     <xs:sequence>
@@ -418,8 +425,8 @@
       <xs:element name="name" type="xs:string"/>
       <xs:element name="identifier" type="typed_identifier"/> <!-- ??? More than one?  ??? specialized allowable platform identifier types? -->
       <xs:element name="type" type="platform_type"/> <!-- controlled vocab? -->
-      <xs:element name="owner" type="xs:string"/> <!-- and/or org-ref ? -->
-      <xs:element name="country" type="vocabulary_item_reference"/> <!-- controlled vocab -->
+      <xs:element name="owner" type="xs:string" minOccurs="0"/> <!-- and/or org-ref ? -->
+      <xs:element name="country" type="vocabulary_item_reference" minOccurs="0"/> <!-- controlled vocab -->
     </xs:sequence>
   </xs:complexType>
 
@@ -438,12 +445,13 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:group name="observations_ds_fields">
-    <!-- sampling ??? Could there be different sampling modalities (both discrete and continuous) in a dataest? -->
-    <!-- observation (eg DSG) type ???  Could this be relevant to non-observational data ??? 
-         ??? Could there be more than one observation type in a dataset? -->
+<!--
+  <xs:group name="observations_ds_fields"> . -X- NOT USED
+    <!-x- sampling ??? Could there be different sampling modalities (both discrete and continuous) in a dataest? -x->
+    <!-x- observation (eg DSG) type ???  Could this be relevant to non-observational data ??? 
+         ??? Could there be more than one observation type in a dataset? -x->
     <xs:sequence>
-      <xs:element name="observation_geometry" type="observation_geometry" minOccurs="0">
+      <xs:element name="observation_type" type="observation_types" minOccurs="0">
         <xs:annotation>
           <xs:documentation>
             If uniform.  Otherwise in variable.
@@ -453,7 +461,7 @@
       <xs:group ref="biological_ds_fields" minOccurs="0" />
     </xs:sequence>
   </xs:group>
-
+-->
   <!-- biological -->
   <xs:group name="biological_ds_fields">
     <xs:sequence>
@@ -780,8 +788,8 @@
       <xs:documentation> Metadata about *this* metadata document. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="document_date" type="xs:date"/>
-      <xs:element name="document_source" type="organization_ref">  <!-- ??? And/Or Person -->
+      <xs:element name="document_date" type="xs:date"/>  <!-- date of last edit to this document -->
+      <xs:element name="document_source" type="organization_ref" minOccurs="0"> 
         <xs:annotation>
           <xs:documentation> The organization that produced *this* metadata document.
           </xs:documentation>

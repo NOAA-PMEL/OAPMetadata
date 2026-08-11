@@ -40,15 +40,15 @@
       <xs:element name="landing_page_url" type="described_uri" minOccurs="0"/>
       <xs:element name="dataset_graphic_url" type="described_uri" minOccurs="0" maxOccurs="unbounded"/>  <!-- could be multiple -->
 
-      <xs:element name="publication_date" type="xs:date" minOccurs="0"/>  <!-- the <data_revision_date/>  
-                                                                               or would that be different, and need its own field? -->
+      <xs:element name="publication_date" type="xs:date" minOccurs="0"/> <!-- are both theses needed / useful? -->
+      <xs:element name="data_revision_date" type="xs:date" minOccurs="0"/>
       <xs:element name="metadata_revision_date" type="xs:date" minOccurs="0"/>
       
       <!-- This should be pulled from the revision history.
             Or at minimum be references to entries in revision history.
-      <xs:element name="date_published" type="xs:dateTime" minOccurs="0" maxOccurs="1"/> 
-      <xs:element name="initial_submission" type="submission_info"/>
-      <xs:element name="latest_revision" type="submission_info"/>
+   -X-   <xs:element name="date_published" type="xs:dateTime" minOccurs="0" maxOccurs="1"/> 
+   -X-   <xs:element name="initial_submission" type="submission_info"/>
+   -X-   <xs:element name="latest_revision" type="submission_info"/>
       -->
       <xs:element name="version_history">
         <xs:complexType>
