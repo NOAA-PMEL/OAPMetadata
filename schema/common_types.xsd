@@ -143,16 +143,16 @@
   </xs:complexType>
  -->
   <xs:complexType name="degrees_c_restriction">
-    <xs:complexContent>
+    <xs:simpleContent>
       <xs:restriction base="measured_value">
         <xs:attribute name="units" type="xs:string" fixed="degrees C" use="required"/>
       </xs:restriction>
-    </xs:complexContent>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="degrees_c">
-    <xs:complexContent>
+    <xs:simpleContent>
       <xs:extension base="degrees_c_restriction"/>
-    </xs:complexContent>
+    </xs:simpleContent>
   </xs:complexType>
   
   <xs:complexType name="ordered_string_element">

@@ -2,7 +2,7 @@
 <!DOCTYPE dataset_metadata [
   <!ENTITY SCHEMA_URL "https://data.pmel.noaa.gov/sdig/oap/schema/ocads/v4.9" >
   <!ENTITY SCHEMA_FILE "file:///Users/kamb/workspace/OAPMetadata-concessions/schema">
-  <!ENTITY SCHEMA_LOCATION "&SCHEMA_URL;" >
+  <!ENTITY SCHEMA_LOCATION "&SCHEMA_FILE;" >
 
 ]>
 <!-- *** NOTE This document does not fully validate as it has object references 
@@ -449,7 +449,7 @@
 
    <dataset_variable_name>SST</dataset_variable_name>
 
-   <units>degrees Celsius</units>
+   <units>degrees Celsius</units>  <!-- XXX Should be constrained to "degrees C" in editor. -->
 
    <related_variables>
      <variable name="sst_deg_f"/>
@@ -1006,7 +1006,7 @@
             </correction_for_unpurified_dye>
           </indicator_dye_information>
 
-         <calibration_temperature units="degrees Celsius">25</calibration_temperature>
+         <calibration_temperature units="degrees C">25</calibration_temperature>
        </calibration>
 
      </analyzing_instrument>
@@ -1146,7 +1146,7 @@
 
         <calibration_certificate_info>Information about the calibration certificates</calibration_certificate_info>
 
-        <calibration_temperature units="degrees Celsius">42.2</calibration_temperature>
+        <calibration_temperature units="degrees C">42.2</calibration_temperature>
        
         <standard_gases>
           <gas>
@@ -1271,7 +1271,7 @@
         <calibration_certificate_info>Information about the calibration certificates
         </calibration_certificate_info>
 
-        <calibration_temperature units="degrees Celsius">24</calibration_temperature>
+        <calibration_temperature units="degrees C">24</calibration_temperature>
 
         <standard_gases>
           <gas>

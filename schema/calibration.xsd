@@ -83,7 +83,7 @@
             </xs:complexType>
           </xs:element>
           <xs:element name="indicator_dye_information" type="ph_dye_info"/>
-           <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
+           <xs:element name="calibration_temperature" type="degrees_c" minOccurs="0"/> <!-- degrees C ? -->
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -108,7 +108,7 @@
     <xs:complexContent>
       <xs:extension base="basic_calibration_info">
         <xs:sequence>
-          <xs:element name="calibration_temperature" type="measured_value" minOccurs="0"/> <!-- degrees C ? -->
+          <xs:element name="calibration_temperature" type="degrees_c" minOccurs="0"/> <!-- degrees C ? -->
           <xs:element name="standard_gases">
             <xs:complexType>
               <xs:sequence>

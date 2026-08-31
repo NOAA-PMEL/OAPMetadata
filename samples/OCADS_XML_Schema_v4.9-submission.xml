@@ -952,7 +952,7 @@
             </correction_for_unpurified_dye>
           </indicator_dye_information>
 
-         <calibration_temperature units="degrees Celsius">25</calibration_temperature>
+         <calibration_temperature units="degrees C">25</calibration_temperature>
        </calibration>
 
      </analyzing_instrument>
@@ -1092,7 +1092,7 @@
 
         <calibration_certificate_info>Information about the calibration certificates</calibration_certificate_info>
 
-        <calibration_temperature units="degrees Celsius">42.2</calibration_temperature>
+        <calibration_temperature units="degrees C">42.2</calibration_temperature>
        
         <standard_gases>
           <gas>
@@ -1217,7 +1217,7 @@
         <calibration_certificate_info>Information about the calibration certificates
         </calibration_certificate_info>
 
-        <calibration_temperature units="degrees Celsius">24</calibration_temperature>
+        <calibration_temperature units="degrees C">24</calibration_temperature>
 
         <standard_gases>
           <gas>
